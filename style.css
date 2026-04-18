@@ -16,7 +16,7 @@ body {
 }
 
 /* =====================
-   HEADER (REDESIGNED)
+   HEADER (FIXED - LARGER LOGO)
    ===================== */
 
 .header {
@@ -27,7 +27,7 @@ body {
     background: linear-gradient(135deg, #f5e6d3 0%, #f9f3e9 100%);
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
     z-index: 1000;
-    padding: 10px 16px;
+    padding: 8px 16px;
 }
 
 .header-inner {
@@ -41,13 +41,15 @@ body {
 
 .logo-section {
     flex-shrink: 0;
+    display: flex;
+    align-items: center;
 }
 
 .logo {
-    height: 45px;
+    height: 60px;
     width: auto;
     object-fit: contain;
-    filter: brightness(1.1);
+    filter: brightness(1.05);
 }
 
 .nav {
@@ -93,7 +95,7 @@ body {
 }
 
 body {
-    padding-top: 65px;
+    padding-top: 75px;
 }
 
 /* =====================
@@ -138,7 +140,7 @@ a:hover {
 }
 
 /* =====================
-   HERO SECTION (MODERN)
+   HERO SECTION
    ===================== */
 
 .hero {
@@ -249,7 +251,7 @@ a:hover {
 }
 
 /* =====================
-   PRODUCTS GRID (NEW DESIGN)
+   PRODUCTS GRID (IMPROVED IMAGES)
    ===================== */
 
 .products-grid {
@@ -283,12 +285,12 @@ a:hover {
 }
 
 /* =====================
-   PRODUCT IMAGE (KEY FIX)
+   PRODUCT IMAGE (FIXED - CONTAINS FULL IMAGE)
    ===================== */
 
 .product-image {
     width: 100%;
-    height: 200px;
+    height: 220px;
     background: linear-gradient(135deg, #f5e6d3 0%, #f0ebe0 100%);
     display: flex;
     align-items: center;
@@ -303,7 +305,7 @@ a:hover {
     height: 100%;
     object-fit: contain;
     object-position: center;
-    padding: 12px;
+    padding: 14px;
     max-width: 100%;
     max-height: 100%;
 }
@@ -336,42 +338,44 @@ a:hover {
 }
 
 /* =====================
-   ABOUT SECTION
+   ABOUT SECTION (REDESIGNED)
    ===================== */
 
 .about-section {
     background: white;
-    padding: 20px 0;
+    padding: 0;
     margin-bottom: 0;
 }
 
 .about-inner {
     display: flex;
     flex-direction: column;
-    gap: 16px;
+    gap: 0;
 }
 
 .about-image {
     width: 100%;
-    border-radius: 0;
+    height: 280px;
+    overflow: hidden;
+    background: #f5f5f5;
 }
 
 .about-image img {
     width: 100%;
-    height: auto;
-    max-height: 350px;
+    height: 100%;
     object-fit: cover;
-    border-radius: 0;
+    object-position: center;
     display: block;
 }
 
 .about-text {
-    padding: 0 12px 20px;
+    padding: 16px 12px 20px;
 }
 
 .about-text h2 {
     color: #5C3A21;
     margin-bottom: 10px;
+    font-size: 1.4rem;
 }
 
 .about-text p {
@@ -386,6 +390,8 @@ a:hover {
     flex-direction: column;
     gap: 6px;
     margin-top: 12px;
+    padding-top: 12px;
+    border-top: 1px solid #efefef;
 }
 
 .about-highlights p {
@@ -561,6 +567,7 @@ a:hover {
     width: 100%;
     height: 100%;
     object-fit: contain;
+    object-position: center;
     padding: 16px;
 }
 
@@ -746,10 +753,21 @@ a:hover {
 
     .about-inner {
         flex-direction: row;
+        align-items: stretch;
     }
 
     .about-image {
-        flex: 0 0 40%;
+        flex: 0 0 35%;
+        height: auto;
+        min-height: 300px;
+    }
+
+    .about-text {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 20px 24px;
     }
 }
 
@@ -764,5 +782,13 @@ a:hover {
 
     .container {
         padding: 0 20px;
+    }
+
+    .logo {
+        height: 70px;
+    }
+
+    body {
+        padding-top: 85px;
     }
 }
