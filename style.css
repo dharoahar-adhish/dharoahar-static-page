@@ -16,7 +16,7 @@ body {
 }
 
 /* =====================
-   HEADER (LARGER LOGO)
+   HEADER (SMALLER WIDTH)
    ===================== */
 
 .header {
@@ -27,7 +27,7 @@ body {
     background: linear-gradient(135deg, #f5e6d3 0%, #f9f3e9 100%);
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
     z-index: 1000;
-    padding: 8px 16px;
+    padding: 6px 16px;
 }
 
 .header-inner {
@@ -52,7 +52,7 @@ body {
 }
 
 .logo {
-    height: 80px;
+    height: 60px;
     width: auto;
     object-fit: contain;
     filter: brightness(1.05);
@@ -105,7 +105,7 @@ body {
 }
 
 body {
-    padding-top: 85px;
+    padding-top: 75px;
 }
 
 /* =====================
@@ -166,6 +166,37 @@ a:hover {
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 12px;
+}
+
+/* =====================
+   WHATSAPP FLOATING BUTTON
+   ===================== */
+
+.whatsapp-float {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 60px;
+    height: 60px;
+    background: #25D366;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 12px rgba(37, 211, 102, 0.4);
+    z-index: 999;
+    transition: all 0.3s ease;
+    text-decoration: none;
+}
+
+.whatsapp-float:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 16px rgba(37, 211, 102, 0.6);
+}
+
+.whatsapp-float svg {
+    width: 32px;
+    height: 32px;
 }
 
 /* =====================
@@ -1069,7 +1100,7 @@ a:hover {
     }
 
     .header {
-        padding: 12px 20px;
+        padding: 10px 20px;
     }
 
     .container {
@@ -1077,11 +1108,11 @@ a:hover {
     }
 
     .logo {
-        height: 90px;
+        height: 65px;
     }
 
     body {
-        padding-top: 95px;
+        padding-top: 80px;
     }
 
     .hero h1 {
