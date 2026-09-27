@@ -3,728 +3,808 @@
 <head>
   <meta charset="UTF-8">
 
-  <meta
-    name="viewport"
-    content="width=device-width, initial-scale=1, viewport-fit=cover"
-  >
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Our Spices | Whole & Powder Spices | Dharoahar</title>
 
   <meta
     name="description"
-    content="Explore the Dharoahar spice collection — whole spices and powder spices for the modern Indian kitchen."
+    content="Explore the Dharoahar spice collection — whole Indian spices and ground spices sourced with care for everyday cooking, retail and B2B requirements."
   >
 
-  <meta name="theme-color" content="#f7f3ed">
+  <meta
+    name="keywords"
+    content="Dharoahar spices, Indian spices, whole spices, powder spices, whole masala, ground spices, cloves, cardamom, cinnamon, cumin, chilli powder, turmeric, coriander powder"
+  >
 
-  <title>Our Spices | Dharoahar</title>
+  <link rel="canonical" href="https://www.dharoahar.com/products.html">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap"
+    rel="stylesheet"
+  >
 
   <style>
 
     /* =========================================================
-       DHAROAHAR PRODUCTS
-       Mobile-first FMCG catalogue
+       DHAROAHAR — PRODUCTS CATALOGUE
+       Self-contained page styling
        ========================================================= */
 
     :root {
-      --dh-bg: #f7f3ed;
-      --dh-paper: #fffdf9;
-      --dh-card: #ffffff;
-      --dh-ink: #2d241d;
-      --dh-muted: #756a60;
-      --dh-soft: #a0958a;
-      --dh-line: #e7dfd5;
-      --dh-brown: #5b3a27;
-      --dh-brown-dark: #3e281b;
-      --dh-accent: #a66a32;
-      --dh-accent-light: #eee0d0;
-      --dh-whatsapp: #25D366;
+      --dh-brown: #4b2f22;
+      --dh-brown-dark: #2e1d16;
+      --dh-brown-soft: #6b4937;
 
-      --dh-radius-md: 16px;
-      --dh-radius-lg: 24px;
+      --dh-cream: #f7f3ec;
+      --dh-cream-2: #fbf9f5;
+      --dh-white: #ffffff;
 
-      --dh-shadow: 0 10px 30px rgba(55, 39, 27, 0.07);
-      --dh-shadow-hover: 0 18px 40px rgba(55, 39, 27, 0.12);
+      --dh-border: #e7dfd4;
+      --dh-muted: #766d65;
 
-      --dh-max: 1240px;
+      --dh-accent: #a76a35;
+      --dh-accent-light: #efe0ce;
+
+      --dh-green: #405b43;
+
+      --container: 1240px;
+
+      --serif: "Playfair Display", Georgia, serif;
+      --sans: "DM Sans", Arial, sans-serif;
     }
 
-    /* =========================================================
-       RESET
-       ========================================================= */
 
-    .dharoahar-products,
-    .dharoahar-products * {
+    * {
       box-sizing: border-box;
+      margin: 0;
+      padding: 0;
     }
+
 
     html {
       scroll-behavior: smooth;
     }
 
-    body.dharoahar-products {
-      margin: 0;
-      padding: 0;
-      background: var(--dh-bg);
-      color: var(--dh-ink);
-      font-family:
-        Inter,
-        ui-sans-serif,
-        system-ui,
-        -apple-system,
-        BlinkMacSystemFont,
-        "Segoe UI",
-        Arial,
-        sans-serif;
-      -webkit-font-smoothing: antialiased;
+
+    body {
+      background: var(--dh-cream-2);
+      color: var(--dh-brown-dark);
+      font-family: var(--sans);
       overflow-x: hidden;
+      line-height: 1.5;
     }
 
-    .dharoahar-products img {
-      display: block;
-      max-width: 100%;
-    }
 
-    .dharoahar-products a {
+    a {
       color: inherit;
       text-decoration: none;
     }
 
-    .dh-wrap {
-      width: min(calc(100% - 32px), var(--dh-max));
-      margin: 0 auto;
+
+    img {
+      display: block;
+      max-width: 100%;
     }
+
+
+    button {
+      font-family: inherit;
+    }
+
 
     /* =========================================================
        HEADER
        ========================================================= */
 
-    .dh-header {
+    .catalog-header {
       position: sticky;
       top: 0;
       z-index: 1000;
-      background: rgba(255, 253, 249, 0.96);
-      border-bottom: 1px solid var(--dh-line);
-      backdrop-filter: blur(14px);
-      -webkit-backdrop-filter: blur(14px);
+
+      background: rgba(251, 249, 245, 0.96);
+      border-bottom: 1px solid var(--dh-border);
+
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
     }
 
-    .dh-header-inner {
-      min-height: 68px;
+
+    .header-inner {
+      width: min(var(--container), calc(100% - 40px));
+      min-height: 76px;
+      margin: auto;
+
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 16px;
+      gap: 30px;
     }
 
-    .dh-logo {
-      display: inline-flex;
+
+    .brand {
+      display: flex;
       flex-direction: column;
       line-height: 1;
       flex-shrink: 0;
     }
 
-    .dh-logo-main {
-      font-family: Georgia, "Times New Roman", serif;
-      font-size: 21px;
-      font-weight: 700;
-      letter-spacing: 0.08em;
+
+    .brand-name {
       color: var(--dh-brown-dark);
+
+      font-family: var(--serif);
+      font-size: 27px;
+      font-weight: 700;
+      letter-spacing: -0.5px;
     }
 
-    .dh-logo-sub {
+
+    .brand-sub {
       margin-top: 5px;
-      font-size: 7px;
-      font-weight: 700;
-      letter-spacing: 0.22em;
+
       color: var(--dh-accent);
+
+      font-size: 8px;
+      font-weight: 700;
+      letter-spacing: 2.2px;
       text-transform: uppercase;
     }
 
-    /* Mobile menu */
 
-    .dh-mobile-menu {
-      position: relative;
-    }
-
-    .dh-mobile-menu summary {
-      width: 42px;
-      height: 42px;
+    .desktop-nav {
       display: flex;
       align-items: center;
-      justify-content: center;
-      border: 1px solid var(--dh-line);
-      border-radius: 50%;
-      background: var(--dh-paper);
-      cursor: pointer;
-      list-style: none;
+      gap: 32px;
     }
 
-    .dh-mobile-menu summary::-webkit-details-marker {
-      display: none;
-    }
 
-    .dh-menu-icon {
-      width: 17px;
-      height: 12px;
+    .desktop-nav a {
       position: relative;
-      border-top: 1.5px solid var(--dh-brown);
-      border-bottom: 1.5px solid var(--dh-brown);
-    }
 
-    .dh-menu-icon::after {
-      content: "";
-      position: absolute;
-      top: 4px;
-      left: 0;
-      width: 100%;
-      height: 1.5px;
-      background: var(--dh-brown);
-    }
+      color: #544940;
 
-    .dh-mobile-nav {
-      position: absolute;
-      top: calc(100% + 10px);
-      right: 0;
-      width: min(250px, calc(100vw - 32px));
-      padding: 10px;
-      border: 1px solid var(--dh-line);
-      border-radius: 16px;
-      background: var(--dh-paper);
-      box-shadow: var(--dh-shadow-hover);
-    }
-
-    .dh-mobile-nav a {
-      display: block;
-      padding: 13px 14px;
-      border-radius: 10px;
-      font-size: 14px;
+      font-size: 13px;
       font-weight: 600;
-      color: var(--dh-ink);
     }
 
-    .dh-mobile-nav a:hover {
-      background: var(--dh-accent-light);
+
+    .desktop-nav a::after {
+      content: "";
+
+      position: absolute;
+      left: 0;
+      bottom: -7px;
+
+      width: 0;
+      height: 1px;
+
+      background: var(--dh-accent);
+
+      transition: width 0.25s ease;
     }
 
-    .dh-desktop-nav {
+
+    .desktop-nav a:hover::after {
+      width: 100%;
+    }
+
+
+    .header-contact {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+
+      min-height: 42px;
+      padding: 0 19px;
+
+      border-radius: 4px;
+
+      background: var(--dh-brown);
+      color: white;
+
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.2px;
+
+      transition:
+        transform 0.2s ease,
+        background 0.2s ease;
+    }
+
+
+    .header-contact:hover {
+      background: var(--dh-brown-dark);
+      transform: translateY(-1px);
+    }
+
+
+    .mobile-menu {
       display: none;
+
+      border: 0;
+      background: transparent;
+
+      color: var(--dh-brown);
+
+      font-size: 24px;
+      cursor: pointer;
     }
+
 
     /* =========================================================
        HERO
        ========================================================= */
 
-    .dh-hero {
-      padding: 42px 0 28px;
+    .catalog-hero {
+      background: var(--dh-cream);
+
+      border-bottom: 1px solid var(--dh-border);
     }
 
-    .dh-hero-inner {
-      position: relative;
-      overflow: hidden;
-      padding: 30px 24px;
-      border: 1px solid var(--dh-line);
-      border-radius: var(--dh-radius-lg);
-      background:
-        radial-gradient(
-          circle at 95% 10%,
-          rgba(166, 106, 50, 0.13),
-          transparent 32%
-        ),
-        radial-gradient(
-          circle at 0% 100%,
-          rgba(91, 58, 39, 0.08),
-          transparent 35%
-        ),
-        var(--dh-paper);
+
+    .catalog-hero-inner {
+      width: min(var(--container), calc(100% - 40px));
+
+      margin: auto;
+      padding: 76px 0 68px;
+
+      display: grid;
+      grid-template-columns: minmax(0, 1.15fr) minmax(280px, 0.85fr);
+      align-items: end;
+      gap: 70px;
     }
 
-    .dh-eyebrow {
-      margin: 0 0 11px;
-      font-size: 11px;
-      font-weight: 800;
-      letter-spacing: 0.17em;
-      text-transform: uppercase;
-      color: var(--dh-accent);
-    }
 
-    .dh-hero h1 {
-      max-width: 700px;
-      margin: 0;
-      font-family: Georgia, "Times New Roman", serif;
-      font-size: clamp(36px, 10vw, 70px);
-      line-height: 0.98;
-      letter-spacing: -0.035em;
-      font-weight: 500;
-      color: var(--dh-brown-dark);
-    }
-
-    .dh-hero h1 span {
-      color: var(--dh-accent);
-    }
-
-    .dh-hero-copy {
-      max-width: 600px;
-      margin: 18px 0 0;
-      color: var(--dh-muted);
-      font-size: 15px;
-      line-height: 1.65;
-    }
-
-    .dh-hero-actions {
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-      margin-top: 25px;
-    }
-
-    .dh-btn {
-      min-height: 48px;
+    .eyebrow {
       display: inline-flex;
       align-items: center;
-      justify-content: center;
-      padding: 0 20px;
-      border-radius: 999px;
+      gap: 10px;
+
+      margin-bottom: 20px;
+
+      color: var(--dh-accent);
+
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 2.3px;
+      text-transform: uppercase;
+    }
+
+
+    .eyebrow::before {
+      content: "";
+
+      width: 27px;
+      height: 1px;
+
+      background: var(--dh-accent);
+    }
+
+
+    .catalog-title {
+      max-width: 760px;
+
+      color: var(--dh-brown-dark);
+
+      font-family: var(--serif);
+      font-size: clamp(42px, 5vw, 68px);
+      font-weight: 600;
+      letter-spacing: -2px;
+      line-height: 1.04;
+    }
+
+
+    .catalog-title span {
+      color: var(--dh-accent);
+    }
+
+
+    .catalog-intro {
+      max-width: 520px;
+
+      color: var(--dh-muted);
+
+      font-size: 15px;
+      line-height: 1.8;
+    }
+
+
+    .hero-note {
+      padding-left: 28px;
+
+      border-left: 1px solid var(--dh-border);
+    }
+
+
+    .hero-note-title {
+      margin-bottom: 10px;
+
+      color: var(--dh-brown);
+
+      font-family: var(--serif);
+      font-size: 24px;
+      line-height: 1.25;
+    }
+
+
+    .hero-note p {
+      color: var(--dh-muted);
+
       font-size: 13px;
-      font-weight: 800;
-      letter-spacing: 0.02em;
-      transition:
-        transform 180ms ease,
-        background 180ms ease,
-        color 180ms ease;
+      line-height: 1.75;
     }
 
-    /* BOTH HERO CTAs NOW HAVE WHITE TEXT */
-
-    .dh-btn-primary,
-    .dh-btn-secondary {
-      background: var(--dh-brown);
-      border: 1px solid var(--dh-brown);
-      color: #ffffff !important;
-    }
-
-    .dh-btn-primary:hover,
-    .dh-btn-secondary:hover {
-      background: var(--dh-brown-dark);
-      border-color: var(--dh-brown-dark);
-      color: #ffffff !important;
-      transform: translateY(-2px);
-    }
 
     /* =========================================================
-       CATEGORY NAV
+       CATALOGUE NAV / FILTER
        ========================================================= */
 
-    .dh-category-wrap {
-      padding: 5px 0 24px;
-    }
+    .catalog-controls {
+      width: min(var(--container), calc(100% - 40px));
 
-    .dh-category-nav {
+      margin: auto;
+      padding: 36px 0 24px;
+
       display: flex;
-      gap: 8px;
-      overflow-x: auto;
-      padding: 4px 1px 9px;
-      scrollbar-width: none;
-      -webkit-overflow-scrolling: touch;
-    }
-
-    .dh-category-nav::-webkit-scrollbar {
-      display: none;
-    }
-
-    .dh-category-link {
-      flex: 0 0 auto;
-      min-height: 42px;
-      display: inline-flex;
       align-items: center;
-      justify-content: center;
-      padding: 0 17px;
-      border: 1px solid var(--dh-line);
-      border-radius: 999px;
-      background: var(--dh-paper);
-      color: var(--dh-brown);
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+
+    .category-tabs {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+
+    .category-btn {
+      appearance: none;
+
+      padding: 10px 18px;
+
+      border: 1px solid var(--dh-border);
+      border-radius: 100px;
+
+      background: transparent;
+      color: #655950;
+
       font-size: 12px;
-      font-weight: 800;
+      font-weight: 700;
+
+      cursor: pointer;
+
+      transition:
+        background 0.2s ease,
+        color 0.2s ease,
+        border-color 0.2s ease;
+    }
+
+
+    .category-btn:hover {
+      border-color: var(--dh-brown);
+      color: var(--dh-brown);
+    }
+
+
+    .category-btn.active {
+      border-color: var(--dh-brown);
+      background: var(--dh-brown);
+      color: white;
+    }
+
+
+    .catalog-count {
+      color: var(--dh-muted);
+
+      font-size: 12px;
+      font-weight: 600;
       white-space: nowrap;
     }
 
-    .dh-category-link.active {
-      background: var(--dh-brown);
-      border-color: var(--dh-brown);
-      color: #ffffff;
-    }
-
-    /* =========================================================
-       SECTION
-       ========================================================= */
-
-    .dh-section {
-      padding: 26px 0 45px;
-      scroll-margin-top: 82px;
-    }
-
-    .dh-section-head {
-      display: flex;
-      flex-direction: column;
-      gap: 7px;
-      margin-bottom: 19px;
-    }
-
-    .dh-section-kicker {
-      margin: 0;
-      color: var(--dh-accent);
-      font-size: 10px;
-      font-weight: 900;
-      letter-spacing: 0.16em;
-      text-transform: uppercase;
-    }
-
-    .dh-section-title {
-      margin: 0;
-      font-family: Georgia, "Times New Roman", serif;
-      font-size: clamp(28px, 7vw, 44px);
-      line-height: 1.05;
-      font-weight: 500;
-      letter-spacing: -0.025em;
-      color: var(--dh-brown-dark);
-    }
-
-    .dh-section-description {
-      max-width: 640px;
-      margin: 0;
-      color: var(--dh-muted);
-      font-size: 14px;
-      line-height: 1.6;
-    }
 
     /* =========================================================
        PRODUCT GRID
        ========================================================= */
 
-    .dh-product-grid {
+    .products-section {
+      width: min(var(--container), calc(100% - 40px));
+
+      margin: auto;
+      padding: 0 0 88px;
+    }
+
+
+    .product-group {
+      margin-top: 25px;
+    }
+
+
+    .group-heading {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+
+      padding: 0 0 18px;
+
+      border-bottom: 1px solid var(--dh-border);
+    }
+
+
+    .group-title {
+      color: var(--dh-brown);
+
+      font-family: var(--serif);
+      font-size: 27px;
+      font-weight: 600;
+    }
+
+
+    .group-subtitle {
+      color: var(--dh-muted);
+
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 1.3px;
+      text-transform: uppercase;
+    }
+
+
+    .product-grid {
       display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 12px;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 18px;
+
+      padding-top: 22px;
     }
 
-    .dh-product-card {
-      min-width: 0;
-      overflow: hidden;
-      border: 1px solid var(--dh-line);
-      border-radius: 16px;
-      background: var(--dh-card);
-      box-shadow: 0 5px 18px rgba(55, 39, 27, 0.045);
-      transition:
-        transform 200ms ease,
-        box-shadow 200ms ease,
-        border-color 200ms ease;
-    }
 
-    .dh-product-card:hover {
-      transform: translateY(-4px);
-      border-color: #d7c8b8;
-      box-shadow: var(--dh-shadow-hover);
-    }
+    /* =========================================================
+       PRODUCT CARD
+       ========================================================= */
 
-    .dh-product-image {
+    .product-card {
       position: relative;
-      width: 100%;
-      aspect-ratio: 4 / 5;
-      overflow: hidden;
-      background:
-        linear-gradient(
-          145deg,
-          #eee7de 0%,
-          #f7f2eb 100%
-        );
+
+      min-width: 0;
+
+      background: white;
+
+      border: 1px solid var(--dh-border);
+
+      transition:
+        transform 0.28s ease,
+        box-shadow 0.28s ease,
+        border-color 0.28s ease;
     }
 
-    .dh-product-image img {
+
+    .product-card:hover {
+      transform: translateY(-5px);
+
+      border-color: #d8cabb;
+
+      box-shadow: 0 15px 35px rgba(61, 40, 27, 0.09);
+    }
+
+
+    .product-image-wrap {
+      position: relative;
+
+      aspect-ratio: 4 / 4.7;
+
+      overflow: hidden;
+
+      background: #f2eee7;
+    }
+
+
+    .product-image-wrap img {
       width: 100%;
       height: 100%;
+
       object-fit: contain;
-      padding: 8px;
-      transition: transform 300ms ease;
+
+      padding: 12px;
+
+      transition: transform 0.5s cubic-bezier(0.2, 0.7, 0.2, 1);
     }
 
-    .dh-product-card:hover .dh-product-image img {
+
+    .product-card:hover .product-image-wrap img {
       transform: scale(1.035);
     }
 
-    .dh-product-type {
+
+    .product-type {
       position: absolute;
-      left: 9px;
-      top: 9px;
-      padding: 5px 8px;
-      border-radius: 999px;
-      background: rgba(255, 253, 249, 0.92);
-      border: 1px solid rgba(90, 70, 50, 0.08);
+      top: 13px;
+      left: 13px;
+      z-index: 2;
+
+      padding: 6px 9px;
+
+      background: rgba(255, 255, 255, 0.92);
+
       color: var(--dh-brown);
-      font-size: 8px;
-      font-weight: 900;
-      letter-spacing: 0.07em;
+
+      border: 1px solid rgba(75, 47, 34, 0.1);
+
+      font-size: 9px;
+      font-weight: 700;
+      letter-spacing: 1.1px;
       text-transform: uppercase;
-      backdrop-filter: blur(6px);
     }
 
-    .dh-product-content {
-      padding: 13px 13px 14px;
+
+    .product-body {
+      padding: 19px 18px 18px;
     }
 
-    .dh-product-name {
-      margin: 0;
+
+    .product-name {
       color: var(--dh-brown-dark);
-      font-size: 15px;
-      line-height: 1.2;
-      font-weight: 800;
-      letter-spacing: -0.01em;
-    }
 
-    .dh-product-hindi {
-      margin-top: 4px;
-      color: var(--dh-soft);
-      font-family:
-        "Noto Sans Devanagari",
-        "Segoe UI",
-        Arial,
-        sans-serif;
-      font-size: 12px;
-      line-height: 1.3;
-    }
-
-    .dh-product-meta {
-      min-height: 25px;
-      margin-top: 10px;
-      display: flex;
-      align-items: center;
-      gap: 5px;
-    }
-
-    .dh-origin {
-      display: inline-flex;
-      align-items: center;
-      gap: 5px;
-      color: var(--dh-muted);
-      font-size: 10px;
+      font-family: var(--serif);
+      font-size: 20px;
+      font-weight: 600;
       line-height: 1.25;
     }
 
-    .dh-origin::before {
-      content: "";
-      width: 5px;
-      height: 5px;
-      flex: 0 0 5px;
-      border-radius: 50%;
-      background: var(--dh-accent);
+
+    .product-hindi {
+      margin-top: 4px;
+
+      color: var(--dh-accent);
+
+      font-size: 12px;
+      font-weight: 600;
     }
 
-    .dh-view {
-      width: 100%;
-      min-height: 38px;
-      margin-top: 11px;
+
+    .product-origin {
+      min-height: 20px;
+
+      margin-top: 12px;
+
+      color: var(--dh-muted);
+
+      font-size: 11px;
+    }
+
+
+    .product-origin strong {
+      color: #5b514a;
+      font-weight: 700;
+    }
+
+
+    .product-link {
       display: flex;
       align-items: center;
       justify-content: space-between;
-      padding: 0 11px;
-      border: 1px solid var(--dh-line);
-      border-radius: 9px;
+
+      margin-top: 16px;
+      padding-top: 13px;
+
+      border-top: 1px solid var(--dh-border);
+
       color: var(--dh-brown);
-      background: #ffffff;
-      font-size: 10px;
-      font-weight: 900;
-      letter-spacing: 0.02em;
-      transition:
-        background 180ms ease,
-        color 180ms ease;
-    }
 
-    .dh-view-arrow {
-      font-size: 15px;
-      line-height: 1;
-    }
-
-    .dh-product-card:hover .dh-view {
-      background: var(--dh-brown);
-      border-color: var(--dh-brown);
-      color: #ffffff;
-    }
-
-    /* =========================================================
-       BRAND STRIP
-       ========================================================= */
-
-    .dh-brand-strip {
-      margin: 10px 0 30px;
-      padding: 24px 20px;
-      border-radius: var(--dh-radius-lg);
-      background: var(--dh-brown);
-      color: #ffffff;
-    }
-
-    .dh-brand-strip-inner {
-      display: flex;
-      flex-direction: column;
-      gap: 18px;
-    }
-
-    .dh-brand-strip-label {
-      margin: 0 0 7px;
-      color: #d9b28a;
-      font-size: 9px;
-      font-weight: 900;
-      letter-spacing: 0.16em;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.5px;
       text-transform: uppercase;
     }
 
-    .dh-brand-strip h2 {
-      margin: 0;
-      max-width: 650px;
-      font-family: Georgia, "Times New Roman", serif;
-      font-size: clamp(25px, 6vw, 40px);
-      line-height: 1.08;
-      font-weight: 500;
+
+    .product-link-arrow {
+      font-size: 17px;
+      line-height: 1;
+
+      transition: transform 0.2s ease;
     }
 
-    .dh-brand-strip-copy {
-      margin: 11px 0 0;
-      max-width: 600px;
-      color: rgba(255,255,255,0.72);
-      font-size: 13px;
-      line-height: 1.6;
+
+    .product-card:hover .product-link-arrow {
+      transform: translateX(4px);
     }
 
-    .dh-channel-list {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 7px;
-    }
-
-    .dh-channel {
-      display: inline-flex;
-      min-height: 34px;
-      align-items: center;
-      padding: 0 12px;
-      border: 1px solid rgba(255,255,255,0.17);
-      border-radius: 999px;
-      color: rgba(255,255,255,0.9);
-      font-size: 10px;
-      font-weight: 800;
-    }
 
     /* =========================================================
-       CTA
+       COLLECTION NOTE
        ========================================================= */
 
-    .dh-contact-section {
-      padding: 10px 0 55px;
+    .collection-note {
+      margin-top: 62px;
+      padding: 48px 52px;
+
+      background: var(--dh-brown);
+
+      color: white;
+
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      align-items: center;
+      gap: 60px;
     }
 
-    .dh-contact-card {
-      padding: 27px 22px;
-      border: 1px solid var(--dh-line);
-      border-radius: var(--dh-radius-lg);
-      background: var(--dh-paper);
-      text-align: center;
-    }
 
-    .dh-contact-card h2 {
-      margin: 0;
-      font-family: Georgia, "Times New Roman", serif;
-      font-size: clamp(28px, 7vw, 44px);
+    .collection-note h2 {
+      color: white;
+
+      font-family: var(--serif);
+      font-size: clamp(29px, 3vw, 42px);
       font-weight: 500;
-      line-height: 1.05;
-      color: var(--dh-brown-dark);
+      line-height: 1.2;
     }
 
-    .dh-contact-card p {
-      max-width: 550px;
-      margin: 12px auto 0;
-      color: var(--dh-muted);
+
+    .collection-note p {
+      margin-top: 15px;
+
+      max-width: 600px;
+
+      color: rgba(255, 255, 255, 0.74);
+
       font-size: 13px;
-      line-height: 1.6;
+      line-height: 1.8;
     }
 
-    .dh-contact-actions {
+
+    .collection-action {
+      justify-self: end;
+
       display: flex;
       flex-direction: column;
-      gap: 9px;
-      margin-top: 21px;
+      align-items: flex-start;
+      gap: 12px;
     }
 
-    /* =========================================================
-       NOTE
-       ========================================================= */
 
-    .dh-catalogue-note {
-      padding: 0 0 42px;
+    .collection-action-label {
+      color: rgba(255, 255, 255, 0.55);
+
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 1.6px;
+      text-transform: uppercase;
     }
 
-    .dh-note {
-      padding: 17px;
-      border: 1px solid var(--dh-line);
-      border-radius: 14px;
-      background: rgba(255,255,255,0.52);
-      color: var(--dh-muted);
-      font-size: 11px;
-      line-height: 1.6;
+
+    .collection-action a {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+
+      min-height: 46px;
+      padding: 0 21px;
+
+      background: white;
+      color: var(--dh-brown);
+
+      font-size: 12px;
+      font-weight: 700;
+
+      transition:
+        background 0.2s ease,
+        transform 0.2s ease;
     }
+
+
+    .collection-action a:hover {
+      background: #f2e8db;
+      transform: translateY(-2px);
+    }
+
 
     /* =========================================================
        FOOTER
        ========================================================= */
 
-    .dh-footer {
-      border-top: 1px solid var(--dh-line);
-      background: #eee7de;
+    .catalog-footer {
+      background: #291b15;
+
+      color: white;
     }
 
-    .dh-footer-inner {
-      padding: 32px 0 24px;
-    }
 
-    .dh-footer-brand {
-      font-family: Georgia, "Times New Roman", serif;
-      font-size: 22px;
-      font-weight: 700;
-      letter-spacing: 0.06em;
-      color: var(--dh-brown-dark);
-    }
+    .footer-inner {
+      width: min(var(--container), calc(100% - 40px));
 
-    .dh-footer-tagline {
-      max-width: 340px;
-      margin: 9px 0 0;
-      color: var(--dh-muted);
-      font-size: 12px;
-      line-height: 1.55;
-    }
+      margin: auto;
+      padding: 48px 0 28px;
 
-    .dh-footer-links {
-      margin-top: 25px;
       display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 9px;
+      grid-template-columns: 1.3fr 0.7fr 0.7fr;
+      gap: 50px;
     }
 
-    .dh-footer-links a {
-      color: var(--dh-brown);
+
+    .footer-brand-name {
+      font-family: var(--serif);
+      font-size: 27px;
+      font-weight: 600;
+    }
+
+
+    .footer-tagline {
+      max-width: 330px;
+
+      margin-top: 10px;
+
+      color: rgba(255, 255, 255, 0.58);
+
       font-size: 12px;
-      font-weight: 700;
+      line-height: 1.7;
     }
 
-    .dh-footer-bottom {
-      padding: 17px 0;
-      border-top: 1px solid rgba(91,58,39,0.1);
-      color: var(--dh-soft);
-      font-size: 10px;
-      line-height: 1.5;
+
+    .footer-heading {
+      margin-bottom: 14px;
+
+      color: rgba(255, 255, 255, 0.45);
+
+      font-size: 9px;
+      font-weight: 700;
+      letter-spacing: 1.8px;
+      text-transform: uppercase;
     }
+
+
+    .footer-links {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+
+    .footer-links a {
+      color: rgba(255, 255, 255, 0.78);
+
+      font-size: 12px;
+
+      transition: color 0.2s ease;
+    }
+
+
+    .footer-links a:hover {
+      color: white;
+    }
+
+
+    .footer-bottom {
+      width: min(var(--container), calc(100% - 40px));
+
+      margin: auto;
+      padding: 20px 0;
+
+      border-top: 1px solid rgba(255, 255, 255, 0.09);
+
+      color: rgba(255, 255, 255, 0.38);
+
+      font-size: 10px;
+
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
 
     /* =========================================================
-       AUTHENTIC WHATSAPP BUTTON
+       WHATSAPP
        ========================================================= */
 
-    .dh-whatsapp {
+    .whatsapp-float {
       position: fixed;
-      right: 15px;
-      bottom: max(15px, env(safe-area-inset-bottom));
+      right: 20px;
+      bottom: 20px;
       z-index: 1200;
 
       width: 52px;
@@ -735,389 +815,430 @@
       justify-content: center;
 
       border-radius: 50%;
-      background: var(--dh-whatsapp);
 
-      box-shadow:
-        0 7px 20px rgba(20, 90, 45, 0.22);
+      background: #25D366;
+
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.18);
 
       transition:
-        transform 180ms ease,
-        box-shadow 180ms ease;
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
     }
 
-    .dh-whatsapp svg {
-      width: 29px;
-      height: 29px;
-      display: block;
-    }
 
-    .dh-whatsapp:hover {
+    .whatsapp-float:hover {
       transform: translateY(-3px);
-      box-shadow:
-        0 11px 28px rgba(20, 90, 45, 0.28);
+      box-shadow: 0 12px 28px rgba(0, 0, 0, 0.22);
     }
 
+
+    .whatsapp-float svg {
+      width: 27px;
+      height: 27px;
+      fill: white;
+    }
+
+
     /* =========================================================
-       TABLET
+       MOBILE
        ========================================================= */
 
-    @media (min-width: 600px) {
+    @media (max-width: 1050px) {
 
-      .dh-wrap {
-        width: min(calc(100% - 48px), var(--dh-max));
-      }
-
-      .dh-header-inner {
-        min-height: 74px;
-      }
-
-      .dh-hero {
-        padding: 55px 0 32px;
-      }
-
-      .dh-hero-inner {
-        padding: 45px 40px;
-      }
-
-      .dh-hero-actions {
-        flex-direction: row;
-        max-width: 390px;
-      }
-
-      .dh-product-grid {
+      .product-grid {
         grid-template-columns: repeat(3, minmax(0, 1fr));
-        gap: 16px;
       }
 
-      .dh-product-content {
-        padding: 15px;
+      .catalog-hero-inner {
+        grid-template-columns: 1fr 0.7fr;
+        gap: 40px;
       }
 
-      .dh-product-name {
-        font-size: 16px;
-      }
-
-      .dh-brand-strip {
-        padding: 34px;
-      }
-
-      .dh-contact-actions {
-        flex-direction: row;
-        justify-content: center;
-      }
-
-      .dh-footer-links {
-        grid-template-columns: repeat(4, auto);
-        justify-content: start;
-        gap: 24px;
-      }
     }
 
-    /* =========================================================
-       DESKTOP
-       ========================================================= */
 
-    @media (min-width: 900px) {
+    @media (max-width: 820px) {
 
-      .dh-mobile-menu {
+      .header-inner {
+        min-height: 68px;
+      }
+
+
+      .desktop-nav,
+      .header-contact {
         display: none;
       }
 
-      .dh-desktop-nav {
-        display: flex;
-        align-items: center;
-        gap: 27px;
+
+      .mobile-menu {
+        display: block;
       }
 
-      .dh-desktop-nav a {
-        position: relative;
-        padding: 8px 0;
-        color: var(--dh-muted);
-        font-size: 12px;
-        font-weight: 800;
+
+      .catalog-hero-inner {
+        display: block;
+        padding: 55px 0 50px;
       }
 
-      .dh-desktop-nav a:hover,
-      .dh-desktop-nav a.active {
-        color: var(--dh-brown-dark);
+
+      .catalog-intro {
+        margin-top: 22px;
       }
 
-      .dh-desktop-nav a.active::after {
-        content: "";
-        position: absolute;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        height: 1.5px;
-        background: var(--dh-accent);
+
+      .hero-note {
+        margin-top: 32px;
+        padding-left: 20px;
       }
 
-      .dh-hero-inner {
-        min-height: 390px;
-        display: flex;
-        align-items: center;
-        padding: 60px;
+
+      .product-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 14px;
       }
 
-      .dh-hero-copy {
-        font-size: 16px;
+
+      .collection-note {
+        grid-template-columns: 1fr;
+        gap: 30px;
+
+        padding: 36px 30px;
       }
 
-      .dh-section {
-        padding-top: 38px;
-        padding-bottom: 70px;
+
+      .collection-action {
+        justify-self: start;
       }
 
-      .dh-section-head {
-        margin-bottom: 25px;
+
+      .footer-inner {
+        grid-template-columns: 1fr 1fr;
       }
 
-      .dh-product-grid {
-        grid-template-columns: repeat(4, minmax(0, 1fr));
-        gap: 20px;
+    }
+
+
+    @media (max-width: 560px) {
+
+      .header-inner,
+      .catalog-hero-inner,
+      .catalog-controls,
+      .products-section,
+      .footer-inner,
+      .footer-bottom {
+        width: min(100% - 28px, var(--container));
       }
 
-      .dh-product-image {
-        aspect-ratio: 4 / 5;
+
+      .brand-name {
+        font-size: 24px;
       }
 
-      .dh-product-content {
-        padding: 17px;
+
+      .catalog-title {
+        font-size: 42px;
+        letter-spacing: -1.3px;
       }
 
-      .dh-product-name {
-        font-size: 17px;
+
+      .catalog-intro {
+        font-size: 13px;
+        line-height: 1.75;
       }
 
-      .dh-product-hindi {
-        font-size: 12px;
-      }
 
-      .dh-view {
-        min-height: 40px;
-      }
-
-      .dh-brand-strip-inner {
-        flex-direction: row;
-        align-items: flex-end;
-        justify-content: space-between;
-        gap: 50px;
-      }
-
-      .dh-channel-list {
-        max-width: 370px;
-        justify-content: flex-end;
-      }
-
-      .dh-contact-card {
-        padding: 50px;
-      }
-
-      .dh-footer-inner {
-        display: flex;
+      .catalog-controls {
         align-items: flex-start;
-        justify-content: space-between;
-        gap: 60px;
-        padding: 42px 0 30px;
+        flex-direction: column;
+        gap: 14px;
+
+        padding-top: 25px;
       }
 
-      .dh-footer-links {
-        margin-top: 4px;
-      }
-    }
 
-    /* =========================================================
-       LARGE DESKTOP
-       ========================================================= */
+      .category-tabs {
+        width: 100%;
+        overflow-x: auto;
+        flex-wrap: nowrap;
 
-    @media (min-width: 1200px) {
+        padding-bottom: 3px;
 
-      .dh-hero {
-        padding-top: 64px;
+        scrollbar-width: none;
       }
 
-      .dh-product-grid {
-        gap: 22px;
+
+      .category-tabs::-webkit-scrollbar {
+        display: none;
       }
 
-      .dh-product-image img {
-        padding: 10px;
-      }
-    }
 
-    /* =========================================================
-       REDUCED MOTION
-       ========================================================= */
-
-    @media (prefers-reduced-motion: reduce) {
-
-      html {
-        scroll-behavior: auto;
+      .category-btn {
+        flex-shrink: 0;
       }
 
-      .dh-product-card,
-      .dh-product-image img,
-      .dh-btn,
-      .dh-whatsapp {
-        transition: none;
+
+      .catalog-count {
+        padding-left: 2px;
       }
+
+
+      .group-heading {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 5px;
+      }
+
+
+      .group-title {
+        font-size: 25px;
+      }
+
+
+      .group-subtitle {
+        font-size: 9px;
+      }
+
+
+      .product-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 10px;
+      }
+
+
+      .product-image-wrap {
+        aspect-ratio: 1 / 1.18;
+      }
+
+
+      .product-image-wrap img {
+        padding: 7px;
+      }
+
+
+      .product-type {
+        top: 8px;
+        left: 8px;
+
+        padding: 5px 7px;
+
+        font-size: 7px;
+        letter-spacing: 0.7px;
+      }
+
+
+      .product-body {
+        padding: 14px 12px 13px;
+      }
+
+
+      .product-name {
+        font-size: 16px;
+        line-height: 1.22;
+      }
+
+
+      .product-hindi {
+        margin-top: 3px;
+
+        font-size: 10px;
+      }
+
+
+      .product-origin {
+        min-height: 17px;
+
+        margin-top: 9px;
+
+        font-size: 9px;
+      }
+
+
+      .product-link {
+        margin-top: 11px;
+        padding-top: 10px;
+
+        font-size: 8px;
+      }
+
+
+      .product-link-arrow {
+        font-size: 14px;
+      }
+
+
+      .collection-note {
+        margin-top: 45px;
+        padding: 30px 22px;
+      }
+
+
+      .collection-note h2 {
+        font-size: 29px;
+      }
+
+
+      .collection-note p {
+        font-size: 12px;
+      }
+
+
+      .footer-inner {
+        grid-template-columns: 1fr;
+        gap: 30px;
+        padding: 40px 0 28px;
+      }
+
+
+      .footer-bottom {
+        flex-direction: column;
+        gap: 7px;
+      }
+
+
+      .whatsapp-float {
+        right: 15px;
+        bottom: 15px;
+
+        width: 49px;
+        height: 49px;
+      }
+
+
+      .whatsapp-float svg {
+        width: 25px;
+        height: 25px;
+      }
+
     }
 
   </style>
 </head>
 
 
-<body class="dharoahar-products">
+<body>
 
 
   <!-- =======================================================
        HEADER
        ======================================================= -->
 
-  <header class="dh-header">
+  <header class="catalog-header">
 
-    <div class="dh-wrap dh-header-inner">
+    <div class="header-inner">
 
-      <a
-        href="index.html"
-        class="dh-logo"
-        aria-label="Dharoahar Home"
-      >
-        <span class="dh-logo-main">
-          DHAROAHAR
-        </span>
-
-        <span class="dh-logo-sub">
-          Rooted in Tradition
-        </span>
+      <a href="index.html" class="brand">
+        <span class="brand-name">Dharoahar</span>
+        <span class="brand-sub">Adhish Dharoahar Pvt. Ltd.</span>
       </a>
 
 
-      <!-- DESKTOP NAVIGATION -->
-
-      <nav
-        class="dh-desktop-nav"
-        aria-label="Main navigation"
-      >
-
-        <a href="index.html">
-          Home
-        </a>
-
-        <a href="about.html">
-          About Us
-        </a>
-
-        <a
-          href="products.html"
-          class="active"
-        >
-          Our Spices
-        </a>
-
-        <a href="quality.html">
-          Quality
-        </a>
-
-        <a href="contact.html">
-          Contact
-        </a>
-
+      <nav class="desktop-nav" aria-label="Main navigation">
+        <a href="index.html">Home</a>
+        <a href="about.html">About Us</a>
+        <a href="products.html">Our Spices</a>
+        <a href="quality.html">Quality</a>
+        <a href="contact.html">Contact</a>
       </nav>
 
 
-      <!-- MOBILE NAVIGATION -->
+      <a
+        class="header-contact"
+        href="https://wa.me/918603824415?text=Hello%20Dharoahar%2C%20I%20would%20like%20to%20know%20more%20about%20your%20spices."
+        target="_blank"
+        rel="noopener"
+      >
+        Enquire Now
+      </a>
 
-      <details class="dh-mobile-menu">
 
-        <summary aria-label="Open navigation">
-          <span class="dh-menu-icon"></span>
-        </summary>
+      <button
+        class="mobile-menu"
+        type="button"
+        aria-label="Menu"
+        onclick="toggleMenu()"
+      >
+        ☰
+      </button>
 
-        <nav
-          class="dh-mobile-nav"
-          aria-label="Mobile navigation"
-        >
+    </div>
 
-          <a href="index.html">
-            Home
-          </a>
 
-          <a href="about.html">
-            About Us
-          </a>
+    <div
+      id="mobileNav"
+      style="
+        display:none;
+        border-top:1px solid #e7dfd4;
+        background:#fbf9f5;
+      "
+    >
 
-          <a href="products.html">
-            Our Spices
-          </a>
+      <nav
+        style="
+          width:min(100% - 28px, 1240px);
+          margin:auto;
+          padding:16px 0 20px;
+          display:flex;
+          flex-direction:column;
+          gap:15px;
+        "
+      >
 
-          <a href="quality.html">
-            Quality
-          </a>
+        <a href="index.html" style="font-size:13px;font-weight:600;">Home</a>
+        <a href="about.html" style="font-size:13px;font-weight:600;">About Us</a>
+        <a href="products.html" style="font-size:13px;font-weight:600;">Our Spices</a>
+        <a href="quality.html" style="font-size:13px;font-weight:600;">Quality</a>
+        <a href="contact.html" style="font-size:13px;font-weight:600;">Contact</a>
 
-          <a href="contact.html">
-            Contact
-          </a>
-
-        </nav>
-
-      </details>
+      </nav>
 
     </div>
 
   </header>
 
 
+  <!-- =======================================================
+       HERO
+       ======================================================= -->
+
   <main>
 
+    <section class="catalog-hero">
 
-    <!-- =====================================================
-         HERO
-         ===================================================== -->
+      <div class="catalog-hero-inner">
 
-    <section class="dh-hero">
+        <div>
 
-      <div class="dh-wrap">
-
-        <div class="dh-hero-inner">
-
-          <div>
-
-            <p class="dh-eyebrow">
-              Our Spice Collection
-            </p>
-
-            <h1>
-              20 spices for
-              <span>the Indian kitchen.</span>
-            </h1>
-
-            <p class="dh-hero-copy">
-              Explore the Dharoahar range of whole spices
-              and powder spices — presented simply, so you
-              can find exactly what you need.
-            </p>
-
-
-            <div class="dh-hero-actions">
-
-              <a
-                href="#whole-spices"
-                class="dh-btn dh-btn-primary"
-              >
-                Explore the range
-              </a>
-
-              <a
-                href="#partner"
-                class="dh-btn dh-btn-secondary"
-              >
-                Partner with us
-              </a>
-
-            </div>
-
+          <div class="eyebrow">
+            Our Collection
           </div>
+
+
+          <h1 class="catalog-title">
+            20 spices.<br>
+            <span>One Indian pantry.</span>
+          </h1>
+
+
+          <p class="catalog-intro">
+            Explore the Dharoahar collection of whole spices and ground spices,
+            selected for everyday Indian cooking, culinary businesses and
+            growing retail requirements.
+          </p>
+
+        </div>
+
+
+        <div class="hero-note">
+
+          <h2 class="hero-note-title">
+            From whole spice to everyday powder.
+          </h2>
+
+          <p>
+            Our collection brings together familiar Indian kitchen staples
+            across whole and powdered formats, with product information
+            presented clearly for both consumers and business enquiries.
+          </p>
 
         </div>
 
@@ -1127,127 +1248,114 @@
 
 
     <!-- =====================================================
-         CATEGORY NAV
+         CATEGORY CONTROLS
          ===================================================== -->
 
-    <section class="dh-category-wrap">
+    <section class="catalog-controls">
 
-      <div class="dh-wrap">
+      <div class="category-tabs">
 
-        <nav
-          class="dh-category-nav"
-          aria-label="Spice categories"
+        <button
+          class="category-btn active"
+          data-filter="all"
+          type="button"
         >
+          All Spices
+        </button>
 
-          <a
-            href="#whole-spices"
-            class="dh-category-link active"
-          >
-            All Spices
-          </a>
+        <button
+          class="category-btn"
+          data-filter="whole"
+          type="button"
+        >
+          Whole Spices
+        </button>
 
-          <a
-            href="#whole-spices"
-            class="dh-category-link"
-          >
-            Whole Spices
-          </a>
+        <button
+          class="category-btn"
+          data-filter="powder"
+          type="button"
+        >
+          Powder Spices
+        </button>
 
-          <a
-            href="#powder-spices"
-            class="dh-category-link"
-          >
-            Powder Spices
-          </a>
+      </div>
 
-        </nav>
 
+      <div class="catalog-count" id="catalogCount">
+        20 products
       </div>
 
     </section>
 
 
     <!-- =====================================================
-         WHOLE SPICES
+         PRODUCTS
          ===================================================== -->
 
-    <section
-      class="dh-section"
-      id="whole-spices"
-    >
+    <section class="products-section">
 
-      <div class="dh-wrap">
 
-        <div class="dh-section-head">
+      <!-- ===================================================
+           WHOLE SPICES
+           =================================================== -->
 
-          <p class="dh-section-kicker">
-            10 varieties
-          </p>
+      <div class="product-group" data-group="whole">
 
-          <h2 class="dh-section-title">
+        <div class="group-heading">
+
+          <h2 class="group-title">
             Whole Spices
           </h2>
 
-          <p class="dh-section-description">
-            Whole aromatics and seeds for everyday cooking,
-            tempering and traditional Indian recipes.
-          </p>
+          <span class="group-subtitle">
+            Khada Masala · 10 Products
+          </span>
 
         </div>
 
 
-        <div class="dh-product-grid">
+        <div class="product-grid">
 
 
-          <!-- CLOVE -->
+          <!-- Clove -->
 
-          <article class="dh-product-card">
+          <article class="product-card" data-category="whole">
 
             <a href="clove.html">
 
-              <div class="dh-product-image">
+              <div class="product-image-wrap">
 
-                <span class="dh-product-type">
+                <span class="product-type">
                   Whole Spice
                 </span>
 
                 <img
                   src="clove.jpg"
-                  alt="Clove — लौंग"
+                  alt="Clove (Laung) whole spice"
                   loading="lazy"
                 >
 
               </div>
 
 
-              <div class="dh-product-content">
+              <div class="product-body">
 
-                <h3 class="dh-product-name">
+                <h3 class="product-name">
                   Clove
                 </h3>
 
-                <div class="dh-product-hindi">
-                  लौंग
+                <div class="product-hindi">
+                  लौंग · Laung
                 </div>
 
-                <div class="dh-product-meta">
-
-                  <span class="dh-origin">
-                    Kerala
-                  </span>
-
+                <div class="product-origin">
+                  <strong>Origin:</strong> Kerala
                 </div>
 
-                <div class="dh-view">
-
-                  <span>
-                    View Product
-                  </span>
-
-                  <span class="dh-view-arrow">
-                    →
-                  </span>
-
+                <div class="product-link">
+                  View Product
+                  <span class="product-link-arrow">→</span>
                 </div>
 
               </div>
@@ -1257,48 +1365,44 @@
           </article>
 
 
-          <!-- GREEN CARDAMOM -->
+          <!-- Green Cardamom -->
 
-          <article class="dh-product-card">
+          <article class="product-card" data-category="whole">
 
             <a href="cardamom.html">
 
-              <div class="dh-product-image">
+              <div class="product-image-wrap">
 
-                <span class="dh-product-type">
+                <span class="product-type">
                   Whole Spice
                 </span>
 
                 <img
                   src="cardamom.jpg"
-                  alt="Green Cardamom — हरी इलायची"
+                  alt="Green Cardamom (Hari Elaichi)"
                   loading="lazy"
                 >
 
               </div>
 
 
-              <div class="dh-product-content">
+              <div class="product-body">
 
-                <h3 class="dh-product-name">
+                <h3 class="product-name">
                   Green Cardamom
                 </h3>
 
-                <div class="dh-product-hindi">
-                  हरी इलायची
+                <div class="product-hindi">
+                  हरी इलायची · Elaichi
                 </div>
 
-                <div class="dh-product-meta">
-
-                  <span class="dh-origin">
-                    Kerala
-                  </span>
-
+                <div class="product-origin">
+                  <strong>Origin:</strong> Kerala
                 </div>
 
-                <div class="dh-view">
-                  <span>View Product</span>
-                  <span class="dh-view-arrow">→</span>
+                <div class="product-link">
+                  View Product
+                  <span class="product-link-arrow">→</span>
                 </div>
 
               </div>
@@ -1308,48 +1412,44 @@
           </article>
 
 
-          <!-- CINNAMON -->
+          <!-- Cinnamon -->
 
-          <article class="dh-product-card">
+          <article class="product-card" data-category="whole">
 
             <a href="cinnamon.html">
 
-              <div class="dh-product-image">
+              <div class="product-image-wrap">
 
-                <span class="dh-product-type">
+                <span class="product-type">
                   Whole Spice
                 </span>
 
                 <img
                   src="cinnamon.jpg"
-                  alt="Cinnamon — दालचीनी"
+                  alt="Cinnamon (Dalchini) whole spice"
                   loading="lazy"
                 >
 
               </div>
 
 
-              <div class="dh-product-content">
+              <div class="product-body">
 
-                <h3 class="dh-product-name">
+                <h3 class="product-name">
                   Cinnamon
                 </h3>
 
-                <div class="dh-product-hindi">
-                  दालचीनी
+                <div class="product-hindi">
+                  दालचीनी · Dalchini
                 </div>
 
-                <div class="dh-product-meta">
-
-                  <span class="dh-origin">
-                    Kerala
-                  </span>
-
+                <div class="product-origin">
+                  <strong>Origin:</strong> Kerala
                 </div>
 
-                <div class="dh-view">
-                  <span>View Product</span>
-                  <span class="dh-view-arrow">→</span>
+                <div class="product-link">
+                  View Product
+                  <span class="product-link-arrow">→</span>
                 </div>
 
               </div>
@@ -1359,48 +1459,44 @@
           </article>
 
 
-          <!-- BLACK PEPPER -->
+          <!-- Black Pepper -->
 
-          <article class="dh-product-card">
+          <article class="product-card" data-category="whole">
 
             <a href="blackpepper.html">
 
-              <div class="dh-product-image">
+              <div class="product-image-wrap">
 
-                <span class="dh-product-type">
+                <span class="product-type">
                   Whole Spice
                 </span>
 
                 <img
                   src="black-pepper.jpg"
-                  alt="Black Pepper — काली मिर्च"
+                  alt="Black Pepper (Kali Mirch)"
                   loading="lazy"
                 >
 
               </div>
 
 
-              <div class="dh-product-content">
+              <div class="product-body">
 
-                <h3 class="dh-product-name">
+                <h3 class="product-name">
                   Black Pepper
                 </h3>
 
-                <div class="dh-product-hindi">
-                  काली मिर्च
+                <div class="product-hindi">
+                  काली मिर्च · Kali Mirch
                 </div>
 
-                <div class="dh-product-meta">
-
-                  <span class="dh-origin">
-                    Kerala
-                  </span>
-
+                <div class="product-origin">
+                  <strong>Origin:</strong> Kerala
                 </div>
 
-                <div class="dh-view">
-                  <span>View Product</span>
-                  <span class="dh-view-arrow">→</span>
+                <div class="product-link">
+                  View Product
+                  <span class="product-link-arrow">→</span>
                 </div>
 
               </div>
@@ -1410,48 +1506,44 @@
           </article>
 
 
-          <!-- CUMIN -->
+          <!-- Cumin Seeds -->
 
-          <article class="dh-product-card">
+          <article class="product-card" data-category="whole">
 
             <a href="cumin.html">
 
-              <div class="dh-product-image">
+              <div class="product-image-wrap">
 
-                <span class="dh-product-type">
+                <span class="product-type">
                   Whole Spice
                 </span>
 
                 <img
                   src="cumin.jpg"
-                  alt="Cumin Seeds — जीरा"
+                  alt="Cumin Seeds (Jeera)"
                   loading="lazy"
                 >
 
               </div>
 
 
-              <div class="dh-product-content">
+              <div class="product-body">
 
-                <h3 class="dh-product-name">
+                <h3 class="product-name">
                   Cumin Seeds
                 </h3>
 
-                <div class="dh-product-hindi">
-                  जीरा
+                <div class="product-hindi">
+                  जीरा · Jeera
                 </div>
 
-                <div class="dh-product-meta">
-
-                  <span class="dh-origin">
-                    Rajasthan
-                  </span>
-
+                <div class="product-origin">
+                  <strong>Origin:</strong> Rajasthan
                 </div>
 
-                <div class="dh-view">
-                  <span>View Product</span>
-                  <span class="dh-view-arrow">→</span>
+                <div class="product-link">
+                  View Product
+                  <span class="product-link-arrow">→</span>
                 </div>
 
               </div>
@@ -1461,42 +1553,44 @@
           </article>
 
 
-          <!-- STAR ANISE -->
+          <!-- Star Anise -->
 
-          <article class="dh-product-card">
+          <article class="product-card" data-category="whole">
 
             <a href="star-anise.html">
 
-              <div class="dh-product-image">
+              <div class="product-image-wrap">
 
-                <span class="dh-product-type">
+                <span class="product-type">
                   Whole Spice
                 </span>
 
                 <img
                   src="star-anise.png"
-                  alt="Star Anise — चक्र फूल"
+                  alt="Star Anise (Chakra Phool)"
                   loading="lazy"
                 >
 
               </div>
 
 
-              <div class="dh-product-content">
+              <div class="product-body">
 
-                <h3 class="dh-product-name">
+                <h3 class="product-name">
                   Star Anise
                 </h3>
 
-                <div class="dh-product-hindi">
-                  चक्र फूल
+                <div class="product-hindi">
+                  चक्र फूल · Chakra Phool
                 </div>
 
-                <div class="dh-product-meta"></div>
+                <div class="product-origin">
+                  Whole Spice
+                </div>
 
-                <div class="dh-view">
-                  <span>View Product</span>
-                  <span class="dh-view-arrow">→</span>
+                <div class="product-link">
+                  View Product
+                  <span class="product-link-arrow">→</span>
                 </div>
 
               </div>
@@ -1506,48 +1600,44 @@
           </article>
 
 
-          <!-- BAY LEAF -->
+          <!-- Bay Leaf -->
 
-          <article class="dh-product-card">
+          <article class="product-card" data-category="whole">
 
             <a href="bay-leaf.html">
 
-              <div class="dh-product-image">
+              <div class="product-image-wrap">
 
-                <span class="dh-product-type">
+                <span class="product-type">
                   Whole Spice
                 </span>
 
                 <img
                   src="bay-leaf.png"
-                  alt="Bay Leaf — तेज पत्ता"
+                  alt="Bay Leaf (Tej Patta)"
                   loading="lazy"
                 >
 
               </div>
 
 
-              <div class="dh-product-content">
+              <div class="product-body">
 
-                <h3 class="dh-product-name">
+                <h3 class="product-name">
                   Bay Leaf
                 </h3>
 
-                <div class="dh-product-hindi">
-                  तेज पत्ता
+                <div class="product-hindi">
+                  तेज पत्ता · Tej Patta
                 </div>
 
-                <div class="dh-product-meta">
-
-                  <span class="dh-origin">
-                    Kerala
-                  </span>
-
+                <div class="product-origin">
+                  <strong>Origin:</strong> Kerala
                 </div>
 
-                <div class="dh-view">
-                  <span>View Product</span>
-                  <span class="dh-view-arrow">→</span>
+                <div class="product-link">
+                  View Product
+                  <span class="product-link-arrow">→</span>
                 </div>
 
               </div>
@@ -1557,42 +1647,44 @@
           </article>
 
 
-          <!-- FENNEL -->
+          <!-- Fennel Seeds -->
 
-          <article class="dh-product-card">
+          <article class="product-card" data-category="whole">
 
             <a href="fennel-seeds.html">
 
-              <div class="dh-product-image">
+              <div class="product-image-wrap">
 
-                <span class="dh-product-type">
+                <span class="product-type">
                   Whole Spice
                 </span>
 
                 <img
                   src="fennel-seeds.png"
-                  alt="Fennel Seeds — सौंफ"
+                  alt="Fennel Seeds (Saunf)"
                   loading="lazy"
                 >
 
               </div>
 
 
-              <div class="dh-product-content">
+              <div class="product-body">
 
-                <h3 class="dh-product-name">
+                <h3 class="product-name">
                   Fennel Seeds
                 </h3>
 
-                <div class="dh-product-hindi">
-                  सौंफ
+                <div class="product-hindi">
+                  सौंफ · Saunf
                 </div>
 
-                <div class="dh-product-meta"></div>
+                <div class="product-origin">
+                  Whole Spice
+                </div>
 
-                <div class="dh-view">
-                  <span>View Product</span>
-                  <span class="dh-view-arrow">→</span>
+                <div class="product-link">
+                  View Product
+                  <span class="product-link-arrow">→</span>
                 </div>
 
               </div>
@@ -1602,42 +1694,44 @@
           </article>
 
 
-          <!-- MUSTARD -->
+          <!-- Mustard Seeds -->
 
-          <article class="dh-product-card">
+          <article class="product-card" data-category="whole">
 
             <a href="mustard-seeds.html">
 
-              <div class="dh-product-image">
+              <div class="product-image-wrap">
 
-                <span class="dh-product-type">
+                <span class="product-type">
                   Whole Spice
                 </span>
 
                 <img
                   src="mustard-seeds.png"
-                  alt="Mustard Seeds — राई"
+                  alt="Mustard Seeds (Rai)"
                   loading="lazy"
                 >
 
               </div>
 
 
-              <div class="dh-product-content">
+              <div class="product-body">
 
-                <h3 class="dh-product-name">
+                <h3 class="product-name">
                   Mustard Seeds
                 </h3>
 
-                <div class="dh-product-hindi">
-                  राई
+                <div class="product-hindi">
+                  राई · Rai
                 </div>
 
-                <div class="dh-product-meta"></div>
+                <div class="product-origin">
+                  Whole Spice
+                </div>
 
-                <div class="dh-view">
-                  <span>View Product</span>
-                  <span class="dh-view-arrow">→</span>
+                <div class="product-link">
+                  View Product
+                  <span class="product-link-arrow">→</span>
                 </div>
 
               </div>
@@ -1647,42 +1741,44 @@
           </article>
 
 
-          <!-- FENUGREEK -->
+          <!-- Fenugreek Seeds -->
 
-          <article class="dh-product-card">
+          <article class="product-card" data-category="whole">
 
             <a href="fenugreek-seeds.html">
 
-              <div class="dh-product-image">
+              <div class="product-image-wrap">
 
-                <span class="dh-product-type">
+                <span class="product-type">
                   Whole Spice
                 </span>
 
                 <img
                   src="fenugreek-seeds.png"
-                  alt="Fenugreek Seeds — मेथी"
+                  alt="Fenugreek Seeds (Methi)"
                   loading="lazy"
                 >
 
               </div>
 
 
-              <div class="dh-product-content">
+              <div class="product-body">
 
-                <h3 class="dh-product-name">
+                <h3 class="product-name">
                   Fenugreek Seeds
                 </h3>
 
-                <div class="dh-product-hindi">
-                  मेथी
+                <div class="product-hindi">
+                  मेथी · Methi
                 </div>
 
-                <div class="dh-product-meta"></div>
+                <div class="product-origin">
+                  Whole Spice
+                </div>
 
-                <div class="dh-view">
-                  <span>View Product</span>
-                  <span class="dh-view-arrow">→</span>
+                <div class="product-link">
+                  View Product
+                  <span class="product-link-arrow">→</span>
                 </div>
 
               </div>
@@ -1691,146 +1787,72 @@
 
           </article>
 
-        </div>
-
-      </div>
-
-    </section>
-
-
-    <!-- =====================================================
-         BRAND STRIP
-         ===================================================== -->
-
-    <section class="dh-wrap">
-
-      <div class="dh-brand-strip">
-
-        <div class="dh-brand-strip-inner">
-
-          <div>
-
-            <p class="dh-brand-strip-label">
-              Dharoahar
-            </p>
-
-            <h2>
-              A range built for the Indian pantry.
-            </h2>
-
-            <p class="dh-brand-strip-copy">
-              From everyday kitchen essentials to traditional
-              whole spices, the range is designed for retail,
-              distribution and food-service requirements.
-            </p>
-
-          </div>
-
-
-          <div class="dh-channel-list">
-
-            <span class="dh-channel">
-              Retail
-            </span>
-
-            <span class="dh-channel">
-              Distribution
-            </span>
-
-            <span class="dh-channel">
-              Quick Commerce
-            </span>
-
-            <span class="dh-channel">
-              HoReCa
-            </span>
-
-            <span class="dh-channel">
-              Institutional
-            </span>
-
-          </div>
 
         </div>
 
       </div>
 
-    </section>
 
+      <!-- ===================================================
+           POWDER SPICES
+           =================================================== -->
 
-    <!-- =====================================================
-         POWDER SPICES
-         ===================================================== -->
+      <div class="product-group" data-group="powder">
 
-    <section
-      class="dh-section"
-      id="powder-spices"
-    >
+        <div class="group-heading">
 
-      <div class="dh-wrap">
-
-        <div class="dh-section-head">
-
-          <p class="dh-section-kicker">
-            10 varieties
-          </p>
-
-          <h2 class="dh-section-title">
+          <h2 class="group-title">
             Powder Spices
           </h2>
 
-          <p class="dh-section-description">
-            Familiar Indian spice essentials, prepared for
-            everyday cooking and recipes across the country.
-          </p>
+          <span class="group-subtitle">
+            Ground Spices · 10 Products
+          </span>
 
         </div>
 
 
-        <div class="dh-product-grid">
+        <div class="product-grid">
 
 
-          <!-- DEGI MIRCH -->
+          <!-- Degi Mirch -->
 
-          <article class="dh-product-card">
+          <article class="product-card" data-category="powder">
 
             <a href="degi-mirch.html">
 
-              <div class="dh-product-image">
+              <div class="product-image-wrap">
 
-                <span class="dh-product-type">
+                <span class="product-type">
                   Powder Spice
                 </span>
 
                 <img
                   src="degi-mirch.jpg"
-                  alt="Degi Mirch — देगी मिर्च"
+                  alt="Degi Mirch (Degi Mirch Powder)"
                   loading="lazy"
                 >
 
               </div>
 
-              <div class="dh-product-content">
 
-                <h3 class="dh-product-name">
+              <div class="product-body">
+
+                <h3 class="product-name">
                   Degi Mirch
                 </h3>
 
-                <div class="dh-product-hindi">
-                  देगी मिर्च
+                <div class="product-hindi">
+                  देगी मिर्च · Degi Mirch
                 </div>
 
-                <div class="dh-product-meta">
-
-                  <span class="dh-origin">
-                    Andhra Pradesh
-                  </span>
-
+                <div class="product-origin">
+                  <strong>Origin:</strong> Andhra Pradesh
                 </div>
 
-                <div class="dh-view">
-                  <span>View Product</span>
-                  <span class="dh-view-arrow">→</span>
+                <div class="product-link">
+                  View Product
+                  <span class="product-link-arrow">→</span>
                 </div>
 
               </div>
@@ -1840,47 +1862,44 @@
           </article>
 
 
-          <!-- KASHMIRI MIRCH -->
+          <!-- Kashmiri Mirch -->
 
-          <article class="dh-product-card">
+          <article class="product-card" data-category="powder">
 
             <a href="kashmiri-mirch.html">
 
-              <div class="dh-product-image">
+              <div class="product-image-wrap">
 
-                <span class="dh-product-type">
+                <span class="product-type">
                   Powder Spice
                 </span>
 
                 <img
                   src="kashmiri-mirch.jpg"
-                  alt="Kashmiri Mirch — कश्मीरी मिर्च"
+                  alt="Kashmiri Mirch powder"
                   loading="lazy"
                 >
 
               </div>
 
-              <div class="dh-product-content">
 
-                <h3 class="dh-product-name">
+              <div class="product-body">
+
+                <h3 class="product-name">
                   Kashmiri Mirch
                 </h3>
 
-                <div class="dh-product-hindi">
-                  कश्मीरी मिर्च
+                <div class="product-hindi">
+                  कश्मीरी मिर्च · Kashmiri Mirch
                 </div>
 
-                <div class="dh-product-meta">
-
-                  <span class="dh-origin">
-                    Guntur
-                  </span>
-
+                <div class="product-origin">
+                  <strong>Origin:</strong> Guntur
                 </div>
 
-                <div class="dh-view">
-                  <span>View Product</span>
-                  <span class="dh-view-arrow">→</span>
+                <div class="product-link">
+                  View Product
+                  <span class="product-link-arrow">→</span>
                 </div>
 
               </div>
@@ -1890,47 +1909,44 @@
           </article>
 
 
-          <!-- TURMERIC -->
+          <!-- Turmeric -->
 
-          <article class="dh-product-card">
+          <article class="product-card" data-category="powder">
 
             <a href="haldi-powder.html">
 
-              <div class="dh-product-image">
+              <div class="product-image-wrap">
 
-                <span class="dh-product-type">
+                <span class="product-type">
                   Powder Spice
                 </span>
 
                 <img
                   src="haldi-powder.jpg"
-                  alt="Turmeric Powder — हल्दी"
+                  alt="Turmeric Powder (Haldi)"
                   loading="lazy"
                 >
 
               </div>
 
-              <div class="dh-product-content">
 
-                <h3 class="dh-product-name">
+              <div class="product-body">
+
+                <h3 class="product-name">
                   Turmeric Powder
                 </h3>
 
-                <div class="dh-product-hindi">
-                  हल्दी
+                <div class="product-hindi">
+                  हल्दी · Haldi
                 </div>
 
-                <div class="dh-product-meta">
-
-                  <span class="dh-origin">
-                    Tamil Nadu &amp; Maharashtra
-                  </span>
-
+                <div class="product-origin">
+                  <strong>Origin:</strong> Tamil Nadu &amp; Maharashtra
                 </div>
 
-                <div class="dh-view">
-                  <span>View Product</span>
-                  <span class="dh-view-arrow">→</span>
+                <div class="product-link">
+                  View Product
+                  <span class="product-link-arrow">→</span>
                 </div>
 
               </div>
@@ -1940,47 +1956,44 @@
           </article>
 
 
-          <!-- CORIANDER -->
+          <!-- Coriander -->
 
-          <article class="dh-product-card">
+          <article class="product-card" data-category="powder">
 
             <a href="dhaniya-powder.html">
 
-              <div class="dh-product-image">
+              <div class="product-image-wrap">
 
-                <span class="dh-product-type">
+                <span class="product-type">
                   Powder Spice
                 </span>
 
                 <img
                   src="dhaniya-powder.jpg"
-                  alt="Coriander Powder — धनिया"
+                  alt="Coriander Powder (Dhaniya)"
                   loading="lazy"
                 >
 
               </div>
 
-              <div class="dh-product-content">
 
-                <h3 class="dh-product-name">
+              <div class="product-body">
+
+                <h3 class="product-name">
                   Coriander Powder
                 </h3>
 
-                <div class="dh-product-hindi">
-                  धनिया
+                <div class="product-hindi">
+                  धनिया · Dhaniya
                 </div>
 
-                <div class="dh-product-meta">
-
-                  <span class="dh-origin">
-                    Rajasthan
-                  </span>
-
+                <div class="product-origin">
+                  <strong>Origin:</strong> Rajasthan
                 </div>
 
-                <div class="dh-view">
-                  <span>View Product</span>
-                  <span class="dh-view-arrow">→</span>
+                <div class="product-link">
+                  View Product
+                  <span class="product-link-arrow">→</span>
                 </div>
 
               </div>
@@ -1990,47 +2003,44 @@
           </article>
 
 
-          <!-- CUMIN POWDER -->
+          <!-- Cumin Powder -->
 
-          <article class="dh-product-card">
+          <article class="product-card" data-category="powder">
 
             <a href="cumin-powder.html">
 
-              <div class="dh-product-image">
+              <div class="product-image-wrap">
 
-                <span class="dh-product-type">
+                <span class="product-type">
                   Powder Spice
                 </span>
 
                 <img
                   src="cumin-powder.jpg"
-                  alt="Cumin Powder — जीरा पाउडर"
+                  alt="Cumin Powder (Jeera Powder)"
                   loading="lazy"
                 >
 
               </div>
 
-              <div class="dh-product-content">
 
-                <h3 class="dh-product-name">
+              <div class="product-body">
+
+                <h3 class="product-name">
                   Cumin Powder
                 </h3>
 
-                <div class="dh-product-hindi">
-                  जीरा पाउडर
+                <div class="product-hindi">
+                  जीरा पाउडर · Jeera
                 </div>
 
-                <div class="dh-product-meta">
-
-                  <span class="dh-origin">
-                    Rajasthan
-                  </span>
-
+                <div class="product-origin">
+                  <strong>Origin:</strong> Rajasthan
                 </div>
 
-                <div class="dh-view">
-                  <span>View Product</span>
-                  <span class="dh-view-arrow">→</span>
+                <div class="product-link">
+                  View Product
+                  <span class="product-link-arrow">→</span>
                 </div>
 
               </div>
@@ -2040,47 +2050,44 @@
           </article>
 
 
-          <!-- GARAM MASALA -->
+          <!-- Garam Masala -->
 
-          <article class="dh-product-card">
+          <article class="product-card" data-category="powder">
 
             <a href="garam-masala.html">
 
-              <div class="dh-product-image">
+              <div class="product-image-wrap">
 
-                <span class="dh-product-type">
+                <span class="product-type">
                   Powder Spice
                 </span>
 
                 <img
                   src="garam-masala.jpg"
-                  alt="Garam Masala — गरम मसाला"
+                  alt="Garam Masala"
                   loading="lazy"
                 >
 
               </div>
 
-              <div class="dh-product-content">
 
-                <h3 class="dh-product-name">
+              <div class="product-body">
+
+                <h3 class="product-name">
                   Garam Masala
                 </h3>
 
-                <div class="dh-product-hindi">
-                  गरम मसाला
+                <div class="product-hindi">
+                  गरम मसाला · Garam Masala
                 </div>
 
-                <div class="dh-product-meta">
-
-                  <span class="dh-origin">
-                    Kerala
-                  </span>
-
+                <div class="product-origin">
+                  <strong>Origin:</strong> Kerala
                 </div>
 
-                <div class="dh-view">
-                  <span>View Product</span>
-                  <span class="dh-view-arrow">→</span>
+                <div class="product-link">
+                  View Product
+                  <span class="product-link-arrow">→</span>
                 </div>
 
               </div>
@@ -2090,41 +2097,44 @@
           </article>
 
 
-          <!-- BLACK PEPPER POWDER -->
+          <!-- Black Pepper Powder -->
 
-          <article class="dh-product-card">
+          <article class="product-card" data-category="powder">
 
             <a href="black-pepper-powder.html">
 
-              <div class="dh-product-image">
+              <div class="product-image-wrap">
 
-                <span class="dh-product-type">
+                <span class="product-type">
                   Powder Spice
                 </span>
 
                 <img
                   src="black-pepper-powder.png"
-                  alt="Black Pepper Powder — काली मिर्च पाउडर"
+                  alt="Black Pepper Powder (Kali Mirch)"
                   loading="lazy"
                 >
 
               </div>
 
-              <div class="dh-product-content">
 
-                <h3 class="dh-product-name">
+              <div class="product-body">
+
+                <h3 class="product-name">
                   Black Pepper Powder
                 </h3>
 
-                <div class="dh-product-hindi">
+                <div class="product-hindi">
                   काली मिर्च पाउडर
                 </div>
 
-                <div class="dh-product-meta"></div>
+                <div class="product-origin">
+                  Powder Spice
+                </div>
 
-                <div class="dh-view">
-                  <span>View Product</span>
-                  <span class="dh-view-arrow">→</span>
+                <div class="product-link">
+                  View Product
+                  <span class="product-link-arrow">→</span>
                 </div>
 
               </div>
@@ -2134,41 +2144,44 @@
           </article>
 
 
-          <!-- RED CHILLI -->
+          <!-- Red Chilli Powder -->
 
-          <article class="dh-product-card">
+          <article class="product-card" data-category="powder">
 
             <a href="red-chilli-powder.html">
 
-              <div class="dh-product-image">
+              <div class="product-image-wrap">
 
-                <span class="dh-product-type">
+                <span class="product-type">
                   Powder Spice
                 </span>
 
                 <img
                   src="red-chilli-powder.png"
-                  alt="Red Chilli Powder — लाल मिर्च पाउडर"
+                  alt="Red Chilli Powder (Lal Mirch)"
                   loading="lazy"
                 >
 
               </div>
 
-              <div class="dh-product-content">
 
-                <h3 class="dh-product-name">
+              <div class="product-body">
+
+                <h3 class="product-name">
                   Red Chilli Powder
                 </h3>
 
-                <div class="dh-product-hindi">
+                <div class="product-hindi">
                   लाल मिर्च पाउडर
                 </div>
 
-                <div class="dh-product-meta"></div>
+                <div class="product-origin">
+                  Powder Spice
+                </div>
 
-                <div class="dh-view">
-                  <span>View Product</span>
-                  <span class="dh-view-arrow">→</span>
+                <div class="product-link">
+                  View Product
+                  <span class="product-link-arrow">→</span>
                 </div>
 
               </div>
@@ -2178,41 +2191,44 @@
           </article>
 
 
-          <!-- AMCHUR -->
+          <!-- Amchur -->
 
-          <article class="dh-product-card">
+          <article class="product-card" data-category="powder">
 
             <a href="amchur-powder.html">
 
-              <div class="dh-product-image">
+              <div class="product-image-wrap">
 
-                <span class="dh-product-type">
+                <span class="product-type">
                   Powder Spice
                 </span>
 
                 <img
                   src="amchur-powder.png"
-                  alt="Amchur Powder — अमचूर"
+                  alt="Amchur Powder"
                   loading="lazy"
                 >
 
               </div>
 
-              <div class="dh-product-content">
 
-                <h3 class="dh-product-name">
+              <div class="product-body">
+
+                <h3 class="product-name">
                   Amchur Powder
                 </h3>
 
-                <div class="dh-product-hindi">
-                  अमचूर
+                <div class="product-hindi">
+                  अमचूर · Amchur
                 </div>
 
-                <div class="dh-product-meta"></div>
+                <div class="product-origin">
+                  Powder Spice
+                </div>
 
-                <div class="dh-view">
-                  <span>View Product</span>
-                  <span class="dh-view-arrow">→</span>
+                <div class="product-link">
+                  View Product
+                  <span class="product-link-arrow">→</span>
                 </div>
 
               </div>
@@ -2222,41 +2238,44 @@
           </article>
 
 
-          <!-- GINGER -->
+          <!-- Ginger Powder -->
 
-          <article class="dh-product-card">
+          <article class="product-card" data-category="powder">
 
             <a href="ginger-powder.html">
 
-              <div class="dh-product-image">
+              <div class="product-image-wrap">
 
-                <span class="dh-product-type">
+                <span class="product-type">
                   Powder Spice
                 </span>
 
                 <img
                   src="ginger-powder.png"
-                  alt="Ginger Powder — सोंठ"
+                  alt="Ginger Powder (Sonth)"
                   loading="lazy"
                 >
 
               </div>
 
-              <div class="dh-product-content">
 
-                <h3 class="dh-product-name">
+              <div class="product-body">
+
+                <h3 class="product-name">
                   Ginger Powder
                 </h3>
 
-                <div class="dh-product-hindi">
-                  सोंठ
+                <div class="product-hindi">
+                  सोंठ · Sonth
                 </div>
 
-                <div class="dh-product-meta"></div>
+                <div class="product-origin">
+                  Powder Spice
+                </div>
 
-                <div class="dh-view">
-                  <span>View Product</span>
-                  <span class="dh-view-arrow">→</span>
+                <div class="product-link">
+                  View Product
+                  <span class="product-link-arrow">→</span>
                 </div>
 
               </div>
@@ -2265,80 +2284,51 @@
 
           </article>
 
+
         </div>
 
       </div>
 
-    </section>
 
+      <!-- ===================================================
+           BUSINESS CTA
+           =================================================== -->
 
-    <!-- =====================================================
-         PARTNER CTA
-         ===================================================== -->
+      <div class="collection-note">
 
-    <section
-      class="dh-contact-section"
-      id="partner"
-    >
-
-      <div class="dh-wrap">
-
-        <div class="dh-contact-card">
-
-          <p class="dh-section-kicker">
-            Business Enquiries
-          </p>
+        <div>
 
           <h2>
-            Looking to partner with Dharoahar?
+            Looking for spices for your business?
           </h2>
 
           <p>
-            Connect with us for retail, distribution, wholesale,
-            institutional and other business enquiries.
+            Whether you are building a retail range, sourcing for a food
+            business or exploring a larger requirement, speak with the
+            Dharoahar team about the products in our collection.
           </p>
 
-          <div class="dh-contact-actions">
+        </div>
 
-            <a
-              href="contact.html"
-              class="dh-btn dh-btn-primary"
-            >
-              Contact Us
-            </a>
 
-            <a
-              href="mailto:amanadhish@dharoahar.com"
-              class="dh-btn dh-btn-secondary"
-            >
-              amanadhish@dharoahar.com
-            </a>
+        <div class="collection-action">
 
-          </div>
+          <span class="collection-action-label">
+            Product &amp; Business Enquiries
+          </span>
+
+          <a
+            href="https://wa.me/918603824415?text=Hello%20Dharoahar%2C%20I%20would%20like%20to%20discuss%20a%20spice%20requirement."
+            target="_blank"
+            rel="noopener"
+          >
+            Talk to Dharoahar →
+          </a>
 
         </div>
 
       </div>
 
-    </section>
-
-
-    <!-- =====================================================
-         NOTE
-         ===================================================== -->
-
-    <section class="dh-catalogue-note">
-
-      <div class="dh-wrap">
-
-        <div class="dh-note">
-          Product availability, specifications, pack formats and
-          commercial details may vary by market and channel.
-          Please contact Dharoahar for current business and
-          product information.
-        </div>
-
-      </div>
 
     </section>
 
@@ -2349,50 +2339,75 @@
        FOOTER
        ======================================================= -->
 
-  <footer class="dh-footer">
+  <footer class="catalog-footer">
 
-    <div class="dh-wrap dh-footer-inner">
+    <div class="footer-inner">
 
       <div>
 
-        <div class="dh-footer-brand">
-          DHAROAHAR
+        <div class="footer-brand-name">
+          Dharoahar
         </div>
 
-        <p class="dh-footer-tagline">
-          Rooted in Tradition. Delivered with Purity.
+        <p class="footer-tagline">
+          Authentic Indian Spices, Sourced with Care.
         </p>
 
       </div>
 
 
-      <nav
-        class="dh-footer-links"
-        aria-label="Footer navigation"
-      >
+      <div>
 
-        <a href="index.html">Home</a>
+        <div class="footer-heading">
+          Explore
+        </div>
 
-        <a href="about.html">About Us</a>
+        <div class="footer-links">
+          <a href="index.html">Home</a>
+          <a href="about.html">About Us</a>
+          <a href="products.html">Our Spices</a>
+          <a href="quality.html">Quality</a>
+        </div>
 
-        <a href="products.html">Our Spices</a>
+      </div>
 
-        <a href="quality.html">Quality</a>
 
-        <a href="contact.html">Contact</a>
+      <div>
 
-      </nav>
+        <div class="footer-heading">
+          Connect
+        </div>
+
+        <div class="footer-links">
+
+          <a href="mailto:amanadhish@dharoahar.com">
+            amanadhish@dharoahar.com
+          </a>
+
+          <a
+            href="https://wa.me/918603824415"
+            target="_blank"
+            rel="noopener"
+          >
+            +91 86038 24415
+          </a>
+
+        </div>
+
+      </div>
 
     </div>
 
 
-    <div class="dh-footer-bottom">
+    <div class="footer-bottom">
 
-      <div class="dh-wrap">
-
+      <span>
         © 2026 Adhish Dharoahar Pvt. Ltd. All rights reserved.
+      </span>
 
-      </div>
+      <span>
+        Dharoahar
+      </span>
 
     </div>
 
@@ -2401,32 +2416,107 @@
 
   <!-- =======================================================
        WHATSAPP
-       Authentic WhatsApp-style logo
-       +91 86038 24415
        ======================================================= -->
 
   <a
-    class="dh-whatsapp"
-    href="https://wa.me/918603824415"
+    class="whatsapp-float"
+    href="https://wa.me/918603824415?text=Hello%20Dharoahar%2C%20I%20would%20like%20to%20know%20more%20about%20your%20spices."
     target="_blank"
-    rel="noopener noreferrer"
-    aria-label="Contact Dharoahar on WhatsApp at +91 86038 24415"
+    rel="noopener"
+    aria-label="Chat with Dharoahar on WhatsApp"
   >
 
     <svg
       viewBox="0 0 32 32"
       aria-hidden="true"
-      xmlns="http://www.w3.org/2000/svg"
     >
+      <path d="M19.11 17.39c-.29-.14-1.68-.83-1.94-.92-.26-.1-.45-.14-.64.14-.19.29-.73.92-.89 1.11-.16.19-.33.22-.61.08-.29-.14-1.21-.45-2.31-1.43-.85-.76-1.43-1.69-1.59-1.97-.16-.29-.02-.44.12-.58.13-.13.29-.33.43-.49.14-.16.19-.27.29-.46.1-.19.05-.35-.02-.49-.08-.14-.64-1.54-.88-2.11-.23-.55-.47-.48-.64-.49h-.54c-.19 0-.49.07-.75.35-.26.29-1 1-1 2.45s1.02 2.84 1.16 3.03c.14.19 2.01 3.07 4.87 4.3.68.29 1.21.46 1.63.59.68.22 1.3.19 1.79.12.55-.08 1.68-.69 1.92-1.35.24-.66.24-1.23.17-1.35-.07-.12-.26-.19-.54-.33z"></path>
 
-      <path
-        fill="#ffffff"
-        d="M16 3.2C8.93 3.2 3.2 8.93 3.2 16c0 2.26.59 4.38 1.62 6.22L3.15 28.8l6.75-1.62A12.73 12.73 0 0 0 16 28.8c7.07 0 12.8-5.73 12.8-12.8S23.07 3.2 16 3.2Zm0 23.35c-2.02 0-3.91-.59-5.5-1.61l-.39-.25-4 .96.97-3.9-.25-.4A10.58 10.58 0 1 1 16 26.55Zm5.82-7.93c-.32-.16-1.9-.94-2.19-1.05-.29-.11-.5-.16-.71.16-.21.32-.81 1.05-.99 1.27-.18.21-.36.24-.68.08-.32-.16-1.34-.49-2.55-1.57-.94-.84-1.57-1.88-1.75-2.2-.18-.32-.02-.49.14-.65.15-.15.32-.37.48-.55.16-.18.21-.32.32-.53.11-.21.05-.4-.03-.56-.08-.16-.71-1.71-.97-2.34-.25-.61-.51-.53-.71-.54h-.61c-.21 0-.55.08-.84.4-.29.32-1.1 1.08-1.1 2.63s1.13 3.05 1.29 3.26c.16.21 2.22 3.39 5.38 4.76.75.32 1.33.52 1.79.67.75.24 1.44.21 1.98.13.6-.09 1.9-.78 2.17-1.53.27-.76.27-1.41.19-1.54-.08-.13-.29-.21-.61-.37Z"
-      />
-
+      <path d="M16.01 3.2c-7.05 0-12.77 5.72-12.77 12.77 0 2.25.59 4.37 1.62 6.2L3.12 28.8l6.78-1.71a12.7 12.7 0 0 0 6.11 1.56h.01c7.05 0 12.77-5.72 12.77-12.77S23.06 3.2 16.01 3.2zm0 23.33h-.01a10.57 10.57 0 0 1-5.39-1.47l-.39-.23-4.02 1.02 1.07-3.91-.25-.4a10.54 10.54 0 1 1 8.99 4.99z"></path>
     </svg>
 
   </a>
+
+
+  <!-- =======================================================
+       JAVASCRIPT
+       ======================================================= -->
+
+  <script>
+
+    function toggleMenu() {
+
+      const menu = document.getElementById("mobileNav");
+
+      if (menu.style.display === "block") {
+        menu.style.display = "none";
+      } else {
+        menu.style.display = "block";
+      }
+
+    }
+
+
+    const buttons = document.querySelectorAll(".category-btn");
+    const groups = document.querySelectorAll(".product-group");
+    const cards = document.querySelectorAll(".product-card");
+    const count = document.getElementById("catalogCount");
+
+
+    buttons.forEach(button => {
+
+      button.addEventListener("click", () => {
+
+        const filter = button.dataset.filter;
+
+
+        buttons.forEach(btn => {
+          btn.classList.remove("active");
+        });
+
+        button.classList.add("active");
+
+
+        let visibleCount = 0;
+
+
+        groups.forEach(group => {
+
+          const groupType = group.dataset.group;
+
+
+          if (filter === "all" || filter === groupType) {
+
+            group.style.display = "block";
+
+          } else {
+
+            group.style.display = "none";
+
+          }
+
+        });
+
+
+        cards.forEach(card => {
+
+          const category = card.dataset.category;
+
+          if (filter === "all" || category === filter) {
+            visibleCount++;
+          }
+
+        });
+
+
+        count.textContent =
+          visibleCount + (visibleCount === 1 ? " product" : " products");
+
+      });
+
+    });
+
+  </script>
 
 
 </body>
