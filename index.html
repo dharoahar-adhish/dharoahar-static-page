@@ -33,13 +33,12 @@ html{
 body{
   margin:0;
   padding:0;
+  overflow-x:hidden;
 
   background:#f7f1e7;
   color:#2d1b12;
 
   font-family:Arial,Helvetica,sans-serif;
-
-  overflow-x:hidden;
 }
 
 img{
@@ -52,7 +51,8 @@ a{
 }
 
 button,
-input{
+input,
+select{
   font-family:inherit;
 }
 
@@ -173,9 +173,7 @@ input{
 
 
 /* =========================================================
-   MAIN HERO
-   IMPORTANT:
-   NO fixed desktop crop.
+   HERO
 ========================================================= */
 
 .hero{
@@ -185,7 +183,7 @@ input{
 
   overflow:hidden;
 
-  background:#e9ddca;
+  background:#3b2114;
 }
 
 .hero-image{
@@ -195,14 +193,41 @@ input{
   height:auto;
 
   object-fit:contain;
-
   object-position:center center;
+}
+
+
+/*
+   IMPORTANT:
+   Stronger overlay than previous version.
+   This makes white typography readable.
+*/
+
+.hero::after{
+  content:"";
+
+  position:absolute;
+
+  inset:0;
+
+  z-index:1;
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(25,13,7,.72) 0%,
+      rgba(25,13,7,.48) 38%,
+      rgba(25,13,7,.20) 70%,
+      rgba(25,13,7,.30) 100%
+    );
 }
 
 .hero-overlay{
   position:absolute;
 
   inset:0;
+
+  z-index:2;
 
   display:flex;
 
@@ -213,13 +238,15 @@ input{
 }
 
 .hero-content{
-  width:min(650px,100%);
+  width:min(700px,100%);
 
   text-align:center;
 
   color:#fff;
 
-  text-shadow:0 2px 12px rgba(0,0,0,.25);
+  text-shadow:
+    0 2px 8px rgba(0,0,0,.65),
+    0 4px 18px rgba(0,0,0,.40);
 }
 
 .hero-eyebrow{
@@ -247,7 +274,7 @@ input{
 }
 
 .hero-copy{
-  max-width:530px;
+  max-width:560px;
 
   margin:20px auto 0;
 
@@ -298,11 +325,11 @@ input{
 }
 
 .hero-btn-secondary{
-  border:1px solid rgba(255,255,255,.8);
+  border:1px solid rgba(255,255,255,.85);
 
   color:#fff;
 
-  background:rgba(40,25,17,.18);
+  background:rgba(40,25,17,.42);
 }
 
 .hero-btn:hover{
@@ -508,7 +535,6 @@ input{
 
 /* =========================================================
    SPICE SIGNATURE
-   FINAL DESIGN
 ========================================================= */
 
 .signature-section{
@@ -516,24 +542,10 @@ input{
 
   width:100%;
 
-  margin:0;
-
-  padding:0;
-
   overflow:hidden;
 
   background:#2b1810;
 }
-
-
-/*
-   ARTWORK HOLDER
-
-   No green.
-   No grey.
-   No background image.
-   No cover.
-*/
 
 .signature-art{
   position:relative;
@@ -546,12 +558,6 @@ input{
 
   line-height:0;
 }
-
-
-/*
-   DESKTOP:
-   Full artwork remains visible.
-*/
 
 .signature-art > img{
   display:block;
@@ -569,14 +575,6 @@ input{
   opacity:1;
 }
 
-
-/*
-   CENTRAL PANEL
-
-   Much MORE transparent than previous version.
-   The artwork remains visible through it.
-*/
-
 .signature-content{
   position:absolute;
 
@@ -591,9 +589,9 @@ input{
 
   padding:27px 27px 24px;
 
-  background:rgba(250,244,232,.60);
+  background:rgba(250,244,232,.54);
 
-  border:1px solid rgba(80,52,35,.20);
+  border:1px solid rgba(80,52,35,.18);
 
   box-shadow:
     0 14px 35px rgba(46,25,14,.10);
@@ -601,10 +599,6 @@ input{
   text-align:center;
 
   line-height:normal;
-
-  backdrop-filter:blur(1px);
-
-  -webkit-backdrop-filter:blur(1px);
 }
 
 .signature-content .eyebrow{
@@ -653,11 +647,6 @@ input{
   color:#514239;
 }
 
-
-/*
-   CAPSULES
-*/
-
 .signature-tabs{
   display:grid;
 
@@ -679,7 +668,7 @@ input{
 
   border-radius:999px;
 
-  background:rgba(255,252,247,.76);
+  background:rgba(255,252,247,.82);
 
   color:#34231a;
 
@@ -696,10 +685,6 @@ input{
   transition:.2s ease;
 }
 
-.signature-tab:hover{
-  transform:translateY(-1px);
-}
-
 .signature-tab.active{
   background:#2b1a12;
 
@@ -710,7 +695,7 @@ input{
 
 
 /* =========================================================
-   REGION PANEL
+   REGION
 ========================================================= */
 
 .region-panel{
@@ -768,12 +753,6 @@ input{
 
   color:rgba(255,255,255,.80);
 }
-
-
-/*
-   Recipe cards.
-   Larger than before.
-*/
 
 .region-dishes{
   display:grid;
@@ -923,96 +902,103 @@ input{
 
 
 /* =========================================================
-   PLANNER
+   B2B SPICE PLANNER
 ========================================================= */
 
 .planner-section{
-  padding:80px 20px;
+  padding:90px 20px;
 
   background:#eee3d2;
 }
 
 .planner-wrap{
-  width:min(980px,100%);
+  width:min(1080px,100%);
 
   margin:auto;
-
-  display:grid;
-
-  grid-template-columns:1fr 1fr;
-
-  gap:40px;
-
-  align-items:center;
 }
 
-.planner-eyebrow{
-  margin-bottom:12px;
+.planner-heading{
+  max-width:760px;
 
-  color:#bd8449;
+  margin:0 auto 38px;
 
-  font-size:9px;
-
-  font-weight:700;
-
-  letter-spacing:.25em;
-
-  text-transform:uppercase;
+  text-align:center;
 }
 
-.planner-copy h2{
+.planner-heading h2{
   margin:0;
 
   font-family:Georgia,"Times New Roman",serif;
 
-  font-size:48px;
+  font-size:clamp(38px,5vw,55px);
 
   font-weight:400;
 
-  line-height:1;
+  line-height:.98;
 }
 
-.planner-copy p{
-  max-width:470px;
+.planner-heading p{
+  max-width:650px;
 
-  margin:20px 0 0;
+  margin:18px auto 0;
 
-  font-size:14px;
+  font-size:13px;
 
   line-height:1.7;
 
   color:#6d5b4e;
 }
 
+
+/* MAIN CALCULATOR */
+
 .planner-box{
-  padding:28px;
+  padding:32px;
 
   background:#faf6ef;
 
   border:1px solid rgba(60,38,25,.10);
 
-  box-shadow:0 14px 35px rgba(50,30,18,.07);
+  box-shadow:0 18px 45px rgba(50,30,18,.08);
 }
 
-.planner-row{
-  margin-bottom:16px;
+
+/* FORM GRID */
+
+.planner-form{
+  display:grid;
+
+  grid-template-columns:repeat(2,1fr);
+
+  gap:18px;
+}
+
+.planner-field{
+  display:flex;
+
+  flex-direction:column;
+}
+
+.planner-field.full{
+  grid-column:1/-1;
 }
 
 .planner-label{
-  display:block;
-
   margin-bottom:8px;
 
   font-size:10px;
 
   font-weight:700;
 
-  letter-spacing:.08em;
+  letter-spacing:.10em;
 
   text-transform:uppercase;
+
+  color:#49372d;
 }
 
-.planner-input{
+.planner-input,
+.planner-select{
   width:100%;
 
   height:48px;
@@ -1023,13 +1009,184 @@ input{
 
   background:#fff;
 
-  font-size:14px;
+  color:#33231a;
+
+  font-size:13px;
+
+  outline:none;
 }
 
-.planner-button{
+.planner-input:focus,
+.planner-select:focus{
+  border-color:#a56f3c;
+}
+
+
+/* SECTION LABEL */
+
+.planner-subheading{
+  grid-column:1/-1;
+
+  margin:12px 0 -3px;
+
+  padding-top:20px;
+
+  border-top:1px solid rgba(50,30,20,.10);
+
+  font-family:Georgia,"Times New Roman",serif;
+
+  font-size:23px;
+
+  font-weight:400;
+
+  color:#2d1b12;
+}
+
+
+/* CATEGORY SELECTION */
+
+.spice-category-grid{
+  grid-column:1/-1;
+
+  display:grid;
+
+  grid-template-columns:repeat(4,1fr);
+
+  gap:9px;
+}
+
+.spice-category{
+  position:relative;
+
+  display:flex;
+
+  flex-direction:column;
+
+  align-items:flex-start;
+
+  justify-content:center;
+
+  min-height:86px;
+
+  padding:15px;
+
+  border:1px solid rgba(50,30,20,.14);
+
+  background:#fff;
+
+  cursor:pointer;
+
+  transition:.2s ease;
+}
+
+.spice-category:hover{
+  border-color:#a56f3c;
+
+  transform:translateY(-2px);
+}
+
+.spice-category input{
+  position:absolute;
+
+  opacity:0;
+}
+
+.spice-category.active{
+  background:#2d1b12;
+
+  border-color:#2d1b12;
+
+  color:#fff;
+}
+
+.spice-category-title{
+  font-family:Georgia,"Times New Roman",serif;
+
+  font-size:18px;
+
+  line-height:1.05;
+}
+
+.spice-category-text{
+  margin-top:6px;
+
+  font-size:9px;
+
+  line-height:1.35;
+
+  opacity:.68;
+}
+
+
+/* INTENSITY */
+
+.intensity-grid{
+  grid-column:1/-1;
+
+  display:grid;
+
+  grid-template-columns:repeat(3,1fr);
+
+  gap:9px;
+}
+
+.intensity-option{
+  min-height:60px;
+
+  padding:10px;
+
+  border:1px solid rgba(50,30,20,.14);
+
+  background:#fff;
+
+  cursor:pointer;
+
+  text-align:center;
+
+  transition:.2s ease;
+}
+
+.intensity-option input{
+  display:none;
+}
+
+.intensity-option strong{
+  display:block;
+
+  font-size:11px;
+
+  text-transform:uppercase;
+
+  letter-spacing:.08em;
+}
+
+.intensity-option span{
+  display:block;
+
+  margin-top:4px;
+
+  font-size:9px;
+
+  color:#7b6b60;
+}
+
+.intensity-option.active{
+  background:#d7b17b;
+
+  border-color:#a56f3c;
+}
+
+
+/* BUTTON */
+
+.planner-calculate{
+  grid-column:1/-1;
+
   width:100%;
 
-  height:48px;
+  min-height:52px;
+
+  margin-top:8px;
 
   border:0;
 
@@ -1041,37 +1198,241 @@ input{
 
   font-weight:700;
 
-  letter-spacing:.08em;
+  letter-spacing:.10em;
 
   text-transform:uppercase;
 
   cursor:pointer;
+
+  transition:.2s ease;
 }
+
+.planner-calculate:hover{
+  background:#4a2c1b;
+
+  transform:translateY(-1px);
+}
+
+
+/* RESULT */
 
 .planner-result{
   display:none;
 
-  margin-top:20px;
+  margin-top:28px;
 
-  padding:18px;
+  padding-top:28px;
 
-  background:#eee3d2;
-
-  text-align:center;
+  border-top:1px solid rgba(50,30,20,.14);
 }
 
 .planner-result.show{
   display:block;
 }
 
-.planner-result strong{
-  display:block;
+.result-heading{
+  margin-bottom:18px;
+}
+
+.result-heading .small{
+  font-size:9px;
+
+  font-weight:700;
+
+  letter-spacing:.22em;
+
+  text-transform:uppercase;
+
+  color:#bd8449;
+}
+
+.result-heading h3{
+  margin:7px 0 0;
 
   font-family:Georgia,"Times New Roman",serif;
 
-  font-size:30px;
+  font-size:32px;
 
   font-weight:400;
+}
+
+
+/* RESULT TOP */
+
+.result-summary{
+  display:grid;
+
+  grid-template-columns:1fr 1fr;
+
+  gap:12px;
+
+  margin-bottom:18px;
+}
+
+.result-total{
+  padding:20px;
+
+  background:#2d1b12;
+
+  color:#fff;
+}
+
+.result-total span{
+  display:block;
+
+  font-size:9px;
+
+  letter-spacing:.12em;
+
+  text-transform:uppercase;
+
+  opacity:.68;
+}
+
+.result-total strong{
+  display:block;
+
+  margin-top:8px;
+
+  font-family:Georgia,"Times New Roman",serif;
+
+  font-size:36px;
+
+  font-weight:400;
+}
+
+
+/* BREAKUP */
+
+.result-breakup{
+  display:grid;
+
+  grid-template-columns:repeat(4,1fr);
+
+  gap:8px;
+
+  margin-bottom:20px;
+}
+
+.result-category{
+  padding:15px;
+
+  background:#eee3d2;
+
+  border:1px solid rgba(50,30,20,.08);
+}
+
+.result-category-label{
+  display:block;
+
+  font-size:9px;
+
+  font-weight:700;
+
+  letter-spacing:.06em;
+
+  text-transform:uppercase;
+}
+
+.result-category-value{
+  display:block;
+
+  margin-top:6px;
+
+  font-family:Georgia,"Times New Roman",serif;
+
+  font-size:24px;
+}
+
+
+/* INDIVIDUAL SPICES */
+
+.result-spices{
+  display:grid;
+
+  grid-template-columns:repeat(2,1fr);
+
+  gap:7px;
+
+  margin-top:15px;
+}
+
+.result-spice-row{
+  display:flex;
+
+  align-items:center;
+
+  justify-content:space-between;
+
+  gap:10px;
+
+  padding:10px 12px;
+
+  background:#fff;
+
+  border:1px solid rgba(50,30,20,.08);
+
+  font-size:10px;
+}
+
+.result-spice-row span:last-child{
+  font-weight:700;
+
+  color:#8e6038;
+}
+
+
+/* RESULT CTA */
+
+.result-actions{
+  display:flex;
+
+  gap:9px;
+
+  margin-top:22px;
+}
+
+.result-action{
+  flex:1;
+
+  min-height:48px;
+
+  display:flex;
+
+  align-items:center;
+  justify-content:center;
+
+  border:1px solid #2d1b12;
+
+  font-size:10px;
+
+  font-weight:700;
+
+  letter-spacing:.07em;
+
+  text-transform:uppercase;
+}
+
+.result-action-primary{
+  background:#2d1b12;
+
+  color:#fff;
+}
+
+.result-action-secondary{
+  background:#fff;
+
+  color:#2d1b12;
+}
+
+.planner-note{
+  margin-top:14px;
+
+  font-size:9px;
+
+  line-height:1.55;
+
+  color:#827267;
 }
 
 
@@ -1475,8 +1836,6 @@ input{
 
 @media(max-width:700px){
 
-  /* HEADER */
-
   .header-inner{
     width:calc(100% - 30px);
 
@@ -1507,16 +1866,19 @@ input{
 
   /* HERO */
 
-  .hero{
-    min-height:0;
-  }
-
   .hero-image{
     width:100%;
-
     height:auto;
+  }
 
-    object-fit:contain;
+  .hero::after{
+    background:
+      linear-gradient(
+        180deg,
+        rgba(25,13,7,.46) 0%,
+        rgba(25,13,7,.67) 52%,
+        rgba(25,13,7,.78) 100%
+      );
   }
 
   .hero-overlay{
@@ -1524,13 +1886,15 @@ input{
   }
 
   .hero-title{
-    font-size:42px;
+    font-size:41px;
+
+    line-height:.92;
   }
 
   .hero-copy{
     margin-top:15px;
 
-    font-size:12px;
+    font-size:11px;
 
     line-height:1.55;
   }
@@ -1590,66 +1954,30 @@ input{
   }
 
 
-  /* =====================================================
-     SPICE SIGNATURE MOBILE
-  ===================================================== */
-
-  .signature-section{
-    background:#2b1810;
-  }
-
-  .signature-art{
-    background:#2b1810;
-
-    /*
-      IMPORTANT:
-      Keep the image's natural ratio.
-      Never crop it.
-    */
-  }
+  /* SIGNATURE */
 
   .signature-art > img{
     width:100%;
 
     height:auto;
 
-    display:block;
-
     object-fit:contain;
-
-    opacity:1;
   }
-
-
-  /*
-     Small translucent panel.
-
-     MUCH MORE transparent than previous version.
-  */
 
   .signature-content{
     left:50%;
 
-    /*
-       Move the panel slightly lower.
-       This exposes more of the monuments.
-    */
     top:58%;
 
     width:calc(100% - 36px);
 
     padding:15px 10px 13px;
 
-    background:rgba(250,244,232,.48);
+    background:rgba(250,244,232,.46);
 
-    border:1px solid rgba(80,52,35,.18);
+    border:1px solid rgba(80,52,35,.15);
 
-    box-shadow:
-      0 8px 22px rgba(35,18,10,.08);
-
-    backdrop-filter:blur(0);
-
-    -webkit-backdrop-filter:blur(0);
+    box-shadow:none;
   }
 
   .signature-content .eyebrow{
@@ -1667,8 +1995,6 @@ input{
 
     line-height:.95;
 
-    letter-spacing:-.02em;
-
     margin-bottom:7px;
   }
 
@@ -1682,11 +2008,6 @@ input{
     margin-bottom:9px;
   }
 
-
-  /*
-     Bigger capsules
-  */
-
   .signature-tabs{
     gap:5px;
   }
@@ -1697,8 +2018,6 @@ input{
     padding:0 5px;
 
     font-size:8px;
-
-    letter-spacing:.03em;
   }
 
 
@@ -1714,14 +2033,10 @@ input{
 
   .region-kicker{
     font-size:8px;
-
-    letter-spacing:.23em;
   }
 
   .region-title{
     font-size:43px;
-
-    line-height:.95;
   }
 
   .region-description{
@@ -1732,58 +2047,113 @@ input{
     margin-bottom:17px;
   }
 
-
-  /*
-     Larger recipe buttons
-  */
-
   .region-dishes{
     grid-template-columns:repeat(2,1fr);
 
     gap:6px;
-
-    max-width:none;
   }
 
   .region-dish{
-    min-height:42px;
+    min-height:44px;
 
     padding:7px 6px;
 
-    font-size:8.5px;
-
-    line-height:1.2;
+    font-size:9px;
   }
 
   .region-more{
-    margin-top:16px;
-
     font-size:10px;
   }
 
 
-  /* PLANNER */
+  /* =====================================================
+     B2B PLANNER MOBILE
+  ===================================================== */
 
   .planner-section{
-    padding:55px 15px;
+    padding:58px 14px;
   }
 
-  .planner-wrap{
-    grid-template-columns:1fr;
-
-    gap:25px;
+  .planner-heading{
+    margin-bottom:26px;
   }
 
-  .planner-copy h2{
+  .planner-heading h2{
     font-size:38px;
+
+    line-height:.98;
   }
 
-  .planner-copy p{
+  .planner-heading p{
     font-size:12px;
   }
 
   .planner-box{
-    padding:20px;
+    padding:18px;
+
+    box-shadow:0 12px 30px rgba(50,30,18,.07);
+  }
+
+  .planner-form{
+    grid-template-columns:1fr;
+
+    gap:14px;
+  }
+
+  .planner-field.full{
+    grid-column:auto;
+  }
+
+  .planner-subheading{
+    grid-column:auto;
+
+    margin-top:8px;
+  }
+
+  .spice-category-grid{
+    grid-column:auto;
+
+    grid-template-columns:repeat(2,1fr);
+  }
+
+  .spice-category{
+    min-height:82px;
+
+    padding:12px;
+  }
+
+  .spice-category-title{
+    font-size:16px;
+  }
+
+  .spice-category-text{
+    font-size:8px;
+  }
+
+  .intensity-grid{
+    grid-column:auto;
+
+    grid-template-columns:1fr;
+  }
+
+  .planner-calculate{
+    grid-column:auto;
+  }
+
+  .result-summary{
+    grid-template-columns:1fr;
+  }
+
+  .result-breakup{
+    grid-template-columns:repeat(2,1fr);
+  }
+
+  .result-spices{
+    grid-template-columns:1fr;
+  }
+
+  .result-actions{
+    flex-direction:column;
   }
 
 
@@ -1879,10 +2249,14 @@ input{
 
 
 /* =========================================================
-   VERY SMALL PHONES
+   SMALL PHONES
 ========================================================= */
 
 @media(max-width:390px){
+
+  .hero-title{
+    font-size:36px;
+  }
 
   .signature-content{
     width:calc(100% - 28px);
@@ -1898,8 +2272,6 @@ input{
 
   .signature-content p{
     font-size:7.5px;
-
-    margin-bottom:8px;
   }
 
   .signature-tab{
@@ -1912,29 +2284,14 @@ input{
     font-size:39px;
   }
 
-  .region-dish{
-    min-height:40px;
-
-    font-size:8px;
-  }
-
 }
 
 
 /* =========================================================
-   DESKTOP TUNING
+   DESKTOP
 ========================================================= */
 
 @media(min-width:701px){
-
-  /*
-     Keep the signature artwork naturally proportioned.
-     This is the key desktop fix.
-  */
-
-  .signature-art{
-    min-height:0;
-  }
 
   .signature-art > img{
     width:100%;
@@ -1944,29 +2301,16 @@ input{
     object-fit:contain;
   }
 
-  /*
-     Desktop panel is smaller and more transparent.
-  */
-
   .signature-content{
     width:min(620px,42vw);
 
-    background:rgba(250,244,232,.60);
+    background:rgba(250,244,232,.54);
   }
 
   .signature-content h2{
     font-size:40px;
   }
 
-}
-
-
-/* =========================================================
-   HIDDEN
-========================================================= */
-
-.hidden{
-  display:none !important;
 }
 
 </style>
@@ -2002,33 +2346,19 @@ input{
 
     <nav class="desktop-nav">
 
-      <a href="index.html">
-        Home
-      </a>
+      <a href="index.html">Home</a>
 
-      <a href="about.html">
-        About Us
-      </a>
+      <a href="about.html">About Us</a>
 
-      <a href="products.html">
-        Our Spices
-      </a>
+      <a href="products.html">Our Spices</a>
 
-      <a href="#spice-signature">
-        Spice Signature
-      </a>
+      <a href="#spice-signature">Spice Signature</a>
 
-      <a href="#spice-planner">
-        Spice Planner
-      </a>
+      <a href="#spice-planner">Spice Planner</a>
 
-      <a href="quality.html">
-        Quality
-      </a>
+      <a href="quality.html">Quality</a>
 
-      <a href="contact.html">
-        Contact
-      </a>
+      <a href="contact.html">Contact</a>
 
     </nav>
 
@@ -2049,33 +2379,19 @@ input{
     id="mobileMenu"
   >
 
-    <a href="index.html">
-      Home
-    </a>
+    <a href="index.html">Home</a>
 
-    <a href="about.html">
-      About Us
-    </a>
+    <a href="about.html">About Us</a>
 
-    <a href="products.html">
-      Our Spices
-    </a>
+    <a href="products.html">Our Spices</a>
 
-    <a href="#spice-signature">
-      Spice Signature
-    </a>
+    <a href="#spice-signature">Spice Signature</a>
 
-    <a href="#spice-planner">
-      Spice Planner
-    </a>
+    <a href="#spice-planner">Spice Planner</a>
 
-    <a href="quality.html">
-      Quality
-    </a>
+    <a href="quality.html">Quality</a>
 
-    <a href="contact.html">
-      Contact
-    </a>
+    <a href="contact.html">Contact</a>
 
   </div>
 
@@ -2083,11 +2399,7 @@ input{
 
 
 <!-- ======================================================
-     MAIN HERO
-
-     IMPORTANT:
-     If your existing homepage hero image is NOT hero.jpg,
-     change only the src below to your existing filename.
+     HERO
 ====================================================== -->
 
 <section class="hero">
@@ -2170,7 +2482,7 @@ input{
 
 
 <!-- ======================================================
-     FEATURED PRODUCTS
+     PRODUCTS
 ====================================================== -->
 
 <section class="products-section">
@@ -2191,10 +2503,7 @@ input{
   <div class="product-grid">
 
 
-    <a
-      class="product-card"
-      href="clove.html"
-    >
+    <a class="product-card" href="clove.html">
 
       <div class="product-image">
 
@@ -2224,10 +2533,7 @@ input{
     </a>
 
 
-    <a
-      class="product-card"
-      href="cardamom.html"
-    >
+    <a class="product-card" href="cardamom.html">
 
       <div class="product-image">
 
@@ -2257,10 +2563,7 @@ input{
     </a>
 
 
-    <a
-      class="product-card"
-      href="cinnamon.html"
-    >
+    <a class="product-card" href="cinnamon.html">
 
       <div class="product-image">
 
@@ -2290,10 +2593,7 @@ input{
     </a>
 
 
-    <a
-      class="product-card"
-      href="blackpepper.html"
-    >
+    <a class="product-card" href="blackpepper.html">
 
       <div class="product-image">
 
@@ -2323,10 +2623,7 @@ input{
     </a>
 
 
-    <a
-      class="product-card"
-      href="cumin.html"
-    >
+    <a class="product-card" href="cumin.html">
 
       <div class="product-image">
 
@@ -2356,10 +2653,7 @@ input{
     </a>
 
 
-    <a
-      class="product-card"
-      href="star-anise.html"
-    >
+    <a class="product-card" href="star-anise.html">
 
       <div class="product-image">
 
@@ -2389,10 +2683,7 @@ input{
     </a>
 
 
-    <a
-      class="product-card"
-      href="degi-mirch.html"
-    >
+    <a class="product-card" href="degi-mirch.html">
 
       <div class="product-image">
 
@@ -2422,10 +2713,7 @@ input{
     </a>
 
 
-    <a
-      class="product-card"
-      href="kashmiri-mirch.html"
-    >
+    <a class="product-card" href="kashmiri-mirch.html">
 
       <div class="product-image">
 
@@ -2468,16 +2756,7 @@ input{
   id="spice-signature"
 >
 
-
   <div class="signature-art">
-
-    <!--
-      IMPORTANT:
-      This is the artwork you uploaded.
-
-      File:
-      spice-signature-banner.png
-    -->
 
     <img
       src="spice-signature-banner.png"
@@ -2537,9 +2816,7 @@ input{
   </div>
 
 
-  <!-- ====================================================
-       NORTH
-  ==================================================== -->
+  <!-- NORTH -->
 
   <div
     class="region-panel"
@@ -2561,46 +2838,29 @@ input{
         rich gravies create a familiar North Indian flavour vocabulary.
       </p>
 
-
       <div class="region-dishes">
 
-        <button
-          class="region-dish"
-          data-dish="Dal Makhani"
-        >
+        <button class="region-dish" data-dish="Dal Makhani">
           Dal Makhani
         </button>
 
-        <button
-          class="region-dish"
-          data-dish="Chole"
-        >
+        <button class="region-dish" data-dish="Chole">
           Chole
         </button>
 
-        <button
-          class="region-dish"
-          data-dish="Rajma Chawal"
-        >
+        <button class="region-dish" data-dish="Rajma Chawal">
           Rajma Chawal
         </button>
 
-        <button
-          class="region-dish"
-          data-dish="Paneer Butter Masala"
-        >
+        <button class="region-dish" data-dish="Paneer Butter Masala">
           Paneer Butter Masala
         </button>
 
-        <button
-          class="region-dish"
-          data-dish="Aloo Paratha"
-        >
+        <button class="region-dish" data-dish="Aloo Paratha">
           Aloo Paratha
         </button>
 
       </div>
-
 
       <button
         class="region-more"
@@ -2614,9 +2874,7 @@ input{
   </div>
 
 
-  <!-- ====================================================
-       EAST
-  ==================================================== -->
+  <!-- EAST -->
 
   <div
     class="region-panel"
@@ -2639,46 +2897,29 @@ input{
         distinctive regional preparations shape the eastern table.
       </p>
 
-
       <div class="region-dishes">
 
-        <button
-          class="region-dish"
-          data-dish="Luchi & Aloo Dum"
-        >
+        <button class="region-dish" data-dish="Luchi & Aloo Dum">
           Luchi &amp; Aloo Dum
         </button>
 
-        <button
-          class="region-dish"
-          data-dish="Cholar Dal"
-        >
+        <button class="region-dish" data-dish="Cholar Dal">
           Cholar Dal
         </button>
 
-        <button
-          class="region-dish"
-          data-dish="Aloo Posto"
-        >
+        <button class="region-dish" data-dish="Aloo Posto">
           Aloo Posto
         </button>
 
-        <button
-          class="region-dish"
-          data-dish="Dalma"
-        >
+        <button class="region-dish" data-dish="Dalma">
           Dalma
         </button>
 
-        <button
-          class="region-dish"
-          data-dish="Shorshe Ilish"
-        >
+        <button class="region-dish" data-dish="Shorshe Ilish">
           Shorshe Ilish
         </button>
 
       </div>
-
 
       <button
         class="region-more"
@@ -2692,9 +2933,7 @@ input{
   </div>
 
 
-  <!-- ====================================================
-       WEST
-  ==================================================== -->
+  <!-- WEST -->
 
   <div
     class="region-panel"
@@ -2717,46 +2956,29 @@ input{
         diverse vegetarian traditions define much of western India.
       </p>
 
-
       <div class="region-dishes">
 
-        <button
-          class="region-dish"
-          data-dish="Pav Bhaji"
-        >
+        <button class="region-dish" data-dish="Pav Bhaji">
           Pav Bhaji
         </button>
 
-        <button
-          class="region-dish"
-          data-dish="Vada Pav"
-        >
+        <button class="region-dish" data-dish="Vada Pav">
           Vada Pav
         </button>
 
-        <button
-          class="region-dish"
-          data-dish="Misal Pav"
-        >
+        <button class="region-dish" data-dish="Misal Pav">
           Misal Pav
         </button>
 
-        <button
-          class="region-dish"
-          data-dish="Khaman Dhokla"
-        >
+        <button class="region-dish" data-dish="Khaman Dhokla">
           Khaman Dhokla
         </button>
 
-        <button
-          class="region-dish"
-          data-dish="Undhiyu"
-        >
+        <button class="region-dish" data-dish="Undhiyu">
           Undhiyu
         </button>
 
       </div>
-
 
       <button
         class="region-more"
@@ -2770,9 +2992,7 @@ input{
   </div>
 
 
-  <!-- ====================================================
-       SOUTH
-  ==================================================== -->
+  <!-- SOUTH -->
 
   <div
     class="region-panel"
@@ -2791,50 +3011,33 @@ input{
       </h2>
 
       <p class="region-description">
-        Rice, lentils, tempering spices, coconut and regional
+        Rice, lentils, coconut, tempering spices and regional
         chilli profiles create a remarkably diverse southern table.
       </p>
 
-
       <div class="region-dishes">
 
-        <button
-          class="region-dish"
-          data-dish="Masala Dosa"
-        >
+        <button class="region-dish" data-dish="Masala Dosa">
           Masala Dosa
         </button>
 
-        <button
-          class="region-dish"
-          data-dish="Idli & Sambar"
-        >
+        <button class="region-dish" data-dish="Idli & Sambar">
           Idli &amp; Sambar
         </button>
 
-        <button
-          class="region-dish"
-          data-dish="Sambar Rice"
-        >
+        <button class="region-dish" data-dish="Sambar Rice">
           Sambar Rice
         </button>
 
-        <button
-          class="region-dish"
-          data-dish="Lemon Rice"
-        >
+        <button class="region-dish" data-dish="Lemon Rice">
           Lemon Rice
         </button>
 
-        <button
-          class="region-dish"
-          data-dish="Bisi Bele Bath"
-        >
+        <button class="region-dish" data-dish="Bisi Bele Bath">
           Bisi Bele Bath
         </button>
 
       </div>
-
 
       <button
         class="region-more"
@@ -2887,7 +3090,7 @@ input{
 
 
 <!-- ======================================================
-     SPICE PLANNER
+     B2B SPICE PLANNER
 ====================================================== -->
 
 <section
@@ -2897,20 +3100,20 @@ input{
 
   <div class="planner-wrap">
 
-    <div class="planner-copy">
+    <div class="planner-heading">
 
-      <div class="planner-eyebrow">
+      <div class="section-eyebrow">
         For Food Businesses
       </div>
 
       <h2>
-        How much spice does your kitchen need?
+        Plan your spice requirement with Dharoahar.
       </h2>
 
       <p>
-        Tell us roughly how many meals you serve.
-        We’ll help you estimate a starting point for your
-        monthly spice requirement.
+        Tell us about your kitchen or food business and we’ll
+        estimate your monthly spice requirement across the
+        categories you are likely to use.
       </p>
 
     </div>
@@ -2918,46 +3121,357 @@ input{
 
     <div class="planner-box">
 
-      <div class="planner-row">
 
-        <label
-          class="planner-label"
-          for="meals"
-        >
-          Meals served per day
-        </label>
+      <div class="planner-form">
 
-        <input
-          class="planner-input"
-          id="meals"
-          type="number"
-          min="1"
-          placeholder="Example: 500"
+
+        <!-- BUSINESS -->
+
+        <div class="planner-field">
+
+          <label class="planner-label">
+            Business Type
+          </label>
+
+          <select
+            class="planner-select"
+            id="businessType"
+          >
+
+            <option value="restaurant">
+              Restaurant
+            </option>
+
+            <option value="cloud-kitchen">
+              Cloud Kitchen
+            </option>
+
+            <option value="hotel">
+              Hotel
+            </option>
+
+            <option value="qsr">
+              QSR / Fast Food
+            </option>
+
+            <option value="caterer">
+              Caterer
+            </option>
+
+            <option value="canteen">
+              Canteen / Institutional Kitchen
+            </option>
+
+            <option value="manufacturer">
+              Food Manufacturer
+            </option>
+
+            <option value="retailer">
+              Retailer / Distributor
+            </option>
+
+          </select>
+
+        </div>
+
+
+        <!-- MEALS -->
+
+        <div class="planner-field">
+
+          <label
+            class="planner-label"
+            for="dailyMeals"
+          >
+            Meals / Orders Per Day
+          </label>
+
+          <input
+            class="planner-input"
+            id="dailyMeals"
+            type="number"
+            min="1"
+            placeholder="Example: 500"
+          >
+
+        </div>
+
+
+        <!-- DAYS -->
+
+        <div class="planner-field">
+
+          <label
+            class="planner-label"
+            for="operatingDays"
+          >
+            Operating Days / Month
+          </label>
+
+          <input
+            class="planner-input"
+            id="operatingDays"
+            type="number"
+            min="1"
+            max="31"
+            value="26"
+          >
+
+        </div>
+
+
+        <!-- INTENSITY -->
+
+        <div class="planner-field">
+
+          <label class="planner-label">
+            Spice Usage Profile
+          </label>
+
+          <select
+            class="planner-select"
+            id="spiceIntensity"
+          >
+
+            <option value="light">
+              Light — Lower Spice Usage
+            </option>
+
+            <option
+              value="standard"
+              selected
+            >
+              Standard — Typical Usage
+            </option>
+
+            <option value="heavy">
+              Heavy — Spice-forward Menu
+            </option>
+
+          </select>
+
+        </div>
+
+
+        <!-- CATEGORY -->
+
+        <div class="planner-subheading">
+          What do you want to source?
+        </div>
+
+
+        <div class="spice-category-grid">
+
+
+          <label
+            class="spice-category active"
+            data-category="whole"
+          >
+
+            <input
+              type="checkbox"
+              value="whole"
+              checked
+            >
+
+            <span class="spice-category-title">
+              Whole Spices
+            </span>
+
+            <span class="spice-category-text">
+              Cumin, cardamom, clove, cinnamon, pepper &amp; more
+            </span>
+
+          </label>
+
+
+          <label
+            class="spice-category active"
+            data-category="powder"
+          >
+
+            <input
+              type="checkbox"
+              value="powder"
+              checked
+            >
+
+            <span class="spice-category-title">
+              Powder Spices
+            </span>
+
+            <span class="spice-category-text">
+              Turmeric, coriander, cumin powder &amp; more
+            </span>
+
+          </label>
+
+
+          <label
+            class="spice-category active"
+            data-category="chilli"
+          >
+
+            <input
+              type="checkbox"
+              value="chilli"
+              checked
+            >
+
+            <span class="spice-category-title">
+              Chilli Collection
+            </span>
+
+            <span class="spice-category-text">
+              Degi, Kashmiri &amp; red chilli powders
+            </span>
+
+          </label>
+
+
+          <label
+            class="spice-category active"
+            data-category="blend"
+          >
+
+            <input
+              type="checkbox"
+              value="blend"
+              checked
+            >
+
+            <span class="spice-category-title">
+              Blended Spices
+            </span>
+
+            <span class="spice-category-text">
+              Garam masala and everyday spice blends
+            </span>
+
+          </label>
+
+
+        </div>
+
+
+        <!-- CALCULATE -->
+
+        <button
+          class="planner-calculate"
+          id="calculatePlanner"
         >
+          Calculate My Requirement →
+        </button>
 
       </div>
 
 
-      <button
-        class="planner-button"
-        id="calculateBtn"
-      >
-        Calculate My Requirement →
-      </button>
-
+      <!-- =================================================
+           RESULT
+      ================================================= -->
 
       <div
         class="planner-result"
         id="plannerResult"
       >
 
-        <strong id="resultValue">
-          —
-        </strong>
+        <div class="result-heading">
 
-        <span>
-          Approximate spice requirement per month
-        </span>
+          <div class="small">
+            Your Dharoahar Estimate
+          </div>
+
+          <h3>
+            Approximate monthly requirement
+          </h3>
+
+        </div>
+
+
+        <div class="result-summary">
+
+          <div class="result-total">
+
+            <span>
+              Estimated monthly requirement
+            </span>
+
+            <strong id="totalKg">
+              —
+            </strong>
+
+          </div>
+
+
+          <div class="result-total">
+
+            <span>
+              Estimated monthly meals / orders
+            </span>
+
+            <strong id="totalMeals">
+              —
+            </strong>
+
+          </div>
+
+        </div>
+
+
+        <!-- CATEGORY BREAKUP -->
+
+        <div
+          class="result-breakup"
+          id="categoryBreakup"
+        >
+
+        </div>
+
+
+        <!-- INDIVIDUAL SPICES -->
+
+        <div class="planner-subheading">
+          Indicative spice-wise breakup
+        </div>
+
+        <div
+          class="result-spices"
+          id="spiceBreakup"
+        >
+
+        </div>
+
+
+        <!-- CTA -->
+
+        <div class="result-actions">
+
+          <a
+            href="https://wa.me/918603824415?text=Hi%20Dharoahar,%20I%20used%20the%20Spice%20Planner%20and%20would%20like%20to%20discuss%20my%20monthly%20spice%20requirement."
+            target="_blank"
+            rel="noopener"
+            class="result-action result-action-primary"
+          >
+            Talk to Dharoahar →
+          </a>
+
+
+          <a
+            href="contact.html"
+            class="result-action result-action-secondary"
+          >
+            Contact / Request Sample
+          </a>
+
+        </div>
+
+
+        <div class="planner-note">
+          This is a planning estimate intended to help start a sourcing
+          conversation. Actual consumption varies by menu, recipes,
+          serving size, wastage and kitchen practices. Dharoahar can
+          refine the requirement with your actual usage.
+        </div>
 
       </div>
 
@@ -3327,7 +3841,7 @@ if(menuBtn){
 
 
 /* =========================================================
-   REGION TABS
+   SPICE SIGNATURE
 ========================================================= */
 
 const signatureTabs =
@@ -3344,16 +3858,13 @@ signatureTabs.forEach(function(tab){
     const region =
       tab.dataset.region;
 
-
     signatureTabs.forEach(function(item){
 
       item.classList.remove("active");
 
     });
 
-
     tab.classList.add("active");
-
 
     regionPanels.forEach(function(panel){
 
@@ -3361,21 +3872,14 @@ signatureTabs.forEach(function(tab){
 
     });
 
-
     const selected =
       document.getElementById(
         "region-" + region
       );
 
-
     if(selected){
 
       selected.style.display="block";
-
-      /*
-         On desktop and mobile, take the user
-         directly to the selected region.
-      */
 
       setTimeout(function(){
 
@@ -3447,7 +3951,6 @@ document
       const data =
         regionDescriptions[region];
 
-
       if(data){
 
         drawerTitle.textContent =
@@ -3458,15 +3961,12 @@ document
 
       }
 
-
       drawer.classList.add("open");
 
     });
 
   });
 
-
-/* Individual dish */
 
 document
   .querySelectorAll("[data-dish]")
@@ -3487,61 +3987,117 @@ document
   });
 
 
-if(drawerClose){
+drawerClose.addEventListener("click",function(){
 
-  drawerClose.addEventListener("click",function(){
+  drawer.classList.remove("open");
+
+});
+
+
+drawer.addEventListener("click",function(event){
+
+  if(event.target===drawer){
 
     drawer.classList.remove("open");
 
-  });
+  }
 
-}
-
-
-if(drawer){
-
-  drawer.addEventListener("click",function(event){
-
-    if(event.target===drawer){
-
-      drawer.classList.remove("open");
-
-    }
-
-  });
-
-}
+});
 
 
 /* =========================================================
-   SPICE PLANNER
+   B2B SPICE PLANNER
 ========================================================= */
 
-const calculateBtn =
-  document.getElementById("calculateBtn");
 
-const mealsInput =
-  document.getElementById("meals");
+/*
+   Indicative planning model.
 
-const plannerResult =
-  document.getElementById("plannerResult");
+   Base spice consumption per meal:
+   light     = 2.2 g
+   standard  = 3.0 g
+   heavy     = 4.0 g
 
-const resultValue =
-  document.getElementById("resultValue");
+   Category mix:
+   Whole       22%
+   Powder      38%
+   Chilli      25%
+   Blends      15%
 
-
-if(calculateBtn){
-
-  calculateBtn.addEventListener("click",function(){
-
-    const meals =
-      Number(mealsInput.value);
+   These are intentionally labelled as estimates.
+*/
 
 
-    if(!meals || meals<=0){
+const categoryMix = {
+
+  whole:22,
+
+  powder:38,
+
+  chilli:25,
+
+  blend:15
+
+};
+
+
+const spiceMix = {
+
+  whole:[
+    ["Cumin Seeds",28],
+    ["Black Pepper",22],
+    ["Cinnamon",15],
+    ["Green Cardamom",13],
+    ["Clove",12],
+    ["Bay Leaf",10]
+  ],
+
+  powder:[
+    ["Turmeric Powder",28],
+    ["Coriander Powder",30],
+    ["Cumin Powder",18],
+    ["Black Pepper Powder",12]
+  ],
+
+  chilli:[
+    ["Degi Mirch",35],
+    ["Kashmiri Mirch",35],
+    ["Red Chilli Powder",30]
+  ],
+
+  blend:[
+    ["Garam Masala",100]
+  ]
+
+};
+
+
+const calculatePlanner =
+  document.getElementById("calculatePlanner");
+
+
+calculatePlanner.addEventListener(
+  "click",
+  function(){
+
+    const dailyMeals =
+      Number(
+        document.getElementById("dailyMeals").value
+      );
+
+    const operatingDays =
+      Number(
+        document.getElementById("operatingDays").value
+      );
+
+    const intensity =
+      document.getElementById("spiceIntensity").value;
+
+
+    if(!dailyMeals || dailyMeals<=0){
 
       alert(
-        "Please enter the number of meals served per day."
+        "Please enter your meals / orders per day."
       );
 
       return;
@@ -3549,27 +4105,320 @@ if(calculateBtn){
     }
 
 
+    if(
+      !operatingDays ||
+      operatingDays<1 ||
+      operatingDays>31
+    ){
+
+      alert(
+        "Please enter operating days between 1 and 31."
+      );
+
+      return;
+
+    }
+
+
+    /*
+       Base usage per meal.
+    */
+
+    let gramsPerMeal = 3;
+
+
+    if(intensity==="light"){
+
+      gramsPerMeal = 2.2;
+
+    }
+
+    if(intensity==="heavy"){
+
+      gramsPerMeal = 4;
+
+    }
+
+
+    /*
+       Monthly meals.
+    */
+
     const monthlyMeals =
-      meals * 30;
+      dailyMeals * operatingDays;
 
 
-    const gramsPerMeal =
-      3;
+    /*
+       Total estimated spice.
+    */
 
-
-    const monthlyKg =
+    const totalKg =
       (monthlyMeals * gramsPerMeal) / 1000;
 
 
-    resultValue.textContent =
-      monthlyKg.toFixed(1) + " kg";
+    /*
+       Selected categories.
+    */
+
+    const selectedCategories = [];
 
 
-    plannerResult.classList.add("show");
+    document
+      .querySelectorAll(
+        ".spice-category input:checked"
+      )
+      .forEach(function(input){
+
+        selectedCategories.push(
+          input.value
+        );
+
+      });
+
+
+    if(selectedCategories.length===0){
+
+      alert(
+        "Please select at least one spice category."
+      );
+
+      return;
+
+    }
+
+
+    /*
+       Rebalance category percentages
+       among selected categories.
+    */
+
+    let selectedTotal = 0;
+
+
+    selectedCategories.forEach(function(category){
+
+      selectedTotal +=
+        categoryMix[category];
+
+    });
+
+
+    const categoryBreakup =
+      document.getElementById(
+        "categoryBreakup"
+      );
+
+
+    categoryBreakup.innerHTML="";
+
+
+    selectedCategories.forEach(function(category){
+
+      const percentage =
+        categoryMix[category] /
+        selectedTotal;
+
+      const kg =
+        totalKg * percentage;
+
+
+      const labels = {
+
+        whole:"Whole Spices",
+
+        powder:"Powder Spices",
+
+        chilli:"Chilli Collection",
+
+        blend:"Blended Spices"
+
+      };
+
+
+      const card =
+        document.createElement("div");
+
+      card.className =
+        "result-category";
+
+
+      card.innerHTML =
+
+        "<span class='result-category-label'>" +
+
+        labels[category] +
+
+        "</span>" +
+
+        "<span class='result-category-value'>" +
+
+        kg.toFixed(1) +
+
+        " kg</span>";
+
+
+      categoryBreakup.appendChild(card);
+
+    });
+
+
+    /*
+       Individual spice breakup.
+    */
+
+    const spiceBreakup =
+      document.getElementById(
+        "spiceBreakup"
+      );
+
+
+    spiceBreakup.innerHTML="";
+
+
+    selectedCategories.forEach(function(category){
+
+      const categoryWeight =
+        categoryMix[category] /
+        selectedTotal;
+
+
+      const categoryKg =
+        totalKg *
+        categoryWeight;
+
+
+      spiceMix[category].forEach(function(spice){
+
+        const spiceName =
+          spice[0];
+
+        const spicePercentage =
+          spice[1] / 100;
+
+        const spiceKg =
+          categoryKg *
+          spicePercentage;
+
+
+        const row =
+          document.createElement("div");
+
+        row.className =
+          "result-spice-row";
+
+
+        row.innerHTML =
+
+          "<span>" +
+
+          spiceName +
+
+          "</span>" +
+
+          "<span>" +
+
+          spiceKg.toFixed(2) +
+
+          " kg</span>";
+
+
+        spiceBreakup.appendChild(row);
+
+      });
+
+    });
+
+
+    /*
+       Update totals.
+    */
+
+    document.getElementById(
+      "totalKg"
+    ).textContent =
+      totalKg.toFixed(1) + " kg";
+
+
+    document.getElementById(
+      "totalMeals"
+    ).textContent =
+      monthlyMeals.toLocaleString("en-IN");
+
+
+    /*
+       Show result.
+    */
+
+    const result =
+      document.getElementById(
+        "plannerResult"
+      );
+
+    result.classList.add("show");
+
+
+    /*
+       Scroll result into view.
+    */
+
+    setTimeout(function(){
+
+      result.scrollIntoView({
+        behavior:"smooth",
+        block:"start"
+      });
+
+    },100);
+
+  }
+);
+
+
+/* =========================================================
+   CATEGORY SELECTORS
+========================================================= */
+
+document
+  .querySelectorAll(".spice-category")
+  .forEach(function(card){
+
+    const checkbox =
+      card.querySelector("input");
+
+
+    card.addEventListener(
+      "click",
+      function(event){
+
+        /*
+           Allow normal checkbox behaviour
+           but update card visual state.
+        */
+
+        if(
+          event.target.tagName !== "INPUT"
+        ){
+
+          checkbox.checked =
+            !checkbox.checked;
+
+        }
+
+
+        if(checkbox.checked){
+
+          card.classList.add("active");
+
+        }else{
+
+          card.classList.remove("active");
+
+        }
+
+      }
+    );
 
   });
-
-}
 
 
 /* =========================================================
@@ -3580,11 +4429,14 @@ document
   .querySelectorAll(".mobile-menu a")
   .forEach(function(link){
 
-    link.addEventListener("click",function(){
+    link.addEventListener(
+      "click",
+      function(){
 
-      mobileMenu.classList.remove("open");
+        mobileMenu.classList.remove("open");
 
-    });
+      }
+    );
 
   });
 
