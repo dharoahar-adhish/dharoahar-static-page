@@ -1,132 +1,1637 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-    <title>Bay Leaf (तेज पत्ता) - Dharoahar</title>
-    <link rel="stylesheet" href="style.css">
+
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1, viewport-fit=cover"
+  >
+
+  <meta
+    name="description"
+    content="Explore Dharoahar Bay Leaf (Tej Patta), a whole spice sourced from Kerala for Indian cooking, biryani, rice dishes, curries and traditional spice preparations."
+  >
+
+  <meta
+    name="keywords"
+    content="Bay Leaf, Tej Patta, Tej Patta spice, Indian Bay Leaf, whole bay leaf, Kerala spices, Dharoahar Bay Leaf"
+  >
+
+  <meta name="theme-color" content="#f7f3ed">
+
+  <title>
+    Bay Leaf (Tej Patta) | Whole Bay Leaf | Dharoahar
+  </title>
+
+  <style>
+
+    :root {
+      --dh-bg: #f7f3ed;
+      --dh-paper: #fffdf9;
+      --dh-white: #ffffff;
+      --dh-ink: #2d241d;
+      --dh-brown: #5b3a27;
+      --dh-brown-dark: #3e281b;
+      --dh-accent: #a66a32;
+      --dh-accent-soft: #eee0d0;
+      --dh-muted: #756a60;
+      --dh-soft: #9b9085;
+      --dh-line: #e7dfd5;
+      --dh-green: #25D366;
+      --dh-max: 1240px;
+      --dh-radius-md: 16px;
+      --dh-radius-lg: 24px;
+      --dh-shadow: 0 12px 35px rgba(55, 39, 27, 0.08);
+    }
+
+    .dh-product-page,
+    .dh-product-page * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body.dh-product-page {
+      margin: 0;
+      padding: 0;
+      background: var(--dh-bg);
+      color: var(--dh-ink);
+      font-family:
+        Inter,
+        ui-sans-serif,
+        system-ui,
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        Arial,
+        sans-serif;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+
+    .dh-product-page img {
+      display: block;
+      max-width: 100%;
+    }
+
+    .dh-product-page a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .dh-wrap {
+      width: min(calc(100% - 32px), var(--dh-max));
+      margin: 0 auto;
+    }
+
+    /* =========================================================
+       HEADER
+       ========================================================= */
+
+    .dh-header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(255, 253, 249, 0.96);
+      border-bottom: 1px solid var(--dh-line);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+    }
+
+    .dh-header-inner {
+      min-height: 68px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .dh-logo {
+      display: inline-flex;
+      flex-direction: column;
+      line-height: 1;
+    }
+
+    .dh-logo-main {
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 21px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      color: var(--dh-brown-dark);
+    }
+
+    .dh-logo-sub {
+      margin-top: 5px;
+      font-size: 7px;
+      font-weight: 700;
+      letter-spacing: 0.22em;
+      color: var(--dh-accent);
+      text-transform: uppercase;
+    }
+
+    .dh-mobile-menu {
+      position: relative;
+    }
+
+    .dh-mobile-menu summary {
+      width: 42px;
+      height: 42px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid var(--dh-line);
+      border-radius: 50%;
+      background: var(--dh-paper);
+      cursor: pointer;
+      list-style: none;
+    }
+
+    .dh-mobile-menu summary::-webkit-details-marker {
+      display: none;
+    }
+
+    .dh-menu-icon {
+      width: 17px;
+      height: 12px;
+      position: relative;
+      border-top: 1.5px solid var(--dh-brown);
+      border-bottom: 1.5px solid var(--dh-brown);
+    }
+
+    .dh-menu-icon::after {
+      content: "";
+      position: absolute;
+      top: 4px;
+      left: 0;
+      width: 100%;
+      height: 1.5px;
+      background: var(--dh-brown);
+    }
+
+    .dh-mobile-nav {
+      position: absolute;
+      top: calc(100% + 10px);
+      right: 0;
+      width: min(250px, calc(100vw - 32px));
+      padding: 10px;
+      border: 1px solid var(--dh-line);
+      border-radius: 16px;
+      background: var(--dh-paper);
+      box-shadow: 0 18px 40px rgba(55, 39, 27, 0.13);
+    }
+
+    .dh-mobile-nav a {
+      display: block;
+      padding: 13px 14px;
+      border-radius: 10px;
+      font-size: 14px;
+      font-weight: 600;
+    }
+
+    .dh-mobile-nav a:hover {
+      background: var(--dh-accent-soft);
+    }
+
+    .dh-desktop-nav {
+      display: none;
+    }
+
+    /* =========================================================
+       BREADCRUMB
+       ========================================================= */
+
+    .dh-breadcrumb {
+      padding: 20px 0 10px;
+    }
+
+    .dh-breadcrumb-inner {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 6px;
+      color: var(--dh-soft);
+      font-size: 10px;
+      font-weight: 700;
+    }
+
+    .dh-breadcrumb a {
+      color: var(--dh-muted);
+    }
+
+    .dh-breadcrumb-current {
+      color: var(--dh-accent);
+    }
+
+    /* =========================================================
+       PRODUCT HERO
+       ========================================================= */
+
+    .dh-product-hero {
+      padding: 8px 0 45px;
+    }
+
+    .dh-product-layout {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 28px;
+    }
+
+    .dh-product-visual {
+      position: relative;
+      overflow: hidden;
+      border: 1px solid var(--dh-line);
+      border-radius: var(--dh-radius-lg);
+      background:
+        linear-gradient(
+          145deg,
+          #eee7de 0%,
+          #f8f4ee 100%
+        );
+      box-shadow: var(--dh-shadow);
+    }
+
+    .dh-product-visual img {
+      width: 100%;
+      aspect-ratio: 4 / 5;
+      object-fit: contain;
+      padding: 12px;
+    }
+
+    .dh-product-category {
+      position: absolute;
+      top: 14px;
+      left: 14px;
+      z-index: 2;
+      padding: 7px 10px;
+      border-radius: 999px;
+      border: 1px solid rgba(90, 70, 50, 0.08);
+      background: rgba(255, 253, 249, 0.94);
+      color: var(--dh-brown);
+      font-size: 9px;
+      font-weight: 900;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      backdrop-filter: blur(8px);
+    }
+
+    /* =========================================================
+       PRODUCT INFORMATION
+       ========================================================= */
+
+    .dh-product-info {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .dh-product-eyebrow {
+      margin: 0 0 10px;
+      color: var(--dh-accent);
+      font-size: 10px;
+      font-weight: 900;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+    }
+
+    .dh-product-title {
+      margin: 0;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(42px, 13vw, 72px);
+      line-height: 0.95;
+      letter-spacing: -0.04em;
+      font-weight: 500;
+      color: var(--dh-brown-dark);
+    }
+
+    .dh-product-hindi {
+      margin-top: 9px;
+      color: var(--dh-soft);
+      font-family:
+        "Noto Sans Devanagari",
+        "Segoe UI",
+        Arial,
+        sans-serif;
+      font-size: 19px;
+      line-height: 1.3;
+    }
+
+    .dh-product-short {
+      margin: 20px 0 0;
+      color: var(--dh-muted);
+      font-size: 15px;
+      line-height: 1.65;
+    }
+
+    /* =========================================================
+       PRODUCT FACTS
+       ========================================================= */
+
+    .dh-product-facts {
+      margin-top: 25px;
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      border: 1px solid var(--dh-line);
+      border-radius: var(--dh-radius-md);
+      overflow: hidden;
+      background: var(--dh-paper);
+    }
+
+    .dh-fact {
+      padding: 15px 14px;
+      border-right: 1px solid var(--dh-line);
+    }
+
+    .dh-fact:nth-child(2) {
+      border-right: 0;
+    }
+
+    .dh-fact-label {
+      display: block;
+      margin-bottom: 5px;
+      color: var(--dh-soft);
+      font-size: 9px;
+      font-weight: 900;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .dh-fact-value {
+      display: block;
+      color: var(--dh-brown-dark);
+      font-size: 13px;
+      font-weight: 800;
+    }
+
+    /* =========================================================
+       CTA
+       ========================================================= */
+
+    .dh-product-actions {
+      margin-top: 18px;
+      display: flex;
+      flex-direction: column;
+      gap: 9px;
+    }
+
+    .dh-btn {
+      min-height: 50px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0 20px;
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: 900;
+      letter-spacing: 0.02em;
+      transition:
+        transform 180ms ease,
+        background 180ms ease;
+    }
+
+    .dh-btn-primary {
+      background: var(--dh-brown);
+      border: 1px solid var(--dh-brown);
+      color: #ffffff !important;
+    }
+
+    .dh-btn-primary:hover {
+      background: var(--dh-brown-dark);
+      border-color: var(--dh-brown-dark);
+      color: #ffffff !important;
+      transform: translateY(-2px);
+    }
+
+    .dh-btn-secondary {
+      background: var(--dh-white);
+      border: 1px solid var(--dh-line);
+      color: var(--dh-brown) !important;
+    }
+
+    .dh-btn-secondary:hover {
+      background: var(--dh-accent-soft);
+      transform: translateY(-2px);
+    }
+
+    /* =========================================================
+       CONTENT SECTIONS
+       ========================================================= */
+
+    .dh-content-section {
+      padding: 15px 0 50px;
+    }
+
+    .dh-content-card {
+      padding: 25px 20px;
+      border: 1px solid var(--dh-line);
+      border-radius: var(--dh-radius-lg);
+      background: var(--dh-paper);
+    }
+
+    .dh-content-kicker {
+      margin: 0 0 8px;
+      color: var(--dh-accent);
+      font-size: 10px;
+      font-weight: 900;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+    }
+
+    .dh-content-title {
+      margin: 0;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(28px, 8vw, 45px);
+      line-height: 1.05;
+      font-weight: 500;
+      color: var(--dh-brown-dark);
+    }
+
+    .dh-content-text {
+      margin: 15px 0 0;
+      color: var(--dh-muted);
+      font-size: 14px;
+      line-height: 1.75;
+    }
+
+    /* =========================================================
+       KITCHEN USES
+       ========================================================= */
+
+    .dh-uses-section {
+      padding: 0 0 55px;
+    }
+
+    .dh-uses-head {
+      margin-bottom: 18px;
+    }
+
+    .dh-uses-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 10px;
+    }
+
+    .dh-use {
+      padding: 18px 15px;
+      border: 1px solid var(--dh-line);
+      border-radius: 14px;
+      background: var(--dh-white);
+    }
+
+    .dh-use-number {
+      display: block;
+      margin-bottom: 13px;
+      color: var(--dh-accent);
+      font-size: 10px;
+      font-weight: 900;
+    }
+
+    .dh-use-title {
+      margin: 0;
+      color: var(--dh-brown-dark);
+      font-size: 13px;
+      font-weight: 800;
+      line-height: 1.3;
+    }
+
+    .dh-use-text {
+      margin: 6px 0 0;
+      color: var(--dh-muted);
+      font-size: 11px;
+      line-height: 1.5;
+    }
+
+    /* =========================================================
+       BRAND CTA
+       ========================================================= */
+
+    .dh-brand-cta {
+      padding: 10px 0 55px;
+    }
+
+    .dh-brand-cta-card {
+      padding: 28px 21px;
+      border-radius: var(--dh-radius-lg);
+      background: var(--dh-brown);
+      color: #ffffff;
+      text-align: center;
+    }
+
+    .dh-brand-cta-label {
+      margin: 0 0 9px;
+      color: #d9b28a;
+      font-size: 9px;
+      font-weight: 900;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+    }
+
+    .dh-brand-cta-title {
+      margin: 0;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(28px, 8vw, 44px);
+      line-height: 1.05;
+      font-weight: 500;
+    }
+
+    .dh-brand-cta-text {
+      max-width: 570px;
+      margin: 12px auto 0;
+      color: rgba(255,255,255,0.72);
+      font-size: 13px;
+      line-height: 1.6;
+    }
+
+    .dh-brand-cta-actions {
+      margin-top: 21px;
+      display: flex;
+      flex-direction: column;
+      gap: 9px;
+    }
+
+    .dh-brand-cta .dh-btn-primary {
+      background: #ffffff;
+      border-color: #ffffff;
+      color: var(--dh-brown) !important;
+    }
+
+    .dh-brand-cta .dh-btn-primary:hover {
+      background: #f3ede5;
+      border-color: #f3ede5;
+      color: var(--dh-brown-dark) !important;
+    }
+
+    /* =========================================================
+       RELATED PRODUCTS
+       ========================================================= */
+
+    .dh-related {
+      padding: 0 0 60px;
+    }
+
+    .dh-related-head {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      gap: 15px;
+      margin-bottom: 18px;
+    }
+
+    .dh-related-title {
+      margin: 0;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(27px, 7vw, 40px);
+      line-height: 1.05;
+      font-weight: 500;
+      color: var(--dh-brown-dark);
+    }
+
+    .dh-related-link {
+      flex-shrink: 0;
+      color: var(--dh-accent);
+      font-size: 10px;
+      font-weight: 900;
+    }
+
+    .dh-related-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+    }
+
+    .dh-related-card {
+      overflow: hidden;
+      border: 1px solid var(--dh-line);
+      border-radius: 14px;
+      background: var(--dh-white);
+    }
+
+    .dh-related-image {
+      width: 100%;
+      aspect-ratio: 1 / 1;
+      background: #eee7de;
+    }
+
+    .dh-related-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      padding: 7px;
+    }
+
+    .dh-related-info {
+      padding: 12px;
+    }
+
+    .dh-related-name {
+      margin: 0;
+      color: var(--dh-brown-dark);
+      font-size: 13px;
+      font-weight: 800;
+    }
+
+    .dh-related-hindi {
+      margin-top: 3px;
+      color: var(--dh-soft);
+      font-family:
+        "Noto Sans Devanagari",
+        "Segoe UI",
+        Arial,
+        sans-serif;
+      font-size: 10px;
+    }
+
+    /* =========================================================
+       FOOTER
+       ========================================================= */
+
+    .dh-footer {
+      border-top: 1px solid var(--dh-line);
+      background: #eee7de;
+    }
+
+    .dh-footer-inner {
+      padding: 32px 0 24px;
+    }
+
+    .dh-footer-brand {
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 22px;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      color: var(--dh-brown-dark);
+    }
+
+    .dh-footer-tagline {
+      max-width: 340px;
+      margin: 9px 0 0;
+      color: var(--dh-muted);
+      font-size: 12px;
+      line-height: 1.55;
+    }
+
+    .dh-footer-links {
+      margin-top: 25px;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 9px;
+    }
+
+    .dh-footer-links a {
+      color: var(--dh-brown);
+      font-size: 12px;
+      font-weight: 700;
+    }
+
+    .dh-footer-bottom {
+      padding: 17px 0;
+      border-top: 1px solid rgba(91,58,39,0.1);
+      color: var(--dh-soft);
+      font-size: 10px;
+      line-height: 1.5;
+    }
+
+    /* =========================================================
+       WHATSAPP
+       ========================================================= */
+
+    .dh-whatsapp {
+      position: fixed;
+      right: 15px;
+      bottom: max(15px, env(safe-area-inset-bottom));
+      z-index: 1200;
+      width: 52px;
+      height: 52px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      background: var(--dh-green);
+      box-shadow:
+        0 8px 24px rgba(20, 90, 45, 0.25);
+      transition:
+        transform 180ms ease,
+        box-shadow 180ms ease;
+    }
+
+    .dh-whatsapp svg {
+      width: 29px;
+      height: 29px;
+    }
+
+    .dh-whatsapp:hover {
+      transform: translateY(-3px);
+      box-shadow:
+        0 12px 30px rgba(20, 90, 45, 0.3);
+    }
+
+    /* =========================================================
+       TABLET
+       ========================================================= */
+
+    @media (min-width: 600px) {
+
+      .dh-wrap {
+        width:
+          min(
+            calc(100% - 48px),
+            var(--dh-max)
+          );
+      }
+
+      .dh-header-inner {
+        min-height: 74px;
+      }
+
+      .dh-product-layout {
+        grid-template-columns: 1fr 1fr;
+        gap: 38px;
+        align-items: center;
+      }
+
+      .dh-product-visual img {
+        aspect-ratio: 4 / 5;
+      }
+
+      .dh-product-actions {
+        flex-direction: row;
+      }
+
+      .dh-product-actions .dh-btn {
+        flex: 1;
+      }
+
+      .dh-content-card {
+        padding: 35px;
+      }
+
+      .dh-uses-grid {
+        grid-template-columns:
+          repeat(4, minmax(0, 1fr));
+      }
+
+      .dh-brand-cta-card {
+        padding: 45px;
+      }
+
+      .dh-brand-cta-actions {
+        flex-direction: row;
+        justify-content: center;
+      }
+
+      .dh-related-grid {
+        grid-template-columns:
+          repeat(4, minmax(0, 1fr));
+      }
+
+      .dh-footer-links {
+        grid-template-columns:
+          repeat(4, auto);
+        justify-content: start;
+        gap: 24px;
+      }
+
+    }
+
+    /* =========================================================
+       DESKTOP
+       ========================================================= */
+
+    @media (min-width: 900px) {
+
+      .dh-mobile-menu {
+        display: none;
+      }
+
+      .dh-desktop-nav {
+        display: flex;
+        align-items: center;
+        gap: 27px;
+      }
+
+      .dh-desktop-nav a {
+        position: relative;
+        padding: 8px 0;
+        color: var(--dh-muted);
+        font-size: 12px;
+        font-weight: 800;
+      }
+
+      .dh-desktop-nav a:hover,
+      .dh-desktop-nav a.active {
+        color: var(--dh-brown-dark);
+      }
+
+      .dh-desktop-nav a.active::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        height: 1.5px;
+        background: var(--dh-accent);
+      }
+
+      .dh-breadcrumb {
+        padding: 25px 0 16px;
+      }
+
+      .dh-product-hero {
+        padding: 12px 0 75px;
+      }
+
+      .dh-product-layout {
+        grid-template-columns:
+          minmax(0, 1.05fr)
+          minmax(0, 0.95fr);
+        gap: 70px;
+      }
+
+      .dh-product-visual {
+        max-width: 600px;
+      }
+
+      .dh-product-visual img {
+        aspect-ratio: 4 / 5;
+        padding: 18px;
+      }
+
+      .dh-product-title {
+        font-size: clamp(55px, 6vw, 78px);
+      }
+
+      .dh-product-short {
+        max-width: 560px;
+        font-size: 16px;
+      }
+
+      .dh-product-actions {
+        max-width: 480px;
+      }
+
+      .dh-content-section {
+        padding-bottom: 75px;
+      }
+
+      .dh-content-card {
+        padding: 50px 55px;
+      }
+
+      .dh-content-text {
+        max-width: 850px;
+        font-size: 15px;
+      }
+
+      .dh-uses-section {
+        padding-bottom: 80px;
+      }
+
+      .dh-brand-cta {
+        padding-bottom: 80px;
+      }
+
+      .dh-related {
+        padding-bottom: 80px;
+      }
+
+      .dh-footer-inner {
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+        gap: 60px;
+        padding: 42px 0 30px;
+      }
+
+      .dh-footer-links {
+        margin-top: 4px;
+      }
+
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+
+      html {
+        scroll-behavior: auto;
+      }
+
+      .dh-btn,
+      .dh-whatsapp {
+        transition: none;
+      }
+
+    }
+
+  </style>
+
 </head>
-<body>
 
-<header class="header">
-    <div class="header-inner">
 
-        <div class="logo-section">
-            <img src="logo.png" alt="Dharoahar" class="logo">
-        </div>
+<body class="dh-product-page">
 
-        <nav class="nav">
-            <a href="index.html">Home</a>
-            <a href="products.html">Products</a>
-            <a href="about.html">About</a>
+
+  <!-- =======================================================
+       HEADER
+       ======================================================= -->
+
+  <header class="dh-header">
+
+    <div class="dh-wrap dh-header-inner">
+
+
+      <a
+        href="index.html"
+        class="dh-logo"
+        aria-label="Dharoahar Home"
+      >
+
+        <span class="dh-logo-main">
+          DHAROAHAR
+        </span>
+
+        <span class="dh-logo-sub">
+          Authentic Indian Spices
+        </span>
+
+      </a>
+
+
+      <nav
+        class="dh-desktop-nav"
+        aria-label="Main navigation"
+      >
+
+        <a href="index.html">
+          Home
+        </a>
+
+        <a href="about.html">
+          About Us
+        </a>
+
+        <a
+          href="products.html"
+          class="active"
+        >
+          Our Spices
+        </a>
+
+        <a href="quality.html">
+          Quality
+        </a>
+
+        <a href="contact.html">
+          Contact
+        </a>
+
+      </nav>
+
+
+      <details class="dh-mobile-menu">
+
+        <summary aria-label="Open navigation">
+
+          <span class="dh-menu-icon"></span>
+
+        </summary>
+
+        <nav
+          class="dh-mobile-nav"
+          aria-label="Mobile navigation"
+        >
+
+          <a href="index.html">
+            Home
+          </a>
+
+          <a href="about.html">
+            About Us
+          </a>
+
+          <a href="products.html">
+            Our Spices
+          </a>
+
+          <a href="quality.html">
+            Quality
+          </a>
+
+          <a href="contact.html">
+            Contact
+          </a>
+
         </nav>
 
-        <a href="contact.html" class="btn-header">Contact</a>
+      </details>
 
     </div>
-</header>
 
-<section class="section product-detail">
-    <div class="container product-detail-inner">
+  </header>
 
-        <div class="product-detail-image">
-            <img src="bay-leaf.png" alt="Bay Leaf (Tej Patta)">
-        </div>
 
-        <div class="product-detail-content">
+  <main>
 
-            <p class="product-type">Khada Masala • Whole Spice</p>
 
-            <h1>Bay Leaf</h1>
+    <!-- =====================================================
+         BREADCRUMB
+         ===================================================== -->
 
-            <p style="color: #6B5A4A; font-size: 1.05rem; font-weight: 600; margin: 6px 0 12px;">
-                तेज पत्ता
-            </p>
+    <div class="dh-breadcrumb">
 
-            <p style="color: #C8A97E; font-weight: 600; margin: 12px 0 18px;">
-                🌿 Fragrant &amp; Aromatic
-            </p>
+      <div class="dh-wrap">
 
-            <p style="color: #6B5A4A; font-size: 0.98rem; font-weight: 600; margin: 0 0 18px;">
-                Origin: Kerala
-            </p>
+        <div
+          class="dh-breadcrumb-inner"
+          aria-label="Breadcrumb"
+        >
 
-            <p>
-                Dharoahar Bay Leaf, traditionally known as Tej Patta, is a
-                classic whole spice valued for its distinctive fragrance and
-                subtle depth of flavour. It is widely used in Indian cooking
-                to build a warm and aromatic foundation in rice dishes,
-                curries, gravies and slow-cooked preparations.
-            </p>
+          <a href="index.html">
+            Home
+          </a>
 
-            <p>
-                Whole bay leaves are generally added during cooking and removed
-                before serving. Their natural aroma gradually infuses into the
-                dish, complementing other whole spices and ingredients without
-                overpowering the overall flavour.
-            </p>
+          <span>/</span>
 
-            <p>
-                Bay Leaf is particularly suited to biryani, pulao, dals,
-                curries, gravies and traditional spice preparations. It also
-                works well alongside spices such as cumin, cardamom, cinnamon
-                and cloves, making it an important part of many classic Indian
-                spice combinations.
-            </p>
+          <a href="products.html">
+            Our Spices
+          </a>
 
-            <p>
-                Its versatility makes Tej Patta a useful everyday whole spice,
-                whether used in home cooking, traditional recipes or more
-                elaborate preparations where layered aroma and depth are
-                important.
-            </p>
+          <span>/</span>
 
-            <div class="product-highlights">
-
-                <h3>Highlights</h3>
-
-                <ul>
-                    <li>Premium whole Bay Leaves</li>
-                    <li>Origin: Kerala</li>
-                    <li>Traditional Tej Patta</li>
-                    <li>Distinctive natural aroma</li>
-                    <li>Subtle warm flavour</li>
-                    <li>Ideal for biryani and pulao</li>
-                    <li>Excellent for curries and gravies</li>
-                    <li>Perfect for dals and slow-cooked dishes</li>
-                    <li>Pairs well with traditional whole spices</li>
-                </ul>
-
-            </div>
-
-            <div class="cta-buttons" style="margin-top: 16px;">
-
-                <a href="tel:+918603824415" class="cta-btn">
-                    📞 Call to Order
-                </a>
-
-                <a href="https://wa.me/918603824415" class="cta-btn cta-btn-white">
-                    💬 WhatsApp
-                </a>
-
-            </div>
+          <span class="dh-breadcrumb-current">
+            Bay Leaf
+          </span>
 
         </div>
 
-    </div>
-</section>
+      </div>
 
-<footer class="footer">
-
-    <p>&copy; 2026 Dharoahar Pvt Ltd</p>
-
-    <div class="footer-links">
-        <a href="privacy.html">Privacy</a>
-        <a href="terms.html">Terms</a>
-        <a href="contact.html">Contact</a>
     </div>
 
-</footer>
+
+    <!-- =====================================================
+         PRODUCT HERO
+         ===================================================== -->
+
+    <section class="dh-product-hero">
+
+      <div class="dh-wrap">
+
+        <div class="dh-product-layout">
+
+
+          <!-- PRODUCT IMAGE -->
+
+          <div class="dh-product-visual">
+
+            <span class="dh-product-category">
+              Whole Spice
+            </span>
+
+            <img
+              src="bay-leaf.png"
+              alt="Dharoahar Bay Leaf (Tej Patta) — Whole Bay Leaf"
+            >
+
+          </div>
+
+
+          <!-- PRODUCT INFORMATION -->
+
+          <div class="dh-product-info">
+
+            <p class="dh-product-eyebrow">
+              Whole Spice
+            </p>
+
+            <h1 class="dh-product-title">
+              Bay Leaf
+            </h1>
+
+            <div class="dh-product-hindi">
+              तेज पत्ता · Tej Patta
+            </div>
+
+            <p class="dh-product-short">
+              A classic whole spice used across Indian
+              cooking for its aromatic character, especially
+              in biryani, rice dishes, curries and traditional
+              spice preparations.
+            </p>
+
+
+            <!-- PRODUCT FACTS -->
+
+            <div class="dh-product-facts">
+
+              <div class="dh-fact">
+
+                <span class="dh-fact-label">
+                  Product
+                </span>
+
+                <span class="dh-fact-value">
+                  Whole Bay Leaf
+                </span>
+
+              </div>
+
+
+              <div class="dh-fact">
+
+                <span class="dh-fact-label">
+                  Origin
+                </span>
+
+                <span class="dh-fact-value">
+                  Kerala
+                </span>
+
+              </div>
+
+            </div>
+
+
+            <!-- ACTIONS -->
+
+            <div class="dh-product-actions">
+
+              <a
+                href="https://wa.me/918603824415?text=Hello%20Dharoahar%2C%20I%20am%20interested%20in%20your%20Bay%20Leaf%20product."
+                target="_blank"
+                rel="noopener noreferrer"
+                class="dh-btn dh-btn-primary"
+              >
+                Enquire About This Product
+              </a>
+
+              <a
+                href="mailto:amanadhish@dharoahar.com?subject=Bay%20Leaf%20Product%20Enquiry"
+                class="dh-btn dh-btn-secondary"
+              >
+                Write to Us
+              </a>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         ABOUT BAY LEAF
+         ===================================================== -->
+
+    <section class="dh-content-section">
+
+      <div class="dh-wrap">
+
+        <div class="dh-content-card">
+
+          <p class="dh-content-kicker">
+            About Bay Leaf
+          </p>
+
+          <h2 class="dh-content-title">
+            An aromatic whole spice for classic Indian dishes.
+          </h2>
+
+          <p class="dh-content-text">
+            Bay Leaf, known as Tej Patta in Hindi, is a
+            familiar whole spice used in Indian kitchens.
+            It is commonly added during cooking to impart
+            its characteristic aroma to savoury preparations.
+          </p>
+
+          <p class="dh-content-text">
+            Dharoahar Bay Leaf is sourced from Kerala and
+            works naturally across biryani, pulao, curries,
+            gravies and traditional whole-spice preparations.
+          </p>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         KITCHEN USES
+         ===================================================== -->
+
+    <section class="dh-uses-section">
+
+      <div class="dh-wrap">
+
+        <div class="dh-uses-head">
+
+          <p class="dh-content-kicker">
+            In the Kitchen
+          </p>
+
+          <h2 class="dh-content-title">
+            Where Bay Leaf fits in.
+          </h2>
+
+        </div>
+
+
+        <div class="dh-uses-grid">
+
+
+          <div class="dh-use">
+
+            <span class="dh-use-number">
+              01
+            </span>
+
+            <h3 class="dh-use-title">
+              Biryani
+            </h3>
+
+            <p class="dh-use-text">
+              A familiar whole spice used in aromatic
+              biryani preparations.
+            </p>
+
+          </div>
+
+
+          <div class="dh-use">
+
+            <span class="dh-use-number">
+              02
+            </span>
+
+            <h3 class="dh-use-title">
+              Rice Dishes
+            </h3>
+
+            <p class="dh-use-text">
+              Works well in pulao and other savoury rice
+              preparations.
+            </p>
+
+          </div>
+
+
+          <div class="dh-use">
+
+            <span class="dh-use-number">
+              03
+            </span>
+
+            <h3 class="dh-use-title">
+              Curries & Gravies
+            </h3>
+
+            <p class="dh-use-text">
+              Used during cooking in a variety of Indian
+              curries and gravies.
+            </p>
+
+          </div>
+
+
+          <div class="dh-use">
+
+            <span class="dh-use-number">
+              04
+            </span>
+
+            <h3 class="dh-use-title">
+              Spice Preparations
+            </h3>
+
+            <p class="dh-use-text">
+              A useful whole spice for traditional savoury
+              preparations and blends.
+            </p>
+
+          </div>
+
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         BRAND CTA
+         ===================================================== -->
+
+    <section class="dh-brand-cta">
+
+      <div class="dh-wrap">
+
+        <div class="dh-brand-cta-card">
+
+          <p class="dh-brand-cta-label">
+            Dharoahar
+          </p>
+
+          <h2 class="dh-brand-cta-title">
+            Authentic Indian Spices,
+            Sourced with Care.
+          </h2>
+
+          <p class="dh-brand-cta-text">
+            Explore the complete Dharoahar range or connect
+            with us for retail, distribution, wholesale and
+            institutional enquiries.
+          </p>
+
+          <div class="dh-brand-cta-actions">
+
+            <a
+              href="products.html"
+              class="dh-btn dh-btn-primary"
+            >
+              Explore All Spices
+            </a>
+
+            <a
+              href="contact.html"
+              class="dh-btn dh-btn-secondary"
+            >
+              Partner With Us
+            </a>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         RELATED PRODUCTS
+         ===================================================== -->
+
+    <section class="dh-related">
+
+      <div class="dh-wrap">
+
+        <div class="dh-related-head">
+
+          <h2 class="dh-related-title">
+            Explore More
+          </h2>
+
+          <a
+            href="products.html"
+            class="dh-related-link"
+          >
+            View All Spices →
+          </a>
+
+        </div>
+
+
+        <div class="dh-related-grid">
+
+
+          <!-- STAR ANISE -->
+
+          <a
+            href="star-anise.html"
+            class="dh-related-card"
+          >
+
+            <div class="dh-related-image">
+
+              <img
+                src="star-anise.png"
+                alt="Star Anise — चक्र फूल"
+                loading="lazy"
+              >
+
+            </div>
+
+            <div class="dh-related-info">
+
+              <h3 class="dh-related-name">
+                Star Anise
+              </h3>
+
+              <div class="dh-related-hindi">
+                चक्र फूल
+              </div>
+
+            </div>
+
+          </a>
+
+
+          <!-- CINNAMON -->
+
+          <a
+            href="cinnamon.html"
+            class="dh-related-card"
+          >
+
+            <div class="dh-related-image">
+
+              <img
+                src="cinnamon.jpg"
+                alt="Cinnamon — दालचीनी"
+                loading="lazy"
+              >
+
+            </div>
+
+            <div class="dh-related-info">
+
+              <h3 class="dh-related-name">
+                Cinnamon
+              </h3>
+
+              <div class="dh-related-hindi">
+                दालचीनी
+              </div>
+
+            </div>
+
+          </a>
+
+
+          <!-- CUMIN -->
+
+          <a
+            href="cumin.html"
+            class="dh-related-card"
+          >
+
+            <div class="dh-related-image">
+
+              <img
+                src="cumin.jpg"
+                alt="Cumin Seeds — जीरा"
+                loading="lazy"
+              >
+
+            </div>
+
+            <div class="dh-related-info">
+
+              <h3 class="dh-related-name">
+                Cumin Seeds
+              </h3>
+
+              <div class="dh-related-hindi">
+                जीरा
+              </div>
+
+            </div>
+
+          </a>
+
+
+          <!-- BLACK PEPPER -->
+
+          <a
+            href="blackpepper.html"
+            class="dh-related-card"
+          >
+
+            <div class="dh-related-image">
+
+              <img
+                src="black-pepper.jpg"
+                alt="Black Pepper — काली मिर्च"
+                loading="lazy"
+              >
+
+            </div>
+
+            <div class="dh-related-info">
+
+              <h3 class="dh-related-name">
+                Black Pepper
+              </h3>
+
+              <div class="dh-related-hindi">
+                काली मिर्च
+              </div>
+
+            </div>
+
+          </a>
+
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+  </main>
+
+
+  <!-- =======================================================
+       FOOTER
+       ======================================================= -->
+
+  <footer class="dh-footer">
+
+    <div class="dh-wrap dh-footer-inner">
+
+      <div>
+
+        <div class="dh-footer-brand">
+          DHAROAHAR
+        </div>
+
+        <p class="dh-footer-tagline">
+          Authentic Indian Spices, Sourced with Care.
+        </p>
+
+      </div>
+
+
+      <nav
+        class="dh-footer-links"
+        aria-label="Footer navigation"
+      >
+
+        <a href="index.html">
+          Home
+        </a>
+
+        <a href="about.html">
+          About Us
+        </a>
+
+        <a href="products.html">
+          Our Spices
+        </a>
+
+        <a href="quality.html">
+          Quality
+        </a>
+
+        <a href="contact.html">
+          Contact
+        </a>
+
+      </nav>
+
+    </div>
+
+
+    <div class="dh-footer-bottom">
+
+      <div class="dh-wrap">
+
+        © 2026 Adhish Dharoahar Pvt. Ltd. All rights reserved.
+
+      </div>
+
+    </div>
+
+  </footer>
+
+
+  <!-- =======================================================
+       WHATSAPP
+       ======================================================= -->
+
+  <a
+    class="dh-whatsapp"
+    href="https://wa.me/918603824415?text=Hello%20Dharoahar%2C%20I%20would%20like%20to%20know%20more%20about%20your%20spices."
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="Contact Dharoahar on WhatsApp"
+  >
+
+    <svg
+      viewBox="0 0 32 32"
+      aria-hidden="true"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+
+      <path
+        fill="#ffffff"
+        d="M16 3.2C8.93 3.2 3.2 8.93 3.2 16c0 2.26.59 4.38 1.62 6.22L3.15 28.8l6.75-1.62A12.73 12.73 0 0 0 16 28.8c7.07 0 12.8-5.73 12.8-12.8S23.07 3.2 16 3.2Zm0 23.35c-2.02 0-3.91-.59-5.5-1.61l-.39-.25-4 .96.97-3.9-.25-.4A10.58 10.58 0 1 1 16 26.55Zm5.82-7.93c-.32-.16-1.9-.94-2.19-1.05-.29-.11-.5-.16-.71.16-.21.32-.81 1.05-.99 1.27-.18.21-.36.24-.68.08-.32-.16-1.34-.49-2.55-1.57-.94-.84-1.57-1.88-1.75-2.2-.18-.32-.02-.49.14-.65.15-.15.32-.37.48-.55.16-.18.21-.32.32-.53.11-.21.05-.4-.03-.56-.08-.16-.71-1.71-.97-2.34-.25-.61-.51-.53-.71-.54h-.61c-.21 0-.55.08-.84.4-.29.32-1.1 1.08-1.1 2.63s1.13 3.05 1.29 3.26c.16.21 2.22 3.39 5.38 4.76.75.32 1.33.52 1.79.67.75.24 1.44.21 1.98.13.6-.09 1.9-.78 2.17-1.53.27-.76.27-1.41.19-1.54-.08-.13-.29-.21-.61-.37Z"
+      />
+
+    </svg>
+
+  </a>
+
 
 </body>
+
 </html>
