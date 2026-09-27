@@ -1,111 +1,1417 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-    <title>Degi Mirch - Dharoahar</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Degi Mirch (देगी मिर्च) | Dharoahar</title>
+
+  <meta
+    name="description"
+    content="Explore Dharoahar Degi Mirch, an Indian chilli powder sourced from Andhra Pradesh and used across curries, gravies, marinades and traditional preparations."
+  >
+
+  <meta
+    name="keywords"
+    content="Degi Mirch, Degi Chilli, Degi Mirch Powder, Andhra Pradesh Chilli, Indian Spices, Dharoahar"
+  >
+
+  <style>
+    :root {
+      --brown: #3b2418;
+      --brown-dark: #28170f;
+      --brown-soft: #6a4938;
+      --cream: #f7f3ed;
+      --cream-dark: #eee7dc;
+      --white: #ffffff;
+      --terracotta: #9a5a3a;
+      --gold: #b58a52;
+      --text: #30231d;
+      --muted: #76685f;
+      --border: rgba(59, 36, 24, 0.12);
+      --shadow: 0 18px 45px rgba(59, 36, 24, 0.09);
+      --radius: 18px;
+      --max-width: 1180px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: var(--cream);
+      color: var(--text);
+      line-height: 1.65;
+      overflow-x: hidden;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .container {
+      width: min(var(--max-width), calc(100% - 40px));
+      margin: 0 auto;
+    }
+
+    /* =========================
+       HEADER
+    ========================= */
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(247, 243, 237, 0.96);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .nav {
+      min-height: 76px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .brand {
+      display: flex;
+      flex-direction: column;
+      line-height: 1;
+      flex-shrink: 0;
+    }
+
+    .brand-name {
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 27px;
+      font-weight: 700;
+      letter-spacing: -0.5px;
+      color: var(--brown);
+    }
+
+    .brand-sub {
+      margin-top: 5px;
+      font-size: 8px;
+      letter-spacing: 2.3px;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 30px;
+      font-size: 14px;
+      color: var(--brown-soft);
+    }
+
+    .nav-links a {
+      position: relative;
+      padding: 8px 0;
+      transition: color 0.2s ease;
+    }
+
+    .nav-links a:hover {
+      color: var(--brown);
+    }
+
+    .menu-btn {
+      display: none;
+      border: 0;
+      background: transparent;
+      color: var(--brown);
+      font-size: 27px;
+      cursor: pointer;
+    }
+
+    /* =========================
+       BREADCRUMB
+    ========================= */
+
+    .breadcrumb-wrap {
+      padding: 20px 0 0;
+    }
+
+    .breadcrumb {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 8px;
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    .breadcrumb a:hover {
+      color: var(--brown);
+    }
+
+    .breadcrumb span {
+      color: #aa9c91;
+    }
+
+    /* =========================
+       HERO
+    ========================= */
+
+    .product-hero {
+      padding: 35px 0 90px;
+    }
+
+    .product-hero-grid {
+      display: grid;
+      grid-template-columns: 0.95fr 1.05fr;
+      gap: 72px;
+      align-items: center;
+    }
+
+    .product-image-stage {
+      position: relative;
+      aspect-ratio: 4 / 5;
+      max-height: 640px;
+      border-radius: 22px;
+      overflow: hidden;
+      background: #eee8de;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 28px;
+    }
+
+    .product-image-stage img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+
+    .product-label {
+      position: absolute;
+      left: 22px;
+      top: 22px;
+      padding: 8px 13px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.9);
+      color: var(--terracotta);
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 1.1px;
+      text-transform: uppercase;
+    }
+
+    .product-copy {
+      max-width: 600px;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      margin-bottom: 17px;
+      color: var(--terracotta);
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 1.7px;
+      text-transform: uppercase;
+    }
+
+    .eyebrow::before {
+      content: "";
+      width: 28px;
+      height: 1px;
+      background: var(--terracotta);
+    }
+
+    .product-copy h1 {
+      font-family: Georgia, "Times New Roman", serif;
+      color: var(--brown);
+      font-size: clamp(44px, 5vw, 66px);
+      line-height: 1.02;
+      letter-spacing: -2px;
+      font-weight: 500;
+    }
+
+    .hindi-name {
+      margin-top: 12px;
+      color: var(--muted);
+      font-size: 16px;
+    }
+
+    .short-description {
+      margin-top: 25px;
+      max-width: 580px;
+      color: var(--muted);
+      font-size: 16px;
+      line-height: 1.85;
+    }
+
+    /* =========================
+       FACTS
+    ========================= */
+
+    .facts {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 0;
+      margin-top: 32px;
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .fact {
+      padding: 18px 0;
+    }
+
+    .fact + .fact {
+      border-left: 1px solid var(--border);
+      padding-left: 24px;
+    }
+
+    .fact-label {
+      color: var(--muted);
+      font-size: 10px;
+      letter-spacing: 1.1px;
+      text-transform: uppercase;
+      margin-bottom: 4px;
+    }
+
+    .fact-value {
+      color: var(--brown);
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 17px;
+    }
+
+    /* =========================
+       BUTTONS
+    ========================= */
+
+    .actions {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-top: 30px;
+    }
+
+    .button {
+      min-height: 50px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0 23px;
+      border-radius: 8px;
+      background: var(--brown);
+      color: #ffffff !important;
+      font-size: 13px;
+      font-weight: 700;
+      transition:
+        background 0.2s ease,
+        transform 0.2s ease;
+    }
+
+    .button:hover {
+      background: var(--terracotta);
+      color: #ffffff !important;
+      transform: translateY(-2px);
+    }
+
+    .button-outline {
+      background: transparent;
+      color: var(--brown) !important;
+      border: 1px solid rgba(59,36,24,0.22);
+    }
+
+    .button-outline:hover {
+      background: var(--brown);
+      color: #ffffff !important;
+    }
+
+    /* =========================
+       ABOUT PRODUCT
+    ========================= */
+
+    .about-product {
+      padding: 88px 0;
+      background: var(--white);
+    }
+
+    .content-grid {
+      display: grid;
+      grid-template-columns: 0.8fr 1.2fr;
+      gap: 80px;
+      align-items: start;
+    }
+
+    .section-label {
+      color: var(--terracotta);
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 1.8px;
+      text-transform: uppercase;
+      margin-bottom: 14px;
+    }
+
+    .content-grid h2,
+    .kitchen h2,
+    .related h2,
+    .brand-cta h2 {
+      font-family: Georgia, "Times New Roman", serif;
+      color: var(--brown);
+      font-size: clamp(34px, 4vw, 48px);
+      line-height: 1.1;
+      letter-spacing: -1.2px;
+      font-weight: 500;
+    }
+
+    .content-copy p {
+      color: var(--muted);
+      font-size: 16px;
+      line-height: 1.85;
+      margin-bottom: 18px;
+    }
+
+    .content-copy p:last-child {
+      margin-bottom: 0;
+    }
+
+    /* =========================
+       KITCHEN
+    ========================= */
+
+    .kitchen {
+      padding: 88px 0;
+      background: var(--cream);
+    }
+
+    .kitchen-heading {
+      max-width: 700px;
+      margin-bottom: 38px;
+    }
+
+    .kitchen-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+    }
+
+    .kitchen-card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 28px 23px;
+      min-height: 165px;
+    }
+
+    .kitchen-card h3 {
+      font-family: Georgia, "Times New Roman", serif;
+      color: var(--brown);
+      font-size: 21px;
+      font-weight: 500;
+      margin-bottom: 9px;
+    }
+
+    .kitchen-card p {
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.65;
+    }
+
+    /* =========================
+       BRAND CTA
+    ========================= */
+
+    .brand-cta {
+      padding: 88px 0;
+      background: var(--brown);
+      color: #ffffff;
+      text-align: center;
+    }
+
+    .brand-cta .section-label {
+      color: #d2a875;
+    }
+
+    .brand-cta h2 {
+      max-width: 700px;
+      margin: 0 auto;
+      color: #ffffff;
+    }
+
+    .brand-cta p {
+      max-width: 650px;
+      margin: 18px auto 0;
+      color: rgba(255,255,255,0.68);
+      font-size: 15px;
+      line-height: 1.8;
+    }
+
+    /* =========================
+       RELATED
+    ========================= */
+
+    .related {
+      padding: 88px 0;
+      background: var(--white);
+    }
+
+    .related-heading {
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: 30px;
+      margin-bottom: 35px;
+    }
+
+    .related-heading a {
+      color: var(--terracotta);
+      font-size: 13px;
+      font-weight: 700;
+      white-space: nowrap;
+    }
+
+    .related-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 18px;
+    }
+
+    .related-card {
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      overflow: hidden;
+      background: var(--cream);
+      transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+    }
+
+    .related-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow);
+    }
+
+    .related-image {
+      aspect-ratio: 1 / 1;
+      background: #eee8de;
+      padding: 13px;
+    }
+
+    .related-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+
+    .related-info {
+      padding: 17px;
+    }
+
+    .related-info h3 {
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 19px;
+      font-weight: 500;
+      color: var(--brown);
+    }
+
+    .related-info p {
+      margin-top: 4px;
+      color: var(--muted);
+      font-size: 11px;
+    }
+
+    /* =========================
+       FOOTER
+    ========================= */
+
+    footer {
+      background: var(--brown-dark);
+      color: rgba(255,255,255,0.72);
+      padding: 48px 0 28px;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr 0.8fr;
+      gap: 50px;
+      padding-bottom: 38px;
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+    }
+
+    .footer-brand {
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 29px;
+      color: #ffffff;
+      margin-bottom: 10px;
+    }
+
+    .footer-tagline {
+      max-width: 310px;
+      color: rgba(255,255,255,0.55);
+      font-size: 13px;
+      line-height: 1.7;
+    }
+
+    .footer-heading {
+      color: #ffffff;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 1.3px;
+      text-transform: uppercase;
+      margin-bottom: 15px;
+    }
+
+    .footer-links {
+      display: flex;
+      flex-direction: column;
+      gap: 9px;
+      font-size: 13px;
+    }
+
+    .footer-links a:hover {
+      color: #ffffff;
+    }
+
+    .footer-bottom {
+      padding-top: 23px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      font-size: 11px;
+      color: rgba(255,255,255,0.42);
+    }
+
+    /* =========================
+       WHATSAPP
+    ========================= */
+
+    .whatsapp {
+      position: fixed;
+      right: 18px;
+      bottom: 18px;
+      z-index: 1100;
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      background: #25D366;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 10px 28px rgba(0,0,0,0.18);
+      transition: transform 0.2s ease;
+    }
+
+    .whatsapp:hover {
+      transform: scale(1.06);
+    }
+
+    .whatsapp svg {
+      width: 29px;
+      height: 29px;
+      fill: #ffffff;
+    }
+
+    /* =========================
+       RESPONSIVE
+    ========================= */
+
+    @media (max-width: 1000px) {
+
+      .product-hero-grid {
+        grid-template-columns: 1fr;
+        gap: 45px;
+      }
+
+      .product-image-stage {
+        max-height: 560px;
+        max-width: 650px;
+      }
+
+      .product-copy {
+        max-width: 720px;
+      }
+
+      .kitchen-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .related-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 900px) {
+
+      .nav {
+        min-height: 68px;
+      }
+
+      .menu-btn {
+        display: block;
+      }
+
+      .nav-links {
+        display: none;
+        position: absolute;
+        top: 68px;
+        left: 0;
+        right: 0;
+        background: var(--cream);
+        border-bottom: 1px solid var(--border);
+        padding: 20px;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 4px;
+      }
+
+      .nav-links.open {
+        display: flex;
+      }
+
+      .nav-links a {
+        width: 100%;
+        padding: 12px 0;
+      }
+    }
+
+    @media (max-width: 600px) {
+
+      .container {
+        width: min(100% - 28px, var(--max-width));
+      }
+
+      .breadcrumb-wrap {
+        padding-top: 16px;
+      }
+
+      .product-hero {
+        padding: 25px 0 65px;
+      }
+
+      .product-image-stage {
+        aspect-ratio: 4 / 4.7;
+        padding: 17px;
+        border-radius: 17px;
+      }
+
+      .product-label {
+        left: 14px;
+        top: 14px;
+      }
+
+      .product-copy h1 {
+        font-size: 45px;
+        letter-spacing: -1.5px;
+      }
+
+      .short-description {
+        font-size: 15px;
+      }
+
+      .facts {
+        grid-template-columns: 1fr;
+      }
+
+      .fact + .fact {
+        border-left: 0;
+        border-top: 1px solid var(--border);
+        padding-left: 0;
+      }
+
+      .actions {
+        flex-direction: column;
+        align-items: stretch;
+      }
+
+      .button {
+        width: 100%;
+      }
+
+      .about-product,
+      .kitchen,
+      .related {
+        padding: 68px 0;
+      }
+
+      .content-grid {
+        grid-template-columns: 1fr;
+        gap: 32px;
+      }
+
+      .kitchen-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .brand-cta {
+        padding: 68px 0;
+      }
+
+      .related-heading {
+        display: block;
+      }
+
+      .related-heading a {
+        display: inline-block;
+        margin-top: 15px;
+      }
+
+      .related-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+      }
+
+      .related-info {
+        padding: 13px;
+      }
+
+      .related-info h3 {
+        font-size: 17px;
+      }
+
+      .footer-grid {
+        grid-template-columns: 1fr;
+        gap: 32px;
+      }
+
+      .footer-bottom {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .brand-name {
+        font-size: 25px;
+      }
+
+      .brand-sub {
+        font-size: 7px;
+        letter-spacing: 1.8px;
+      }
+    }
+  </style>
 </head>
+
 <body>
 
-<header class="header">
-    <div class="header-inner">
-        <div class="logo-section">
-            <img src="logo.png" alt="Dharoahar" class="logo">
-        </div>
+  <!-- =========================
+       HEADER
+  ========================= -->
 
-        <nav class="nav">
-            <a href="index.html">Home</a>
-            <a href="products.html">Products</a>
-            <a href="about.html">About</a>
-        </nav>
+  <header>
+    <div class="container nav">
 
-        <a href="contact.html" class="btn-header">Contact</a>
-    </div>
-</header>
+      <a href="index.html" class="brand">
+        <span class="brand-name">Dharoahar</span>
+        <span class="brand-sub">Authentic Indian Spices</span>
+      </a>
 
-<section class="section product-detail">
-    <div class="container product-detail-inner">
+      <button
+        class="menu-btn"
+        id="menuBtn"
+        aria-label="Open menu"
+        aria-expanded="false"
+      >
+        ☰
+      </button>
 
-        <div class="product-detail-image">
-            <img src="degi-mirch.jpg" alt="Premium Degi Mirch powder">
-        </div>
-
-        <div class="product-detail-content">
-            <p class="product-type">Powder Spice</p>
-
-            <h1>Degi Mirch</h1>
-
-            <p style="color: #C8A97E; font-weight: 600; margin: 12px 0;">
-                ✨ Mild Heat. Vibrant Colour.
-            </p>
-
-            <p style="color: #6B5A4A; font-weight: 600; margin: 8px 0 18px;">
-                Origin: Andhra Pradesh
-            </p>
-
-            <p>
-                Dharoahar Degi Mirch is a finely ground red chilli powder
-                selected for its vibrant colour, smooth texture and balanced
-                level of heat. It is an ideal choice when you want to bring
-                rich colour and a gentle warmth to a dish without overpowering
-                its natural flavours.
-            </p>
-
-            <p>
-                Degi Mirch is a versatile ingredient in Indian cooking. Its
-                bright red colour makes it particularly suitable for curries,
-                gravies, marinades and traditional preparations where visual
-                appeal is just as important as flavour. The powder blends
-                easily with other spices and ingredients, creating a rich,
-                consistent finish.
-            </p>
-
-            <p>
-                From everyday home cooking to restaurant-style preparations,
-                Degi Mirch adds a warm red hue and mild chilli character to
-                recipes. Its fine texture makes it convenient to incorporate
-                directly into spice mixes, marinades, sauces and gravies.
-            </p>
-
-            <div class="product-highlights">
-                <h3>Highlights</h3>
-
-                <ul>
-                    <li>Premium Degi Mirch powder</li>
-                    <li>Origin: Andhra Pradesh</li>
-                    <li>Mild and pleasant heat</li>
-                    <li>Vibrant red colour</li>
-                    <li>Fine and smooth texture</li>
-                    <li>Ideal for curries and gravies</li>
-                    <li>Excellent for marinades and spice blends</li>
-                    <li>Food grade quality</li>
-                </ul>
-            </div>
-
-            <div class="cta-buttons" style="margin-top: 16px;">
-                <a href="tel:+918603824415" class="cta-btn">
-                    📞 Call to Order
-                </a>
-
-                <a href="https://wa.me/918603824415" class="cta-btn cta-btn-white">
-                    💬 WhatsApp
-                </a>
-            </div>
-        </div>
-
-    </div>
-</section>
-
-<footer class="footer">
-    <p>&copy; 2026 Dharoahar Pvt Ltd</p>
-
-    <div class="footer-links">
-        <a href="privacy.html">Privacy</a>
-        <a href="terms.html">Terms</a>
+      <nav class="nav-links" id="navLinks">
+        <a href="index.html">Home</a>
+        <a href="about.html">About Us</a>
+        <a href="products.html">Our Spices</a>
+        <a href="quality.html">Quality</a>
         <a href="contact.html">Contact</a>
+      </nav>
+
     </div>
-</footer>
+  </header>
+
+
+  <main>
+
+    <!-- =========================
+         BREADCRUMB
+    ========================= -->
+
+    <div class="container breadcrumb-wrap">
+
+      <div class="breadcrumb">
+
+        <a href="index.html">Home</a>
+
+        <span>›</span>
+
+        <a href="products.html">Our Spices</a>
+
+        <span>›</span>
+
+        <span>Degi Mirch</span>
+
+      </div>
+
+    </div>
+
+
+    <!-- =========================
+         PRODUCT HERO
+    ========================= -->
+
+    <section class="product-hero">
+
+      <div class="container product-hero-grid">
+
+        <div class="product-image-stage">
+
+          <div class="product-label">
+            Powder Spice
+          </div>
+
+          <img
+            src="degi-mirch.jpg"
+            alt="Degi Mirch powder"
+          >
+
+        </div>
+
+
+        <div class="product-copy">
+
+          <div class="eyebrow">
+            Powder Spice
+          </div>
+
+          <h1>
+            Degi Mirch
+          </h1>
+
+          <div class="hindi-name">
+            देगी मिर्च · Degi Mirch
+          </div>
+
+          <p class="short-description">
+            A familiar Indian chilli powder used across everyday and
+            traditional cooking, including curries, gravies, marinades
+            and regional spice preparations.
+          </p>
+
+
+          <div class="facts">
+
+            <div class="fact">
+
+              <div class="fact-label">
+                Product
+              </div>
+
+              <div class="fact-value">
+                Degi Mirch
+              </div>
+
+            </div>
+
+
+            <div class="fact">
+
+              <div class="fact-label">
+                Origin
+              </div>
+
+              <div class="fact-value">
+                Andhra Pradesh
+              </div>
+
+            </div>
+
+          </div>
+
+
+          <div class="actions">
+
+            <a
+              href="https://wa.me/918603824415?text=Hello%20Dharoahar%2C%20I%20would%20like%20to%20enquire%20about%20Degi%20Mirch."
+              class="button"
+              target="_blank"
+              rel="noopener"
+            >
+              Enquire About This Product
+            </a>
+
+            <a
+              href="mailto:amanadhish@dharoahar.com?subject=Degi%20Mirch%20Enquiry"
+              class="button button-outline"
+            >
+              Write to Us
+            </a>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================
+         ABOUT PRODUCT
+    ========================= -->
+
+    <section class="about-product">
+
+      <div class="container content-grid">
+
+        <div>
+
+          <div class="section-label">
+            About The Product
+          </div>
+
+          <h2>
+            A versatile chilli powder for Indian cooking.
+          </h2>
+
+        </div>
+
+
+        <div class="content-copy">
+
+          <p>
+            Degi Mirch is a familiar chilli preparation used across
+            Indian cooking, from everyday meals to traditional regional
+            recipes.
+          </p>
+
+          <p>
+            It can be used across curries, gravies, marinades and
+            spice preparations, making it a practical addition to
+            everyday Indian cooking.
+          </p>
+
+          <p>
+            Dharoahar's Degi Mirch is sourced from Andhra Pradesh and
+            forms part of our growing collection of Indian chilli
+            products.
+          </p>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================
+         IN THE KITCHEN
+    ========================= -->
+
+    <section class="kitchen">
+
+      <div class="container">
+
+        <div class="kitchen-heading">
+
+          <div class="section-label">
+            In The Kitchen
+          </div>
+
+          <h2>
+            Made for familiar Indian preparations.
+          </h2>
+
+        </div>
+
+
+        <div class="kitchen-grid">
+
+          <article class="kitchen-card">
+
+            <h3>Curries</h3>
+
+            <p>
+              Used across everyday and traditional Indian curry
+              preparations.
+            </p>
+
+          </article>
+
+
+          <article class="kitchen-card">
+
+            <h3>Gravies</h3>
+
+            <p>
+              Suitable for a wide range of Indian gravies and
+              regional preparations.
+            </p>
+
+          </article>
+
+
+          <article class="kitchen-card">
+
+            <h3>Marinades</h3>
+
+            <p>
+              A useful addition to marinades and spice preparations
+              across Indian cooking.
+            </p>
+
+          </article>
+
+
+          <article class="kitchen-card">
+
+            <h3>Spice Preparations</h3>
+
+            <p>
+              Used as part of familiar spice combinations and
+              traditional recipes.
+            </p>
+
+          </article>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================
+         BRAND CTA
+    ========================= -->
+
+    <section class="brand-cta">
+
+      <div class="container">
+
+        <div class="section-label">
+          Dharoahar
+        </div>
+
+        <h2>
+          Authentic Indian Spices, Sourced with Care.
+        </h2>
+
+        <p>
+          Explore the wider Dharoahar collection of whole spices,
+          chilli varieties, everyday powders and traditional spice
+          products.
+        </p>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================
+         RELATED PRODUCTS
+    ========================= -->
+
+    <section class="related">
+
+      <div class="container">
+
+        <div class="related-heading">
+
+          <div>
+
+            <div class="section-label">
+              Explore More
+            </div>
+
+            <h2>
+              From the Dharoahar collection.
+            </h2>
+
+          </div>
+
+          <a href="products.html">
+            View All Spices →
+          </a>
+
+        </div>
+
+
+        <div class="related-grid">
+
+          <!-- Kashmiri Mirch -->
+          <a
+            href="kashmiri-mirch.html"
+            class="related-card"
+          >
+
+            <div class="related-image">
+
+              <img
+                src="kashmiri-mirch.jpg"
+                alt="Kashmiri Mirch"
+                loading="lazy"
+              >
+
+            </div>
+
+            <div class="related-info">
+
+              <h3>Kashmiri Mirch</h3>
+
+              <p>कश्मीरी मिर्च</p>
+
+            </div>
+
+          </a>
+
+
+          <!-- Red Chilli -->
+          <a
+            href="red-chilli-powder.html"
+            class="related-card"
+          >
+
+            <div class="related-image">
+
+              <img
+                src="red-chilli-powder.png"
+                alt="Red Chilli Powder"
+                loading="lazy"
+              >
+
+            </div>
+
+            <div class="related-info">
+
+              <h3>Red Chilli Powder</h3>
+
+              <p>लाल मिर्च पाउडर</p>
+
+            </div>
+
+          </a>
+
+
+          <!-- Turmeric -->
+          <a
+            href="haldi-powder.html"
+            class="related-card"
+          >
+
+            <div class="related-image">
+
+              <img
+                src="haldi-powder.jpg"
+                alt="Turmeric Powder"
+                loading="lazy"
+              >
+
+            </div>
+
+            <div class="related-info">
+
+              <h3>Turmeric Powder</h3>
+
+              <p>हल्दी</p>
+
+            </div>
+
+          </a>
+
+
+          <!-- Garam Masala -->
+          <a
+            href="garam-masala.html"
+            class="related-card"
+          >
+
+            <div class="related-image">
+
+              <img
+                src="garam-masala.jpg"
+                alt="Garam Masala"
+                loading="lazy"
+              >
+
+            </div>
+
+            <div class="related-info">
+
+              <h3>Garam Masala</h3>
+
+              <p>गरम मसाला</p>
+
+            </div>
+
+          </a>
+
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+
+  <!-- =========================
+       FOOTER
+  ========================= -->
+
+  <footer>
+
+    <div class="container">
+
+      <div class="footer-grid">
+
+        <div>
+
+          <div class="footer-brand">
+            Dharoahar
+          </div>
+
+          <p class="footer-tagline">
+            Authentic Indian Spices, Sourced with Care.
+          </p>
+
+        </div>
+
+
+        <div>
+
+          <div class="footer-heading">
+            Explore
+          </div>
+
+          <div class="footer-links">
+
+            <a href="index.html">Home</a>
+
+            <a href="about.html">About Us</a>
+
+            <a href="products.html">Our Spices</a>
+
+            <a href="quality.html">Quality</a>
+
+            <a href="contact.html">Contact</a>
+
+          </div>
+
+        </div>
+
+
+        <div>
+
+          <div class="footer-heading">
+            Contact
+          </div>
+
+          <div class="footer-links">
+
+            <a href="mailto:amanadhish@dharoahar.com">
+              amanadhish@dharoahar.com
+            </a>
+
+            <a
+              href="https://wa.me/918603824415"
+              target="_blank"
+              rel="noopener"
+            >
+              +91 86038 24415
+            </a>
+
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <div class="footer-bottom">
+
+        <span>
+          © 2026 Dharoahar. All rights reserved.
+        </span>
+
+        <span>
+          Authentic Indian Spices, Sourced with Care.
+        </span>
+
+      </div>
+
+    </div>
+
+  </footer>
+
+
+  <!-- =========================
+       WHATSAPP
+  ========================= -->
+
+  <a
+    href="https://wa.me/918603824415"
+    class="whatsapp"
+    target="_blank"
+    rel="noopener"
+    aria-label="Chat with Dharoahar on WhatsApp"
+  >
+
+    <svg
+      viewBox="0 0 32 32"
+      xmlns="http://www.w3.org/2000/svg"
+      aria-hidden="true"
+    >
+      <path d="M19.11 17.47c-.27-.14-1.59-.78-1.84-.87-.25-.09-.43-.14-.61.14-.18.27-.7.87-.86 1.05-.16.18-.32.2-.59.07-.27-.14-1.14-.42-2.17-1.34-.8-.71-1.34-1.59-1.5-1.86-.16-.27-.02-.42.12-.56.12-.12.27-.32.41-.48.14-.16.18-.27.27-.45.09-.18.05-.34-.02-.48-.07-.14-.61-1.47-.84-2.02-.22-.53-.45-.46-.61-.47h-.52c-.18 0-.48.07-.73.34-.25.27-.95.93-.95 2.27s.98 2.63 1.11 2.81c.14.18 1.93 2.95 4.67 4.13.65.28 1.16.45 1.56.57.66.21 1.27.18 1.75.11.53-.08 1.59-.65 1.81-1.28.23-.63.23-1.17.16-1.28-.07-.11-.25-.18-.52-.32z"/>
+      <path d="M16.02 3.2c-7.07 0-12.8 5.73-12.8 12.8 0 2.26.59 4.38 1.62 6.22L3.12 28.8l6.75-1.77a12.75 12.75 0 0 0 6.15 1.57h.01c7.07 0 12.8-5.73 12.8-12.8S23.09 3.2 16.02 3.2zm0 23.2h-.01a10.3 10.3 0 0 1-5.25-1.43l-.38-.23-4.01 1.05 1.07-3.91-.25-.4a10.3 10.3 0 1 1 8.83 4.92z"/>
+    </svg>
+
+  </a>
+
+
+  <script>
+
+    const menuBtn = document.getElementById("menuBtn");
+    const navLinks = document.getElementById("navLinks");
+
+    menuBtn.addEventListener("click", function () {
+
+      const isOpen = navLinks.classList.toggle("open");
+
+      menuBtn.setAttribute(
+        "aria-expanded",
+        isOpen ? "true" : "false"
+      );
+
+      menuBtn.textContent = isOpen ? "✕" : "☰";
+
+    });
+
+
+    navLinks.querySelectorAll("a").forEach(function (link) {
+
+      link.addEventListener("click", function () {
+
+        navLinks.classList.remove("open");
+
+        menuBtn.setAttribute(
+          "aria-expanded",
+          "false"
+        );
+
+        menuBtn.textContent = "☰";
+
+      });
+
+    });
+
+  </script>
 
 </body>
 </html>
