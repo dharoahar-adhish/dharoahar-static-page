@@ -1,1820 +1,2686 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Dharoahar | Authentic Indian Spices, Sourced with Care</title>
+    <meta charset="UTF-8">
 
-  <meta
-    name="description"
-    content="Explore Dharoahar's range of whole and powdered Indian spices, sourced with care from established spice-growing regions across India."
-  >
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
 
-  <meta
-    name="keywords"
-    content="Dharoahar, Indian spices, whole spices, powdered spices, premium spices, Clove, Cardamom, Cinnamon, Black Pepper, Cumin, Degi Mirch, Kashmiri Mirch"
-  >
+    <meta
+        name="theme-color"
+        content="#f5f0e8"
+    >
 
-  <meta name="theme-color" content="#f7f3ec">
+    <title>
+        Dharoahar | Authentic Indian Spices
+    </title>
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <meta
+        name="description"
+        content="Dharoahar brings together authentic Indian whole spices, chilli varieties and powdered spices, sourced with care for retail, food businesses and bulk requirements."
+    >
 
-  <link
-    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap"
-    rel="stylesheet"
-  >
+    <style>
 
-  <style>
+        /* =====================================================
+           ROOT
+        ===================================================== */
 
-    /* =========================================================
-       ROOT
-    ========================================================= */
+        :root {
 
-    :root {
-      --brown: #3d261c;
-      --brown-dark: #281812;
-      --brown-soft: #65483a;
+            --brown: #39251a;
+            --brown-dark: #25170f;
+            --brown-mid: #5c4030;
 
-      --cream: #f7f3ec;
-      --cream-dark: #eee7dc;
+            --cream: #f5f0e8;
+            --cream-dark: #ebe2d5;
 
-      --white: #ffffff;
+            --white: #ffffff;
 
-      --gold: #b28a54;
-      --terracotta: #a75c3c;
+            --gold: #b98b55;
+            --gold-light: #d1aa78;
 
-      --green: #238b45;
+            --terracotta: #985b3d;
 
-      --text: #33251e;
-      --muted: #74675f;
+            --text: #30231b;
+            --muted: #74675d;
 
-      --border: #e3d9cd;
+            --border: rgba(57,37,26,0.12);
 
-      --shadow: 0 18px 50px rgba(61, 38, 28, 0.09);
+            --max-width: 1180px;
+        }
 
-      --radius: 18px;
-    }
 
+        /* =====================================================
+           RESET
+        ===================================================== */
 
-    /* =========================================================
-       RESET
-    ========================================================= */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
 
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
+        html {
+            scroll-behavior: smooth;
+        }
 
-    html {
-      scroll-behavior: smooth;
-      overflow-x: hidden;
-    }
+        body {
 
-    body {
-      margin: 0;
-      font-family: "DM Sans", Arial, sans-serif;
-      color: var(--text);
-      background: var(--cream);
-      line-height: 1.6;
-      overflow-x: hidden;
-    }
+            font-family:
+                Arial,
+                Helvetica,
+                sans-serif;
 
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
+            background: var(--cream);
+            color: var(--text);
 
-    img {
-      display: block;
-      max-width: 100%;
-    }
+            line-height: 1.6;
 
-    button {
-      font-family: inherit;
-    }
+            overflow-x: hidden;
+        }
 
-    .container {
-      width: min(1180px, calc(100% - 40px));
-      margin: 0 auto;
-    }
+        img {
+            max-width: 100%;
+            display: block;
+        }
 
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
 
-    /* =========================================================
-       HEADER
-    ========================================================= */
+        button,
+        input,
+        select {
+            font: inherit;
+        }
 
-    .site-header {
-      position: sticky;
-      top: 0;
-      z-index: 1000;
+        .container {
 
-      background: rgba(247, 243, 236, 0.96);
-      backdrop-filter: blur(14px);
+            width:
+                min(
+                    var(--max-width),
+                    calc(100% - 40px)
+                );
 
-      border-bottom: 1px solid rgba(61, 38, 28, 0.08);
-    }
+            margin: 0 auto;
+        }
 
-    .header-inner {
-      min-height: 74px;
 
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
+        /* =====================================================
+           HEADER
+        ===================================================== */
 
-      gap: 24px;
-    }
+        .site-header {
 
-    .logo {
-      font-family: "Playfair Display", Georgia, serif;
-      font-size: 29px;
-      font-weight: 700;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
 
-      letter-spacing: -0.5px;
+            background:
+                rgba(245,240,232,0.96);
 
-      color: var(--brown);
-    }
+            backdrop-filter: blur(12px);
 
-    .logo span {
-      display: block;
+            border-bottom:
+                1px solid var(--border);
+        }
 
-      font-family: "DM Sans", Arial, sans-serif;
+        .header-inner {
 
-      font-size: 9px;
-      line-height: 1;
+            min-height: 76px;
 
-      letter-spacing: 2.4px;
-      text-transform: uppercase;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
 
-      font-weight: 600;
+            gap: 30px;
+        }
 
-      color: var(--gold);
+        .brand {
 
-      margin-top: 3px;
-    }
+            display: flex;
+            flex-direction: column;
 
-    .desktop-nav {
-      display: flex;
-      align-items: center;
-      gap: 30px;
-    }
+            line-height: 1;
+        }
 
-    .desktop-nav a {
-      position: relative;
+        .brand-name {
 
-      font-size: 14px;
-      font-weight: 500;
+            font-family:
+                Georgia,
+                "Times New Roman",
+                serif;
 
-      color: var(--brown-soft);
+            font-size: 28px;
 
-      transition: color 0.2s ease;
-    }
+            color: var(--brown);
 
-    .desktop-nav a:hover,
-    .desktop-nav a.active {
-      color: var(--brown);
-    }
+            font-weight: 700;
+        }
 
-    .desktop-nav a.active::after {
-      content: "";
+        .brand-sub {
 
-      position: absolute;
+            margin-top: 5px;
 
-      left: 0;
-      right: 0;
-      bottom: -9px;
+            font-size: 7px;
 
-      height: 1.5px;
+            letter-spacing: 2.2px;
 
-      background: var(--gold);
-    }
+            text-transform: uppercase;
 
-    .header-button {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
+            color: var(--muted);
+        }
 
-      min-height: 40px;
+        .nav {
 
-      padding: 0 17px;
+            display: flex;
+            align-items: center;
 
-      border-radius: 6px;
+            gap: 31px;
 
-      background: var(--brown);
-      color: #fff !important;
+            color: var(--brown-mid);
 
-      font-size: 12px;
-      font-weight: 700;
+            font-size: 13px;
+        }
 
-      transition:
-        transform 0.2s ease,
-        background 0.2s ease;
-    }
+        .nav a {
 
-    .header-button:hover {
-      transform: translateY(-1px);
-      background: var(--brown-dark);
-    }
+            transition:
+                color .2s ease;
+        }
 
-    .menu-button {
-      display: none;
+        .nav a:hover {
+            color: var(--terracotta);
+        }
 
-      width: 42px;
-      height: 42px;
+        .header-cta {
 
-      border: 0;
-      background: transparent;
+            padding:
+                11px 18px;
 
-      cursor: pointer;
+            border-radius: 7px;
 
-      align-items: center;
-      justify-content: center;
-    }
+            background: var(--brown);
 
-    .menu-icon {
-      width: 22px;
-      height: 16px;
+            color: #fff !important;
 
-      position: relative;
-    }
+            font-size: 12px;
 
-    .menu-icon span {
-      position: absolute;
+            font-weight: 700;
+        }
 
-      left: 0;
+        .menu-button {
 
-      width: 100%;
-      height: 1.5px;
+            display: none;
 
-      background: var(--brown);
-    }
+            border: 0;
 
-    .menu-icon span:nth-child(1) {
-      top: 0;
-    }
+            background: transparent;
 
-    .menu-icon span:nth-child(2) {
-      top: 7px;
-    }
+            color: var(--brown);
 
-    .menu-icon span:nth-child(3) {
-      top: 14px;
-    }
+            font-size: 27px;
 
-    .mobile-nav {
-      display: none;
+            cursor: pointer;
+        }
 
-      padding: 0 20px 20px;
-    }
 
-    .mobile-nav.open {
-      display: block;
-    }
+        /* =====================================================
+           HERO
+        ===================================================== */
 
-    .mobile-nav a {
-      display: block;
+        .hero {
 
-      padding: 13px 0;
+            min-height: 720px;
 
-      border-bottom: 1px solid var(--border);
+            position: relative;
 
-      font-size: 15px;
+            display: flex;
+            align-items: center;
 
-      color: var(--brown-soft);
-    }
+            overflow: hidden;
 
+            background: #2d2118;
+        }
 
-    /* =========================================================
-       HERO
-    ========================================================= */
+        .hero-image {
 
-    .hero {
-      min-height: 650px;
+            position: absolute;
 
-      position: relative;
+            inset: 0;
 
-      display: flex;
-      align-items: center;
+            width: 100%;
+            height: 100%;
 
-      overflow: hidden;
+            object-fit: cover;
 
-      background: var(--brown-dark);
-    }
+            opacity: .78;
+        }
 
-    .hero-image {
-      position: absolute;
+        .hero-overlay {
 
-      inset: 0;
+            position: absolute;
 
-      width: 100%;
-      height: 100%;
+            inset: 0;
 
-      object-fit: cover;
+            background:
+                linear-gradient(
+                    90deg,
+                    rgba(32,20,13,.88) 0%,
+                    rgba(32,20,13,.63) 43%,
+                    rgba(32,20,13,.15) 100%
+                );
+        }
 
-      object-position: center;
-    }
+        .hero-content {
 
-    .hero-overlay {
-      position: absolute;
+            position: relative;
+            z-index: 2;
 
-      inset: 0;
+            width:
+                min(
+                    var(--max-width),
+                    calc(100% - 40px)
+                );
 
-      background:
-        linear-gradient(
-          90deg,
-          rgba(40, 24, 18, 0.91) 0%,
-          rgba(40, 24, 18, 0.72) 42%,
-          rgba(40, 24, 18, 0.20) 100%
-        );
-    }
+            margin: 0 auto;
 
-    .hero-content {
-      position: relative;
-      z-index: 2;
+            color: white;
+        }
 
-      width: min(1180px, calc(100% - 40px));
+        .hero-eyebrow {
 
-      margin: 0 auto;
+            color: var(--gold-light);
 
-      padding: 95px 0;
-    }
+            font-size: 11px;
 
-    .hero-eyebrow {
-      display: flex;
-      align-items: center;
-      gap: 10px;
+            font-weight: 700;
 
-      margin-bottom: 22px;
+            letter-spacing: 2px;
 
-      color: #d6b37c;
+            text-transform: uppercase;
 
-      font-size: 11px;
-      font-weight: 700;
+            margin-bottom: 20px;
+        }
 
-      letter-spacing: 2.4px;
-      text-transform: uppercase;
-    }
+        .hero h1 {
 
-    .hero-eyebrow::before {
-      content: "";
+            max-width: 780px;
 
-      width: 30px;
-      height: 1px;
+            font-family:
+                Georgia,
+                "Times New Roman",
+                serif;
 
-      background: #d6b37c;
-    }
+            font-size:
+                clamp(
+                    52px,
+                    7vw,
+                    88px
+                );
 
-    .hero h1 {
-      max-width: 720px;
+            line-height: 1;
 
-      font-family: "Playfair Display", Georgia, serif;
+            font-weight: 400;
 
-      color: #fff;
+            letter-spacing: -3px;
+        }
 
-      font-size: clamp(48px, 7vw, 82px);
+        .hero h1 em {
 
-      line-height: 1.02;
+            color: #d5af7b;
 
-      letter-spacing: -2.5px;
+            font-style: italic;
+        }
 
-      font-weight: 600;
+        .hero-copy {
 
-      margin-bottom: 25px;
-    }
+            max-width: 550px;
 
-    .hero-subtitle {
-      max-width: 570px;
+            margin-top: 25px;
 
-      color: rgba(255,255,255,0.78);
+            color:
+                rgba(
+                    255,
+                    255,
+                    255,
+                    .72
+                );
 
-      font-size: 18px;
+            font-size: 16px;
 
-      line-height: 1.75;
+            line-height: 1.8;
+        }
 
-      margin-bottom: 34px;
-    }
+        .hero-actions {
 
-    .hero-actions {
-      display: flex;
+            display: flex;
 
-      flex-wrap: wrap;
+            gap: 12px;
 
-      gap: 12px;
-    }
+            flex-wrap: wrap;
 
-    .hero-button {
-      min-height: 50px;
+            margin-top: 32px;
+        }
 
-      padding: 0 23px;
+        .button {
 
-      border-radius: 6px;
+            min-height: 50px;
 
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
+            display: inline-flex;
 
-      font-size: 13px;
-      font-weight: 700;
+            align-items: center;
+            justify-content: center;
 
-      transition:
-        transform 0.2s ease,
-        background 0.2s ease;
-    }
+            padding:
+                0 22px;
 
-    .hero-button-primary {
-      background: #fff;
-      color: var(--brown);
-    }
+            border-radius: 7px;
 
-    .hero-button-primary:hover {
-      transform: translateY(-2px);
-      background: #f3ede5;
-    }
+            background: var(--gold);
 
-    .hero-button-secondary {
-      border: 1px solid rgba(255,255,255,0.35);
+            color: #fff !important;
 
-      color: #fff;
+            font-size: 12px;
 
-      background: rgba(255,255,255,0.06);
-    }
+            font-weight: 700;
 
-    .hero-button-secondary:hover {
-      transform: translateY(-2px);
-      background: rgba(255,255,255,0.12);
-    }
+            transition:
+                transform .2s ease,
+                background .2s ease;
+        }
 
+        .button:hover {
 
-    /* =========================================================
-       INTRO
-    ========================================================= */
+            background: var(--terracotta);
 
-    .intro-section {
-      padding: 90px 0 85px;
+            transform:
+                translateY(-2px);
+        }
 
-      background: var(--white);
-    }
+        .button-outline {
 
-    .intro-layout {
-      display: grid;
+            background: transparent;
 
-      grid-template-columns: 0.85fr 1.15fr;
+            border:
+                1px solid
+                rgba(255,255,255,.4);
+        }
 
-      gap: 80px;
+        .button-outline:hover {
 
-      align-items: center;
-    }
+            background: white;
 
-    .eyebrow {
-      display: inline-flex;
+            color: var(--brown) !important;
+        }
 
-      align-items: center;
 
-      gap: 9px;
+        /* =====================================================
+           INTRO
+        ===================================================== */
 
-      color: var(--gold);
+        .intro {
 
-      text-transform: uppercase;
+            padding:
+                105px 0;
+        }
 
-      letter-spacing: 2px;
+        .intro-grid {
 
-      font-size: 11px;
+            display: grid;
 
-      font-weight: 700;
+            grid-template-columns:
+                .75fr
+                1.25fr;
 
-      margin-bottom: 18px;
-    }
+            gap: 90px;
 
-    .eyebrow::before {
-      content: "";
+            align-items: start;
+        }
 
-      width: 27px;
-      height: 1px;
+        .section-eyebrow {
 
-      background: var(--gold);
-    }
+            color: var(--terracotta);
 
-    .intro-heading {
-      font-family: "Playfair Display", Georgia, serif;
+            font-size: 10px;
 
-      color: var(--brown);
+            font-weight: 700;
 
-      font-size: clamp(34px, 4vw, 51px);
+            letter-spacing: 2px;
 
-      line-height: 1.13;
+            text-transform: uppercase;
+        }
 
-      font-weight: 600;
+        .intro h2 {
 
-      letter-spacing: -1px;
-    }
+            margin-top: 14px;
 
-    .intro-copy {
-      color: var(--muted);
+            font-family:
+                Georgia,
+                "Times New Roman",
+                serif;
 
-      font-size: 16px;
+            font-weight: 400;
 
-      line-height: 1.85;
-    }
+            font-size:
+                clamp(
+                    38px,
+                    5vw,
+                    58px
+                );
 
-    .intro-copy p + p {
-      margin-top: 17px;
-    }
+            line-height: 1.08;
 
-    .intro-link {
-      display: inline-flex;
+            color: var(--brown);
 
-      align-items: center;
+            letter-spacing: -1.5px;
+        }
 
-      gap: 8px;
+        .intro-copy {
 
-      margin-top: 25px;
+            color: var(--muted);
 
-      color: var(--brown);
+            font-size: 16px;
 
-      font-size: 13px;
+            line-height: 1.9;
+        }
 
-      font-weight: 700;
-    }
+        .intro-copy p + p {
 
-    .intro-link span {
-      transition: transform 0.2s ease;
-    }
+            margin-top: 18px;
+        }
 
-    .intro-link:hover span {
-      transform: translateX(4px);
-    }
 
+        /* =====================================================
+           FEATURED PRODUCTS
+        ===================================================== */
 
-    /* =========================================================
-       FEATURED PRODUCTS
-    ========================================================= */
+        .portfolio {
 
-    .products-section {
-      padding: 90px 0;
+            padding:
+                95px 0;
 
-      background: var(--cream);
-    }
+            background:
+                var(--white);
+        }
 
-    .section-top {
-      display: flex;
+        .section-heading {
 
-      align-items: flex-end;
-      justify-content: space-between;
+            display: flex;
 
-      gap: 30px;
+            align-items: end;
 
-      margin-bottom: 40px;
-    }
+            justify-content: space-between;
 
-    .section-title {
-      font-family: "Playfair Display", Georgia, serif;
+            gap: 30px;
 
-      color: var(--brown);
+            margin-bottom: 40px;
+        }
 
-      font-size: clamp(34px, 4vw, 48px);
+        .section-heading h2 {
 
-      line-height: 1.1;
+            margin-top: 12px;
 
-      font-weight: 600;
-    }
+            font-family:
+                Georgia,
+                "Times New Roman",
+                serif;
 
-    .section-description {
-      max-width: 470px;
+            font-size:
+                clamp(
+                    36px,
+                    5vw,
+                    55px
+                );
 
-      color: var(--muted);
+            font-weight: 400;
 
-      font-size: 14px;
+            line-height: 1.05;
 
-      line-height: 1.7;
-    }
+            color: var(--brown);
 
-    .products-grid {
-      display: grid;
+            letter-spacing: -1.5px;
+        }
 
-      grid-template-columns: repeat(4, 1fr);
+        .section-heading a {
 
-      gap: 18px;
-    }
+            color: var(--terracotta);
 
-    .product-card {
-      display: block;
+            font-size: 12px;
 
-      background: var(--white);
+            font-weight: 700;
 
-      border: 1px solid var(--border);
+            white-space: nowrap;
+        }
 
-      border-radius: 15px;
+        .product-grid {
 
-      overflow: hidden;
+            display: grid;
 
-      transition:
-        transform 0.25s ease,
-        box-shadow 0.25s ease,
-        border-color 0.25s ease;
-    }
+            grid-template-columns:
+                repeat(4, 1fr);
 
-    .product-card:hover {
-      transform: translateY(-5px);
+            gap: 18px;
+        }
 
-      box-shadow: var(--shadow);
+        .product-card {
 
-      border-color: #d7c7b5;
-    }
+            background:
+                var(--cream);
 
-    .product-image {
-      position: relative;
+            border:
+                1px solid
+                var(--border);
 
-      height: 285px;
+            border-radius: 14px;
 
-      background: #f1ece4;
+            overflow: hidden;
 
-      overflow: hidden;
-    }
+            transition:
+                transform .25s ease,
+                box-shadow .25s ease;
+        }
 
-    .product-image img {
-      width: 100%;
-      height: 100%;
+        .product-card:hover {
 
-      object-fit: cover;
+            transform:
+                translateY(-5px);
 
-      transition: transform 0.45s ease;
-    }
+            box-shadow:
+                0 18px 40px
+                rgba(57,37,26,.10);
+        }
 
-    .product-card:hover .product-image img {
-      transform: scale(1.035);
-    }
+        .product-image {
 
-    .product-category {
-      position: absolute;
+            aspect-ratio: 1 / 1.05;
 
-      top: 13px;
-      left: 13px;
+            background:
+                #eee7dc;
 
-      padding: 5px 9px;
+            padding: 14px;
+        }
 
-      border-radius: 4px;
+        .product-image img {
 
-      background: rgba(255,255,255,0.91);
+            width: 100%;
+            height: 100%;
 
-      color: var(--brown);
+            object-fit: contain;
+        }
 
-      font-size: 9px;
+        .product-info {
 
-      font-weight: 700;
+            padding: 18px;
+        }
 
-      text-transform: uppercase;
+        .product-type {
 
-      letter-spacing: 1px;
-    }
+            color:
+                var(--terracotta);
 
-    .product-info {
-      padding: 19px 18px 21px;
-    }
+            font-size: 9px;
 
-    .product-name {
-      font-family: "Playfair Display", Georgia, serif;
+            font-weight: 700;
 
-      color: var(--brown);
+            letter-spacing: 1.3px;
 
-      font-size: 23px;
+            text-transform: uppercase;
+        }
 
-      line-height: 1.2;
+        .product-info h3 {
 
-      margin-bottom: 3px;
-    }
+            margin-top: 6px;
 
-    .product-hindi {
-      color: var(--gold);
+            font-family:
+                Georgia,
+                "Times New Roman",
+                serif;
 
-      font-size: 12px;
+            color: var(--brown);
 
-      margin-bottom: 11px;
-    }
+            font-size: 21px;
 
-    .product-origin {
-      color: var(--muted);
+            font-weight: 500;
+        }
 
-      font-size: 12px;
+        .product-info p {
 
-      min-height: 18px;
-    }
+            margin-top: 3px;
 
-    .view-products {
-      display: flex;
+            color: var(--muted);
 
-      justify-content: center;
+            font-size: 11px;
+        }
 
-      margin-top: 38px;
-    }
 
-    .brown-button {
-      display: inline-flex;
+        /* =====================================================
+           SPICE SIGNATURE
+        ===================================================== */
 
-      align-items: center;
-      justify-content: center;
+        .signature {
 
-      min-height: 48px;
+            background:
+                #302016;
 
-      padding: 0 25px;
+            color: #f7f1e8;
 
-      border-radius: 6px;
+            padding:
+                110px 0;
 
-      background: var(--brown);
+            overflow: hidden;
+        }
 
-      color: #fff !important;
+        .signature-intro {
 
-      font-size: 13px;
+            max-width: 760px;
 
-      font-weight: 700;
+            margin-bottom: 55px;
+        }
 
-      transition:
-        transform 0.2s ease,
-        background 0.2s ease;
-    }
+        .signature-label {
 
-    .brown-button:hover {
-      transform: translateY(-2px);
+            color: #c99b62;
 
-      background: var(--brown-dark);
-    }
+            font-size: 10px;
 
+            font-weight: 700;
 
-    /* =========================================================
-       CATEGORY BAND
-    ========================================================= */
+            letter-spacing: 2px;
 
-    .category-band {
-      padding: 78px 0;
+            text-transform: uppercase;
+        }
 
-      background: var(--brown);
-    }
+        .signature h2 {
 
-    .category-grid {
-      display: grid;
+            margin-top: 16px;
 
-      grid-template-columns: 1fr 1fr;
+            font-family:
+                Georgia,
+                "Times New Roman",
+                serif;
 
-      gap: 18px;
-    }
+            font-size:
+                clamp(
+                    43px,
+                    6vw,
+                    70px
+                );
 
-    .category-card {
-      position: relative;
+            font-weight: 400;
 
-      min-height: 320px;
+            line-height: 1.02;
 
-      padding: 35px;
+            letter-spacing: -2px;
+        }
 
-      border-radius: 20px;
+        .signature h2 em {
 
-      overflow: hidden;
+            color: #c99b62;
 
-      display: flex;
-      flex-direction: column;
-      justify-content: flex-end;
+            font-style: italic;
+        }
 
-      background: #5a4032;
-    }
+        .signature-intro p {
 
-    .category-card:first-child {
-      background:
-        linear-gradient(
-          140deg,
-          #51372a,
-          #2f1e16
-        );
-    }
+            max-width: 560px;
 
-    .category-card:last-child {
-      background:
-        linear-gradient(
-          140deg,
-          #754733,
-          #3e2419
-        );
-    }
+            margin-top: 21px;
 
-    .category-pattern {
-      position: absolute;
+            color:
+                rgba(
+                    247,
+                    241,
+                    232,
+                    .62
+                );
 
-      width: 260px;
-      height: 260px;
+            font-size: 14px;
 
-      border-radius: 50%;
+            line-height: 1.8;
+        }
 
-      border: 1px solid rgba(255,255,255,0.12);
+        .signature-experience {
 
-      right: -80px;
-      top: -90px;
-    }
+            display: grid;
 
-    .category-pattern::after {
-      content: "";
+            grid-template-columns:
+                250px
+                1fr;
 
-      position: absolute;
+            border-top:
+                1px solid
+                rgba(255,255,255,.12);
 
-      width: 190px;
-      height: 190px;
+            border-bottom:
+                1px solid
+                rgba(255,255,255,.12);
+        }
 
-      border-radius: 50%;
+        .dish-selector {
 
-      border: 1px solid rgba(255,255,255,0.09);
+            padding:
+                38px 28px 38px 0;
 
-      left: 35px;
-      top: 35px;
-    }
+            border-right:
+                1px solid
+                rgba(255,255,255,.12);
+        }
 
-    .category-content {
-      position: relative;
-      z-index: 2;
-    }
+        .selector-title {
 
-    .category-label {
-      color: #d6b37c;
+            color:
+                rgba(
+                    247,
+                    241,
+                    232,
+                    .36
+                );
 
-      font-size: 10px;
+            font-size: 9px;
 
-      text-transform: uppercase;
+            font-weight: 700;
 
-      letter-spacing: 2px;
+            letter-spacing: 1.7px;
 
-      font-weight: 700;
+            margin-bottom: 18px;
+        }
 
-      margin-bottom: 11px;
-    }
+        .dish-button {
 
-    .category-card h3 {
-      color: #fff;
+            width: 100%;
 
-      font-family: "Playfair Display", Georgia, serif;
+            display: flex;
 
-      font-size: 34px;
+            align-items: center;
 
-      line-height: 1.1;
+            justify-content: space-between;
 
-      margin-bottom: 11px;
-    }
+            border: 0;
 
-    .category-card p {
-      max-width: 440px;
+            border-bottom:
+                1px solid
+                rgba(255,255,255,.07);
 
-      color: rgba(255,255,255,0.69);
+            background: transparent;
 
-      font-size: 13px;
+            color:
+                rgba(
+                    247,
+                    241,
+                    232,
+                    .55
+                );
 
-      line-height: 1.7;
+            padding:
+                13px 0;
 
-      margin-bottom: 19px;
-    }
+            font-size: 14px;
 
-    .category-link {
-      display: inline-flex;
+            cursor: pointer;
 
-      align-items: center;
+            text-align: left;
 
-      gap: 8px;
+            transition: .2s ease;
+        }
 
-      color: #fff;
+        .dish-button:hover {
 
-      font-size: 12px;
+            color: white;
+        }
 
-      font-weight: 700;
-    }
+        .dish-button.active {
 
-    .category-link span {
-      transition: transform 0.2s ease;
-    }
+            color: #c99b62;
 
-    .category-link:hover span {
-      transform: translateX(4px);
-    }
+            padding-left: 10px;
+        }
 
+        .dish-number {
 
-    /* =========================================================
-       SOURCING
-    ========================================================= */
+            font-size: 9px;
 
-    .sourcing-section {
-      padding: 92px 0;
+            opacity: .5;
+        }
 
-      background: var(--white);
-    }
+        .signature-display {
 
-    .sourcing-heading {
-      max-width: 680px;
+            padding:
+                38px 0 38px 50px;
+        }
 
-      margin-bottom: 45px;
-    }
+        .signature-display-top {
 
-    .sourcing-heading h2 {
-      font-family: "Playfair Display", Georgia, serif;
+            display: flex;
 
-      color: var(--brown);
+            justify-content: space-between;
 
-      font-size: clamp(34px, 4vw, 48px);
+            gap: 20px;
+        }
 
-      line-height: 1.13;
+        .signature-mini {
 
-      margin-bottom: 13px;
-    }
+            color:
+                rgba(
+                    247,
+                    241,
+                    232,
+                    .36
+                );
 
-    .sourcing-heading p {
-      color: var(--muted);
+            font-size: 9px;
 
-      font-size: 15px;
+            letter-spacing: 1.7px;
 
-      line-height: 1.75;
-    }
+            text-transform: uppercase;
+        }
 
-    .origin-grid {
-      display: grid;
+        .signature-dish {
 
-      grid-template-columns: repeat(3, 1fr);
+            margin-top: 5px;
 
-      gap: 18px;
-    }
+            font-family:
+                Georgia,
+                "Times New Roman",
+                serif;
 
-    .origin-card {
-      padding: 28px;
+            font-size: 34px;
 
-      border: 1px solid var(--border);
+            font-weight: 400;
+        }
 
-      border-radius: 16px;
+        .signature-count {
 
-      background: var(--cream);
+            color: #c99b62;
 
-      min-height: 190px;
-    }
+            font-size: 9px;
 
-    .origin-card-number {
-      color: var(--gold);
+            letter-spacing: 1px;
 
-      font-size: 10px;
+            text-transform: uppercase;
+        }
 
-      font-weight: 700;
+        .orbit {
 
-      letter-spacing: 1.5px;
+            position: relative;
 
-      margin-bottom: 18px;
-    }
+            width:
+                min(
+                    430px,
+                    70%
+                );
 
-    .origin-card h3 {
-      font-family: "Playfair Display", Georgia, serif;
+            aspect-ratio: 1;
 
-      color: var(--brown);
+            margin:
+                5px auto 25px;
+        }
 
-      font-size: 25px;
+        .orbit-ring {
 
-      margin-bottom: 7px;
-    }
+            position: absolute;
 
-    .origin-card p {
-      color: var(--muted);
+            left: 50%;
+            top: 50%;
 
-      font-size: 13px;
+            transform:
+                translate(-50%,-50%);
 
-      line-height: 1.7;
-    }
+            border:
+                1px solid
+                rgba(201,155,98,.18);
 
+            border-radius: 50%;
+        }
 
-    /* =========================================================
-       FOUNDER
-    ========================================================= */
+        .orbit-ring-one {
 
-    .founder-section {
-      padding: 90px 0;
+            width: 62%;
+            height: 62%;
+        }
 
-      background: var(--cream);
-    }
+        .orbit-ring-two {
 
-    .founder-layout {
-      display: grid;
+            width: 92%;
+            height: 92%;
 
-      grid-template-columns: 0.72fr 1.28fr;
+            border-color:
+                rgba(255,255,255,.07);
+        }
 
-      gap: 70px;
+        .orbit-center {
 
-      align-items: center;
-    }
+            position: absolute;
 
-    .founder-image {
-      position: relative;
+            left: 50%;
+            top: 50%;
 
-      max-width: 410px;
+            transform:
+                translate(-50%,-50%);
 
-      margin: 0 auto;
-    }
+            width: 145px;
+            height: 145px;
 
-    .founder-image::before {
-      content: "";
+            border-radius: 50%;
 
-      position: absolute;
+            display: flex;
 
-      inset: 14px -14px -14px 14px;
+            align-items: center;
+            justify-content: center;
 
-      border: 1px solid #d5c5b3;
+            flex-direction: column;
 
-      border-radius: 22px;
-    }
+            text-align: center;
 
-    .founder-image img {
-      position: relative;
-      z-index: 2;
+            background:
+                #3b281b;
 
-      width: 100%;
+            border:
+                1px solid
+                rgba(201,155,98,.35);
+        }
 
-      aspect-ratio: 4 / 5;
+        .orbit-center span {
 
-      object-fit: cover;
+            color: #c99b62;
 
-      object-position: center top;
+            font-size: 7px;
 
-      border-radius: 20px;
-    }
+            letter-spacing: 2px;
 
-    .founder-content h2 {
-      font-family: "Playfair Display", Georgia, serif;
+            margin-bottom: 8px;
+        }
 
-      color: var(--brown);
+        .orbit-center strong {
 
-      font-size: clamp(35px, 4vw, 49px);
+            font-family:
+                Georgia,
+                "Times New Roman",
+                serif;
 
-      line-height: 1.1;
+            font-size: 18px;
 
-      margin-bottom: 7px;
-    }
+            line-height: 1.05;
 
-    .founder-name {
-      color: var(--brown);
+            font-weight: 400;
+        }
 
-      font-size: 16px;
+        .spice-node {
 
-      font-weight: 700;
+            position: absolute;
 
-      margin-bottom: 1px;
-    }
+            z-index: 4;
 
-    .founder-title {
-      color: var(--gold);
+            transform:
+                translate(-50%,-50%);
 
-      font-size: 12px;
+            padding:
+                8px 12px;
 
-      font-weight: 600;
+            border-radius: 30px;
 
-      margin-bottom: 24px;
-    }
+            background:
+                #f7f1e8;
 
-    .founder-content p {
-      color: var(--muted);
+            color:
+                #302016;
 
-      font-size: 14px;
+            font-size: 9px;
 
-      line-height: 1.8;
-    }
+            font-weight: 700;
 
-    .founder-content p + p {
-      margin-top: 14px;
-    }
+            white-space: nowrap;
 
-    .founder-link {
-      display: inline-flex;
+            box-shadow:
+                0 8px 22px
+                rgba(0,0,0,.16);
 
-      align-items: center;
+            animation:
+                nodeIn .35s ease both;
+        }
 
-      gap: 8px;
+        .spice-node small {
 
-      margin-top: 25px;
+            display: block;
 
-      color: var(--brown);
+            margin-top: 2px;
 
-      font-size: 13px;
+            color: #8b705b;
 
-      font-weight: 700;
-    }
+            font-size: 6px;
 
-    .founder-link span {
-      transition: transform 0.2s ease;
-    }
+            font-weight: 400;
+        }
 
-    .founder-link:hover span {
-      transform: translateX(4px);
-    }
+        @keyframes nodeIn {
 
+            from {
+                opacity: 0;
+                transform:
+                    translate(-50%,-50%)
+                    scale(.7);
+            }
 
-    /* =========================================================
-       QUALITY
-    ========================================================= */
+            to {
+                opacity: 1;
+                transform:
+                    translate(-50%,-50%)
+                    scale(1);
+            }
+        }
 
-    .quality-section {
-      padding: 90px 0;
+        .signature-pills {
 
-      background: var(--white);
-    }
+            display: flex;
 
-    .quality-heading {
-      text-align: center;
+            justify-content: center;
 
-      max-width: 700px;
+            flex-wrap: wrap;
 
-      margin: 0 auto 45px;
-    }
+            gap: 7px;
+        }
 
-    .quality-heading .eyebrow {
-      justify-content: center;
-    }
+        .signature-pill {
 
-    .quality-heading h2 {
-      font-family: "Playfair Display", Georgia, serif;
+            padding:
+                6px 10px;
 
-      color: var(--brown);
+            border:
+                1px solid
+                rgba(255,255,255,.12);
 
-      font-size: clamp(34px, 4vw, 48px);
+            border-radius: 30px;
 
-      line-height: 1.12;
+            color:
+                rgba(
+                    247,
+                    241,
+                    232,
+                    .68
+                );
 
-      margin-bottom: 13px;
-    }
+            font-size: 9px;
+        }
 
-    .quality-heading p {
-      color: var(--muted);
+        .signature-note {
 
-      font-size: 14px;
+            max-width: 540px;
 
-      line-height: 1.7;
-    }
+            margin:
+                20px auto 0;
 
-    .quality-grid {
-      display: grid;
+            text-align: center;
 
-      grid-template-columns: repeat(4, 1fr);
+            color:
+                rgba(
+                    247,
+                    241,
+                    232,
+                    .43
+                );
 
-      gap: 15px;
-    }
+            font-size: 11px;
 
-    .quality-card {
-      padding: 26px 21px;
+            line-height: 1.7;
+        }
 
-      border: 1px solid var(--border);
+        .signature-bottom {
 
-      border-radius: 15px;
+            display: flex;
 
-      background: var(--cream);
-    }
+            justify-content: space-between;
 
-    .quality-icon {
-      width: 43px;
-      height: 43px;
+            gap: 20px;
 
-      border-radius: 50%;
+            padding-top: 20px;
 
-      background: var(--white);
+            color:
+                rgba(
+                    247,
+                    241,
+                    232,
+                    .3
+                );
 
-      display: flex;
-      align-items: center;
-      justify-content: center;
+            font-size: 9px;
+        }
 
-      color: var(--brown);
+        .signature-bottom a {
 
-      font-size: 15px;
+            color: #c99b62;
 
-      font-weight: 700;
+            font-weight: 700;
+        }
 
-      margin-bottom: 19px;
-    }
 
-    .quality-card h3 {
-      font-family: "Playfair Display", Georgia, serif;
+        /* =====================================================
+           B2B SPICE PLANNER
+        ===================================================== */
 
-      color: var(--brown);
+        .b2b-planner {
 
-      font-size: 21px;
+            padding:
+                110px 0;
 
-      line-height: 1.2;
+            background:
+                #eee6da;
+        }
 
-      margin-bottom: 9px;
-    }
+        .planner-intro {
 
-    .quality-card p {
-      color: var(--muted);
+            max-width: 750px;
 
-      font-size: 12px;
+            margin-bottom: 45px;
+        }
 
-      line-height: 1.65;
+        .planner-intro h2 {
 
-      min-height: 60px;
-    }
+            margin-top: 13px;
 
-    .quality-link {
-      display: inline-flex;
+            font-family:
+                Georgia,
+                "Times New Roman",
+                serif;
 
-      margin-top: 15px;
+            font-size:
+                clamp(
+                    40px,
+                    5vw,
+                    62px
+                );
 
-      color: var(--brown);
+            line-height: 1.04;
 
-      font-size: 11px;
+            font-weight: 400;
 
-      font-weight: 700;
-    }
+            letter-spacing: -1.8px;
 
+            color: var(--brown);
+        }
 
-    /* =========================================================
-       FINAL CTA
-    ========================================================= */
+        .planner-intro p {
 
-    .cta-section {
-      padding: 95px 0;
+            max-width: 610px;
 
-      background:
-        radial-gradient(
-          circle at 85% 20%,
-          rgba(178,138,84,0.14),
-          transparent 30%
-        ),
-        var(--brown);
-    }
+            margin-top: 19px;
 
-    .cta-inner {
-      text-align: center;
+            color: var(--muted);
 
-      max-width: 750px;
+            font-size: 14px;
 
-      margin: 0 auto;
-    }
+            line-height: 1.8;
+        }
 
-    .cta-section .eyebrow {
-      justify-content: center;
+        .planner-box {
 
-      color: #d6b37c;
-    }
+            display: grid;
 
-    .cta-section .eyebrow::before {
-      background: #d6b37c;
-    }
+            grid-template-columns:
+                .85fr
+                1.15fr;
 
-    .cta-section h2 {
-      font-family: "Playfair Display", Georgia, serif;
+            background:
+                var(--white);
 
-      color: #fff;
+            border-radius: 20px;
 
-      font-size: clamp(38px, 5vw, 58px);
+            overflow: hidden;
 
-      line-height: 1.08;
+            border:
+                1px solid
+                var(--border);
 
-      margin-bottom: 14px;
-    }
+            box-shadow:
+                0 20px 60px
+                rgba(57,37,26,.08);
+        }
 
-    .cta-section p {
-      color: rgba(255,255,255,0.68);
+        .planner-inputs {
 
-      font-size: 15px;
+            padding:
+                42px;
 
-      line-height: 1.7;
+            background:
+                #f9f6f1;
+        }
 
-      margin-bottom: 29px;
-    }
+        .planner-results {
 
-    .cta-buttons {
-      display: flex;
+            padding:
+                42px;
 
-      justify-content: center;
+            background:
+                var(--brown);
 
-      flex-wrap: wrap;
+            color: white;
+        }
 
-      gap: 11px;
-    }
+        .planner-heading {
 
-    .cta-button {
-      min-height: 49px;
+            font-family:
+                Georgia,
+                "Times New Roman",
+                serif;
 
-      padding: 0 24px;
+            font-size: 28px;
 
-      border-radius: 6px;
+            font-weight: 400;
 
-      display: inline-flex;
+            color: var(--brown);
 
-      align-items: center;
-      justify-content: center;
+            margin-bottom: 28px;
+        }
 
-      font-size: 13px;
+        .planner-results .planner-heading {
 
-      font-weight: 700;
+            color: white;
+        }
 
-      transition:
-        transform 0.2s ease,
-        background 0.2s ease;
-    }
+        .input-group {
 
-    .cta-button-primary {
-      background: #fff;
+            margin-bottom: 20px;
+        }
 
-      color: var(--brown);
-    }
+        .input-group label {
 
-    .cta-button-primary:hover {
-      transform: translateY(-2px);
+            display: block;
 
-      background: #f3ede5;
-    }
+            margin-bottom: 7px;
 
-    .cta-button-secondary {
-      color: #fff;
+            color: var(--brown);
 
-      border: 1px solid rgba(255,255,255,0.3);
-    }
+            font-size: 11px;
 
-    .cta-button-secondary:hover {
-      transform: translateY(-2px);
+            font-weight: 700;
+        }
 
-      background: rgba(255,255,255,0.08);
-    }
+        .input-help {
 
+            display: block;
 
-    /* =========================================================
-       FOOTER
-    ========================================================= */
+            margin-top: 5px;
 
-    footer {
-      padding: 55px 0 24px;
+            color: var(--muted);
 
-      background: var(--brown-dark);
+            font-size: 9px;
 
-      color: #fff;
-    }
+            line-height: 1.5;
+        }
 
-    .footer-grid {
-      display: grid;
+        .planner-input,
+        .planner-select {
 
-      grid-template-columns: 1.4fr 0.7fr 0.9fr;
+            width: 100%;
 
-      gap: 60px;
+            height: 48px;
 
-      padding-bottom: 42px;
+            border:
+                1px solid
+                rgba(57,37,26,.17);
 
-      border-bottom: 1px solid rgba(255,255,255,0.12);
-    }
+            border-radius: 7px;
 
-    .footer-brand h2 {
-      font-family: "Playfair Display", Georgia, serif;
+            background: white;
 
-      font-size: 29px;
+            color: var(--brown);
 
-      margin-bottom: 8px;
-    }
+            padding:
+                0 13px;
 
-    .footer-brand p {
-      max-width: 380px;
+            outline: none;
+        }
 
-      color: rgba(255,255,255,0.62);
+        .planner-input:focus,
+        .planner-select:focus {
 
-      font-size: 13px;
+            border-color:
+                var(--gold);
+        }
 
-      line-height: 1.75;
-    }
+        .range-row {
 
-    .footer-column h3 {
-      color: #d6b37c;
+            display: grid;
 
-      text-transform: uppercase;
+            grid-template-columns:
+                1fr 80px;
 
-      letter-spacing: 1.6px;
+            gap: 12px;
 
-      font-size: 10px;
+            align-items: center;
+        }
 
-      margin-bottom: 18px;
-    }
+        .planner-range {
 
-    .footer-column a {
-      display: block;
+            width: 100%;
+        }
 
-      color: rgba(255,255,255,0.68);
+        .range-value {
 
-      font-size: 13px;
+            height: 42px;
 
-      margin-bottom: 10px;
+            display: flex;
 
-      transition: color 0.2s ease;
-    }
+            align-items: center;
+            justify-content: center;
 
-    .footer-column a:hover {
-      color: #fff;
-    }
+            border:
+                1px solid
+                rgba(57,37,26,.15);
 
-    .footer-bottom {
-      padding-top: 22px;
+            border-radius: 7px;
 
-      display: flex;
+            background: white;
 
-      justify-content: space-between;
+            color: var(--brown);
 
-      gap: 20px;
+            font-size: 12px;
 
-      color: rgba(255,255,255,0.43);
+            font-weight: 700;
+        }
 
-      font-size: 11px;
-    }
+        .planner-note {
 
+            margin-top: 20px;
 
-    /* =========================================================
-       WHATSAPP
-    ========================================================= */
+            padding-top: 17px;
 
-    .whatsapp-float {
-      position: fixed;
+            border-top:
+                1px solid
+                var(--border);
 
-      right: 20px;
-      bottom: 20px;
+            color: var(--muted);
 
-      width: 56px;
-      height: 56px;
+            font-size: 9px;
 
-      border-radius: 50%;
+            line-height: 1.6;
+        }
 
-      background: var(--green);
+        .result-main {
 
-      display: flex;
+            padding-bottom: 25px;
 
-      align-items: center;
-      justify-content: center;
+            border-bottom:
+                1px solid
+                rgba(255,255,255,.13);
+        }
 
-      box-shadow: 0 9px 26px rgba(0,0,0,0.18);
+        .result-label {
 
-      z-index: 1100;
+            color:
+                rgba(
+                    255,
+                    255,
+                    255,
+                    .46
+                );
 
-      transition: transform 0.2s ease;
-    }
+            font-size: 9px;
 
-    .whatsapp-float:hover {
-      transform: translateY(-3px);
-    }
+            letter-spacing: 1.5px;
 
-    .whatsapp-float svg {
-      width: 29px;
-      height: 29px;
+            text-transform: uppercase;
+        }
 
-      fill: #fff;
-    }
+        .result-number {
 
+            margin-top: 5px;
 
-    /* =========================================================
-       RESPONSIVE
-    ========================================================= */
+            font-family:
+                Georgia,
+                "Times New Roman",
+                serif;
 
-    @media (max-width: 1000px) {
+            font-size:
+                clamp(
+                    45px,
+                    6vw,
+                    70px
+                );
 
-      .desktop-nav {
-        display: none;
-      }
+            line-height: 1;
 
-      .header-button {
-        display: none;
-      }
+            font-weight: 400;
 
-      .menu-button {
-        display: flex;
-      }
+            color: #d5af7b;
+        }
 
-      .intro-layout {
-        grid-template-columns: 1fr;
+        .result-unit {
 
-        gap: 35px;
-      }
+            margin-top: 6px;
 
-      .products-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
+            color:
+                rgba(
+                    255,
+                    255,
+                    255,
+                    .6
+                );
 
-      .origin-grid {
-        grid-template-columns: 1fr 1fr;
-      }
+            font-size: 12px;
+        }
 
-      .quality-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
+        .result-grid {
 
-      .founder-layout {
-        grid-template-columns: 0.65fr 1.35fr;
+            display: grid;
 
-        gap: 45px;
-      }
+            grid-template-columns:
+                repeat(2,1fr);
 
-      .footer-grid {
-        grid-template-columns: 1fr 1fr;
-      }
+            gap: 12px;
 
-      .footer-brand {
-        grid-column: 1 / -1;
-      }
-    }
+            margin-top: 25px;
+        }
 
+        .result-card {
 
-    @media (max-width: 720px) {
+            padding:
+                17px;
 
-      .container {
-        width: min(100% - 30px, 1180px);
-      }
+            border:
+                1px solid
+                rgba(255,255,255,.1);
 
-      .header-inner {
-        min-height: 68px;
-      }
+            border-radius: 10px;
 
-      .logo {
-        font-size: 26px;
-      }
+            background:
+                rgba(255,255,255,.035);
+        }
 
-      .hero {
-        min-height: 590px;
-      }
+        .result-card span {
 
-      .hero-image {
-        object-position: 62% center;
-      }
+            display: block;
 
-      .hero-overlay {
-        background:
-          linear-gradient(
-            90deg,
-            rgba(40, 24, 18, 0.90),
-            rgba(40, 24, 18, 0.63)
-          );
-      }
+            color:
+                rgba(
+                    255,
+                    255,
+                    255,
+                    .42
+                );
 
-      .hero-content {
-        width: min(100% - 30px, 1180px);
+            font-size: 8px;
 
-        padding: 75px 0;
-      }
+            letter-spacing: 1px;
 
-      .hero h1 {
-        font-size: 48px;
+            text-transform: uppercase;
+        }
 
-        letter-spacing: -1.4px;
-      }
+        .result-card strong {
 
-      .hero-subtitle {
-        font-size: 16px;
-      }
+            display: block;
 
-      .intro-section,
-      .products-section,
-      .sourcing-section,
-      .founder-section,
-      .quality-section {
-        padding: 65px 0;
-      }
+            margin-top: 5px;
 
-      .section-top {
-        display: block;
+            color: white;
 
-        margin-bottom: 30px;
-      }
+            font-family:
+                Georgia,
+                "Times New Roman",
+                serif;
 
-      .section-description {
-        margin-top: 13px;
-      }
+            font-size: 22px;
 
-      .products-grid {
-        grid-template-columns: 1fr 1fr;
+            font-weight: 400;
+        }
 
-        gap: 12px;
-      }
+        .result-breakdown {
 
-      .product-image {
-        height: 220px;
-      }
+            margin-top: 25px;
+        }
 
-      .product-info {
-        padding: 15px 13px 17px;
-      }
+        .breakdown-title {
 
-      .product-name {
-        font-size: 20px;
-      }
+            color:
+                rgba(
+                    255,
+                    255,
+                    255,
+                    .48
+                );
 
-      .category-band {
-        padding: 60px 0;
-      }
+            font-size: 9px;
 
-      .category-grid {
-        grid-template-columns: 1fr;
-      }
+            letter-spacing: 1.3px;
 
-      .category-card {
-        min-height: 285px;
+            text-transform: uppercase;
 
-        padding: 27px;
-      }
+            margin-bottom: 12px;
+        }
 
-      .origin-grid {
-        grid-template-columns: 1fr;
-      }
+        .breakdown-row {
 
-      .founder-layout {
-        grid-template-columns: 1fr;
+            display: flex;
 
-        gap: 45px;
-      }
+            align-items: center;
 
-      .founder-image {
-        max-width: 360px;
-      }
+            justify-content: space-between;
 
-      .quality-grid {
-        grid-template-columns: 1fr 1fr;
+            gap: 15px;
 
-        gap: 11px;
-      }
+            padding:
+                9px 0;
 
-      .quality-card {
-        padding: 22px 16px;
-      }
+            border-bottom:
+                1px solid
+                rgba(255,255,255,.07);
 
-      .quality-card p {
-        min-height: auto;
-      }
+            font-size: 11px;
 
-      .cta-section {
-        padding: 68px 0;
-      }
+            color:
+                rgba(
+                    255,
+                    255,
+                    255,
+                    .7
+                );
+        }
 
-      .cta-buttons {
-        flex-direction: column;
-      }
+        .breakdown-row strong {
 
-      .cta-button {
-        width: 100%;
-      }
+            color: white;
 
-      .footer-grid {
-        grid-template-columns: 1fr;
+            font-weight: 700;
+        }
 
-        gap: 32px;
-      }
+        .planner-cta {
 
-      .footer-brand {
-        grid-column: auto;
-      }
+            margin-top: 25px;
 
-      .footer-bottom {
-        flex-direction: column;
+            width: 100%;
 
-        gap: 7px;
-      }
-    }
+            min-height: 50px;
 
+            display: flex;
 
-    @media (max-width: 430px) {
+            align-items: center;
 
-      .products-grid {
-        gap: 10px;
-      }
+            justify-content: center;
 
-      .product-image {
-        height: 190px;
-      }
+            border-radius: 7px;
 
-      .product-category {
-        top: 8px;
-        left: 8px;
+            background:
+                #c99b62;
 
-        padding: 4px 7px;
+            color: #fff;
 
-        font-size: 8px;
-      }
+            font-size: 11px;
 
-      .product-name {
-        font-size: 18px;
-      }
+            font-weight: 700;
 
-      .product-hindi {
-        font-size: 11px;
-      }
+            cursor: pointer;
 
-      .product-origin {
-        font-size: 10px;
-      }
+            border: 0;
+        }
 
-      .quality-grid {
-        grid-template-columns: 1fr;
-      }
+        .planner-cta:hover {
 
-      .whatsapp-float {
-        width: 53px;
-        height: 53px;
+            background:
+                #a96f45;
+        }
 
-        right: 15px;
-        bottom: 15px;
-      }
-    }
 
-  </style>
+        /* =====================================================
+           SOURCING
+        ===================================================== */
+
+        .sourcing {
+
+            padding:
+                105px 0;
+
+            background:
+                var(--white);
+        }
+
+        .sourcing-grid {
+
+            display: grid;
+
+            grid-template-columns:
+                .85fr
+                1.15fr;
+
+            gap: 85px;
+        }
+
+        .sourcing h2 {
+
+            margin-top: 13px;
+
+            font-family:
+                Georgia,
+                "Times New Roman",
+                serif;
+
+            font-size:
+                clamp(
+                    39px,
+                    5vw,
+                    58px
+                );
+
+            line-height: 1.06;
+
+            font-weight: 400;
+
+            color: var(--brown);
+
+            letter-spacing: -1.5px;
+        }
+
+        .sourcing-copy {
+
+            color: var(--muted);
+
+            font-size: 15px;
+
+            line-height: 1.85;
+        }
+
+        .sourcing-cards {
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(3,1fr);
+
+            gap: 14px;
+
+            margin-top: 34px;
+        }
+
+        .source-card {
+
+            padding:
+                24px 20px;
+
+            border:
+                1px solid
+                var(--border);
+
+            border-radius: 12px;
+
+            background:
+                var(--cream);
+        }
+
+        .source-card h3 {
+
+            font-family:
+                Georgia,
+                "Times New Roman",
+                serif;
+
+            color: var(--brown);
+
+            font-size: 20px;
+
+            font-weight: 500;
+        }
+
+        .source-card p {
+
+            margin-top: 7px;
+
+            color: var(--muted);
+
+            font-size: 11px;
+
+            line-height: 1.65;
+        }
+
+
+        /* =====================================================
+           FOUNDER
+        ===================================================== */
+
+        .founder {
+
+            padding:
+                105px 0;
+
+            background:
+                var(--cream);
+        }
+
+        .founder-grid {
+
+            display: grid;
+
+            grid-template-columns:
+                .75fr
+                1.25fr;
+
+            gap: 80px;
+
+            align-items: center;
+        }
+
+        .founder-photo {
+
+            aspect-ratio: 1 / 1.12;
+
+            border-radius: 18px;
+
+            overflow: hidden;
+
+            background:
+                #ddd2c4;
+        }
+
+        .founder-photo img {
+
+            width: 100%;
+            height: 100%;
+
+            object-fit: cover;
+        }
+
+        .founder-content h2 {
+
+            margin-top: 12px;
+
+            font-family:
+                Georgia,
+                "Times New Roman",
+                serif;
+
+            font-size:
+                clamp(
+                    39px,
+                    5vw,
+                    58px
+                );
+
+            font-weight: 400;
+
+            line-height: 1.05;
+
+            color: var(--brown);
+        }
+
+        .founder-name {
+
+            margin-top: 18px;
+
+            color: var(--brown);
+
+            font-family:
+                Georgia,
+                "Times New Roman",
+                serif;
+
+            font-size: 23px;
+        }
+
+        .founder-role {
+
+            color: var(--terracotta);
+
+            font-size: 10px;
+
+            font-weight: 700;
+
+            letter-spacing: 1.2px;
+
+            text-transform: uppercase;
+        }
+
+        .founder-copy {
+
+            margin-top: 24px;
+
+            color: var(--muted);
+
+            font-size: 14px;
+
+            line-height: 1.85;
+        }
+
+        .founder-copy p + p {
+
+            margin-top: 16px;
+        }
+
+
+        /* =====================================================
+           QUALITY
+        ===================================================== */
+
+        .quality {
+
+            padding:
+                100px 0;
+
+            background:
+                var(--brown);
+        }
+
+        .quality-heading {
+
+            max-width: 680px;
+
+            margin-bottom: 40px;
+        }
+
+        .quality-heading .section-eyebrow {
+
+            color: #c99b62;
+        }
+
+        .quality h2 {
+
+            margin-top: 13px;
+
+            font-family:
+                Georgia,
+                "Times New Roman",
+                serif;
+
+            color: white;
+
+            font-size:
+                clamp(
+                    39px,
+                    5vw,
+                    58px
+                );
+
+            line-height: 1.05;
+
+            font-weight: 400;
+        }
+
+        .quality-copy {
+
+            margin-top: 17px;
+
+            color:
+                rgba(
+                    255,
+                    255,
+                    255,
+                    .58
+                );
+
+            font-size: 14px;
+
+            line-height: 1.8;
+        }
+
+        .quality-grid {
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(4,1fr);
+
+            gap: 12px;
+        }
+
+        .quality-card {
+
+            padding:
+                25px 20px;
+
+            border:
+                1px solid
+                rgba(255,255,255,.11);
+
+            border-radius: 12px;
+
+            background:
+                rgba(255,255,255,.035);
+        }
+
+        .quality-card h3 {
+
+            color: white;
+
+            font-family:
+                Georgia,
+                "Times New Roman",
+                serif;
+
+            font-size: 19px;
+
+            font-weight: 400;
+        }
+
+        .quality-card p {
+
+            margin-top: 8px;
+
+            color:
+                rgba(
+                    255,
+                    255,
+                    255,
+                    .48
+                );
+
+            font-size: 10px;
+
+            line-height: 1.65;
+        }
+
+        .quality-link {
+
+            display: inline-block;
+
+            margin-top: 12px;
+
+            color: #c99b62;
+
+            font-size: 9px;
+
+            font-weight: 700;
+        }
+
+
+        /* =====================================================
+           FINAL CTA
+        ===================================================== */
+
+        .final-cta {
+
+            padding:
+                105px 0;
+
+            background:
+                var(--cream);
+
+            text-align: center;
+        }
+
+        .final-cta h2 {
+
+            max-width: 780px;
+
+            margin:
+                13px auto 0;
+
+            font-family:
+                Georgia,
+                "Times New Roman",
+                serif;
+
+            color: var(--brown);
+
+            font-size:
+                clamp(
+                    42px,
+                    6vw,
+                    68px
+                );
+
+            font-weight: 400;
+
+            line-height: 1.04;
+
+            letter-spacing: -2px;
+        }
+
+        .final-cta p {
+
+            max-width: 580px;
+
+            margin:
+                20px auto 0;
+
+            color: var(--muted);
+
+            font-size: 14px;
+
+            line-height: 1.8;
+        }
+
+        .final-cta .button {
+
+            margin-top: 28px;
+        }
+
+
+        /* =====================================================
+           FOOTER
+        ===================================================== */
+
+        .footer {
+
+            padding:
+                50px 0 25px;
+
+            background:
+                var(--brown-dark);
+
+            color:
+                rgba(
+                    255,
+                    255,
+                    255,
+                    .65
+                );
+        }
+
+        .footer-grid {
+
+            display: grid;
+
+            grid-template-columns:
+                1.2fr
+                .8fr
+                .8fr;
+
+            gap: 50px;
+
+            padding-bottom: 35px;
+
+            border-bottom:
+                1px solid
+                rgba(255,255,255,.09);
+        }
+
+        .footer-brand {
+
+            font-family:
+                Georgia,
+                "Times New Roman",
+                serif;
+
+            font-size: 29px;
+
+            color: white;
+        }
+
+        .footer-tagline {
+
+            max-width: 310px;
+
+            margin-top: 9px;
+
+            color:
+                rgba(
+                    255,
+                    255,
+                    255,
+                    .48
+                );
+
+            font-size: 11px;
+
+            line-height: 1.7;
+        }
+
+        .footer-title {
+
+            color: white;
+
+            font-size: 9px;
+
+            letter-spacing: 1.5px;
+
+            font-weight: 700;
+
+            text-transform: uppercase;
+
+            margin-bottom: 14px;
+        }
+
+        .footer-links {
+
+            display: flex;
+
+            flex-direction: column;
+
+            gap: 8px;
+
+            font-size: 11px;
+        }
+
+        .footer-links a:hover {
+
+            color: white;
+        }
+
+        .footer-bottom {
+
+            padding-top: 20px;
+
+            display: flex;
+
+            justify-content: space-between;
+
+            gap: 20px;
+
+            color:
+                rgba(
+                    255,
+                    255,
+                    255,
+                    .32
+                );
+
+            font-size: 9px;
+        }
+
+
+        /* =====================================================
+           WHATSAPP
+        ===================================================== */
+
+        .whatsapp {
+
+            position: fixed;
+
+            right: 18px;
+            bottom: 18px;
+
+            z-index: 1100;
+
+            width: 56px;
+            height: 56px;
+
+            border-radius: 50%;
+
+            display: flex;
+
+            align-items: center;
+            justify-content: center;
+
+            background:
+                #25D366;
+
+            box-shadow:
+                0 10px 28px
+                rgba(0,0,0,.18);
+
+            transition:
+                transform .2s ease;
+        }
+
+        .whatsapp:hover {
+
+            transform:
+                scale(1.06);
+        }
+
+        .whatsapp svg {
+
+            width: 29px;
+            height: 29px;
+
+            fill: white;
+        }
+
+
+        /* =====================================================
+           RESPONSIVE
+        ===================================================== */
+
+        @media (max-width: 1000px) {
+
+            .product-grid {
+                grid-template-columns:
+                    repeat(2,1fr);
+            }
+
+            .quality-grid {
+                grid-template-columns:
+                    repeat(2,1fr);
+            }
+
+            .sourcing-grid,
+            .founder-grid,
+            .intro-grid {
+
+                grid-template-columns:
+                    1fr;
+
+                gap: 45px;
+            }
+
+            .planner-box {
+
+                grid-template-columns:
+                    1fr;
+            }
+
+        }
+
+
+        @media (max-width: 820px) {
+
+            .nav,
+            .header-cta {
+                display: none;
+            }
+
+            .menu-button {
+                display: block;
+            }
+
+            .mobile-nav {
+
+                display: none;
+
+                position: absolute;
+
+                left: 0;
+                right: 0;
+
+                top: 76px;
+
+                background:
+                    var(--cream);
+
+                border-bottom:
+                    1px solid
+                    var(--border);
+
+                padding: 15px 20px;
+            }
+
+            .mobile-nav.open {
+                display: block;
+            }
+
+            .mobile-nav a {
+
+                display: block;
+
+                padding: 13px 0;
+
+                border-bottom:
+                    1px solid
+                    var(--border);
+
+                color: var(--brown-mid);
+
+                font-size: 13px;
+            }
+
+            .signature-experience {
+
+                display: block;
+            }
+
+            .dish-selector {
+
+                padding:
+                    20px 0;
+
+                border-right: 0;
+
+                border-bottom:
+                    1px solid
+                    rgba(255,255,255,.12);
+
+                display: flex;
+
+                gap: 7px;
+
+                overflow-x: auto;
+            }
+
+            .selector-title {
+                display: none;
+            }
+
+            .dish-button {
+
+                flex: 0 0 auto;
+
+                width: auto;
+
+                padding:
+                    9px 13px;
+
+                border:
+                    1px solid
+                    rgba(255,255,255,.12);
+
+                border-radius: 30px;
+
+                font-size: 10px;
+            }
+
+            .dish-button.active {
+
+                padding-left: 13px;
+
+                border-color:
+                    #c99b62;
+            }
+
+            .dish-number {
+                display: none;
+            }
+
+            .signature-display {
+
+                padding:
+                    30px 0;
+            }
+
+            .sourcing-cards {
+
+                grid-template-columns:
+                    1fr;
+            }
+
+            .footer-grid {
+
+                grid-template-columns:
+                    1fr;
+            }
+
+        }
+
+
+        @media (max-width: 600px) {
+
+            .container {
+
+                width:
+                    calc(100% - 28px);
+            }
+
+            .hero {
+
+                min-height: 650px;
+            }
+
+            .hero h1 {
+
+                font-size: 49px;
+
+                letter-spacing:
+                    -1.5px;
+            }
+
+            .hero-copy {
+
+                font-size: 14px;
+            }
+
+            .intro,
+            .portfolio,
+            .signature,
+            .b2b-planner,
+            .sourcing,
+            .founder,
+            .quality,
+            .final-cta {
+
+                padding:
+                    75px 0;
+            }
+
+            .section-heading {
+
+                display: block;
+            }
+
+            .section-heading a {
+
+                display: inline-block;
+
+                margin-top: 14px;
+            }
+
+            .product-grid {
+
+                grid-template-columns:
+                    repeat(2,1fr);
+
+                gap: 11px;
+            }
+
+            .product-info {
+
+                padding: 13px;
+            }
+
+            .product-info h3 {
+
+                font-size: 17px;
+            }
+
+            .product-info p {
+
+                font-size: 9px;
+            }
+
+            .signature h2 {
+
+                font-size: 44px;
+            }
+
+            .signature-display-top {
+
+                align-items: flex-start;
+            }
+
+            .signature-dish {
+
+                font-size: 29px;
+            }
+
+            .orbit {
+
+                width: 94%;
+
+                margin-top: 20px;
+            }
+
+            .orbit-center {
+
+                width: 115px;
+                height: 115px;
+            }
+
+            .orbit-center strong {
+
+                font-size: 15px;
+            }
+
+            .spice-node {
+
+                font-size: 7px;
+
+                padding:
+                    6px 8px;
+            }
+
+            .spice-node small {
+
+                font-size: 5px;
+            }
+
+            .signature-bottom {
+
+                display: block;
+            }
+
+            .signature-bottom a {
+
+                display: inline-block;
+
+                margin-top: 10px;
+            }
+
+            .planner-inputs,
+            .planner-results {
+
+                padding:
+                    28px 22px;
+            }
+
+            .result-grid {
+
+                grid-template-columns:
+                    1fr 1fr;
+            }
+
+            .quality-grid {
+
+                grid-template-columns:
+                    1fr;
+            }
+
+            .footer-bottom {
+
+                flex-direction: column;
+
+                align-items: flex-start;
+            }
+
+        }
+
+
+        @media (prefers-reduced-motion: reduce) {
+
+            *,
+            *::before,
+            *::after {
+
+                scroll-behavior: auto !important;
+
+                animation-duration:
+                    0.01ms !important;
+
+                animation-iteration-count:
+                    1 !important;
+
+                transition-duration:
+                    0.01ms !important;
+            }
+        }
+
+    </style>
+
 </head>
 
 
 <body>
 
 
-  <!-- =======================================================
-       HEADER
-  ======================================================== -->
+<!-- =====================================================
+     HEADER
+===================================================== -->
 
-  <header class="site-header">
+<header class="site-header">
 
     <div class="container header-inner">
 
-      <a href="index.html" class="logo">
-        Dharoahar
-        <span>Authentic Indian Spices</span>
-      </a>
+        <a
+            href="index.html"
+            class="brand"
+        >
 
+            <span class="brand-name">
+                Dharoahar
+            </span>
 
-      <nav class="desktop-nav">
+            <span class="brand-sub">
+                Authentic Indian Spices
+            </span>
 
-        <a href="index.html" class="active">
-          Home
         </a>
 
-        <a href="about.html">
-          About Us
+
+        <nav class="nav">
+
+            <a href="index.html">
+                Home
+            </a>
+
+            <a href="about.html">
+                About Us
+            </a>
+
+            <a href="products.html">
+                Our Spices
+            </a>
+
+            <a href="quality.html">
+                Quality
+            </a>
+
+            <a href="contact.html">
+                Contact
+            </a>
+
+        </nav>
+
+
+        <a
+            href="contact.html"
+            class="header-cta"
+        >
+            Enquire
         </a>
 
-        <a href="products.html">
-          Our Spices
-        </a>
 
-        <a href="quality.html">
-          Quality
-        </a>
-
-        <a href="contact.html">
-          Contact
-        </a>
-
-      </nav>
-
-
-      <a href="contact.html" class="header-button">
-        Enquire
-      </a>
-
-
-      <button
-        class="menu-button"
-        id="menuButton"
-        aria-label="Open menu"
-      >
-
-        <div class="menu-icon">
-
-          <span></span>
-          <span></span>
-          <span></span>
-
-        </div>
-
-      </button>
+        <button
+            class="menu-button"
+            id="menuButton"
+            type="button"
+            aria-label="Open menu"
+            aria-expanded="false"
+        >
+            ☰
+        </button>
 
     </div>
 
 
-    <nav class="mobile-nav" id="mobileNav">
+    <nav
+        class="mobile-nav"
+        id="mobileNav"
+    >
 
-      <a href="index.html">
-        Home
-      </a>
+        <a href="index.html">
+            Home
+        </a>
 
-      <a href="about.html">
-        About Us
-      </a>
+        <a href="about.html">
+            About Us
+        </a>
 
-      <a href="products.html">
-        Our Spices
-      </a>
+        <a href="products.html">
+            Our Spices
+        </a>
 
-      <a href="quality.html">
-        Quality
-      </a>
+        <a href="quality.html">
+            Quality
+        </a>
 
-      <a href="contact.html">
-        Contact
-      </a>
+        <a href="contact.html">
+            Contact
+        </a>
 
     </nav>
 
-  </header>
+</header>
 
 
 
-  <!-- =======================================================
-       HERO
-  ======================================================== -->
+<!-- =====================================================
+     HERO
+===================================================== -->
 
-  <section class="hero">
+<section class="hero">
 
     <img
-      src="hero.jpg"
-      alt="Indian spices"
-      class="hero-image"
+        src="hero.jpg"
+        alt="Indian spices"
+        class="hero-image"
     >
 
     <div class="hero-overlay"></div>
@@ -1822,1120 +2688,2371 @@
 
     <div class="hero-content">
 
-      <div class="hero-eyebrow">
-        Dharoahar
-      </div>
+        <div class="hero-eyebrow">
+            Authentic Indian Spices
+        </div>
+
+        <h1>
+            From the source.<br>
+            <em>To every kitchen.</em>
+        </h1>
+
+        <p class="hero-copy">
+            A considered collection of Indian whole spices,
+            chilli varieties and powdered spices — sourced
+            with care for everyday kitchens and growing
+            food businesses.
+        </p>
 
 
-      <h1>
-        Authentic Indian Spices,
-        Sourced with Care.
-      </h1>
+        <div class="hero-actions">
 
+            <a
+                href="products.html"
+                class="button"
+            >
+                Explore Our Spices
+            </a>
 
-      <p class="hero-subtitle">
-        A carefully selected range of whole and powdered Indian
-        spices, sourced from established spice-growing regions
-        and brought together under one brand.
-      </p>
+            <a
+                href="#b2b-planner"
+                class="button button-outline"
+            >
+                Plan Your B2B Requirement
+            </a>
 
-
-      <div class="hero-actions">
-
-        <a
-          href="products.html"
-          class="hero-button hero-button-primary"
-        >
-          Explore Our Spices
-        </a>
-
-        <a
-          href="contact.html"
-          class="hero-button hero-button-secondary"
-        >
-          Business Enquiry
-        </a>
-
-      </div>
+        </div>
 
     </div>
 
-  </section>
+</section>
 
 
 
-  <!-- =======================================================
-       INTRO
-  ======================================================== -->
+<!-- =====================================================
+     INTRO
+===================================================== -->
 
-  <section class="intro-section">
+<section class="intro">
 
-    <div class="container">
-
-      <div class="intro-layout">
-
+    <div class="container intro-grid">
 
         <div>
 
-          <div class="eyebrow">
-            The Dharoahar Approach
-          </div>
+            <span class="section-eyebrow">
+                Dharoahar
+            </span>
 
-          <h2 class="intro-heading">
-            Spices that belong
-            in the everyday kitchen.
-          </h2>
+            <h2>
+                Indian spices,<br>
+                thoughtfully sourced.
+            </h2>
 
         </div>
 
 
         <div class="intro-copy">
 
-          <p>
-            Dharoahar brings together a growing portfolio of
-            Indian whole spices and powdered spices for everyday
-            cooking, food businesses and commercial requirements.
-          </p>
+            <p>
+                Dharoahar brings together a focused collection
+                of Indian spices for people and businesses who
+                care about what goes into their food.
+            </p>
 
-          <p>
-            Our focus is straightforward: source thoughtfully,
-            maintain documented quality processes and build
-            dependable relationships around the products we supply.
-          </p>
-
-          <a
-            href="about.html"
-            class="intro-link"
-          >
-            Discover Dharoahar
-            <span>→</span>
-          </a>
+            <p>
+                From whole spices and chilli varieties to
+                everyday powdered spices, our range is built
+                around clear sourcing, documented quality and
+                dependable supply.
+            </p>
 
         </div>
 
-      </div>
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     FEATURED PRODUCTS
+===================================================== -->
+
+<section class="portfolio">
+
+    <div class="container">
+
+        <div class="section-heading">
+
+            <div>
+
+                <span class="section-eyebrow">
+                    From Our Portfolio
+                </span>
+
+                <h2>
+                    20 spices.<br>
+                    Endless possibilities.
+                </h2>
+
+            </div>
+
+            <a href="products.html">
+                Explore all 20 spices →
+            </a>
+
+        </div>
+
+
+        <div class="product-grid">
+
+
+            <a
+                href="clove.html"
+                class="product-card"
+            >
+
+                <div class="product-image">
+
+                    <img
+                        src="clove.jpg"
+                        alt="Clove"
+                        loading="lazy"
+                    >
+
+                </div>
+
+                <div class="product-info">
+
+                    <span class="product-type">
+                        Whole Spice
+                    </span>
+
+                    <h3>
+                        Clove
+                    </h3>
+
+                    <p>
+                        लौंग · Laung
+                    </p>
+
+                </div>
+
+            </a>
+
+
+            <a
+                href="cardamom.html"
+                class="product-card"
+            >
+
+                <div class="product-image">
+
+                    <img
+                        src="cardamom.jpg"
+                        alt="Green Cardamom"
+                        loading="lazy"
+                    >
+
+                </div>
+
+                <div class="product-info">
+
+                    <span class="product-type">
+                        Whole Spice
+                    </span>
+
+                    <h3>
+                        Green Cardamom
+                    </h3>
+
+                    <p>
+                        हरी इलायची · Elaichi
+                    </p>
+
+                </div>
+
+            </a>
+
+
+            <a
+                href="cinnamon.html"
+                class="product-card"
+            >
+
+                <div class="product-image">
+
+                    <img
+                        src="cinnamon.jpg"
+                        alt="Cinnamon"
+                        loading="lazy"
+                    >
+
+                </div>
+
+                <div class="product-info">
+
+                    <span class="product-type">
+                        Whole Spice
+                    </span>
+
+                    <h3>
+                        Cinnamon
+                    </h3>
+
+                    <p>
+                        दालचीनी · Dalchini
+                    </p>
+
+                </div>
+
+            </a>
+
+
+            <a
+                href="blackpepper.html"
+                class="product-card"
+            >
+
+                <div class="product-image">
+
+                    <img
+                        src="black-pepper.jpg"
+                        alt="Black Pepper"
+                        loading="lazy"
+                    >
+
+                </div>
+
+                <div class="product-info">
+
+                    <span class="product-type">
+                        Whole Spice
+                    </span>
+
+                    <h3>
+                        Black Pepper
+                    </h3>
+
+                    <p>
+                        काली मिर्च · Kali Mirch
+                    </p>
+
+                </div>
+
+            </a>
+
+
+            <a
+                href="cumin.html"
+                class="product-card"
+            >
+
+                <div class="product-image">
+
+                    <img
+                        src="cumin.jpg"
+                        alt="Cumin Seeds"
+                        loading="lazy"
+                    >
+
+                </div>
+
+                <div class="product-info">
+
+                    <span class="product-type">
+                        Whole Spice
+                    </span>
+
+                    <h3>
+                        Cumin Seeds
+                    </h3>
+
+                    <p>
+                        जीरा · Jeera
+                    </p>
+
+                </div>
+
+            </a>
+
+
+            <a
+                href="star-anise.html"
+                class="product-card"
+            >
+
+                <div class="product-image">
+
+                    <img
+                        src="star-anise.png"
+                        alt="Star Anise"
+                        loading="lazy"
+                    >
+
+                </div>
+
+                <div class="product-info">
+
+                    <span class="product-type">
+                        Whole Spice
+                    </span>
+
+                    <h3>
+                        Star Anise
+                    </h3>
+
+                    <p>
+                        चक्र फूल · Chakra Phool
+                    </p>
+
+                </div>
+
+            </a>
+
+
+            <a
+                href="degi-mirch.html"
+                class="product-card"
+            >
+
+                <div class="product-image">
+
+                    <img
+                        src="degi-mirch.jpg"
+                        alt="Degi Mirch"
+                        loading="lazy"
+                    >
+
+                </div>
+
+                <div class="product-info">
+
+                    <span class="product-type">
+                        Chilli
+                    </span>
+
+                    <h3>
+                        Degi Mirch
+                    </h3>
+
+                    <p>
+                        देगी मिर्च
+                    </p>
+
+                </div>
+
+            </a>
+
+
+            <a
+                href="garam-masala.html"
+                class="product-card"
+            >
+
+                <div class="product-image">
+
+                    <img
+                        src="garam-masala.jpg"
+                        alt="Garam Masala"
+                        loading="lazy"
+                    >
+
+                </div>
+
+                <div class="product-info">
+
+                    <span class="product-type">
+                        Powder Spice
+                    </span>
+
+                    <h3>
+                        Garam Masala
+                    </h3>
+
+                    <p>
+                        गरम मसाला
+                    </p>
+
+                </div>
+
+            </a>
+
+        </div>
 
     </div>
 
-  </section>
+</section>
 
 
 
-  <!-- =======================================================
-       FEATURED PRODUCTS
-  ======================================================== -->
+<!-- =====================================================
+     DHAROAHAR SPICE SIGNATURE
+===================================================== -->
 
-  <section class="products-section">
+<section
+    class="signature"
+    id="spice-signature"
+>
 
     <div class="container">
 
 
-      <div class="section-top">
+        <div class="signature-intro">
+
+            <span class="signature-label">
+                The Dharoahar Spice Signature™
+            </span>
+
+            <h2>
+                Every dish has a combination.<br>
+                <em>Discover yours.</em>
+            </h2>
+
+            <p>
+                Choose what you're cooking and explore the
+                spices that commonly come together to create
+                its culinary character.
+            </p>
+
+        </div>
+
+
+        <div class="signature-experience">
+
+
+            <!-- DISH SELECTOR -->
+
+            <div class="dish-selector">
+
+                <div class="selector-title">
+                    WHAT ARE YOU COOKING?
+                </div>
+
+
+                <button
+                    class="dish-button active"
+                    type="button"
+                    data-dish="biryani"
+                >
+                    <span>Biryani</span>
+                    <span class="dish-number">01</span>
+                </button>
+
+
+                <button
+                    class="dish-button"
+                    type="button"
+                    data-dish="dal"
+                >
+                    <span>Dal</span>
+                    <span class="dish-number">02</span>
+                </button>
+
+
+                <button
+                    class="dish-button"
+                    type="button"
+                    data-dish="chole"
+                >
+                    <span>Chole</span>
+                    <span class="dish-number">03</span>
+                </button>
+
+
+                <button
+                    class="dish-button"
+                    type="button"
+                    data-dish="aloo-gobi"
+                >
+                    <span>Aloo Gobi</span>
+                    <span class="dish-number">04</span>
+                </button>
+
+
+                <button
+                    class="dish-button"
+                    type="button"
+                    data-dish="tandoori"
+                >
+                    <span>Tandoori</span>
+                    <span class="dish-number">05</span>
+                </button>
+
+
+                <button
+                    class="dish-button"
+                    type="button"
+                    data-dish="everyday"
+                >
+                    <span>Everyday Curry</span>
+                    <span class="dish-number">06</span>
+                </button>
+
+            </div>
+
+
+            <!-- SIGNATURE DISPLAY -->
+
+            <div class="signature-display">
+
+                <div class="signature-display-top">
+
+                    <div>
+
+                        <span class="signature-mini">
+                            Your Spice Signature
+                        </span>
+
+                        <h3
+                            class="signature-dish"
+                            id="signatureDish"
+                        >
+                            Biryani
+                        </h3>
+
+                    </div>
+
+                    <span
+                        class="signature-count"
+                        id="signatureCount"
+                    >
+                        07 spices
+                    </span>
+
+                </div>
+
+
+                <div
+                    class="orbit"
+                    id="spiceOrbit"
+                >
+
+                    <div class="orbit-ring orbit-ring-one"></div>
+
+                    <div class="orbit-ring orbit-ring-two"></div>
+
+
+                    <div class="orbit-center">
+
+                        <span>
+                            DHAROAHAR
+                        </span>
+
+                        <strong>
+                            Spice<br>
+                            Signature
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+                <div
+                    class="signature-pills"
+                    id="signaturePills"
+                >
+                </div>
+
+
+                <p
+                    class="signature-note"
+                    id="signatureNote"
+                >
+                    A warm and aromatic combination commonly
+                    found across Indian biryani preparations.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="signature-bottom">
+
+            <span>
+                Culinary combinations are illustrative,
+                inspired by traditional recipe patterns.
+            </span>
+
+            <a href="products.html">
+                Explore all 20 spices →
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     B2B SPICE PLANNER
+===================================================== -->
+
+<section
+    class="b2b-planner"
+    id="b2b-planner"
+>
+
+    <div class="container">
+
+
+        <div class="planner-intro">
+
+            <span class="section-eyebrow">
+                Built for Food Businesses
+            </span>
+
+            <h2>
+                How much spice do you need every month?
+            </h2>
+
+            <p>
+                Estimate your monthly spice requirement based
+                on your expected plate volume. Adjust the
+                assumptions to match your menu and operating
+                model, then speak to Dharoahar about your
+                requirement.
+            </p>
+
+        </div>
+
+
+        <div class="planner-box">
+
+
+            <!-- INPUTS -->
+
+            <div class="planner-inputs">
+
+                <h3 class="planner-heading">
+                    Your business
+                </h3>
+
+
+                <div class="input-group">
+
+                    <label for="businessType">
+                        Business Type
+                    </label>
+
+                    <select
+                        id="businessType"
+                        class="planner-select"
+                    >
+
+                        <option value="cloud">
+                            Cloud Kitchen
+                        </option>
+
+                        <option value="restaurant">
+                            Restaurant
+                        </option>
+
+                        <option value="qsr">
+                            QSR / Fast Casual
+                        </option>
+
+                        <option value="hotel">
+                            Hotel / Hotel Chain
+                        </option>
+
+                        <option value="caterer">
+                            Caterer
+                        </option>
+
+                        <option value="manufacturer">
+                            Food Manufacturer
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <div class="input-group">
+
+                    <label for="outlets">
+                        Number of Outlets
+                    </label>
+
+                    <input
+                        id="outlets"
+                        class="planner-input"
+                        type="number"
+                        min="1"
+                        max="10000"
+                        value="1"
+                    >
+
+                    <span class="input-help">
+                        Use 1 for a single kitchen / outlet.
+                    </span>
+
+                </div>
+
+
+                <div class="input-group">
+
+                    <label for="plates">
+                        Estimated Plates / Meals per Month
+                    </label>
+
+                    <input
+                        id="plates"
+                        class="planner-input"
+                        type="number"
+                        min="100"
+                        max="10000000"
+                        value="15000"
+                    >
+
+                    <span class="input-help">
+                        Enter your total monthly volume across
+                        all selected outlets.
+                    </span>
+
+                </div>
+
+
+                <div class="input-group">
+
+                    <label for="gramsPerPlate">
+                        Average Spice Usage per Plate
+                    </label>
+
+
+                    <div class="range-row">
+
+                        <input
+                            id="gramsPerPlate"
+                            class="planner-range"
+                            type="range"
+                            min="2"
+                            max="20"
+                            step="0.5"
+                            value="7"
+                        >
+
+                        <div
+                            class="range-value"
+                            id="gramsValue"
+                        >
+                            7 g
+                        </div>
+
+                    </div>
+
+
+                    <span class="input-help">
+                        This is a planning assumption. Adjust it
+                        based on your recipes, menu and actual
+                        consumption.
+                    </span>
+
+                </div>
+
+
+                <div class="input-group">
+
+                    <label for="buffer">
+                        Wastage / Safety Buffer
+                    </label>
+
+
+                    <div class="range-row">
+
+                        <input
+                            id="buffer"
+                            class="planner-range"
+                            type="range"
+                            min="0"
+                            max="20"
+                            step="1"
+                            value="8"
+                        >
+
+                        <div
+                            class="range-value"
+                            id="bufferValue"
+                        >
+                            8%
+                        </div>
+
+                    </div>
+
+                    <span class="input-help">
+                        Use this for kitchen wastage, handling
+                        loss and procurement buffer.
+                    </span>
+
+                </div>
+
+
+                <div class="planner-note">
+
+                    The calculator is a planning tool, not an
+                    industry-standard consumption benchmark.
+                    Actual usage varies significantly by menu,
+                    recipe, serving size and cooking method.
+
+                </div>
+
+            </div>
+
+
+            <!-- RESULTS -->
+
+            <div class="planner-results">
+
+                <h3 class="planner-heading">
+                    Your estimated requirement
+                </h3>
+
+
+                <div class="result-main">
+
+                    <div class="result-label">
+                        Monthly Spice Requirement
+                    </div>
+
+                    <div
+                        class="result-number"
+                        id="monthlyResult"
+                    >
+                        113.4
+                    </div>
+
+                    <div class="result-unit">
+                        kg per month
+                    </div>
+
+                </div>
+
+
+                <div class="result-grid">
+
+                    <div class="result-card">
+
+                        <span>
+                            Annual Requirement
+                        </span>
+
+                        <strong id="annualResult">
+                            1,225.0 kg
+                        </strong>
+
+                    </div>
+
+
+                    <div class="result-card">
+
+                        <span>
+                            Per Outlet / Month
+                        </span>
+
+                        <strong id="outletResult">
+                            113.4 kg
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+                <div class="result-breakdown">
+
+                    <div class="breakdown-title">
+                        Indicative Procurement Split
+                    </div>
+
+
+                    <div class="breakdown-row">
+
+                        <span>
+                            Whole Spices
+                        </span>
+
+                        <strong id="wholeResult">
+                            34.0 kg
+                        </strong>
+
+                    </div>
+
+
+                    <div class="breakdown-row">
+
+                        <span>
+                            Chilli Products
+                        </span>
+
+                        <strong id="chilliResult">
+                            17.0 kg
+                        </strong>
+
+                    </div>
+
+
+                    <div class="breakdown-row">
+
+                        <span>
+                            Powder Spices
+                        </span>
+
+                        <strong id="powderResult">
+                            62.4 kg
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+                <button
+                    type="button"
+                    class="planner-cta"
+                    id="plannerWhatsapp"
+                >
+                    Discuss This Requirement on WhatsApp
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     SOURCING
+===================================================== -->
+
+<section class="sourcing">
+
+    <div class="container sourcing-grid">
 
         <div>
 
-          <div class="eyebrow">
-            From Our Portfolio
-          </div>
+            <span class="section-eyebrow">
+                Sourcing
+            </span>
 
-          <h2 class="section-title">
-            A taste of our spices.
-          </h2>
+            <h2>
+                From recognised spice regions across India.
+            </h2>
 
         </div>
 
 
-        <p class="section-description">
-          Explore selected whole and powdered spices from the
-          Dharoahar portfolio. Every product page provides
-          details on the spice, its culinary uses and available
-          sourcing information.
-        </p>
+        <div>
 
-      </div>
+            <div class="sourcing-copy">
 
+                Our collection brings together spices from
+                established Indian sourcing regions, with
+                product-specific origin information wherever
+                confirmed and documented.
 
-
-      <div class="products-grid">
-
-
-        <!-- CLOVE -->
-
-        <a
-          href="clove.html"
-          class="product-card"
-        >
-
-          <div class="product-image">
-
-            <img
-              src="clove.jpg"
-              alt="Clove"
-              loading="lazy"
-            >
-
-            <span class="product-category">
-              Whole Spice
-            </span>
-
-          </div>
-
-
-          <div class="product-info">
-
-            <h3 class="product-name">
-              Clove
-            </h3>
-
-            <p class="product-hindi">
-              लौंग · Laung
-            </p>
-
-            <p class="product-origin">
-              Origin: Kerala
-            </p>
-
-          </div>
-
-        </a>
-
-
-
-        <!-- CARDAMOM -->
-
-        <a
-          href="cardamom.html"
-          class="product-card"
-        >
-
-          <div class="product-image">
-
-            <img
-              src="cardamom.jpg"
-              alt="Green Cardamom"
-              loading="lazy"
-            >
-
-            <span class="product-category">
-              Whole Spice
-            </span>
-
-          </div>
-
-
-          <div class="product-info">
-
-            <h3 class="product-name">
-              Green Cardamom
-            </h3>
-
-            <p class="product-hindi">
-              हरी इलायची · Elaichi
-            </p>
-
-            <p class="product-origin">
-              Origin: Kerala
-            </p>
-
-          </div>
-
-        </a>
-
-
-
-        <!-- CINNAMON -->
-
-        <a
-          href="cinnamon.html"
-          class="product-card"
-        >
-
-          <div class="product-image">
-
-            <img
-              src="cinnamon.jpg"
-              alt="Cinnamon"
-              loading="lazy"
-            >
-
-            <span class="product-category">
-              Whole Spice
-            </span>
-
-          </div>
-
-
-          <div class="product-info">
-
-            <h3 class="product-name">
-              Cinnamon
-            </h3>
-
-            <p class="product-hindi">
-              दालचीनी · Dalchini
-            </p>
-
-            <p class="product-origin">
-              Origin: Kerala
-            </p>
-
-          </div>
-
-        </a>
-
-
-
-        <!-- BLACK PEPPER -->
-
-        <a
-          href="blackpepper.html"
-          class="product-card"
-        >
-
-          <div class="product-image">
-
-            <img
-              src="black-pepper.jpg"
-              alt="Black Pepper"
-              loading="lazy"
-            >
-
-            <span class="product-category">
-              Whole Spice
-            </span>
-
-          </div>
-
-
-          <div class="product-info">
-
-            <h3 class="product-name">
-              Black Pepper
-            </h3>
-
-            <p class="product-hindi">
-              काली मिर्च · Kali Mirch
-            </p>
-
-            <p class="product-origin">
-              Origin: Kerala
-            </p>
-
-          </div>
-
-        </a>
-
-
-
-        <!-- CUMIN -->
-
-        <a
-          href="cumin.html"
-          class="product-card"
-        >
-
-          <div class="product-image">
-
-            <img
-              src="cumin.jpg"
-              alt="Cumin Seeds"
-              loading="lazy"
-            >
-
-            <span class="product-category">
-              Whole Spice
-            </span>
-
-          </div>
-
-
-          <div class="product-info">
-
-            <h3 class="product-name">
-              Cumin Seeds
-            </h3>
-
-            <p class="product-hindi">
-              जीरा · Jeera
-            </p>
-
-            <p class="product-origin">
-              Origin: Rajasthan
-            </p>
-
-          </div>
-
-        </a>
-
-
-
-        <!-- STAR ANISE -->
-
-        <a
-          href="star-anise.html"
-          class="product-card"
-        >
-
-          <div class="product-image">
-
-            <img
-              src="star-anise.png"
-              alt="Star Anise"
-              loading="lazy"
-            >
-
-            <span class="product-category">
-              Whole Spice
-            </span>
-
-          </div>
-
-
-          <div class="product-info">
-
-            <h3 class="product-name">
-              Star Anise
-            </h3>
-
-            <p class="product-hindi">
-              चक्र फूल · Chakra Phool
-            </p>
-
-            <p class="product-origin">
-              Whole Spice
-            </p>
-
-          </div>
-
-        </a>
-
-
-
-        <!-- DEGI MIRCH -->
-
-        <a
-          href="degi-mirch.html"
-          class="product-card"
-        >
-
-          <div class="product-image">
-
-            <img
-              src="degi-mirch.jpg"
-              alt="Degi Mirch"
-              loading="lazy"
-            >
-
-            <span class="product-category">
-              Powder Spice
-            </span>
-
-          </div>
-
-
-          <div class="product-info">
-
-            <h3 class="product-name">
-              Degi Mirch
-            </h3>
-
-            <p class="product-hindi">
-              देगी मिर्च
-            </p>
-
-            <p class="product-origin">
-              Origin: Andhra Pradesh
-            </p>
-
-          </div>
-
-        </a>
-
-
-
-        <!-- KASHMIRI MIRCH -->
-
-        <a
-          href="kashmiri-mirch.html"
-          class="product-card"
-        >
-
-          <div class="product-image">
-
-            <img
-              src="kashmiri-mirch.jpg"
-              alt="Kashmiri Mirch"
-              loading="lazy"
-            >
-
-            <span class="product-category">
-              Powder Spice
-            </span>
-
-          </div>
-
-
-          <div class="product-info">
-
-            <h3 class="product-name">
-              Kashmiri Mirch
-            </h3>
-
-            <p class="product-hindi">
-              कश्मीरी मिर्च
-            </p>
-
-            <p class="product-origin">
-              Origin: Guntur
-            </p>
-
-          </div>
-
-        </a>
-
-      </div>
-
-
-
-      <div class="view-products">
-
-        <a
-          href="products.html"
-          class="brown-button"
-        >
-          View All 20 Spices
-        </a>
-
-      </div>
-
-    </div>
-
-  </section>
-
-
-
-  <!-- =======================================================
-       CATEGORIES
-  ======================================================== -->
-
-  <section class="category-band">
-
-    <div class="container">
-
-      <div class="category-grid">
-
-
-        <div class="category-card">
-
-          <div class="category-pattern"></div>
-
-          <div class="category-content">
-
-            <div class="category-label">
-              10 Products
             </div>
 
-            <h3>
-              Whole Spices
-            </h3>
 
-            <p>
-              Clove, cardamom, cinnamon, black pepper, cumin and
-              other whole spices for cooking, tempering, blends
-              and traditional recipes.
-            </p>
-
-            <a
-              href="products.html#whole-spices"
-              class="category-link"
-            >
-              Explore Whole Spices
-              <span>→</span>
-            </a>
-
-          </div>
-
-        </div>
+            <div class="sourcing-cards">
 
 
+                <div class="source-card">
 
-        <div class="category-card">
+                    <h3>
+                        Kerala
+                    </h3>
 
-          <div class="category-pattern"></div>
+                    <p>
+                        Selected whole spices including clove,
+                        green cardamom, cinnamon, black pepper
+                        and bay leaf.
+                    </p>
 
-          <div class="category-content">
+                </div>
 
-            <div class="category-label">
-              10 Products
+
+                <div class="source-card">
+
+                    <h3>
+                        Rajasthan
+                    </h3>
+
+                    <p>
+                        Cumin seeds, cumin powder and coriander
+                        powder from an important Indian spice
+                        growing region.
+                    </p>
+
+                </div>
+
+
+                <div class="source-card">
+
+                    <h3>
+                        Chilli Regions
+                    </h3>
+
+                    <p>
+                        Chilli products sourced from established
+                        Indian chilli-producing regions including
+                        Andhra Pradesh and Guntur.
+                    </p>
+
+                </div>
+
             </div>
 
-            <h3>
-              Powder Spices
-            </h3>
+        </div>
 
-            <p>
-              A practical range of ground spices including chilli,
-              turmeric, coriander, cumin, garam masala and more.
-            </p>
+    </div>
 
-            <a
-              href="products.html#powder-spices"
-              class="category-link"
+</section>
+
+
+
+<!-- =====================================================
+     FOUNDER
+===================================================== -->
+
+<section class="founder">
+
+    <div class="container founder-grid">
+
+
+        <div class="founder-photo">
+
+            <img
+                src="founder.jpg"
+                alt="Aman Adhish, Founder of Dharoahar"
+                onerror="this.style.display='none';"
             >
-              Explore Powder Spices
-              <span>→</span>
-            </a>
-
-          </div>
-
-        </div>
-
-      </div>
-
-    </div>
-
-  </section>
-
-
-
-  <!-- =======================================================
-       SOURCING
-  ======================================================== -->
-
-  <section class="sourcing-section">
-
-    <div class="container">
-
-
-      <div class="sourcing-heading">
-
-        <div class="eyebrow">
-          Sourcing
-        </div>
-
-        <h2>
-          Rooted in India's
-          spice-growing regions.
-        </h2>
-
-        <p>
-          Our portfolio brings together spices associated with
-          established growing regions across India. Origin
-          information is shown on individual product pages where
-          it has been confirmed.
-        </p>
-
-      </div>
-
-
-
-      <div class="origin-grid">
-
-
-        <div class="origin-card">
-
-          <div class="origin-card-number">
-            01
-          </div>
-
-          <h3>
-            Kerala
-          </h3>
-
-          <p>
-            Our confirmed Kerala-origin portfolio includes
-            clove, green cardamom, cinnamon, black pepper and
-            bay leaf.
-          </p>
-
-        </div>
-
-
-
-        <div class="origin-card">
-
-          <div class="origin-card-number">
-            02
-          </div>
-
-          <h3>
-            Rajasthan
-          </h3>
-
-          <p>
-            Cumin seeds, cumin powder and coriander powder in
-            our portfolio carry confirmed Rajasthan origin.
-          </p>
-
-        </div>
-
-
-
-        <div class="origin-card">
-
-          <div class="origin-card-number">
-            03
-          </div>
-
-          <h3>
-            Chilli Regions
-          </h3>
-
-          <p>
-            Degi Mirch is sourced from Andhra Pradesh, while
-            Kashmiri Mirch in our current portfolio carries
-            confirmed Guntur origin.
-          </p>
-
-        </div>
-
-      </div>
-
-    </div>
-
-  </section>
-
-
-
-  <!-- =======================================================
-       FOUNDER
-  ======================================================== -->
-
-  <section class="founder-section">
-
-    <div class="container">
-
-      <div class="founder-layout">
-
-
-        <div class="founder-image">
-
-          <img
-            src="founder.jpg"
-            alt="Aman Adhish, Founder and Director of Dharoahar"
-            loading="lazy"
-          >
 
         </div>
 
 
         <div class="founder-content">
 
-          <div class="eyebrow">
-            The Person Behind Dharoahar
-          </div>
+            <span class="section-eyebrow">
+                The Founder
+            </span>
 
-          <h2>
-            Building a spice business
-            around dependable sourcing.
-          </h2>
+            <h2>
+                Building Dharoahar
+                around trust.
+            </h2>
 
-          <p class="founder-name">
-            Aman Adhish
-          </p>
+            <div class="founder-name">
+                Aman Adhish
+            </div>
 
-          <p class="founder-title">
-            Founder &amp; Director
-          </p>
-
-
-          <p>
-            Dharoahar was founded with a simple objective:
-            to build a dependable business around Indian spices,
-            with attention to sourcing, product quality and
-            long-term relationships.
-          </p>
-
-          <p>
-            The business brings together experience across sales,
-            procurement and commercial operations with a focus on
-            creating a practical and reliable spice portfolio.
-          </p>
+            <div class="founder-role">
+                Founder & Director
+            </div>
 
 
-          <a
-            href="about.html"
-            class="founder-link"
-          >
-            Read Our Story
-            <span>→</span>
-          </a>
+            <div class="founder-copy">
+
+                <p>
+                    Dharoahar was created with a simple objective:
+                    to build a dependable spice business around
+                    thoughtful sourcing, documented quality and
+                    long-term relationships.
+                </p>
+
+                <p>
+                    The business is being built to serve both
+                    everyday consumers and food businesses looking
+                    for a dependable Indian spice partner.
+                </p>
+
+            </div>
+
+
+            <div style="margin-top:28px;">
+
+                <a
+                    href="about.html"
+                    class="button"
+                    style="background:#39251a;"
+                >
+                    Discover Dharoahar
+                </a>
+
+            </div>
 
         </div>
 
-      </div>
-
     </div>
 
-  </section>
+</section>
 
 
 
-  <!-- =======================================================
-       QUALITY
-  ======================================================== -->
+<!-- =====================================================
+     QUALITY
+===================================================== -->
 
-  <section class="quality-section">
+<section class="quality">
 
     <div class="container">
 
 
-      <div class="quality-heading">
+        <div class="quality-heading">
 
-        <div class="eyebrow">
-          Quality &amp; Compliance
-        </div>
+            <span class="section-eyebrow">
+                Quality & Compliance
+            </span>
 
-        <h2>
-          Built on quality.
-          Backed by documentation.
-        </h2>
+            <h2>
+                Built on quality.<br>
+                Backed by documentation.
+            </h2>
 
-        <p>
-          Dharoahar maintains documented registrations and
-          certifications relevant to its food business and
-          international trade activities.
-        </p>
-
-      </div>
-
-
-
-      <div class="quality-grid">
-
-
-        <div class="quality-card">
-
-          <div class="quality-icon">
-            F
-          </div>
-
-          <h3>
-            FSSAI Central License
-          </h3>
-
-          <p>
-            Central food safety license covering the applicable
-            trade, retail, wholesale and exporter activities.
-          </p>
-
-          <a
-            href="quality.html"
-            class="quality-link"
-          >
-            View Details →
-          </a>
+            <p class="quality-copy">
+                Dharoahar operates with documented regulatory
+                and quality credentials supporting its food
+                business and export activity.
+            </p>
 
         </div>
 
 
+        <div class="quality-grid">
 
-        <div class="quality-card">
 
-          <div class="quality-icon">
-            I
-          </div>
+            <div class="quality-card">
 
-          <h3>
-            Importer-Exporter Code
-          </h3>
+                <h3>
+                    FSSAI
+                </h3>
 
-          <p>
-            Government-issued IEC supporting the company's
-            international trade activities.
-          </p>
+                <p>
+                    Central food safety licence covering the
+                    registered business activities.
+                </p>
 
-          <a
-            href="quality.html"
-            class="quality-link"
-          >
-            View Details →
-          </a>
+                <a
+                    href="quality.html"
+                    class="quality-link"
+                >
+                    View details →
+                </a>
+
+            </div>
+
+
+            <div class="quality-card">
+
+                <h3>
+                    IEC
+                </h3>
+
+                <p>
+                    Importer-Exporter Code supporting the
+                    company's export activity.
+                </p>
+
+                <a
+                    href="quality.html"
+                    class="quality-link"
+                >
+                    View details →
+                </a>
+
+            </div>
+
+
+            <div class="quality-card">
+
+                <h3>
+                    ISO 9001:2015
+                </h3>
+
+                <p>
+                    Quality management system certification for
+                    manufacturing and supply of spices and other
+                    food products.
+                </p>
+
+                <a
+                    href="quality.html"
+                    class="quality-link"
+                >
+                    View details →
+                </a>
+
+            </div>
+
+
+            <div class="quality-card">
+
+                <h3>
+                    FDA Compliance
+                </h3>
+
+                <p>
+                    Certificate of Compliance covering the
+                    registered scope of food product activity.
+                </p>
+
+                <a
+                    href="quality.html"
+                    class="quality-link"
+                >
+                    View details →
+                </a>
+
+            </div>
 
         </div>
-
-
-
-        <div class="quality-card">
-
-          <div class="quality-icon">
-            Q
-          </div>
-
-          <h3>
-            ISO 9001:2015
-          </h3>
-
-          <p>
-            Quality Management System certification covering
-            manufacturing and supply of spices and food products.
-          </p>
-
-          <a
-            href="quality.html"
-            class="quality-link"
-          >
-            View Details →
-          </a>
-
-        </div>
-
-
-
-        <div class="quality-card">
-
-          <div class="quality-icon">
-            C
-          </div>
-
-          <h3>
-            FDA Certificate of Compliance
-          </h3>
-
-          <p>
-            Certificate of Compliance covering manufacturing
-            and supply of spices and other food products.
-          </p>
-
-          <a
-            href="quality.html"
-            class="quality-link"
-          >
-            View Details →
-          </a>
-
-        </div>
-
-      </div>
 
     </div>
 
-  </section>
+</section>
 
 
 
-  <!-- =======================================================
-       CTA
-  ======================================================== -->
+<!-- =====================================================
+     FINAL CTA
+===================================================== -->
 
-  <section class="cta-section">
-
-    <div class="container">
-
-      <div class="cta-inner">
-
-        <div class="eyebrow">
-          Start a Conversation
-        </div>
-
-        <h2>
-          Looking for Indian spices?
-        </h2>
-
-        <p>
-          Explore the Dharoahar portfolio or speak with us about
-          product, wholesale, distribution and other business
-          enquiries.
-        </p>
-
-
-        <div class="cta-buttons">
-
-          <a
-            href="products.html"
-            class="cta-button cta-button-primary"
-          >
-            Explore Our Spices
-          </a>
-
-
-          <a
-            href="https://wa.me/918603824415?text=Hello%20Dharoahar%2C%20I%20would%20like%20to%20make%20an%20enquiry."
-            target="_blank"
-            rel="noopener"
-            class="cta-button cta-button-secondary"
-          >
-            WhatsApp Us
-          </a>
-
-
-          <a
-            href="contact.html"
-            class="cta-button cta-button-secondary"
-          >
-            Contact Us
-          </a>
-
-        </div>
-
-      </div>
-
-    </div>
-
-  </section>
-
-
-
-  <!-- =======================================================
-       FOOTER
-  ======================================================== -->
-
-  <footer>
+<section class="final-cta">
 
     <div class="container">
 
-
-      <div class="footer-grid">
-
-
-        <div class="footer-brand">
-
-          <h2>
+        <span class="section-eyebrow">
             Dharoahar
-          </h2>
-
-          <p>
-            Authentic Indian spices, sourced with care.
-            A growing portfolio of whole and powdered spices
-            for customers and businesses.
-          </p>
-
-        </div>
-
-
-        <div class="footer-column">
-
-          <h3>
-            Explore
-          </h3>
-
-          <a href="index.html">
-            Home
-          </a>
-
-          <a href="about.html">
-            About Us
-          </a>
-
-          <a href="products.html">
-            Our Spices
-          </a>
-
-          <a href="quality.html">
-            Quality
-          </a>
-
-          <a href="contact.html">
-            Contact
-          </a>
-
-        </div>
-
-
-        <div class="footer-column">
-
-          <h3>
-            Connect
-          </h3>
-
-          <a
-            href="https://wa.me/918603824415"
-            target="_blank"
-            rel="noopener"
-          >
-            WhatsApp
-          </a>
-
-          <a href="mailto:amanadhish@dharoahar.com">
-            Email
-          </a>
-
-          <a href="tel:+918603824415">
-            +91 86038 24415
-          </a>
-
-        </div>
-
-      </div>
-
-
-      <div class="footer-bottom">
-
-        <span>
-          © 2026 Dharoahar. All rights reserved.
         </span>
 
-        <span>
-          Adhish Dharoahar Pvt. Ltd.
-        </span>
+        <h2>
+            Authentic Indian Spices,
+            Sourced with Care.
+        </h2>
 
-      </div>
+        <p>
+            Looking to source spices for your home, restaurant,
+            cloud kitchen, retail business or larger food
+            operation?
+        </p>
+
+
+        <a
+            href="contact.html"
+            class="button"
+            style="background:#39251a;"
+        >
+            Talk to Dharoahar
+        </a>
 
     </div>
 
-  </footer>
+</section>
 
 
 
-  <!-- =======================================================
-       WHATSAPP FLOAT
-  ======================================================== -->
+<!-- =====================================================
+     FOOTER
+===================================================== -->
 
-  <a
-    class="whatsapp-float"
-    href="https://wa.me/918603824415?text=Hello%20Dharoahar%2C%20I%20would%20like%20to%20make%20an%20enquiry."
+<footer class="footer">
+
+    <div class="container">
+
+
+        <div class="footer-grid">
+
+
+            <div>
+
+                <div class="footer-brand">
+                    Dharoahar
+                </div>
+
+                <p class="footer-tagline">
+                    Authentic Indian Spices, Sourced with Care.
+                </p>
+
+            </div>
+
+
+            <div>
+
+                <div class="footer-title">
+                    Explore
+                </div>
+
+                <div class="footer-links">
+
+                    <a href="index.html">
+                        Home
+                    </a>
+
+                    <a href="about.html">
+                        About Us
+                    </a>
+
+                    <a href="products.html">
+                        Our Spices
+                    </a>
+
+                    <a href="quality.html">
+                        Quality
+                    </a>
+
+                    <a href="contact.html">
+                        Contact
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <div>
+
+                <div class="footer-title">
+                    Contact
+                </div>
+
+                <div class="footer-links">
+
+                    <a
+                        href="mailto:amanadhish@dharoahar.com"
+                    >
+                        amanadhish@dharoahar.com
+                    </a>
+
+                    <a
+                        href="https://wa.me/918603824415"
+                        target="_blank"
+                        rel="noopener"
+                    >
+                        +91 86038 24415
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="footer-bottom">
+
+            <span>
+                © 2026 Dharoahar. All rights reserved.
+            </span>
+
+            <span>
+                Authentic Indian Spices, Sourced with Care.
+            </span>
+
+        </div>
+
+    </div>
+
+</footer>
+
+
+
+<!-- =====================================================
+     WHATSAPP
+===================================================== -->
+
+<a
+    href="https://wa.me/918603824415"
+    class="whatsapp"
     target="_blank"
     rel="noopener"
     aria-label="Chat with Dharoahar on WhatsApp"
-  >
+>
 
     <svg
-      viewBox="0 0 24 24"
-      aria-hidden="true"
+        viewBox="0 0 32 32"
+        xmlns="http://www.w3.org/2000/svg"
+        aria-hidden="true"
     >
 
-      <path d="M20.52 3.48A11.78 11.78 0 0 0 12.06 0C5.52 0 .2 5.32.2 11.86c0 2.09.55 4.13 1.59 5.93L.1 24l6.37-1.67a11.83 11.83 0 0 0 5.58 1.42h.01c6.54 0 11.86-5.32 11.86-11.86 0-3.17-1.24-6.14-3.4-8.41ZM12.06 21.7h-.01a9.82 9.82 0 0 1-5.01-1.37l-.36-.21-3.78.99 1.01-3.68-.23-.38a9.84 9.84 0 1 1 8.38 4.65Zm5.4-7.37c-.3-.15-1.77-.87-2.05-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.95 1.17-.17.2-.35.22-.65.07-.3-.15-1.27-.47-2.42-1.5-.9-.8-1.5-1.79-1.68-2.09-.17-.3-.02-.46.13-.61.14-.14.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.07-.15-.67-1.61-.92-2.21-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.49s1.07 2.89 1.22 3.09c.15.2 2.1 3.21 5.09 4.5.71.31 1.26.49 1.69.63.71.23 1.35.2 1.86.12.57-.09 1.77-.72 2.02-1.42.25-.7.25-1.3.17-1.42-.07-.12-.27-.2-.57-.35Z"/>
+        <path d="M19.11 17.47c-.27-.14-1.59-.78-1.84-.87-.25-.09-.43-.14-.61.14-.18.27-.7.87-.86 1.05-.16.18-.32.2-.59.07-.27-.14-1.14-.42-2.17-1.34-.8-.71-1.34-1.59-1.5-1.86-.16-.27-.02-.42.12-.56.12-.12.27-.32.41-.48.14-.16.18-.27.27-.45.09-.18.05-.34-.02-.48-.07-.14-.61-1.47-.84-2.02-.22-.53-.45-.46-.61-.47h-.52c-.18 0-.48.07-.73.34-.25.27-.95.93-.95 2.27s.98 2.63 1.11 2.81c.14.18 1.93 2.95 4.67 4.13.65.28 1.16.45 1.56.57.66.21 1.27.18 1.75.11.53-.08 1.59-.65 1.81-1.28.23-.63.23-1.17.16-1.28-.07-.11-.25-.18-.52-.32z"/>
+
+        <path d="M16.02 3.2c-7.07 0-12.8 5.73-12.8 12.8 0 2.26.59 4.38 1.62 6.22L3.12 28.8l6.75-1.77a12.75 12.75 0 0 0 6.15 1.57h.01c7.07 0 12.8-5.73 12.8-12.8S23.09 3.2 16.02 3.2zm0 23.2h-.01a10.3 10.3 0 0 1-5.25-1.43l-.38-.23-4.01 1.05 1.07-3.91-.25-.4a10.3 10.3 0 1 1 8.83 4.92z"/>
 
     </svg>
 
-  </a>
+</a>
 
 
 
-  <!-- =======================================================
-       MOBILE MENU
-  ======================================================== -->
+<!-- =====================================================
+     JAVASCRIPT
+===================================================== -->
 
-  <script>
-
-    const menuButton =
-      document.getElementById("menuButton");
-
-    const mobileNav =
-      document.getElementById("mobileNav");
+<script>
 
 
-    menuButton.addEventListener("click", function () {
+/* =====================================================
+   MOBILE MENU
+===================================================== */
 
-      mobileNav.classList.toggle("open");
+const menuButton =
+    document.getElementById("menuButton");
+
+const mobileNav =
+    document.getElementById("mobileNav");
+
+
+menuButton.addEventListener(
+    "click",
+    function() {
+
+        const open =
+            mobileNav.classList.toggle("open");
+
+        menuButton.setAttribute(
+            "aria-expanded",
+            open ? "true" : "false"
+        );
+
+        menuButton.textContent =
+            open ? "✕" : "☰";
+
+    }
+);
+
+
+mobileNav
+    .querySelectorAll("a")
+    .forEach(function(link) {
+
+        link.addEventListener(
+            "click",
+            function() {
+
+                mobileNav.classList.remove("open");
+
+                menuButton.setAttribute(
+                    "aria-expanded",
+                    "false"
+                );
+
+                menuButton.textContent = "☰";
+
+            }
+        );
 
     });
 
 
-    mobileNav
-      .querySelectorAll("a")
-      .forEach(function(link) {
 
-        link.addEventListener("click", function() {
+/* =====================================================
+   SPICE SIGNATURE DATA
+===================================================== */
 
-          mobileNav.classList.remove("open");
+const spiceSignatures = {
 
-        });
+    biryani: {
 
-      });
+        name: "Biryani",
 
-  </script>
+        note:
+            "A warm and aromatic combination commonly found across Indian biryani and rice-spice preparations.",
 
+        spices: [
+
+            {
+                name: "Cinnamon",
+                hindi: "दालचीनी",
+                link: "cinnamon.html"
+            },
+
+            {
+                name: "Cardamom",
+                hindi: "इलायची",
+                link: "cardamom.html"
+            },
+
+            {
+                name: "Clove",
+                hindi: "लौंग",
+                link: "clove.html"
+            },
+
+            {
+                name: "Bay Leaf",
+                hindi: "तेज पत्ता",
+                link: "bay-leaf.html"
+            },
+
+            {
+                name: "Star Anise",
+                hindi: "चक्र फूल",
+                link: "star-anise.html"
+            },
+
+            {
+                name: "Black Pepper",
+                hindi: "काली मिर्च",
+                link: "blackpepper.html"
+            },
+
+            {
+                name: "Cumin Seeds",
+                hindi: "जीरा",
+                link: "cumin.html"
+            }
+
+        ]
+
+    },
+
+
+    dal: {
+
+        name: "Dal",
+
+        note:
+            "A familiar Indian dal profile built around tempering spices and everyday powdered spices.",
+
+        spices: [
+
+            {
+                name: "Cumin Seeds",
+                hindi: "जीरा",
+                link: "cumin.html"
+            },
+
+            {
+                name: "Bay Leaf",
+                hindi: "तेज पत्ता",
+                link: "bay-leaf.html"
+            },
+
+            {
+                name: "Turmeric",
+                hindi: "हल्दी",
+                link: "haldi-powder.html"
+            },
+
+            {
+                name: "Red Chilli",
+                hindi: "लाल मिर्च",
+                link: "red-chilli-powder.html"
+            },
+
+            {
+                name: "Coriander",
+                hindi: "धनिया",
+                link: "dhaniya-powder.html"
+            },
+
+            {
+                name: "Garam Masala",
+                hindi: "गरम मसाला",
+                link: "garam-masala.html"
+            }
+
+        ]
+
+    },
+
+
+    chole: {
+
+        name: "Chole",
+
+        note:
+            "A layered combination of earthy, warm and tangy spices commonly used in chole preparations.",
+
+        spices: [
+
+            {
+                name: "Cumin Powder",
+                hindi: "जीरा",
+                link: "cumin-powder.html"
+            },
+
+            {
+                name: "Coriander Powder",
+                hindi: "धनिया",
+                link: "dhaniya-powder.html"
+            },
+
+            {
+                name: "Red Chilli",
+                hindi: "लाल मिर्च",
+                link: "red-chilli-powder.html"
+            },
+
+            {
+                name: "Turmeric",
+                hindi: "हल्दी",
+                link: "haldi-powder.html"
+            },
+
+            {
+                name: "Black Pepper",
+                hindi: "काली मिर्च",
+                link: "black-pepper-powder.html"
+            },
+
+            {
+                name: "Garam Masala",
+                hindi: "गरम मसाला",
+                link: "garam-masala.html"
+            },
+
+            {
+                name: "Amchur",
+                hindi: "अमचूर",
+                link: "amchur-powder.html"
+            }
+
+        ]
+
+    },
+
+
+    "aloo-gobi": {
+
+        name: "Aloo Gobi",
+
+        note:
+            "A familiar everyday combination balancing earthy, warm and tangy spice notes.",
+
+        spices: [
+
+            {
+                name: "Cumin Seeds",
+                hindi: "जीरा",
+                link: "cumin.html"
+            },
+
+            {
+                name: "Turmeric",
+                hindi: "हल्दी",
+                link: "haldi-powder.html"
+            },
+
+            {
+                name: "Red Chilli",
+                hindi: "लाल मिर्च",
+                link: "red-chilli-powder.html"
+            },
+
+            {
+                name: "Coriander",
+                hindi: "धनिया",
+                link: "dhaniya-powder.html"
+            },
+
+            {
+                name: "Cumin Powder",
+                hindi: "जीरा",
+                link: "cumin-powder.html"
+            },
+
+            {
+                name: "Amchur",
+                hindi: "अमचूर",
+                link: "amchur-powder.html"
+            },
+
+            {
+                name: "Garam Masala",
+                hindi: "गरम मसाला",
+                link: "garam-masala.html"
+            }
+
+        ]
+
+    },
+
+
+    tandoori: {
+
+        name: "Tandoori",
+
+        note:
+            "A bold spice profile built around chilli, warm spices and aromatic powdered seasonings.",
+
+        spices: [
+
+            {
+                name: "Kashmiri Mirch",
+                hindi: "कश्मीरी मिर्च",
+                link: "kashmiri-mirch.html"
+            },
+
+            {
+                name: "Turmeric",
+                hindi: "हल्दी",
+                link: "haldi-powder.html"
+            },
+
+            {
+                name: "Coriander",
+                hindi: "धनिया",
+                link: "dhaniya-powder.html"
+            },
+
+            {
+                name: "Cumin Powder",
+                hindi: "जीरा",
+                link: "cumin-powder.html"
+            },
+
+            {
+                name: "Garam Masala",
+                hindi: "गरम मसाला",
+                link: "garam-masala.html"
+            }
+
+        ]
+
+    },
+
+
+    everyday: {
+
+        name: "Everyday Curry",
+
+        note:
+            "A practical everyday foundation combining some of the most familiar Indian cooking spices.",
+
+        spices: [
+
+            {
+                name: "Cumin Seeds",
+                hindi: "जीरा",
+                link: "cumin.html"
+            },
+
+            {
+                name: "Turmeric",
+                hindi: "हल्दी",
+                link: "haldi-powder.html"
+            },
+
+            {
+                name: "Coriander",
+                hindi: "धनिया",
+                link: "dhaniya-powder.html"
+            },
+
+            {
+                name: "Red Chilli",
+                hindi: "लाल मिर्च",
+                link: "red-chilli-powder.html"
+            },
+
+            {
+                name: "Garam Masala",
+                hindi: "गरम मसाला",
+                link: "garam-masala.html"
+            }
+
+        ]
+
+    }
+
+};
+
+
+
+/* =====================================================
+   SPICE SIGNATURE RENDER
+===================================================== */
+
+const dishButtons =
+    document.querySelectorAll(".dish-button");
+
+const signatureDish =
+    document.getElementById("signatureDish");
+
+const signatureCount =
+    document.getElementById("signatureCount");
+
+const signaturePills =
+    document.getElementById("signaturePills");
+
+const signatureNote =
+    document.getElementById("signatureNote");
+
+const spiceOrbit =
+    document.getElementById("spiceOrbit");
+
+
+function renderSignature(key) {
+
+    const data =
+        spiceSignatures[key];
+
+    if (!data) {
+        return;
+    }
+
+
+    signatureDish.textContent =
+        data.name;
+
+
+    signatureCount.textContent =
+        String(data.spices.length)
+        .padStart(2,"0")
+        + " spices";
+
+
+    signatureNote.textContent =
+        data.note;
+
+
+    signaturePills.innerHTML = "";
+
+
+    data.spices.forEach(
+        function(spice) {
+
+            const pill =
+                document.createElement("a");
+
+            pill.href =
+                spice.link;
+
+            pill.className =
+                "signature-pill";
+
+            pill.textContent =
+                spice.name;
+
+            signaturePills.appendChild(
+                pill
+            );
+
+        }
+    );
+
+
+    spiceOrbit
+        .querySelectorAll(".spice-node")
+        .forEach(
+            function(node) {
+                node.remove();
+            }
+        );
+
+
+    const positions = [
+
+        { x: 50, y: 3 },
+
+        { x: 83, y: 18 },
+
+        { x: 97, y: 50 },
+
+        { x: 83, y: 82 },
+
+        { x: 50, y: 97 },
+
+        { x: 17, y: 82 },
+
+        { x: 3, y: 50 },
+
+        { x: 17, y: 18 }
+
+    ];
+
+
+    data.spices.forEach(
+        function(spice,index) {
+
+            const position =
+                positions[
+                    index %
+                    positions.length
+                ];
+
+
+            const node =
+                document.createElement("a");
+
+
+            node.href =
+                spice.link;
+
+
+            node.className =
+                "spice-node";
+
+
+            node.style.left =
+                position.x + "%";
+
+
+            node.style.top =
+                position.y + "%";
+
+
+            node.style.animationDelay =
+                (index * .06) + "s";
+
+
+            node.innerHTML =
+                spice.name +
+                "<small>" +
+                spice.hindi +
+                "</small>";
+
+
+            spiceOrbit.appendChild(
+                node
+            );
+
+        }
+    );
+
+}
+
+
+dishButtons.forEach(
+    function(button) {
+
+        button.addEventListener(
+            "click",
+            function() {
+
+                dishButtons.forEach(
+                    function(item) {
+
+                        item.classList.remove(
+                            "active"
+                        );
+
+                    }
+                );
+
+
+                button.classList.add(
+                    "active"
+                );
+
+
+                renderSignature(
+                    button.dataset.dish
+                );
+
+            }
+        );
+
+    }
+);
+
+
+renderSignature("biryani");
+
+
+
+/* =====================================================
+   B2B CALCULATOR
+===================================================== */
+
+const businessType =
+    document.getElementById("businessType");
+
+const outletsInput =
+    document.getElementById("outlets");
+
+const platesInput =
+    document.getElementById("plates");
+
+const gramsInput =
+    document.getElementById("gramsPerPlate");
+
+const bufferInput =
+    document.getElementById("buffer");
+
+
+const gramsValue =
+    document.getElementById("gramsValue");
+
+const bufferValue =
+    document.getElementById("bufferValue");
+
+
+const monthlyResult =
+    document.getElementById("monthlyResult");
+
+const annualResult =
+    document.getElementById("annualResult");
+
+const outletResult =
+    document.getElementById("outletResult");
+
+const wholeResult =
+    document.getElementById("wholeResult");
+
+const chilliResult =
+    document.getElementById("chilliResult");
+
+const powderResult =
+    document.getElementById("powderResult");
+
+
+const plannerWhatsapp =
+    document.getElementById("plannerWhatsapp");
+
+
+/*
+   These are planning defaults only.
+   They are deliberately editable.
+
+   The calculator does NOT claim these are
+   industry-standard consumption levels.
+*/
+
+const businessDefaults = {
+
+    cloud: 7,
+
+    restaurant: 7,
+
+    qsr: 5,
+
+    hotel: 8,
+
+    caterer: 8,
+
+    manufacturer: 10
+
+};
+
+
+function formatNumber(value, decimals) {
+
+    return Number(value).toLocaleString(
+        "en-IN",
+        {
+            minimumFractionDigits: decimals,
+            maximumFractionDigits: decimals
+        }
+    );
+
+}
+
+
+function calculateSpiceRequirement() {
+
+    let plates =
+        Number(platesInput.value);
+
+
+    let outlets =
+        Number(outletsInput.value);
+
+
+    let grams =
+        Number(gramsInput.value);
+
+
+    let buffer =
+        Number(bufferInput.value);
+
+
+    if (!Number.isFinite(plates) || plates < 100) {
+        plates = 100;
+    }
+
+
+    if (!Number.isFinite(outlets) || outlets < 1) {
+        outlets = 1;
+    }
+
+
+    if (!Number.isFinite(grams) || grams < 2) {
+        grams = 2;
+    }
+
+
+    if (!Number.isFinite(buffer) || buffer < 0) {
+        buffer = 0;
+    }
+
+
+    plates =
+        Math.min(
+            plates,
+            10000000
+        );
+
+
+    outlets =
+        Math.min(
+            outlets,
+            10000
+        );
+
+
+    grams =
+        Math.min(
+            grams,
+            20
+        );
+
+
+    buffer =
+        Math.min(
+            buffer,
+            20
+        );
+
+
+    const baseKg =
+        (
+            plates *
+            grams
+        ) / 1000;
+
+
+    const monthlyKg =
+        baseKg *
+        (
+            1 +
+            buffer / 100
+        );
+
+
+    const annualKg =
+        monthlyKg *
+        12;
+
+
+    const perOutlet =
+        monthlyKg /
+        outlets;
+
+
+    /*
+       Indicative procurement split.
+
+       This is NOT a recipe formula.
+       It is simply a planning view to help
+       a buyer think about procurement mix.
+
+       Whole: 30%
+       Chilli: 15%
+       Powder: 55%
+    */
+
+    const wholeKg =
+        monthlyKg * .30;
+
+
+    const chilliKg =
+        monthlyKg * .15;
+
+
+    const powderKg =
+        monthlyKg * .55;
+
+
+    gramsValue.textContent =
+        grams + " g";
+
+
+    bufferValue.textContent =
+        buffer + "%";
+
+
+    monthlyResult.textContent =
+        formatNumber(
+            monthlyKg,
+            1
+        );
+
+
+    annualResult.textContent =
+        formatNumber(
+            annualKg,
+            1
+        ) + " kg";
+
+
+    outletResult.textContent =
+        formatNumber(
+            perOutlet,
+            1
+        ) + " kg";
+
+
+    wholeResult.textContent =
+        formatNumber(
+            wholeKg,
+            1
+        ) + " kg";
+
+
+    chilliResult.textContent =
+        formatNumber(
+            chilliKg,
+            1
+        ) + " kg";
+
+
+    powderResult.textContent =
+        formatNumber(
+            powderKg,
+            1
+        ) + " kg";
+
+
+    return {
+
+        business:
+            businessType
+                .options[
+                    businessType.selectedIndex
+                ].text,
+
+        outlets,
+
+        plates,
+
+        grams,
+
+        buffer,
+
+        monthlyKg,
+
+        annualKg,
+
+        perOutlet,
+
+        wholeKg,
+
+        chilliKg,
+
+        powderKg
+
+    };
+
+}
+
+
+/* UPDATE ON INPUT */
+
+[
+    outletsInput,
+    platesInput,
+    gramsInput,
+    bufferInput
+].forEach(
+    function(input) {
+
+        input.addEventListener(
+            "input",
+            calculateSpiceRequirement
+        );
+
+    }
+);
+
+
+/* BUSINESS TYPE DEFAULT */
+
+businessType.addEventListener(
+    "change",
+    function() {
+
+        const defaultGrams =
+            businessDefaults[
+                businessType.value
+            ];
+
+
+        if (defaultGrams) {
+
+            gramsInput.value =
+                defaultGrams;
+
+        }
+
+
+        calculateSpiceRequirement();
+
+    }
+);
+
+
+/* WHATSAPP */
+
+plannerWhatsapp.addEventListener(
+    "click",
+    function() {
+
+        const result =
+            calculateSpiceRequirement();
+
+
+        const message =
+
+            "Hello Dharoahar,%0A%0A" +
+
+            "I used the Dharoahar B2B Spice Planner.%0A%0A" +
+
+            "Business Type: " +
+            encodeURIComponent(result.business) +
+            "%0A" +
+
+            "Outlets: " +
+            result.outlets +
+            "%0A" +
+
+            "Monthly Plates / Meals: " +
+            result.plates.toLocaleString("en-IN") +
+            "%0A" +
+
+            "Average Spice Usage: " +
+            result.grams +
+            " g / plate%0A" +
+
+            "Buffer: " +
+            result.buffer +
+            "%0A%0A" +
+
+            "Estimated Monthly Requirement: " +
+            result.monthlyKg.toFixed(1) +
+            " kg%0A" +
+
+            "Estimated Annual Requirement: " +
+            result.annualKg.toFixed(1) +
+            " kg%0A%0A" +
+
+            "I would like to discuss my spice sourcing requirement with Dharoahar.";
+
+
+        window.open(
+            "https://wa.me/918603824415?text=" +
+            message,
+            "_blank"
+        );
+
+    }
+);
+
+
+/* INITIAL CALCULATION */
+
+calculateSpiceRequirement();
+
+</script>
 
 </body>
 </html>
