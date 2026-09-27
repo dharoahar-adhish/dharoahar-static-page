@@ -140,9 +140,9 @@ select{
 .hero{
   position:relative;
   width:100%;
+  height:620px;
   overflow:hidden;
   background:#321b10;
-  min-height:620px;
 }
 
 .hero-image{
@@ -420,18 +420,11 @@ select{
   left:50%;
   top:50%;
   transform:translate(-50%,-50%);
-
   width:min(640px,44vw);
-
   padding:29px 28px 25px;
-
-  background:rgba(250,244,232,.80);
-
+  background:rgba(250,244,232,.86);
   border:1px solid rgba(80,52,35,.20);
-
   text-align:center;
-
-  line-height:normal;
 }
 
 .signature-content .eyebrow{
@@ -566,14 +559,10 @@ select{
   position:fixed;
   inset:0;
   z-index:1200;
-
   display:none;
-
   align-items:center;
   justify-content:center;
-
   padding:20px;
-
   background:rgba(25,14,9,.72);
 }
 
@@ -583,20 +572,13 @@ select{
 
 .recipe-box{
   position:relative;
-
   width:min(720px,100%);
   max-height:88vh;
-
   overflow:auto;
-
   padding:30px;
-
   background:#f8f0e3;
-
   color:#2d1b12;
-
   border-radius:3px;
-
   box-shadow:0 25px 70px rgba(0,0,0,.25);
 }
 
@@ -604,36 +586,27 @@ select{
   position:absolute;
   top:16px;
   right:16px;
-
   width:36px;
   height:36px;
-
   border:1px solid rgba(50,30,20,.16);
   border-radius:50%;
-
   background:#fffaf3;
-
   font-size:20px;
-
   cursor:pointer;
 }
 
 .recipe-region{
   margin-bottom:8px;
-
   font-size:9px;
   font-weight:700;
   letter-spacing:.24em;
   text-transform:uppercase;
-
   color:#bd8449;
 }
 
 .recipe-title{
   margin:0;
-
   padding-right:45px;
-
   font-family:Georgia,"Times New Roman",serif;
   font-size:36px;
   font-weight:400;
@@ -643,7 +616,7 @@ select{
   display:flex;
   gap:8px;
   flex-wrap:wrap;
-  margin:13px 0 20px;
+  margin:13px 0 18px;
 }
 
 .food-tag{
@@ -668,20 +641,70 @@ select{
   background:#f4e8b7;
 }
 
-.pax-box{
-  margin:0 0 20px;
-  padding:12px 15px;
+
+/* =========================================================
+   SERVING CONTROLS
+========================================================= */
+
+.serving-control{
+  margin:0 0 18px;
+  padding:15px;
   background:#eadbc6;
-  border-left:3px solid #bd8449;
-  font-size:11px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:15px;
+}
+
+.serving-label{
+  display:flex;
+  flex-direction:column;
+}
+
+.serving-label strong{
+  font-size:12px;
+}
+
+.serving-label span{
+  margin-top:4px;
+  font-size:9px;
+  color:#78685d;
+}
+
+.serving-stepper{
+  display:flex;
+  align-items:center;
+  gap:9px;
+}
+
+.serving-stepper button{
+  width:42px;
+  height:42px;
+  border:1px solid rgba(50,30,20,.20);
+  border-radius:50%;
+  background:#fffaf3;
+  color:#2d1b12;
+  font-size:20px;
+  cursor:pointer;
+}
+
+.serving-number{
+  min-width:90px;
+  text-align:center;
+  font-family:Georgia,"Times New Roman",serif;
+  font-size:21px;
+}
+
+.recipe-note{
+  margin:0 0 18px;
+  font-size:10px;
   line-height:1.5;
+  color:#75665b;
 }
 
 .recipe-section-title{
   margin:22px 0 10px;
-
   font-family:Georgia,"Times New Roman",serif;
-
   font-size:21px;
   font-weight:400;
 }
@@ -696,18 +719,15 @@ select{
   display:flex;
   justify-content:space-between;
   gap:12px;
-
   padding:9px 11px;
-
   background:#fffaf3;
-
   border:1px solid rgba(50,30,20,.07);
-
   font-size:10px;
 }
 
 .ingredient strong{
   color:#8f6035;
+  white-space:nowrap;
 }
 
 .recipe-steps{
@@ -729,13 +749,10 @@ select{
 
 .recipe-cta a{
   flex:1;
-
   min-height:46px;
-
   display:flex;
   align-items:center;
   justify-content:center;
-
   font-size:10px;
   font-weight:700;
   letter-spacing:.06em;
@@ -835,12 +852,9 @@ select{
 
 .planner-subheading{
   grid-column:1/-1;
-
   margin:12px 0 -3px;
   padding-top:20px;
-
   border-top:1px solid rgba(50,30,20,.10);
-
   font-family:Georgia,"Times New Roman",serif;
   font-size:23px;
   font-weight:400;
@@ -848,7 +862,6 @@ select{
 
 .spice-category-grid{
   grid-column:1/-1;
-
   display:grid;
   grid-template-columns:repeat(4,1fr);
   gap:9px;
@@ -856,17 +869,13 @@ select{
 
 .spice-category{
   position:relative;
-
   min-height:86px;
   padding:15px;
-
   display:flex;
   flex-direction:column;
   justify-content:center;
-
   border:1px solid rgba(50,30,20,.14);
   background:#fff;
-
   cursor:pointer;
 }
 
@@ -895,22 +904,16 @@ select{
 
 .planner-calculate{
   grid-column:1/-1;
-
   width:100%;
   min-height:52px;
-
   margin-top:8px;
-
   border:0;
-
   background:#2d1b12;
   color:#fff;
-
   font-size:11px;
   font-weight:700;
   letter-spacing:.10em;
   text-transform:uppercase;
-
   cursor:pointer;
 }
 
@@ -1313,18 +1316,13 @@ select{
   z-index:950;
   right:22px;
   bottom:22px;
-
   width:50px;
   height:50px;
-
   display:flex;
   align-items:center;
   justify-content:center;
-
   border-radius:50%;
-
   background:#25D366;
-
   box-shadow:0 8px 25px rgba(0,0,0,.18);
 }
 
@@ -1364,28 +1362,13 @@ select{
   }
 
 
-  /* =====================================================
-     HERO MOBILE
-     IMPORTANT: CONTENT + CTA HAVE THEIR OWN SPACE
-  ===================================================== */
+  /* HERO */
 
   .hero{
-    /*
-      The image remains the complete width.
-      The hero is intentionally taller than the source
-      image so the CTAs have room.
-    */
-    min-height:355px;
     height:355px;
   }
 
   .hero-image{
-    position:absolute;
-    inset:0;
-
-    width:100%;
-    height:100%;
-
     object-fit:cover;
     object-position:center center;
   }
@@ -1402,11 +1385,6 @@ select{
 
   .hero-overlay{
     padding:18px 13px 22px;
-
-    /*
-      Slightly above absolute centre so CTA
-      does not get pushed below the hero.
-    */
     align-items:center;
   }
 
@@ -1424,47 +1402,31 @@ select{
   .hero-title{
     width:100%;
     max-width:370px;
-
     margin:0 auto;
-
     font-size:30px;
-
     line-height:1.08;
-
-    letter-spacing:-.01em;
   }
 
   .hero-copy{
     max-width:350px;
-
     margin:11px auto 0;
-
     font-size:9px;
-
     line-height:1.42;
   }
 
   .hero-actions{
     width:100%;
-
     margin-top:15px;
-
     display:flex;
-
     flex-wrap:nowrap;
-
     gap:7px;
-
     justify-content:center;
   }
 
   .hero-btn{
     min-height:37px;
-
     padding:0 11px;
-
     font-size:7.5px;
-
     white-space:nowrap;
   }
 
@@ -1509,9 +1471,7 @@ select{
   }
 
 
-  /* =====================================================
-     SIGNATURE MOBILE
-  ===================================================== */
+  /* SIGNATURE */
 
   .signature-art{
     width:100%;
@@ -1526,18 +1486,9 @@ select{
 
   .signature-content{
     width:calc(100% - 24px);
-
-    /*
-      Less transparent than previous version so
-      the words remain readable.
-    */
-    background:rgba(250,244,232,.86);
-
+    background:rgba(250,244,232,.88);
     padding:13px 8px 11px;
-
     top:50%;
-
-    box-shadow:none;
   }
 
   .signature-content .eyebrow{
@@ -1611,7 +1562,7 @@ select{
   }
 
 
-  /* RECIPE MODAL */
+  /* RECIPE */
 
   .recipe-modal{
     padding:0;
@@ -1620,15 +1571,27 @@ select{
 
   .recipe-box{
     width:100%;
-    max-height:88vh;
-
+    max-height:90vh;
     padding:25px 18px 25px;
-
     border-radius:22px 22px 0 0;
   }
 
   .recipe-title{
     font-size:29px;
+  }
+
+  .serving-control{
+    padding:12px;
+  }
+
+  .serving-stepper button{
+    width:40px;
+    height:40px;
+  }
+
+  .serving-number{
+    min-width:75px;
+    font-size:18px;
   }
 
   .recipe-ingredients{
@@ -1803,7 +1766,6 @@ select{
 @media(max-width:390px){
 
   .hero{
-    min-height:345px;
     height:345px;
   }
 
@@ -1833,19 +1795,6 @@ select{
   .signature-tab{
     min-height:28px;
     font-size:6.5px;
-  }
-
-}
-
-
-/* =========================================================
-   DESKTOP SIGNATURE
-========================================================= */
-
-@media(min-width:701px){
-
-  .signature-content{
-    background:rgba(250,244,232,.80);
   }
 
 }
@@ -1889,7 +1838,12 @@ select{
 
     </nav>
 
-    <button class="menu-btn" id="menuBtn">
+    <button
+      class="menu-btn"
+      id="menuBtn"
+      type="button"
+      aria-label="Open menu"
+    >
       ☰
     </button>
 
@@ -2010,7 +1964,6 @@ select{
   </div>
 
   <div class="product-grid">
-
 
     <a class="product-card" href="clove.html">
 
@@ -2165,19 +2118,19 @@ select{
 
       <div class="signature-tabs">
 
-        <button class="signature-tab active" data-region="north">
+        <button class="signature-tab active" data-region="north" type="button">
           North
         </button>
 
-        <button class="signature-tab" data-region="east">
+        <button class="signature-tab" data-region="east" type="button">
           East
         </button>
 
-        <button class="signature-tab" data-region="west">
+        <button class="signature-tab" data-region="west" type="button">
           West
         </button>
 
-        <button class="signature-tab" data-region="south">
+        <button class="signature-tab" data-region="south" type="button">
           South
         </button>
 
@@ -2209,29 +2162,29 @@ select{
 
       <div class="region-dishes">
 
-        <button class="region-dish" data-dish="Dal Makhani">
+        <button class="region-dish" data-dish="Dal Makhani" type="button">
           Dal Makhani
         </button>
 
-        <button class="region-dish" data-dish="Chole">
+        <button class="region-dish" data-dish="Chole" type="button">
           Chole
         </button>
 
-        <button class="region-dish" data-dish="Rajma Chawal">
+        <button class="region-dish" data-dish="Rajma Chawal" type="button">
           Rajma Chawal
         </button>
 
-        <button class="region-dish" data-dish="Paneer Butter Masala">
+        <button class="region-dish" data-dish="Paneer Butter Masala" type="button">
           Paneer Butter Masala
         </button>
 
-        <button class="region-dish" data-dish="Aloo Paratha">
+        <button class="region-dish" data-dish="Aloo Paratha" type="button">
           Aloo Paratha
         </button>
 
       </div>
 
-      <button class="region-more" data-drawer-region="north">
+      <button class="region-more" data-drawer-region="north" type="button">
         Explore North India →
       </button>
 
@@ -2261,29 +2214,29 @@ select{
 
       <div class="region-dishes">
 
-        <button class="region-dish" data-dish="Luchi & Aloo Dum">
+        <button class="region-dish" data-dish="Luchi & Aloo Dum" type="button">
           Luchi &amp; Aloo Dum
         </button>
 
-        <button class="region-dish" data-dish="Cholar Dal">
+        <button class="region-dish" data-dish="Cholar Dal" type="button">
           Cholar Dal
         </button>
 
-        <button class="region-dish" data-dish="Aloo Posto">
+        <button class="region-dish" data-dish="Aloo Posto" type="button">
           Aloo Posto
         </button>
 
-        <button class="region-dish" data-dish="Dalma">
+        <button class="region-dish" data-dish="Dalma" type="button">
           Dalma
         </button>
 
-        <button class="region-dish" data-dish="Shorshe Ilish">
+        <button class="region-dish" data-dish="Shorshe Ilish" type="button">
           Shorshe Ilish
         </button>
 
       </div>
 
-      <button class="region-more" data-drawer-region="east">
+      <button class="region-more" data-drawer-region="east" type="button">
         Explore East India →
       </button>
 
@@ -2313,29 +2266,29 @@ select{
 
       <div class="region-dishes">
 
-        <button class="region-dish" data-dish="Pav Bhaji">
+        <button class="region-dish" data-dish="Pav Bhaji" type="button">
           Pav Bhaji
         </button>
 
-        <button class="region-dish" data-dish="Vada Pav">
+        <button class="region-dish" data-dish="Vada Pav" type="button">
           Vada Pav
         </button>
 
-        <button class="region-dish" data-dish="Misal Pav">
+        <button class="region-dish" data-dish="Misal Pav" type="button">
           Misal Pav
         </button>
 
-        <button class="region-dish" data-dish="Khaman Dhokla">
+        <button class="region-dish" data-dish="Khaman Dhokla" type="button">
           Khaman Dhokla
         </button>
 
-        <button class="region-dish" data-dish="Undhiyu">
+        <button class="region-dish" data-dish="Undhiyu" type="button">
           Undhiyu
         </button>
 
       </div>
 
-      <button class="region-more" data-drawer-region="west">
+      <button class="region-more" data-drawer-region="west" type="button">
         Explore West India →
       </button>
 
@@ -2365,29 +2318,29 @@ select{
 
       <div class="region-dishes">
 
-        <button class="region-dish" data-dish="Masala Dosa">
+        <button class="region-dish" data-dish="Masala Dosa" type="button">
           Masala Dosa
         </button>
 
-        <button class="region-dish" data-dish="Idli & Sambar">
+        <button class="region-dish" data-dish="Idli & Sambar" type="button">
           Idli &amp; Sambar
         </button>
 
-        <button class="region-dish" data-dish="Sambar Rice">
+        <button class="region-dish" data-dish="Sambar Rice" type="button">
           Sambar Rice
         </button>
 
-        <button class="region-dish" data-dish="Lemon Rice">
+        <button class="region-dish" data-dish="Lemon Rice" type="button">
           Lemon Rice
         </button>
 
-        <button class="region-dish" data-dish="Bisi Bele Bath">
+        <button class="region-dish" data-dish="Bisi Bele Bath" type="button">
           Bisi Bele Bath
         </button>
 
       </div>
 
-      <button class="region-more" data-drawer-region="south">
+      <button class="region-more" data-drawer-region="south" type="button">
         Explore South India →
       </button>
 
@@ -2406,7 +2359,7 @@ select{
 
   <div class="recipe-box">
 
-    <button class="recipe-close" id="recipeClose">
+    <button class="recipe-close" id="recipeClose" type="button">
       ×
     </button>
 
@@ -2420,10 +2373,51 @@ select{
 
     <div class="recipe-meta" id="recipeMeta"></div>
 
-    <div class="pax-box">
-      Quantities below are designed as an indicative
-      <strong>1-person serving</strong>. Scale according to
-      your recipe, serving size and kitchen practice.
+    <div class="serving-control">
+
+      <div class="serving-label">
+
+        <strong>How many people?</strong>
+
+        <span>
+          Adjust the recipe quantities
+        </span>
+
+      </div>
+
+      <div class="serving-stepper">
+
+        <button
+          type="button"
+          id="servingMinus"
+          aria-label="Decrease servings"
+        >
+          −
+        </button>
+
+        <div
+          class="serving-number"
+          id="servingNumber"
+        >
+          1 person
+        </div>
+
+        <button
+          type="button"
+          id="servingPlus"
+          aria-label="Increase servings"
+        >
+          +
+        </button>
+
+      </div>
+
+    </div>
+
+    <div class="recipe-note">
+      Quantities update automatically for your selected serving size.
+      These are indicative culinary quantities and may vary by recipe,
+      preparation style and serving size.
     </div>
 
     <h3 class="recipe-section-title">
@@ -2482,9 +2476,9 @@ select{
       </h2>
 
       <p>
-        Tell us how many meals you serve. We'll help you estimate
-        your monthly spice requirement across the categories
-        relevant to your kitchen.
+        Tell us about your kitchen and daily volume. We'll provide
+        an indicative monthly planning estimate across the spice
+        categories you want to source.
       </p>
 
     </div>
@@ -2497,20 +2491,20 @@ select{
 
         <div class="planner-field">
 
-          <label class="planner-label">
+          <label class="planner-label" for="businessType">
             Business Type
           </label>
 
           <select class="planner-select" id="businessType">
 
-            <option>Restaurant</option>
-            <option>Cloud Kitchen</option>
-            <option>Hotel</option>
-            <option>QSR / Fast Food</option>
-            <option>Caterer</option>
-            <option>Canteen / Institutional Kitchen</option>
-            <option>Food Manufacturer</option>
-            <option>Retailer / Distributor</option>
+            <option value="restaurant">Restaurant</option>
+            <option value="cloud">Cloud Kitchen</option>
+            <option value="hotel">Hotel</option>
+            <option value="qsr">QSR / Fast Food</option>
+            <option value="caterer">Caterer</option>
+            <option value="institutional">Canteen / Institutional Kitchen</option>
+            <option value="manufacturer">Food Manufacturer</option>
+            <option value="retailer">Retailer / Distributor</option>
 
           </select>
 
@@ -2519,7 +2513,7 @@ select{
 
         <div class="planner-field">
 
-          <label class="planner-label">
+          <label class="planner-label" for="dailyMeals">
             Meals / Orders Per Day
           </label>
 
@@ -2528,6 +2522,7 @@ select{
             id="dailyMeals"
             type="number"
             min="1"
+            max="1000000"
             placeholder="Example: 500"
           >
 
@@ -2536,7 +2531,7 @@ select{
 
         <div class="planner-field">
 
-          <label class="planner-label">
+          <label class="planner-label" for="operatingDays">
             Operating Days / Month
           </label>
 
@@ -2554,7 +2549,7 @@ select{
 
         <div class="planner-field">
 
-          <label class="planner-label">
+          <label class="planner-label" for="spiceIntensity">
             Spice Usage Profile
           </label>
 
@@ -2587,7 +2582,11 @@ select{
 
           <label class="spice-category active">
 
-            <input type="checkbox" value="whole" checked>
+            <input
+              type="checkbox"
+              value="whole"
+              checked
+            >
 
             <span class="spice-category-title">
               Whole Spices
@@ -2602,7 +2601,11 @@ select{
 
           <label class="spice-category active">
 
-            <input type="checkbox" value="powder" checked>
+            <input
+              type="checkbox"
+              value="powder"
+              checked
+            >
 
             <span class="spice-category-title">
               Powder Spices
@@ -2617,7 +2620,11 @@ select{
 
           <label class="spice-category active">
 
-            <input type="checkbox" value="chilli" checked>
+            <input
+              type="checkbox"
+              value="chilli"
+              checked
+            >
 
             <span class="spice-category-title">
               Chilli Collection
@@ -2632,7 +2639,11 @@ select{
 
           <label class="spice-category active">
 
-            <input type="checkbox" value="blend" checked>
+            <input
+              type="checkbox"
+              value="blend"
+              checked
+            >
 
             <span class="spice-category-title">
               Blended Spices
@@ -2651,6 +2662,7 @@ select{
         <button
           class="planner-calculate"
           id="calculatePlanner"
+          type="button"
         >
           Calculate My Requirement →
         </button>
@@ -2658,7 +2670,11 @@ select{
       </div>
 
 
-      <div class="planner-result" id="plannerResult">
+      <div
+        class="planner-result"
+        id="plannerResult"
+        aria-live="polite"
+      >
 
         <div class="result-heading">
 
@@ -2736,9 +2752,9 @@ select{
 
 
         <div class="planner-note">
-          This is a planning estimate intended to start a sourcing
-          conversation. Actual consumption varies by menu, recipes,
-          serving size, wastage and kitchen practices.
+          This is an indicative planning estimate, not a procurement
+          specification. Actual consumption varies by menu, recipes,
+          serving size, spice intensity, wastage and kitchen practices.
         </div>
 
       </div>
@@ -3112,20 +3128,14 @@ signatureTabs.forEach(function(tab){
       tab.dataset.region;
 
     signatureTabs.forEach(function(item){
-
       item.classList.remove("active");
-
     });
 
     tab.classList.add("active");
 
-
     regionPanels.forEach(function(panel){
-
       panel.style.display="none";
-
     });
-
 
     const selected =
       document.getElementById(
@@ -3133,14 +3143,7 @@ signatureTabs.forEach(function(tab){
       );
 
     if(selected){
-
       selected.style.display="block";
-
-      /*
-        Do NOT automatically scroll the user.
-        This keeps the interaction calm on mobile.
-      */
-
     }
 
   });
@@ -3181,7 +3184,7 @@ const recipes = {
   region:"North India",
   type:"veg",
   ingredients:[
-    ["Chickpeas","120 g cooked"],
+    ["Chickpeas","120 g"],
     ["Onion","50 g"],
     ["Tomato","70 g"],
     ["Cumin Seeds","1/2 tsp"],
@@ -3194,7 +3197,7 @@ const recipes = {
     "Cook soaked chickpeas until tender.",
     "Prepare onion and tomato masala with cumin.",
     "Add the spice powders and cooked chickpeas.",
-    "Simmer until the gravy becomes thick and coats the chickpeas."
+    "Simmer until the gravy becomes thick."
   ]
 },
 
@@ -3202,7 +3205,7 @@ const recipes = {
   region:"North India",
   type:"veg",
   ingredients:[
-    ["Rajma","100 g cooked"],
+    ["Rajma","100 g"],
     ["Rice","80 g"],
     ["Onion","50 g"],
     ["Tomato","80 g"],
@@ -3317,7 +3320,6 @@ const recipes = {
     "Grill or roast until cooked and lightly charred."
   ]
 },
-
 
 "Luchi & Aloo Dum":{
   region:"East India",
@@ -3466,7 +3468,6 @@ const recipes = {
     "Add ginger and chilli before serving."
   ]
 },
-
 
 "Pav Bhaji":{
   region:"West India",
@@ -3617,7 +3618,6 @@ const recipes = {
     "Cook briefly until just done."
   ]
 },
-
 
 "Masala Dosa":{
   region:"South India",
@@ -3777,7 +3777,7 @@ const recipes = {
 
 
 /* =========================================================
-   RECIPE MODAL LOGIC
+   RECIPE MODAL
 ========================================================= */
 
 const recipeModal =
@@ -3801,22 +3801,196 @@ const recipeIngredients =
 const recipeSteps =
   document.getElementById("recipeSteps");
 
+const servingMinus =
+  document.getElementById("servingMinus");
 
-function openRecipe(name){
+const servingPlus =
+  document.getElementById("servingPlus");
 
-  const recipe =
-    recipes[name];
+const servingNumber =
+  document.getElementById("servingNumber");
 
-  if(!recipe){
+
+let currentRecipe = null;
+let currentServings = 1;
+
+
+/* =========================================================
+   QUANTITY SCALING
+========================================================= */
+
+function parseQuantity(value){
+
+  const text =
+    String(value).trim();
+
+  const fractionMap={
+    "1/4":0.25,
+    "1/2":0.5,
+    "3/4":0.75,
+    "1/3":0.3333,
+    "2/3":0.6667
+  };
+
+  const fractionMatch =
+    text.match(
+      /^(\d+\/\d+)\s*(.*)$/
+    );
+
+  if(fractionMatch){
+
+    const fraction =
+      fractionMatch[1];
+
+    const unit =
+      fractionMatch[2];
+
+    if(fractionMap[fraction]){
+      return {
+        number:fractionMap[fraction],
+        unit:unit
+      };
+    }
+
+  }
+
+
+  const decimalMatch =
+    text.match(
+      /^(\d+(?:\.\d+)?)\s*(.*)$/
+    );
+
+  if(decimalMatch){
+
+    return {
+      number:Number(decimalMatch[1]),
+      unit:decimalMatch[2]
+    };
+
+  }
+
+
+  return null;
+
+}
+
+
+function formatNumber(number){
+
+  if(number===0){
+    return "0";
+  }
+
+  if(number<1){
+
+    const common=[
+      [0.125,"1/8"],
+      [0.1667,"1/6"],
+      [0.25,"1/4"],
+      [0.3333,"1/3"],
+      [0.5,"1/2"],
+      [0.6667,"2/3"],
+      [0.75,"3/4"]
+    ];
+
+    let closest =
+      common[0];
+
+    let difference =
+      Math.abs(
+        number-common[0][0]
+      );
+
+    common.forEach(function(item){
+
+      const d =
+        Math.abs(
+          number-item[0]
+        );
+
+      if(d<difference){
+
+        difference=d;
+        closest=item;
+
+      }
+
+    });
+
+    if(difference<0.035){
+      return closest[1];
+    }
+
+  }
+
+
+  if(
+    Math.abs(
+      number-Math.round(number)
+    )<0.001
+  ){
+
+    return String(
+      Math.round(number)
+    );
+
+  }
+
+
+  return number
+    .toFixed(2)
+    .replace(/\.?0+$/,"");
+
+}
+
+
+function scaleQuantity(
+  original,
+  servings
+){
+
+  const parsed =
+    parseQuantity(original);
+
+  if(!parsed){
+
+    return original;
+
+  }
+
+  const scaled =
+    parsed.number *
+    servings;
+
+  return (
+    formatNumber(scaled) +
+    (parsed.unit
+      ? " " + parsed.unit
+      : "")
+  );
+
+}
+
+
+/* =========================================================
+   RENDER RECIPE
+========================================================= */
+
+function renderRecipe(){
+
+  if(!currentRecipe){
     return;
   }
+
+  const recipe =
+    currentRecipe;
 
 
   recipeRegion.textContent =
     recipe.region;
 
   recipeTitle.textContent =
-    name;
+    recipe.name;
 
 
   let tagClass =
@@ -3849,6 +4023,15 @@ function openRecipe(name){
     "</span>";
 
 
+  servingNumber.textContent =
+    currentServings +
+    (
+      currentServings===1
+        ? " person"
+        : " people"
+    );
+
+
   recipeIngredients.innerHTML="";
 
 
@@ -3864,7 +4047,10 @@ function openRecipe(name){
       item[0] +
       "</span>" +
       "<strong>" +
-      item[1] +
+      scaleQuantity(
+        item[1],
+        currentServings
+      ) +
       "</strong>";
 
     recipeIngredients.appendChild(row);
@@ -3886,6 +4072,26 @@ function openRecipe(name){
 
   });
 
+}
+
+
+function openRecipe(name){
+
+  const data =
+    recipes[name];
+
+  if(!data){
+    return;
+  }
+
+  currentRecipe = {
+    name:name,
+    ...data
+  };
+
+  currentServings=1;
+
+  renderRecipe();
 
   recipeModal.classList.add("open");
 
@@ -3898,15 +4104,50 @@ document
   .querySelectorAll("[data-dish]")
   .forEach(function(button){
 
-    button.addEventListener("click",function(){
+    button.addEventListener(
+      "click",
+      function(){
 
-      openRecipe(
-        button.dataset.dish
-      );
+        openRecipe(
+          button.dataset.dish
+        );
 
-    });
+      }
+    );
 
   });
+
+
+servingMinus.addEventListener(
+  "click",
+  function(){
+
+    currentServings =
+      Math.max(
+        1,
+        currentServings-1
+      );
+
+    renderRecipe();
+
+  }
+);
+
+
+servingPlus.addEventListener(
+  "click",
+  function(){
+
+    currentServings =
+      Math.min(
+        50,
+        currentServings+1
+      );
+
+    renderRecipe();
+
+  }
+);
 
 
 recipeClose.addEventListener(
@@ -3926,6 +4167,25 @@ recipeModal.addEventListener(
   function(event){
 
     if(event.target===recipeModal){
+
+      recipeModal.classList.remove("open");
+
+      document.body.style.overflow="";
+
+    }
+
+  }
+);
+
+
+document.addEventListener(
+  "keydown",
+  function(event){
+
+    if(
+      event.key==="Escape" &&
+      recipeModal.classList.contains("open")
+    ){
 
       recipeModal.classList.remove("open");
 
@@ -3994,107 +4254,120 @@ document
   .querySelectorAll("[data-drawer-region]")
   .forEach(function(button){
 
-    button.addEventListener("click",function(){
+    button.addEventListener(
+      "click",
+      function(){
 
-      const region =
-        button.dataset.drawerRegion;
+        const region =
+          button.dataset.drawerRegion;
 
-      const dishes =
-        regionLists[region];
+        const dishes =
+          regionLists[region];
 
-      if(!dishes){
-        return;
-      }
-
-
-      /*
-        The first five remain visible on the page.
-        Clicking Explore opens the remaining regional
-        dishes directly in recipe cards.
-      */
-
-      const modal =
-        document.getElementById("recipeModal");
-
-      const box =
-        modal.querySelector(".recipe-box");
-
-      const existing =
-        box.querySelector(".region-explore-list");
+        if(!dishes){
+          return;
+        }
 
 
-      if(existing){
-        existing.remove();
-      }
+        recipeRegion.textContent =
+          region.charAt(0).toUpperCase() +
+          region.slice(1) +
+          " India";
+
+        recipeTitle.textContent =
+          "Explore the Region";
+
+        recipeMeta.innerHTML="";
+
+        recipeIngredients.innerHTML="";
+
+        recipeSteps.innerHTML="";
 
 
-      const list =
-        document.createElement("div");
-
-      list.className="region-explore-list";
-
-      list.style.marginTop="18px";
-
-      list.innerHTML =
-        "<h3 class='recipe-section-title'>Explore the full region</h3>";
+        servingNumber.textContent =
+          "Choose a dish";
 
 
-      dishes.forEach(function(name){
+        const existing =
+          document.querySelector(
+            ".region-explore-list"
+          );
 
-        const r =
-          document.createElement("button");
+        if(existing){
+          existing.remove();
+        }
 
-        r.className="region-dish";
 
-        r.style.width="100%";
-        r.style.marginBottom="6px";
-        r.style.background="#fff";
-        r.style.color="#2d1b12";
-        r.style.borderColor="rgba(50,30,20,.12)";
+        const list =
+          document.createElement("div");
 
-        r.textContent=name;
+        list.className=
+          "region-explore-list";
 
-        r.addEventListener("click",function(){
+        list.style.marginTop="18px";
 
-          openRecipe(name);
+
+        const heading =
+          document.createElement("h3");
+
+        heading.className=
+          "recipe-section-title";
+
+        heading.textContent=
+          "Choose a dish";
+
+        list.appendChild(heading);
+
+
+        dishes.forEach(function(name){
+
+          const r =
+            document.createElement("button");
+
+          r.type="button";
+
+          r.className="region-dish";
+
+          r.style.width="100%";
+          r.style.marginBottom="6px";
+          r.style.background="#fff";
+          r.style.color="#2d1b12";
+          r.style.borderColor="rgba(50,30,20,.12)";
+
+          r.textContent=name;
+
+
+          r.addEventListener(
+            "click",
+            function(){
+
+              list.remove();
+
+              openRecipe(name);
+
+            }
+          );
+
+
+          list.appendChild(r);
 
         });
 
-        list.appendChild(r);
 
-      });
-
-
-      box.appendChild(list);
-
-      recipeRegion.textContent =
-        region.charAt(0).toUpperCase() +
-        region.slice(1) +
-        " India";
-
-      recipeTitle.textContent =
-        "Regional Dishes";
-
-      recipeMeta.innerHTML="";
-
-      recipeIngredients.innerHTML="";
-
-      recipeSteps.innerHTML="";
-
-      const pax =
-        box.querySelector(".pax-box");
-
-      pax.innerHTML =
-        "Select a dish below to view its " +
-        "<strong>1-person recipe</strong>, " +
-        "spice quantities and cooking method.";
+        recipeSteps
+          .parentNode
+          .insertBefore(
+            list,
+            recipeSteps
+          );
 
 
-      recipeModal.classList.add("open");
+        recipeModal.classList.add("open");
 
-      document.body.style.overflow="hidden";
+        document.body.style.overflow="hidden";
 
-    });
+      }
+    );
 
   });
 
@@ -4103,11 +4376,70 @@ document
    B2B CALCULATOR
 ========================================================= */
 
-const categoryMix={
+/*
+  Planning basis:
+
+  Light      = 4 g total spice / meal
+  Standard   = 6 g total spice / meal
+  Heavy      = 8 g total spice / meal
+
+  Business multiplier modifies the planning estimate.
+
+  This is deliberately an INDICATIVE planning model,
+  not a claim that every kitchen consumes the same
+  quantity of spice.
+*/
+
+const usageFactors={
+
+  light:4,
+
+  standard:6,
+
+  heavy:8
+
+};
+
+
+const businessFactors={
+
+  restaurant:1.00,
+
+  cloud:1.05,
+
+  hotel:1.10,
+
+  qsr:0.85,
+
+  caterer:1.15,
+
+  institutional:0.90,
+
+  manufacturer:1.25,
+
+  retailer:1.00
+
+};
+
+
+/*
+  Category weights describe the share of a typical
+  selected spice basket.
+
+  These are used ONLY to allocate the planning total
+  across the selected categories.
+*/
+
+const categoryWeights={
+
   whole:22,
+
   powder:38,
+
   chilli:25,
+
   blend:15
+
 };
 
 
@@ -4126,7 +4458,8 @@ const spiceMix={
     ["Turmeric Powder",28],
     ["Coriander Powder",30],
     ["Cumin Powder",18],
-    ["Black Pepper Powder",12]
+    ["Black Pepper Powder",12],
+    ["Amchur Powder",12]
   ],
 
   chilli:[
@@ -4138,6 +4471,19 @@ const spiceMix={
   blend:[
     ["Garam Masala",100]
   ]
+
+};
+
+
+const categoryLabels={
+
+  whole:"Whole Spices",
+
+  powder:"Powder Spices",
+
+  chilli:"Chilli Collection",
+
+  blend:"Blended Spices"
 
 };
 
@@ -4179,12 +4525,19 @@ document
     "click",
     function(){
 
+      const businessType =
+        document.getElementById(
+          "businessType"
+        ).value;
+
+
       const dailyMeals =
         Number(
           document.getElementById(
             "dailyMeals"
           ).value
         );
+
 
       const operatingDays =
         Number(
@@ -4193,16 +4546,24 @@ document
           ).value
         );
 
+
       const intensity =
         document.getElementById(
           "spiceIntensity"
         ).value;
 
 
-      if(!dailyMeals || dailyMeals<=0){
+      /* -----------------------------
+         VALIDATION
+      ----------------------------- */
+
+      if(
+        !Number.isFinite(dailyMeals) ||
+        dailyMeals<1
+      ){
 
         alert(
-          "Please enter your meals / orders per day."
+          "Please enter a valid number of meals / orders per day."
         );
 
         return;
@@ -4211,7 +4572,7 @@ document
 
 
       if(
-        !operatingDays ||
+        !Number.isFinite(operatingDays) ||
         operatingDays<1 ||
         operatingDays>31
       ){
@@ -4225,27 +4586,9 @@ document
       }
 
 
-      let gramsPerMeal=3;
-
-      if(intensity==="light"){
-        gramsPerMeal=2.2;
-      }
-
-      if(intensity==="heavy"){
-        gramsPerMeal=4;
-      }
-
-
-      const monthlyMeals =
-        dailyMeals *
-        operatingDays;
-
-
-      const totalKg =
-        monthlyMeals *
-        gramsPerMeal /
-        1000;
-
+      /* -----------------------------
+         SELECTED CATEGORIES
+      ----------------------------- */
 
       const selected=[];
 
@@ -4272,12 +4615,54 @@ document
       }
 
 
-      let totalWeight=0;
+      /* -----------------------------
+         BASE PLANNING FACTOR
+      ----------------------------- */
 
-      selected.forEach(function(cat){
+      const gramsPerMeal =
+        usageFactors[intensity];
 
-        totalWeight+=
-          categoryMix[cat];
+
+      const businessMultiplier =
+        businessFactors[businessType] || 1;
+
+
+      /*
+        Total monthly meals/orders.
+      */
+
+      const monthlyMeals =
+        dailyMeals *
+        operatingDays;
+
+
+      /*
+        Total indicative spice requirement.
+
+        meals × g/meal × business factor
+      */
+
+      const totalGrams =
+        monthlyMeals *
+        gramsPerMeal *
+        businessMultiplier;
+
+
+      const totalKg =
+        totalGrams / 1000;
+
+
+      /* -----------------------------
+         CATEGORY BREAKUP
+      ----------------------------- */
+
+      let selectedWeight=0;
+
+
+      selected.forEach(function(category){
+
+        selectedWeight +=
+          categoryWeights[category];
 
       });
 
@@ -4290,22 +4675,16 @@ document
       breakup.innerHTML="";
 
 
-      const labels={
-        whole:"Whole Spices",
-        powder:"Powder Spices",
-        chilli:"Chilli Collection",
-        blend:"Blended Spices"
-      };
+      selected.forEach(function(category){
+
+        const categoryShare =
+          categoryWeights[category] /
+          selectedWeight;
 
 
-      selected.forEach(function(cat){
-
-        const kg =
+        const categoryKg =
           totalKg *
-          (
-            categoryMix[cat] /
-            totalWeight
-          );
+          categoryShare;
 
 
         const div =
@@ -4317,11 +4696,11 @@ document
 
         div.innerHTML =
           "<span class='result-category-label'>" +
-          labels[cat] +
+          categoryLabels[category] +
           "</span>" +
 
           "<span class='result-category-value'>" +
-          kg.toFixed(1) +
+          categoryKg.toFixed(1) +
           " kg</span>";
 
 
@@ -4329,6 +4708,10 @@ document
 
       });
 
+
+      /* -----------------------------
+         SPICE-WISE BREAKUP
+      ----------------------------- */
 
       const spiceBreakup =
         document.getElementById(
@@ -4338,24 +4721,28 @@ document
       spiceBreakup.innerHTML="";
 
 
-      selected.forEach(function(cat){
+      selected.forEach(function(category){
+
+        const categoryShare =
+          categoryWeights[category] /
+          selectedWeight;
+
 
         const categoryKg =
           totalKg *
-          (
-            categoryMix[cat] /
-            totalWeight
-          );
+          categoryShare;
 
 
-        spiceMix[cat].forEach(
+        spiceMix[category].forEach(
           function(item){
 
-            const kg =
+            const spiceShare =
+              item[1] / 100;
+
+
+            const spiceKg =
               categoryKg *
-              (
-                item[1]/100
-              );
+              spiceShare;
 
 
             const row =
@@ -4371,7 +4758,7 @@ document
               "</span>" +
 
               "<span>" +
-              kg.toFixed(2) +
+              spiceKg.toFixed(2) +
               " kg</span>";
 
 
@@ -4382,6 +4769,10 @@ document
 
       });
 
+
+      /* -----------------------------
+         OUTPUT
+      ----------------------------- */
 
       document.getElementById(
         "totalKg"
