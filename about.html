@@ -1,571 +1,1329 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-    <meta name="theme-color" content="#f5e6d3">
-    <title>About Us - Dharoahar</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>About Dharoahar | Indian Spice Company</title>
+
+  <meta
+    name="description"
+    content="Discover Dharoahar — an Indian spice business focused on thoughtful sourcing, documented quality and dependable supply across whole spices, powders and traditional spice products."
+  >
+
+  <meta
+    name="keywords"
+    content="Dharoahar, Indian spices, whole spices, spice powders, Indian spice company, spice supplier"
+  >
+
+  <style>
+    :root {
+      --brown: #3b2418;
+      --brown-dark: #28170f;
+      --brown-soft: #6a4938;
+      --cream: #f7f3ed;
+      --cream-dark: #eee7dc;
+      --white: #ffffff;
+      --terracotta: #9a5a3a;
+      --gold: #b58a52;
+      --text: #30231d;
+      --muted: #76685f;
+      --border: rgba(59, 36, 24, 0.12);
+      --shadow: 0 18px 45px rgba(59, 36, 24, 0.08);
+      --radius: 18px;
+      --max-width: 1180px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: var(--cream);
+      color: var(--text);
+      line-height: 1.65;
+      overflow-x: hidden;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .container {
+      width: min(var(--max-width), calc(100% - 40px));
+      margin: 0 auto;
+    }
+
+    /* =========================
+       HEADER
+    ========================= */
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(247, 243, 237, 0.96);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .nav {
+      min-height: 76px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .brand {
+      display: flex;
+      flex-direction: column;
+      line-height: 1;
+      flex-shrink: 0;
+    }
+
+    .brand-name {
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 27px;
+      font-weight: 700;
+      letter-spacing: -0.5px;
+      color: var(--brown);
+    }
+
+    .brand-sub {
+      margin-top: 5px;
+      font-size: 8px;
+      letter-spacing: 2.3px;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 30px;
+      font-size: 14px;
+      color: var(--brown-soft);
+    }
+
+    .nav-links a {
+      position: relative;
+      padding: 8px 0;
+      transition: color 0.2s ease;
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active {
+      color: var(--brown);
+    }
+
+    .nav-links a.active::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      height: 1.5px;
+      background: var(--terracotta);
+    }
+
+    .menu-btn {
+      display: none;
+      border: 0;
+      background: transparent;
+      font-size: 27px;
+      color: var(--brown);
+      cursor: pointer;
+    }
+
+    /* =========================
+       HERO
+    ========================= */
+
+    .hero {
+      padding: 82px 0 78px;
+      background:
+        radial-gradient(circle at 80% 25%, rgba(181, 138, 82, 0.10), transparent 28%),
+        linear-gradient(135deg, #f8f4ee 0%, #efe7db 100%);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      margin-bottom: 18px;
+      color: var(--terracotta);
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 1.8px;
+      text-transform: uppercase;
+    }
+
+    .eyebrow::before {
+      content: "";
+      width: 28px;
+      height: 1px;
+      background: var(--terracotta);
+    }
+
+    .hero h1 {
+      max-width: 820px;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(42px, 6vw, 72px);
+      line-height: 1.03;
+      letter-spacing: -2.5px;
+      font-weight: 500;
+      color: var(--brown);
+    }
+
+    .hero h1 span {
+      color: var(--terracotta);
+    }
+
+    .hero p {
+      max-width: 690px;
+      margin-top: 24px;
+      color: var(--muted);
+      font-size: 17px;
+      line-height: 1.8;
+    }
+
+    /* =========================
+       INTRO
+    ========================= */
+
+    .intro {
+      padding: 90px 0;
+      background: var(--white);
+    }
+
+    .intro-grid {
+      display: grid;
+      grid-template-columns: 0.8fr 1.2fr;
+      gap: 80px;
+      align-items: start;
+    }
+
+    .section-label {
+      color: var(--terracotta);
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 1.8px;
+      text-transform: uppercase;
+      margin-bottom: 15px;
+    }
+
+    .intro h2,
+    .discover h2,
+    .founder h2,
+    .quality h2,
+    .cta h2 {
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(34px, 4vw, 50px);
+      line-height: 1.12;
+      font-weight: 500;
+      color: var(--brown);
+      letter-spacing: -1.3px;
+    }
+
+    .intro-copy p {
+      color: var(--muted);
+      font-size: 16px;
+      margin-bottom: 20px;
+    }
+
+    .intro-copy p:last-child {
+      margin-bottom: 0;
+    }
+
+    /* =========================
+       DISCOVER
+    ========================= */
+
+    .discover {
+      padding: 95px 0;
+      background: var(--cream);
+    }
+
+    .discover-header {
+      max-width: 760px;
+      margin-bottom: 52px;
+    }
+
+    .discover-header p {
+      margin-top: 18px;
+      color: var(--muted);
+      font-size: 16px;
+      line-height: 1.8;
+    }
+
+    .discover-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .discover-card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 34px 30px;
+      min-height: 260px;
+      box-shadow: 0 8px 28px rgba(59, 36, 24, 0.035);
+      transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+    }
+
+    .discover-card:hover {
+      transform: translateY(-5px);
+      box-shadow: var(--shadow);
+    }
+
+    .card-number {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      background: var(--cream-dark);
+      color: var(--terracotta);
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 17px;
+      margin-bottom: 28px;
+    }
+
+    .discover-card h3 {
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 26px;
+      font-weight: 500;
+      color: var(--brown);
+      margin-bottom: 13px;
+    }
+
+    .discover-card p {
+      color: var(--muted);
+      font-size: 14.5px;
+      line-height: 1.75;
+    }
+
+    /* =========================
+       PRODUCT PORTFOLIO
+    ========================= */
+
+    .portfolio {
+      padding: 92px 0;
+      background: var(--brown);
+      color: var(--white);
+    }
+
+    .portfolio-grid {
+      display: grid;
+      grid-template-columns: 0.85fr 1.15fr;
+      gap: 80px;
+      align-items: center;
+    }
+
+    .portfolio .section-label {
+      color: #d2a875;
+    }
+
+    .portfolio h2 {
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(35px, 4vw, 52px);
+      line-height: 1.1;
+      font-weight: 500;
+      letter-spacing: -1.2px;
+      margin-bottom: 22px;
+    }
+
+    .portfolio-intro {
+      color: rgba(255,255,255,0.72);
+      font-size: 16px;
+      line-height: 1.8;
+    }
+
+    .portfolio-list {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 14px;
+    }
+
+    .portfolio-item {
+      border: 1px solid rgba(255,255,255,0.13);
+      border-radius: 13px;
+      padding: 22px 20px;
+      background: rgba(255,255,255,0.035);
+    }
+
+    .portfolio-item strong {
+      display: block;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 19px;
+      font-weight: 500;
+      margin-bottom: 4px;
+    }
+
+    .portfolio-item span {
+      color: rgba(255,255,255,0.58);
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    /* =========================
+       FOUNDER
+    ========================= */
+
+    .founder {
+      padding: 95px 0;
+      background: var(--white);
+    }
+
+    .founder-grid {
+      display: grid;
+      grid-template-columns: 0.75fr 1.25fr;
+      gap: 80px;
+      align-items: center;
+    }
+
+    .founder-image {
+      min-height: 430px;
+      border-radius: 20px;
+      overflow: hidden;
+      background: var(--cream-dark);
+    }
+
+    .founder-image img {
+      width: 100%;
+      height: 100%;
+      min-height: 430px;
+      object-fit: cover;
+    }
+
+    .founder-copy .section-label {
+      margin-bottom: 14px;
+    }
+
+    .founder-copy h2 {
+      margin-bottom: 22px;
+    }
+
+    .founder-copy p {
+      color: var(--muted);
+      font-size: 16px;
+      line-height: 1.85;
+      margin-bottom: 18px;
+    }
+
+    .founder-name {
+      margin-top: 30px;
+      padding-top: 22px;
+      border-top: 1px solid var(--border);
+    }
+
+    .founder-name strong {
+      display: block;
+      color: var(--brown);
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 24px;
+      font-weight: 500;
+    }
+
+    .founder-name span {
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    /* =========================
+       QUALITY
+    ========================= */
+
+    .quality {
+      padding: 92px 0;
+      background: var(--cream);
+    }
+
+    .quality-header {
+      max-width: 760px;
+      margin-bottom: 45px;
+    }
+
+    .quality-header p {
+      margin-top: 17px;
+      color: var(--muted);
+      font-size: 16px;
+    }
+
+    .quality-box {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 38px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 35px;
+      box-shadow: 0 8px 30px rgba(59,36,24,0.04);
+    }
+
+    .quality-points {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 30px;
+      flex: 1;
+    }
+
+    .quality-point strong {
+      display: block;
+      color: var(--brown);
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 20px;
+      font-weight: 500;
+      margin-bottom: 6px;
+    }
+
+    .quality-point span {
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.6;
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 48px;
+      padding: 0 24px;
+      border-radius: 8px;
+      background: var(--brown);
+      color: #ffffff;
+      font-size: 13px;
+      font-weight: 700;
+      transition:
+        background 0.2s ease,
+        transform 0.2s ease;
+      white-space: nowrap;
+    }
+
+    .button:hover {
+      background: var(--terracotta);
+      color: #ffffff;
+      transform: translateY(-2px);
+    }
+
+    /* =========================
+       CTA
+    ========================= */
+
+    .cta {
+      padding: 90px 0;
+      background: #eee5d9;
+      text-align: center;
+    }
+
+    .cta-inner {
+      max-width: 760px;
+      margin: 0 auto;
+    }
+
+    .cta h2 {
+      margin-bottom: 18px;
+    }
+
+    .cta p {
+      color: var(--muted);
+      max-width: 650px;
+      margin: 0 auto 28px;
+      font-size: 16px;
+    }
+
+    .cta-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .button-outline {
+      background: transparent;
+      color: var(--brown);
+      border: 1px solid rgba(59,36,24,0.25);
+    }
+
+    .button-outline:hover {
+      color: #ffffff;
+      background: var(--brown);
+    }
+
+    /* =========================
+       FOOTER
+    ========================= */
+
+    footer {
+      background: var(--brown-dark);
+      color: rgba(255,255,255,0.72);
+      padding: 48px 0 28px;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr 0.8fr;
+      gap: 50px;
+      padding-bottom: 38px;
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+    }
+
+    .footer-brand {
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 29px;
+      color: #ffffff;
+      margin-bottom: 10px;
+    }
+
+    .footer-tagline {
+      max-width: 300px;
+      color: rgba(255,255,255,0.55);
+      font-size: 13px;
+      line-height: 1.7;
+    }
+
+    .footer-heading {
+      color: #ffffff;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 1.3px;
+      text-transform: uppercase;
+      margin-bottom: 15px;
+    }
+
+    .footer-links {
+      display: flex;
+      flex-direction: column;
+      gap: 9px;
+      font-size: 13px;
+    }
+
+    .footer-links a:hover {
+      color: #ffffff;
+    }
+
+    .footer-bottom {
+      padding-top: 23px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      font-size: 11px;
+      color: rgba(255,255,255,0.42);
+    }
+
+    /* =========================
+       WHATSAPP
+    ========================= */
+
+    .whatsapp {
+      position: fixed;
+      right: 18px;
+      bottom: 18px;
+      z-index: 1100;
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      background: #25D366;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 10px 28px rgba(0,0,0,0.18);
+      transition: transform 0.2s ease;
+    }
+
+    .whatsapp:hover {
+      transform: scale(1.06);
+    }
+
+    .whatsapp svg {
+      width: 29px;
+      height: 29px;
+      fill: #ffffff;
+    }
+
+    /* =========================
+       RESPONSIVE
+    ========================= */
+
+    @media (max-width: 900px) {
+
+      .nav {
+        min-height: 68px;
+      }
+
+      .menu-btn {
+        display: block;
+      }
+
+      .nav-links {
+        display: none;
+        position: absolute;
+        top: 68px;
+        left: 0;
+        right: 0;
+        background: var(--cream);
+        border-bottom: 1px solid var(--border);
+        padding: 20px;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 4px;
+      }
+
+      .nav-links.open {
+        display: flex;
+      }
+
+      .nav-links a {
+        width: 100%;
+        padding: 12px 0;
+      }
+
+      .nav-links a.active::after {
+        display: none;
+      }
+
+      .intro-grid,
+      .portfolio-grid,
+      .founder-grid {
+        grid-template-columns: 1fr;
+        gap: 42px;
+      }
+
+      .discover-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .quality-box {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .quality-points {
+        width: 100%;
+      }
+
+      .footer-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    @media (max-width: 600px) {
+
+      .container {
+        width: min(100% - 28px, var(--max-width));
+      }
+
+      .hero {
+        padding: 58px 0 60px;
+      }
+
+      .hero h1 {
+        font-size: 43px;
+        letter-spacing: -1.7px;
+      }
+
+      .hero p {
+        font-size: 15px;
+      }
+
+      .intro,
+      .discover,
+      .founder,
+      .quality {
+        padding: 68px 0;
+      }
+
+      .portfolio {
+        padding: 68px 0;
+      }
+
+      .portfolio-list {
+        grid-template-columns: 1fr;
+      }
+
+      .founder-image,
+      .founder-image img {
+        min-height: 330px;
+      }
+
+      .quality-box {
+        padding: 25px;
+      }
+
+      .quality-points {
+        grid-template-columns: 1fr;
+        gap: 22px;
+      }
+
+      .cta {
+        padding: 68px 0;
+      }
+
+      .footer-grid {
+        grid-template-columns: 1fr;
+        gap: 32px;
+      }
+
+      .footer-bottom {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .brand-name {
+        font-size: 25px;
+      }
+
+      .brand-sub {
+        font-size: 7px;
+        letter-spacing: 1.8px;
+      }
+    }
+  </style>
 </head>
 
 <body>
 
+  <!-- =========================
+       HEADER
+  ========================= -->
 
-<!-- =====================================================
-     HEADER
-     ===================================================== -->
+  <header>
+    <div class="container nav">
 
-<header class="header">
+      <a href="index.html" class="brand">
+        <span class="brand-name">Dharoahar</span>
+        <span class="brand-sub">Authentic Indian Spices</span>
+      </a>
 
-    <div class="header-inner">
+      <button
+        class="menu-btn"
+        id="menuBtn"
+        aria-label="Open menu"
+        aria-expanded="false"
+      >
+        ☰
+      </button>
 
-        <div class="logo-section">
-
-            <a
-                href="index.html"
-                style="display: flex; align-items: center; text-decoration: none;"
-            >
-                <img
-                    src="logo.png"
-                    alt="Dharoahar"
-                    class="logo"
-                >
-            </a>
-
-        </div>
-
-
-        <nav class="nav">
-
-            <a href="index.html">Home</a>
-
-            <a href="products.html">Products</a>
-
-            <a href="about.html">About</a>
-
-        </nav>
-
-
-        <a
-            href="contact.html"
-            class="btn-header"
-        >
-            Contact
-        </a>
+      <nav class="nav-links" id="navLinks">
+        <a href="index.html">Home</a>
+        <a href="about.html" class="active">About Us</a>
+        <a href="products.html">Our Spices</a>
+        <a href="quality.html">Quality</a>
+        <a href="contact.html">Contact</a>
+      </nav>
 
     </div>
+  </header>
 
-</header>
 
+  <!-- =========================
+       HERO
+  ========================= -->
 
+  <main>
 
-<!-- =====================================================
-     ABOUT SECTION
-     ===================================================== -->
+    <section class="hero">
+      <div class="container">
 
-<section class="section about-section">
+        <div class="eyebrow">About Dharoahar</div>
 
-    <div class="container">
+        <h1>
+          Building a spice business
+          <span>around trust.</span>
+        </h1>
 
-        <div class="about-text">
-
-            <h2>About Dharoahar</h2>
-
-            <p>
-                Dharoahar is committed to delivering premium Indian spices
-                sourced directly from the finest origin farms across India.
-                Our carefully curated selection ensures authenticity,
-                quality, and consistency in every batch.
-            </p>
-
-
-            <p>
-                <strong>Our Sourcing Regions:</strong>
-            </p>
-
-
-            <div class="sourcing-regions">
-
-
-                <!-- KERALA -->
-
-                <p>
-                    <strong>Kerala Spices:</strong>
-                    Our clove, cardamom, cinnamon, black pepper and garam
-                    masala are sourced from Kerala's lush plantations,
-                    known for exceptional quality and rich aromatic profiles.
-                </p>
-
-
-                <!-- RAJASTHAN -->
-
-                <p>
-                    <strong>Rajasthan Spices:</strong>
-                    Our cumin, cumin powder and coriander powder are sourced
-                    from Rajasthan, India's spice capital, delivering
-                    authentic earthy flavors and aroma.
-                </p>
-
-
-                <!-- ANDHRA PRADESH -->
-
-                <p>
-                    <strong>Andhra Pradesh Chilli:</strong>
-                    Our Degi Chilli is sourced from Andhra Pradesh,
-                    delivering vibrant color, balanced heat and authentic
-                    chilli character.
-                </p>
-
-
-                <!-- KASHMIRI CHILLI -->
-
-                <p>
-                    <strong>Kashmiri Chilli:</strong>
-                    Our Kashmiri Chilli is sourced from Guntur, delivering
-                    deep red color with mild heat.
-                </p>
-
-
-                <!-- TURMERIC -->
-
-                <p>
-                    <strong>Turmeric:</strong>
-                    Our turmeric is sourced from Tamil Nadu & Maharashtra,
-                    selected for its golden color and authentic warmth.
-                </p>
-
-
-            </div>
-
-
-            <!-- ABOUT HIGHLIGHTS -->
-
-            <div class="about-highlights">
-
-                <p>
-                    Origin-sourced from premium farms across India
-                </p>
-
-                <p>
-                    Quality certified & tested for purity
-                </p>
-
-                <p>
-                    Direct wholesale supply with no middlemen
-                </p>
-
-                <p>
-                    Consistent excellence in every batch
-                </p>
-
-            </div>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-
-<!-- =====================================================
-     FOUNDER SECTION
-     ===================================================== -->
-
-<section class="section founder-section">
-
-    <div class="container">
-
-        <div class="founder-inner">
-
-
-            <!-- FOUNDER IMAGE -->
-
-            <div class="founder-image-wrapper">
-
-                <div class="founder-image-circle">
-
-                    <img
-                        src="founder.jpg"
-                        alt="Aman Adhish"
-                    >
-
-                </div>
-
-            </div>
-
-
-
-            <!-- FOUNDER CONTENT -->
-
-            <div class="founder-content">
-
-                <h2>Meet Our Founder</h2>
-
-                <p class="founder-name">
-                    Aman Adhish
-                </p>
-
-                <p class="founder-title">
-                    Founder & Director
-                </p>
-
-
-                <div class="founder-bio">
-
-                    <p>
-                        With over 10 years of expertise in sales and procurement,
-                        Aman Adhish brings deep industry knowledge and strategic
-                        vision to Dharoahar. His proven track record in building
-                        supply chains and managing large-scale operations has
-                        been instrumental in establishing Dharoahar's commitment
-                        to quality and reliability.
-                    </p>
-
-
-                    <p>
-                        Combining procurement excellence with a passion for
-                        authentic products, Aman founded Dharoahar to bridge
-                        the gap between premium source farms and discerning
-                        customers. His focus on sustainable partnerships and
-                        direct sourcing ensures every spice meets the highest
-                        standards.
-                    </p>
-
-                </div>
-
-
-                <!-- FOUNDER STATS -->
-
-                <div class="founder-stats">
-
-
-                    <div class="stat">
-
-                        <p class="stat-number">
-                            10+
-                        </p>
-
-                        <p class="stat-label">
-                            Years in Sales & Procurement
-                        </p>
-
-                    </div>
-
-
-                    <div class="stat">
-
-                        <p class="stat-number">
-                            100%
-                        </p>
-
-                        <p class="stat-label">
-                            Quality Assured
-                        </p>
-
-                    </div>
-
-
-                    <div class="stat">
-
-                        <p class="stat-number">
-                            Direct
-                        </p>
-
-                        <p class="stat-label">
-                            Farm Sourcing
-                        </p>
-
-                    </div>
-
-
-                </div>
-
-            </div>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-
-<!-- =====================================================
-     CERTIFICATIONS & COMPLIANCE
-     ===================================================== -->
-
-<section class="section certifications-section">
-
-    <div class="container">
-
-
-        <p class="certifications-tagline">
-            Built on quality, compliance and a commitment to authentic
-            Indian spices.
+        <p>
+          Dharoahar brings together Indian whole spices, powders and traditional
+          spice products with a focus on thoughtful sourcing, documented quality
+          and dependable supply.
         </p>
 
-
-        <h2>
-            Certifications & Compliance
-        </h2>
+      </div>
+    </section>
 
 
-        <div class="certifications-grid">
+    <!-- =========================
+         OUR STORY
+    ========================= -->
 
+    <section class="intro">
 
-            <!-- FSSAI -->
+      <div class="container intro-grid">
 
-            <div class="certification-card">
+        <div>
+          <div class="section-label">Our Story</div>
 
-                <div class="cert-icon">
-                    🏛️
-                </div>
+          <h2>
+            Indian spices, built into a dependable business.
+          </h2>
+        </div>
 
-                <h3>
-                    FSSAI Central License
-                </h3>
+        <div class="intro-copy">
 
-                <p>
-                    Central food safety license covering trade/retail
-                    wholesaling and exporter activity.
-                </p>
+          <p>
+            Dharoahar was created with a simple objective: to build a dependable
+            business around Indian spices.
+          </p>
 
-                <p class="cert-validity">
-                    Valid: Aug 2026 - Aug 2027
-                </p>
+          <p>
+            We bring together whole spices and powdered spices from established
+            sourcing regions across India, with a focus on product selection,
+            documented quality and dependable supply.
+          </p>
 
-                <a
-                    href="ADHISH%20DHAROAHAR%20PRIVATE%20LIMITED%20FSSAI%20LICENCE.pdf"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    class="cert-button"
-                >
-                    View Certificate
-                </a>
-
-            </div>
-
-
-
-            <!-- IEC -->
-
-            <div class="certification-card">
-
-                <div class="cert-icon">
-                    📋
-                </div>
-
-                <h3>
-                    Importer-Exporter Code (IEC)
-                </h3>
-
-                <p>
-                    Government-issued Importer-Exporter Code for
-                    international trade.
-                </p>
-
-                <p class="cert-validity">
-                    Issued: July 2026
-                </p>
-
-                <a
-                    href="IEC%20Certificate.pdf"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    class="cert-button"
-                >
-                    View Certificate
-                </a>
-
-            </div>
-
-
-
-            <!-- ISO -->
-
-            <div class="certification-card">
-
-                <div class="cert-icon">
-                    ✓
-                </div>
-
-                <h3>
-                    ISO 9001:2015
-                </h3>
-
-                <p>
-                    Quality Management System certification covering
-                    manufacturing and supply of spices and food products.
-                </p>
-
-                <p class="cert-validity">
-                    Valid: Aug 2026 - Aug 2029
-                </p>
-
-                <a
-                    href="ISO%209001-2015.pdf"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    class="cert-button"
-                >
-                    View Certificate
-                </a>
-
-            </div>
-
-
-
-            <!-- FDA -->
-
-            <div class="certification-card">
-
-                <div class="cert-icon">
-                    🌍
-                </div>
-
-                <h3>
-                    FDA Certificate of Compliance
-                </h3>
-
-                <p>
-                    Certificate of Compliance covering manufacturing
-                    and supply of spices and food products.
-                </p>
-
-                <p class="cert-validity">
-                    Valid: Aug 2026 - Aug 2029
-                </p>
-
-                <a
-                    href="FDA-%20EUROCERT.pdf"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    class="cert-button"
-                >
-                    View Certificate
-                </a>
-
-            </div>
-
+          <p>
+            Our portfolio is being built for both consumers and businesses —
+            from everyday Indian kitchens to retailers, distributors, food
+            businesses and commercial buyers.
+          </p>
 
         </div>
 
-    </div>
+      </div>
 
-</section>
+    </section>
 
 
+    <!-- =========================
+         DISCOVER DHAROAHAR
+    ========================= -->
 
-<!-- =====================================================
-     CTA SECTION
-     ===================================================== -->
+    <section class="discover">
 
-<section class="section cta-section">
+      <div class="container">
 
-    <div class="container">
+        <div class="discover-header">
+
+          <div class="section-label">Discover Dharoahar</div>
+
+          <h2>
+            A growing Indian spice portfolio,
+            thoughtfully put together.
+          </h2>
+
+          <p>
+            From whole spices such as clove, cardamom, cinnamon, black pepper
+            and cumin to everyday powders, chilli varieties and traditional
+            spice blends, Dharoahar is building a practical Indian spice
+            portfolio for modern customers and businesses.
+          </p>
+
+        </div>
+
+
+        <div class="discover-grid">
+
+          <article class="discover-card">
+
+            <div class="card-number">01</div>
+
+            <h3>Thoughtful Sourcing</h3>
+
+            <p>
+              We work with established sourcing regions across India. Where
+              origin information is confirmed, it is presented clearly across
+              our product range.
+            </p>
+
+          </article>
+
+
+          <article class="discover-card">
+
+            <div class="card-number">02</div>
+
+            <h3>Documented Quality</h3>
+
+            <p>
+              Our business is supported by relevant food-safety,
+              quality-management and trade documentation, available for
+              reference through our Quality & Certifications page.
+            </p>
+
+          </article>
+
+
+          <article class="discover-card">
+
+            <div class="card-number">03</div>
+
+            <h3>Built for Business</h3>
+
+            <p>
+              Dharoahar is being built to serve consumers as well as retailers,
+              distributors, food businesses and other commercial requirements.
+            </p>
+
+          </article>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================
+         PRODUCT PORTFOLIO
+    ========================= -->
+
+    <section class="portfolio">
+
+      <div class="container portfolio-grid">
+
+        <div>
+
+          <div class="section-label">Our Spices</div>
+
+          <h2>
+            From whole spices to everyday powders.
+          </h2>
+
+          <p class="portfolio-intro">
+            Our collection brings together familiar Indian spices across whole
+            and powdered formats, including a dedicated selection of chilli
+            varieties and everyday cooking essentials.
+          </p>
+
+        </div>
+
+
+        <div class="portfolio-list">
+
+          <div class="portfolio-item">
+            <strong>Whole Spices</strong>
+            <span>Khada Masala</span>
+          </div>
+
+          <div class="portfolio-item">
+            <strong>Powder Spices</strong>
+            <span>Everyday Essentials</span>
+          </div>
+
+          <div class="portfolio-item">
+            <strong>Chilli Collection</strong>
+            <span>Degi · Kashmiri · Red Chilli</span>
+          </div>
+
+          <div class="portfolio-item">
+            <strong>Traditional Blends</strong>
+            <span>Indian Spice Blends</span>
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================
+         FOUNDER
+    ========================= -->
+
+    <section class="founder">
+
+      <div class="container founder-grid">
+
+        <div class="founder-image">
+
+          <!--
+            If founder.jpg exists in your GitHub root,
+            this will display automatically.
+          -->
+
+          <img
+            src="founder.jpg"
+            alt="Aman Adhish, Founder and Director of Dharoahar"
+            onerror="this.style.display='none';"
+          >
+
+        </div>
+
+
+        <div class="founder-copy">
+
+          <div class="section-label">Founder</div>
+
+          <h2>
+            Building Dharoahar with a long-term view.
+          </h2>
+
+          <p>
+            Dharoahar is led by Aman Adhish, Founder & Director, with a focus
+            on building the company's sourcing, product portfolio and
+            commercial relationships.
+          </p>
+
+          <p>
+            The objective is straightforward: create a dependable Indian spice
+            business where customers and partners can understand the products,
+            the sourcing and the documentation behind the business.
+          </p>
+
+          <div class="founder-name">
+            <strong>Aman Adhish</strong>
+            <span>Founder & Director · Dharoahar</span>
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================
+         QUALITY
+    ========================= -->
+
+    <section class="quality">
+
+      <div class="container">
+
+        <div class="quality-header">
+
+          <div class="section-label">Quality & Compliance</div>
+
+          <h2>
+            Documentation that supports the business.
+          </h2>
+
+          <p>
+            Dharoahar maintains relevant documentation covering food business
+            licensing, international trade and quality management.
+          </p>
+
+        </div>
+
+
+        <div class="quality-box">
+
+          <div class="quality-points">
+
+            <div class="quality-point">
+              <strong>FSSAI</strong>
+              <span>
+                Central food business licence documentation.
+              </span>
+            </div>
+
+            <div class="quality-point">
+              <strong>IEC</strong>
+              <span>
+                Importer-Exporter Code supporting international trade.
+              </span>
+            </div>
+
+            <div class="quality-point">
+              <strong>ISO 9001:2015</strong>
+              <span>
+                Quality management system certification.
+              </span>
+            </div>
+
+          </div>
+
+          <a href="quality.html" class="button">
+            View Quality & Certifications
+          </a>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================
+         CTA
+    ========================= -->
+
+    <section class="cta">
+
+      <div class="container cta-inner">
+
+        <div class="section-label">Let's Connect</div>
 
         <h2>
-            Partner With Us
+          Looking to work with Dharoahar?
         </h2>
 
         <p>
-            Wholesale pricing for bulk orders available
+          Whether you are looking for spices for your business, distribution
+          requirements or simply want to know more about our products, we'd
+          be happy to hear from you.
         </p>
-
 
         <div class="cta-buttons">
 
+          <a
+            href="https://wa.me/918603824415?text=Hello%20Dharoahar%2C%20I%20would%20like%20to%20know%20more%20about%20your%20spice%20products."
+            class="button"
+            target="_blank"
+            rel="noopener"
+          >
+            WhatsApp Us
+          </a>
 
-            <a
-                href="tel:+918603824415"
-                class="cta-btn"
-            >
-                📞 Call
-            </a>
-
-
-            <a
-                href="https://wa.me/918603824415"
-                class="cta-btn cta-btn-white"
-            >
-                💬 WhatsApp
-            </a>
-
-
-            <a
-                href="mailto:amanadhish@dharoahar.com"
-                class="cta-btn"
-            >
-                📧 Email
-            </a>
-
+          <a
+            href="mailto:amanadhish@dharoahar.com"
+            class="button button-outline"
+          >
+            Write to Us
+          </a>
 
         </div>
 
+      </div>
+
+    </section>
+
+  </main>
+
+
+  <!-- =========================
+       FOOTER
+  ========================= -->
+
+  <footer>
+
+    <div class="container">
+
+      <div class="footer-grid">
+
+        <div>
+
+          <div class="footer-brand">Dharoahar</div>
+
+          <p class="footer-tagline">
+            Authentic Indian Spices, Sourced with Care.
+          </p>
+
+        </div>
+
+
+        <div>
+
+          <div class="footer-heading">Explore</div>
+
+          <div class="footer-links">
+            <a href="index.html">Home</a>
+            <a href="about.html">About Us</a>
+            <a href="products.html">Our Spices</a>
+            <a href="quality.html">Quality</a>
+            <a href="contact.html">Contact</a>
+          </div>
+
+        </div>
+
+
+        <div>
+
+          <div class="footer-heading">Contact</div>
+
+          <div class="footer-links">
+
+            <a href="mailto:amanadhish@dharoahar.com">
+              amanadhish@dharoahar.com
+            </a>
+
+            <a
+              href="https://wa.me/918603824415"
+              target="_blank"
+              rel="noopener"
+            >
+              +91 86038 24415
+            </a>
+
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <div class="footer-bottom">
+
+        <span>
+          © 2026 Dharoahar. All rights reserved.
+        </span>
+
+        <span>
+          Authentic Indian Spices, Sourced with Care.
+        </span>
+
+      </div>
+
     </div>
 
-</section>
+  </footer>
 
 
+  <!-- =========================
+       WHATSAPP
+  ========================= -->
 
-<!-- =====================================================
-     WHATSAPP FLOATING BUTTON
-     ===================================================== -->
-
-<a
-    href="https://wa.me/918603824415?text=Hi%20Dharoahar,%20I%20want%20to%20know%20more"
-    class="whatsapp-float"
+  <a
+    href="https://wa.me/918603824415"
+    class="whatsapp"
     target="_blank"
-    rel="noopener noreferrer"
-    title="Chat on WhatsApp"
-    aria-label="Chat on WhatsApp"
->
+    rel="noopener"
+    aria-label="Chat with Dharoahar on WhatsApp"
+  >
 
     <svg
-        viewBox="0 0 24 24"
-        fill="white"
-        aria-hidden="true"
+      viewBox="0 0 32 32"
+      xmlns="http://www.w3.org/2000/svg"
+      aria-hidden="true"
     >
-
-        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.67-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.076 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421-7.403h-.004a9.87 9.87 0 00-9.746 9.798c0 2.364.661 4.685 1.92 6.709L1.07 23.5l7.074-1.711a9.844 9.844 0 004.6 1.185h.005c5.487 0 9.938-4.469 9.938-9.948 0-2.65-.115-5.151-1.936-7.282-1.821-2.137-4.041-3.29-6.679-3.29z"/>
-
+      <path d="M19.11 17.47c-.27-.14-1.59-.78-1.84-.87-.25-.09-.43-.14-.61.14-.18.27-.7.87-.86 1.05-.16.18-.32.2-.59.07-.27-.14-1.14-.42-2.17-1.34-.8-.71-1.34-1.59-1.5-1.86-.16-.27-.02-.42.12-.56.12-.12.27-.32.41-.48.14-.16.18-.27.27-.45.09-.18.05-.34-.02-.48-.07-.14-.61-1.47-.84-2.02-.22-.53-.45-.46-.61-.47h-.52c-.18 0-.48.07-.73.34-.25.27-.95.93-.95 2.27s.98 2.63 1.11 2.81c.14.18 1.93 2.95 4.67 4.13.65.28 1.16.45 1.56.57.66.21 1.27.18 1.75.11.53-.08 1.59-.65 1.81-1.28.23-.63.23-1.17.16-1.28-.07-.11-.25-.18-.52-.32z"/>
+      <path d="M16.02 3.2c-7.07 0-12.8 5.73-12.8 12.8 0 2.26.59 4.38 1.62 6.22L3.12 28.8l6.75-1.77a12.75 12.75 0 0 0 6.15 1.57h.01c7.07 0 12.8-5.73 12.8-12.8S23.09 3.2 16.02 3.2zm0 23.2h-.01a10.3 10.3 0 0 1-5.25-1.43l-.38-.23-4.01 1.05 1.07-3.91-.25-.4a10.3 10.3 0 1 1 8.83 4.92z"/>
     </svg>
 
-</a>
+  </a>
 
 
+  <script>
+    const menuBtn = document.getElementById("menuBtn");
+    const navLinks = document.getElementById("navLinks");
 
-<!-- =====================================================
-     FOOTER
-     ===================================================== -->
+    menuBtn.addEventListener("click", function () {
+      const isOpen = navLinks.classList.toggle("open");
+      menuBtn.setAttribute("aria-expanded", isOpen ? "true" : "false");
+      menuBtn.textContent = isOpen ? "✕" : "☰";
+    });
 
-<footer class="footer">
-
-    <p>
-        &copy; 2026 Adhish Dharoahar Pvt Ltd |
-        CIN: U10195OR2024PTC049851
-    </p>
-
-
-    <div class="footer-links">
-
-        <a href="privacy.html">
-            Privacy
-        </a>
-
-        <a href="terms.html">
-            Terms
-        </a>
-
-        <a href="contact.html">
-            Contact
-        </a>
-
-    </div>
-
-</footer>
-
+    navLinks.querySelectorAll("a").forEach(function (link) {
+      link.addEventListener("click", function () {
+        navLinks.classList.remove("open");
+        menuBtn.setAttribute("aria-expanded", "false");
+        menuBtn.textContent = "☰";
+      });
+    });
+  </script>
 
 </body>
 </html>
