@@ -34,10 +34,8 @@ body{
   margin:0;
   padding:0;
   overflow-x:hidden;
-
   background:#f7f1e7;
   color:#2d1b12;
-
   font-family:Arial,Helvetica,sans-serif;
 }
 
@@ -93,10 +91,8 @@ select{
 
 .brand-name{
   font-family:Georgia,"Times New Roman",serif;
-
   font-size:27px;
   line-height:1;
-
   color:#2d1b12;
 }
 
@@ -104,9 +100,7 @@ select{
   margin-top:7px;
 
   font-size:7px;
-
   letter-spacing:.32em;
-
   text-transform:uppercase;
 
   color:#8a7567;
@@ -115,17 +109,13 @@ select{
 .desktop-nav{
   display:flex;
   align-items:center;
-
   gap:24px;
 }
 
 .desktop-nav a{
   font-size:11px;
   font-weight:600;
-
   color:#5b4a40;
-
-  transition:.2s ease;
 }
 
 .desktop-nav a:hover{
@@ -139,7 +129,6 @@ select{
   height:40px;
 
   border:1px solid rgba(55,35,24,.16);
-
   border-radius:50%;
 
   background:#fffaf3;
@@ -183,7 +172,7 @@ select{
 
   overflow:hidden;
 
-  background:#3b2114;
+  background:#351d12;
 }
 
 .hero-image{
@@ -192,15 +181,16 @@ select{
   width:100%;
   height:auto;
 
+  margin:0;
+
   object-fit:contain;
   object-position:center center;
 }
 
 
 /*
-   IMPORTANT:
-   Stronger overlay than previous version.
-   This makes white typography readable.
+  Dark overlay.
+  Kept strong enough for white text.
 */
 
 .hero::after{
@@ -215,10 +205,10 @@ select{
   background:
     linear-gradient(
       90deg,
-      rgba(25,13,7,.72) 0%,
-      rgba(25,13,7,.48) 38%,
-      rgba(25,13,7,.20) 70%,
-      rgba(25,13,7,.30) 100%
+      rgba(24,12,6,.66) 0%,
+      rgba(24,12,6,.48) 40%,
+      rgba(24,12,6,.25) 72%,
+      rgba(24,12,6,.40) 100%
     );
 }
 
@@ -234,19 +224,21 @@ select{
   align-items:center;
   justify-content:center;
 
-  padding:30px;
+  padding:30px 20px;
 }
 
 .hero-content{
-  width:min(700px,100%);
+  width:min(720px,100%);
+
+  margin:auto;
 
   text-align:center;
 
   color:#fff;
 
   text-shadow:
-    0 2px 8px rgba(0,0,0,.65),
-    0 4px 18px rgba(0,0,0,.40);
+    0 2px 7px rgba(0,0,0,.75),
+    0 4px 18px rgba(0,0,0,.45);
 }
 
 .hero-eyebrow{
@@ -256,31 +248,35 @@ select{
 
   font-weight:700;
 
-  letter-spacing:.3em;
+  letter-spacing:.30em;
 
   text-transform:uppercase;
 }
 
 .hero-title{
+  width:100%;
+
   margin:0;
 
   font-family:Georgia,"Times New Roman",serif;
 
-  font-size:clamp(40px,5vw,72px);
+  font-size:clamp(42px,5vw,72px);
 
   font-weight:400;
 
-  line-height:.96;
+  line-height:1.02;
+
+  letter-spacing:-.02em;
 }
 
 .hero-copy{
-  max-width:560px;
+  max-width:590px;
 
   margin:20px auto 0;
 
   font-size:14px;
 
-  line-height:1.65;
+  line-height:1.6;
 }
 
 .hero-actions{
@@ -320,7 +316,6 @@ select{
 
 .hero-btn-primary{
   background:#fff;
-
   color:#2d1b12;
 }
 
@@ -329,7 +324,7 @@ select{
 
   color:#fff;
 
-  background:rgba(40,25,17,.42);
+  background:rgba(40,25,17,.45);
 }
 
 .hero-btn:hover{
@@ -362,7 +357,7 @@ select{
 
   font-weight:700;
 
-  letter-spacing:.3em;
+  letter-spacing:.30em;
 
   text-transform:uppercase;
 
@@ -412,7 +407,6 @@ select{
   display:flex;
 
   align-items:flex-end;
-
   justify-content:space-between;
 
   gap:20px;
@@ -563,7 +557,6 @@ select{
   display:block;
 
   width:100%;
-
   height:auto;
 
   max-width:none;
@@ -589,12 +582,11 @@ select{
 
   padding:27px 27px 24px;
 
-  background:rgba(250,244,232,.54);
+  background:rgba(250,244,232,.58);
 
   border:1px solid rgba(80,52,35,.18);
 
-  box-shadow:
-    0 14px 35px rgba(46,25,14,.10);
+  box-shadow:0 14px 35px rgba(46,25,14,.10);
 
   text-align:center;
 
@@ -628,9 +620,9 @@ select{
 
   font-weight:400;
 
-  line-height:.98;
+  line-height:1.02;
 
-  letter-spacing:-.025em;
+  letter-spacing:-.02em;
 
   color:#2b1a12;
 }
@@ -668,7 +660,7 @@ select{
 
   border-radius:999px;
 
-  background:rgba(255,252,247,.82);
+  background:rgba(255,252,247,.88);
 
   color:#34231a;
 
@@ -681,8 +673,6 @@ select{
   text-transform:uppercase;
 
   cursor:pointer;
-
-  transition:.2s ease;
 }
 
 .signature-tab.active{
@@ -737,7 +727,7 @@ select{
 
   font-weight:400;
 
-  line-height:.95;
+  line-height:1;
 
   color:#fff;
 }
@@ -772,30 +762,21 @@ select{
   display:flex;
 
   align-items:center;
-
   justify-content:center;
 
   border:1px solid rgba(255,255,255,.22);
 
-  background:rgba(255,255,255,.035);
+  background:rgba(255,255,255,.045);
 
   color:#fff;
 
   font-size:10px;
 
-  line-height:1.2;
+  line-height:1.3;
 
   text-align:center;
 
   cursor:pointer;
-
-  transition:.2s ease;
-}
-
-.region-dish:hover{
-  background:rgba(255,255,255,.10);
-
-  border-color:rgba(255,255,255,.38);
 }
 
 .region-more{
@@ -822,7 +803,7 @@ select{
 
 
 /* =========================================================
-   DISH DRAWER
+   DRAWER
 ========================================================= */
 
 .dish-drawer{
@@ -902,7 +883,7 @@ select{
 
 
 /* =========================================================
-   B2B SPICE PLANNER
+   B2B PLANNER
 ========================================================= */
 
 .planner-section{
@@ -949,9 +930,6 @@ select{
   color:#6d5b4e;
 }
 
-
-/* MAIN CALCULATOR */
-
 .planner-box{
   padding:32px;
 
@@ -961,9 +939,6 @@ select{
 
   box-shadow:0 18px 45px rgba(50,30,18,.08);
 }
-
-
-/* FORM GRID */
 
 .planner-form{
   display:grid;
@@ -1021,9 +996,6 @@ select{
   border-color:#a56f3c;
 }
 
-
-/* SECTION LABEL */
-
 .planner-subheading{
   grid-column:1/-1;
 
@@ -1041,9 +1013,6 @@ select{
 
   color:#2d1b12;
 }
-
-
-/* CATEGORY SELECTION */
 
 .spice-category-grid{
   grid-column:1/-1;
@@ -1079,12 +1048,6 @@ select{
   transition:.2s ease;
 }
 
-.spice-category:hover{
-  border-color:#a56f3c;
-
-  transform:translateY(-2px);
-}
-
 .spice-category input{
   position:absolute;
 
@@ -1117,68 +1080,6 @@ select{
   opacity:.68;
 }
 
-
-/* INTENSITY */
-
-.intensity-grid{
-  grid-column:1/-1;
-
-  display:grid;
-
-  grid-template-columns:repeat(3,1fr);
-
-  gap:9px;
-}
-
-.intensity-option{
-  min-height:60px;
-
-  padding:10px;
-
-  border:1px solid rgba(50,30,20,.14);
-
-  background:#fff;
-
-  cursor:pointer;
-
-  text-align:center;
-
-  transition:.2s ease;
-}
-
-.intensity-option input{
-  display:none;
-}
-
-.intensity-option strong{
-  display:block;
-
-  font-size:11px;
-
-  text-transform:uppercase;
-
-  letter-spacing:.08em;
-}
-
-.intensity-option span{
-  display:block;
-
-  margin-top:4px;
-
-  font-size:9px;
-
-  color:#7b6b60;
-}
-
-.intensity-option.active{
-  background:#d7b17b;
-
-  border-color:#a56f3c;
-}
-
-
-/* BUTTON */
-
 .planner-calculate{
   grid-column:1/-1;
 
@@ -1203,18 +1104,7 @@ select{
   text-transform:uppercase;
 
   cursor:pointer;
-
-  transition:.2s ease;
 }
-
-.planner-calculate:hover{
-  background:#4a2c1b;
-
-  transform:translateY(-1px);
-}
-
-
-/* RESULT */
 
 .planner-result{
   display:none;
@@ -1255,9 +1145,6 @@ select{
 
   font-weight:400;
 }
-
-
-/* RESULT TOP */
 
 .result-summary{
   display:grid;
@@ -1301,9 +1188,6 @@ select{
   font-weight:400;
 }
 
-
-/* BREAKUP */
-
 .result-breakup{
   display:grid;
 
@@ -1344,9 +1228,6 @@ select{
   font-size:24px;
 }
 
-
-/* INDIVIDUAL SPICES */
-
 .result-spices{
   display:grid;
 
@@ -1361,7 +1242,6 @@ select{
   display:flex;
 
   align-items:center;
-
   justify-content:space-between;
 
   gap:10px;
@@ -1380,9 +1260,6 @@ select{
 
   color:#8e6038;
 }
-
-
-/* RESULT CTA */
 
 .result-actions{
   display:flex;
@@ -1864,51 +1741,117 @@ select{
   }
 
 
-  /* HERO */
+  /* =====================================================
+     HERO MOBILE — FIXED
+  ===================================================== */
+
+  .hero{
+    position:relative;
+
+    /*
+      Do not give the image a forced height.
+      This keeps the entire source image visible.
+    */
+    height:auto;
+
+    min-height:0;
+  }
 
   .hero-image{
+    position:relative;
+
+    display:block;
+
     width:100%;
+
     height:auto;
+
+    min-height:0;
+
+    object-fit:contain;
+
+    object-position:center center;
   }
 
   .hero::after{
     background:
       linear-gradient(
         180deg,
-        rgba(25,13,7,.46) 0%,
-        rgba(25,13,7,.67) 52%,
-        rgba(25,13,7,.78) 100%
+        rgba(22,11,6,.42) 0%,
+        rgba(22,11,6,.56) 42%,
+        rgba(22,11,6,.72) 100%
       );
   }
 
   .hero-overlay{
-    padding:20px 16px;
+    position:absolute;
+
+    inset:0;
+
+    padding:20px 15px;
+
+    display:flex;
+
+    align-items:center;
+    justify-content:center;
+  }
+
+  .hero-content{
+    width:100%;
+
+    max-width:360px;
+
+    padding:0 4px;
+  }
+
+  .hero-eyebrow{
+    margin-bottom:10px;
+
+    font-size:8px;
+
+    letter-spacing:.26em;
   }
 
   .hero-title{
-    font-size:41px;
+    width:100%;
 
-    line-height:.92;
+    margin:0 auto;
+
+    font-size:34px;
+
+    line-height:1.04;
+
+    letter-spacing:-.01em;
+
+    /*
+      Prevent the browser from collapsing
+      the title lines visually.
+    */
+    text-wrap:balance;
   }
 
   .hero-copy{
-    margin-top:15px;
+    max-width:340px;
 
-    font-size:11px;
+    margin:14px auto 0;
 
-    line-height:1.55;
+    font-size:10px;
+
+    line-height:1.48;
   }
 
   .hero-actions{
-    margin-top:20px;
+    margin-top:16px;
+
+    gap:7px;
   }
 
   .hero-btn{
-    min-height:42px;
+    min-height:38px;
 
-    padding:0 17px;
+    padding:0 14px;
 
-    font-size:9px;
+    font-size:8px;
   }
 
 
@@ -1954,14 +1897,28 @@ select{
   }
 
 
-  /* SIGNATURE */
+  /* =====================================================
+     SIGNATURE MOBILE
+  ===================================================== */
+
+  .signature-art{
+    width:100%;
+
+    overflow:hidden;
+  }
 
   .signature-art > img{
+    display:block;
+
     width:100%;
 
     height:auto;
 
+    min-height:0;
+
     object-fit:contain;
+
+    object-position:center center;
   }
 
   .signature-content{
@@ -1969,31 +1926,37 @@ select{
 
     top:58%;
 
-    width:calc(100% - 36px);
+    width:calc(100% - 32px);
 
-    padding:15px 10px 13px;
+    padding:14px 9px 12px;
 
-    background:rgba(250,244,232,.46);
+    /*
+      More transparent than the original,
+      but still readable.
+    */
+    background:rgba(250,244,232,.63);
 
-    border:1px solid rgba(80,52,35,.15);
+    border:1px solid rgba(80,52,35,.16);
 
     box-shadow:none;
   }
 
   .signature-content .eyebrow{
-    font-size:7px;
+    font-size:6.5px;
 
-    letter-spacing:.22em;
+    letter-spacing:.20em;
 
-    margin-bottom:7px;
+    margin-bottom:6px;
   }
 
   .signature-content h2{
     max-width:310px;
 
-    font-size:25px;
+    font-size:23px;
 
-    line-height:.95;
+    line-height:1.02;
+
+    letter-spacing:-.015em;
 
     margin-bottom:7px;
   }
@@ -2001,7 +1964,7 @@ select{
   .signature-content p{
     max-width:270px;
 
-    font-size:8px;
+    font-size:7.5px;
 
     line-height:1.35;
 
@@ -2013,11 +1976,11 @@ select{
   }
 
   .signature-tab{
-    min-height:32px;
+    min-height:31px;
 
     padding:0 5px;
 
-    font-size:8px;
+    font-size:7.5px;
   }
 
 
@@ -2037,6 +2000,8 @@ select{
 
   .region-title{
     font-size:43px;
+
+    line-height:1;
   }
 
   .region-description{
@@ -2059,6 +2024,8 @@ select{
     padding:7px 6px;
 
     font-size:9px;
+
+    line-height:1.25;
   }
 
   .region-more{
@@ -2067,7 +2034,7 @@ select{
 
 
   /* =====================================================
-     B2B PLANNER MOBILE
+     PLANNER
   ===================================================== */
 
   .planner-section{
@@ -2090,8 +2057,6 @@ select{
 
   .planner-box{
     padding:18px;
-
-    box-shadow:0 12px 30px rgba(50,30,18,.07);
   }
 
   .planner-form{
@@ -2128,12 +2093,6 @@ select{
 
   .spice-category-text{
     font-size:8px;
-  }
-
-  .intensity-grid{
-    grid-column:auto;
-
-    grid-template-columns:1fr;
   }
 
   .planner-calculate{
@@ -2255,29 +2214,45 @@ select{
 @media(max-width:390px){
 
   .hero-title{
-    font-size:36px;
+    font-size:31px;
+
+    line-height:1.06;
   }
 
-  .signature-content{
-    width:calc(100% - 28px);
-
-    top:59%;
-
-    padding:13px 8px 12px;
+  .hero-copy{
+    font-size:9px;
   }
 
-  .signature-content h2{
-    font-size:22px;
-  }
+  .hero-btn{
+    min-height:36px;
 
-  .signature-content p{
+    padding:0 12px;
+
     font-size:7.5px;
   }
 
-  .signature-tab{
-    min-height:29px;
+  .signature-content{
+    width:calc(100% - 26px);
 
+    top:59%;
+
+    padding:12px 7px 10px;
+  }
+
+  .signature-content h2{
+    font-size:21px;
+
+    line-height:1.03;
+  }
+
+  .signature-content p{
     font-size:7px;
+  }
+
+  .signature-tab{
+    min-height:28px;
+
+    font-size:6.7px;
   }
 
   .region-title{
@@ -2304,16 +2279,19 @@ select{
   .signature-content{
     width:min(620px,42vw);
 
-    background:rgba(250,244,232,.54);
+    background:rgba(250,244,232,.58);
   }
 
   .signature-content h2{
     font-size:40px;
+
+    line-height:1.02;
   }
 
 }
 
 </style>
+
 </head>
 
 
@@ -2346,19 +2324,33 @@ select{
 
     <nav class="desktop-nav">
 
-      <a href="index.html">Home</a>
+      <a href="index.html">
+        Home
+      </a>
 
-      <a href="about.html">About Us</a>
+      <a href="about.html">
+        About Us
+      </a>
 
-      <a href="products.html">Our Spices</a>
+      <a href="products.html">
+        Our Spices
+      </a>
 
-      <a href="#spice-signature">Spice Signature</a>
+      <a href="#spice-signature">
+        Spice Signature
+      </a>
 
-      <a href="#spice-planner">Spice Planner</a>
+      <a href="#spice-planner">
+        Spice Planner
+      </a>
 
-      <a href="quality.html">Quality</a>
+      <a href="quality.html">
+        Quality
+      </a>
 
-      <a href="contact.html">Contact</a>
+      <a href="contact.html">
+        Contact
+      </a>
 
     </nav>
 
@@ -2379,19 +2371,33 @@ select{
     id="mobileMenu"
   >
 
-    <a href="index.html">Home</a>
+    <a href="index.html">
+      Home
+    </a>
 
-    <a href="about.html">About Us</a>
+    <a href="about.html">
+      About Us
+    </a>
 
-    <a href="products.html">Our Spices</a>
+    <a href="products.html">
+      Our Spices
+    </a>
 
-    <a href="#spice-signature">Spice Signature</a>
+    <a href="#spice-signature">
+      Spice Signature
+    </a>
 
-    <a href="#spice-planner">Spice Planner</a>
+    <a href="#spice-planner">
+      Spice Planner
+    </a>
 
-    <a href="quality.html">Quality</a>
+    <a href="quality.html">
+      Quality
+    </a>
 
-    <a href="contact.html">Contact</a>
+    <a href="contact.html">
+      Contact
+    </a>
 
   </div>
 
@@ -2503,7 +2509,10 @@ select{
   <div class="product-grid">
 
 
-    <a class="product-card" href="clove.html">
+    <a
+      class="product-card"
+      href="clove.html"
+    >
 
       <div class="product-image">
 
@@ -2533,7 +2542,10 @@ select{
     </a>
 
 
-    <a class="product-card" href="cardamom.html">
+    <a
+      class="product-card"
+      href="cardamom.html"
+    >
 
       <div class="product-image">
 
@@ -2563,7 +2575,10 @@ select{
     </a>
 
 
-    <a class="product-card" href="cinnamon.html">
+    <a
+      class="product-card"
+      href="cinnamon.html"
+    >
 
       <div class="product-image">
 
@@ -2593,7 +2608,10 @@ select{
     </a>
 
 
-    <a class="product-card" href="blackpepper.html">
+    <a
+      class="product-card"
+      href="blackpepper.html"
+    >
 
       <div class="product-image">
 
@@ -2623,7 +2641,10 @@ select{
     </a>
 
 
-    <a class="product-card" href="cumin.html">
+    <a
+      class="product-card"
+      href="cumin.html"
+    >
 
       <div class="product-image">
 
@@ -2653,7 +2674,10 @@ select{
     </a>
 
 
-    <a class="product-card" href="star-anise.html">
+    <a
+      class="product-card"
+      href="star-anise.html"
+    >
 
       <div class="product-image">
 
@@ -2683,7 +2707,10 @@ select{
     </a>
 
 
-    <a class="product-card" href="degi-mirch.html">
+    <a
+      class="product-card"
+      href="degi-mirch.html"
+    >
 
       <div class="product-image">
 
@@ -2713,7 +2740,10 @@ select{
     </a>
 
 
-    <a class="product-card" href="kashmiri-mirch.html">
+    <a
+      class="product-card"
+      href="kashmiri-mirch.html"
+    >
 
       <div class="product-image">
 
@@ -2840,23 +2870,38 @@ select{
 
       <div class="region-dishes">
 
-        <button class="region-dish" data-dish="Dal Makhani">
+        <button
+          class="region-dish"
+          data-dish="Dal Makhani"
+        >
           Dal Makhani
         </button>
 
-        <button class="region-dish" data-dish="Chole">
+        <button
+          class="region-dish"
+          data-dish="Chole"
+        >
           Chole
         </button>
 
-        <button class="region-dish" data-dish="Rajma Chawal">
+        <button
+          class="region-dish"
+          data-dish="Rajma Chawal"
+        >
           Rajma Chawal
         </button>
 
-        <button class="region-dish" data-dish="Paneer Butter Masala">
+        <button
+          class="region-dish"
+          data-dish="Paneer Butter Masala"
+        >
           Paneer Butter Masala
         </button>
 
-        <button class="region-dish" data-dish="Aloo Paratha">
+        <button
+          class="region-dish"
+          data-dish="Aloo Paratha"
+        >
           Aloo Paratha
         </button>
 
@@ -2899,23 +2944,38 @@ select{
 
       <div class="region-dishes">
 
-        <button class="region-dish" data-dish="Luchi & Aloo Dum">
+        <button
+          class="region-dish"
+          data-dish="Luchi & Aloo Dum"
+        >
           Luchi &amp; Aloo Dum
         </button>
 
-        <button class="region-dish" data-dish="Cholar Dal">
+        <button
+          class="region-dish"
+          data-dish="Cholar Dal"
+        >
           Cholar Dal
         </button>
 
-        <button class="region-dish" data-dish="Aloo Posto">
+        <button
+          class="region-dish"
+          data-dish="Aloo Posto"
+        >
           Aloo Posto
         </button>
 
-        <button class="region-dish" data-dish="Dalma">
+        <button
+          class="region-dish"
+          data-dish="Dalma"
+        >
           Dalma
         </button>
 
-        <button class="region-dish" data-dish="Shorshe Ilish">
+        <button
+          class="region-dish"
+          data-dish="Shorshe Ilish"
+        >
           Shorshe Ilish
         </button>
 
@@ -2958,23 +3018,38 @@ select{
 
       <div class="region-dishes">
 
-        <button class="region-dish" data-dish="Pav Bhaji">
+        <button
+          class="region-dish"
+          data-dish="Pav Bhaji"
+        >
           Pav Bhaji
         </button>
 
-        <button class="region-dish" data-dish="Vada Pav">
+        <button
+          class="region-dish"
+          data-dish="Vada Pav"
+        >
           Vada Pav
         </button>
 
-        <button class="region-dish" data-dish="Misal Pav">
+        <button
+          class="region-dish"
+          data-dish="Misal Pav"
+        >
           Misal Pav
         </button>
 
-        <button class="region-dish" data-dish="Khaman Dhokla">
+        <button
+          class="region-dish"
+          data-dish="Khaman Dhokla"
+        >
           Khaman Dhokla
         </button>
 
-        <button class="region-dish" data-dish="Undhiyu">
+        <button
+          class="region-dish"
+          data-dish="Undhiyu"
+        >
           Undhiyu
         </button>
 
@@ -3017,23 +3092,38 @@ select{
 
       <div class="region-dishes">
 
-        <button class="region-dish" data-dish="Masala Dosa">
+        <button
+          class="region-dish"
+          data-dish="Masala Dosa"
+        >
           Masala Dosa
         </button>
 
-        <button class="region-dish" data-dish="Idli & Sambar">
+        <button
+          class="region-dish"
+          data-dish="Idli & Sambar"
+        >
           Idli &amp; Sambar
         </button>
 
-        <button class="region-dish" data-dish="Sambar Rice">
+        <button
+          class="region-dish"
+          data-dish="Sambar Rice"
+        >
           Sambar Rice
         </button>
 
-        <button class="region-dish" data-dish="Lemon Rice">
+        <button
+          class="region-dish"
+          data-dish="Lemon Rice"
+        >
           Lemon Rice
         </button>
 
-        <button class="region-dish" data-dish="Bisi Bele Bath">
+        <button
+          class="region-dish"
+          data-dish="Bisi Bele Bath"
+        >
           Bisi Bele Bath
         </button>
 
@@ -3125,8 +3215,6 @@ select{
       <div class="planner-form">
 
 
-        <!-- BUSINESS -->
-
         <div class="planner-field">
 
           <label class="planner-label">
@@ -3175,8 +3263,6 @@ select{
         </div>
 
 
-        <!-- MEALS -->
-
         <div class="planner-field">
 
           <label
@@ -3196,8 +3282,6 @@ select{
 
         </div>
 
-
-        <!-- DAYS -->
 
         <div class="planner-field">
 
@@ -3219,8 +3303,6 @@ select{
 
         </div>
 
-
-        <!-- INTENSITY -->
 
         <div class="planner-field">
 
@@ -3252,8 +3334,6 @@ select{
 
         </div>
 
-
-        <!-- CATEGORY -->
 
         <div class="planner-subheading">
           What do you want to source?
@@ -3354,8 +3434,6 @@ select{
         </div>
 
 
-        <!-- CALCULATE -->
-
         <button
           class="planner-calculate"
           id="calculatePlanner"
@@ -3365,10 +3443,6 @@ select{
 
       </div>
 
-
-      <!-- =================================================
-           RESULT
-      ================================================= -->
 
       <div
         class="planner-result"
@@ -3418,31 +3492,24 @@ select{
         </div>
 
 
-        <!-- CATEGORY BREAKUP -->
-
         <div
           class="result-breakup"
           id="categoryBreakup"
         >
-
         </div>
 
-
-        <!-- INDIVIDUAL SPICES -->
 
         <div class="planner-subheading">
           Indicative spice-wise breakup
         </div>
 
+
         <div
           class="result-spices"
           id="spiceBreakup"
         >
-
         </div>
 
-
-        <!-- CTA -->
 
         <div class="result-actions">
 
@@ -4009,25 +4076,6 @@ drawer.addEventListener("click",function(event){
    B2B SPICE PLANNER
 ========================================================= */
 
-
-/*
-   Indicative planning model.
-
-   Base spice consumption per meal:
-   light     = 2.2 g
-   standard  = 3.0 g
-   heavy     = 4.0 g
-
-   Category mix:
-   Whole       22%
-   Powder      38%
-   Chilli      25%
-   Blends      15%
-
-   These are intentionally labelled as estimates.
-*/
-
-
 const categoryMix = {
 
   whole:22,
@@ -4073,7 +4121,9 @@ const spiceMix = {
 
 
 const calculatePlanner =
-  document.getElementById("calculatePlanner");
+  document.getElementById(
+    "calculatePlanner"
+  );
 
 
 calculatePlanner.addEventListener(
@@ -4082,16 +4132,22 @@ calculatePlanner.addEventListener(
 
     const dailyMeals =
       Number(
-        document.getElementById("dailyMeals").value
+        document.getElementById(
+          "dailyMeals"
+        ).value
       );
 
     const operatingDays =
       Number(
-        document.getElementById("operatingDays").value
+        document.getElementById(
+          "operatingDays"
+        ).value
       );
 
     const intensity =
-      document.getElementById("spiceIntensity").value;
+      document.getElementById(
+        "spiceIntensity"
+      ).value;
 
 
     if(!dailyMeals || dailyMeals<=0){
@@ -4120,47 +4176,29 @@ calculatePlanner.addEventListener(
     }
 
 
-    /*
-       Base usage per meal.
-    */
-
     let gramsPerMeal = 3;
 
 
     if(intensity==="light"){
-
-      gramsPerMeal = 2.2;
-
+      gramsPerMeal=2.2;
     }
 
     if(intensity==="heavy"){
-
-      gramsPerMeal = 4;
-
+      gramsPerMeal=4;
     }
 
 
-    /*
-       Monthly meals.
-    */
-
     const monthlyMeals =
-      dailyMeals * operatingDays;
+      dailyMeals *
+      operatingDays;
 
-
-    /*
-       Total estimated spice.
-    */
 
     const totalKg =
-      (monthlyMeals * gramsPerMeal) / 1000;
+      (monthlyMeals * gramsPerMeal) /
+      1000;
 
 
-    /*
-       Selected categories.
-    */
-
-    const selectedCategories = [];
+    const selectedCategories=[];
 
 
     document
@@ -4187,20 +4225,17 @@ calculatePlanner.addEventListener(
     }
 
 
-    /*
-       Rebalance category percentages
-       among selected categories.
-    */
-
-    let selectedTotal = 0;
+    let selectedTotal=0;
 
 
-    selectedCategories.forEach(function(category){
+    selectedCategories.forEach(
+      function(category){
 
-      selectedTotal +=
-        categoryMix[category];
+        selectedTotal +=
+          categoryMix[category];
 
-    });
+      }
+    );
 
 
     const categoryBreakup =
@@ -4212,59 +4247,56 @@ calculatePlanner.addEventListener(
     categoryBreakup.innerHTML="";
 
 
-    selectedCategories.forEach(function(category){
+    selectedCategories.forEach(
+      function(category){
 
-      const percentage =
-        categoryMix[category] /
-        selectedTotal;
+        const percentage =
+          categoryMix[category] /
+          selectedTotal;
 
-      const kg =
-        totalKg * percentage;
-
-
-      const labels = {
-
-        whole:"Whole Spices",
-
-        powder:"Powder Spices",
-
-        chilli:"Chilli Collection",
-
-        blend:"Blended Spices"
-
-      };
+        const kg =
+          totalKg *
+          percentage;
 
 
-      const card =
-        document.createElement("div");
+        const labels={
 
-      card.className =
-        "result-category";
+          whole:"Whole Spices",
 
+          powder:"Powder Spices",
 
-      card.innerHTML =
+          chilli:"Chilli Collection",
 
-        "<span class='result-category-label'>" +
+          blend:"Blended Spices"
 
-        labels[category] +
-
-        "</span>" +
-
-        "<span class='result-category-value'>" +
-
-        kg.toFixed(1) +
-
-        " kg</span>";
+        };
 
 
-      categoryBreakup.appendChild(card);
+        const card =
+          document.createElement(
+            "div"
+          );
 
-    });
+        card.className =
+          "result-category";
 
 
-    /*
-       Individual spice breakup.
-    */
+        card.innerHTML =
+          "<span class='result-category-label'>" +
+          labels[category] +
+          "</span>" +
+          "<span class='result-category-value'>" +
+          kg.toFixed(1) +
+          " kg</span>";
+
+
+        categoryBreakup.appendChild(
+          card
+        );
+
+      }
+    );
+
 
     const spiceBreakup =
       document.getElementById(
@@ -4275,91 +4307,84 @@ calculatePlanner.addEventListener(
     spiceBreakup.innerHTML="";
 
 
-    selectedCategories.forEach(function(category){
+    selectedCategories.forEach(
+      function(category){
 
-      const categoryWeight =
-        categoryMix[category] /
-        selectedTotal;
+        const categoryWeight =
+          categoryMix[category] /
+          selectedTotal;
 
-
-      const categoryKg =
-        totalKg *
-        categoryWeight;
-
-
-      spiceMix[category].forEach(function(spice){
-
-        const spiceName =
-          spice[0];
-
-        const spicePercentage =
-          spice[1] / 100;
-
-        const spiceKg =
-          categoryKg *
-          spicePercentage;
+        const categoryKg =
+          totalKg *
+          categoryWeight;
 
 
-        const row =
-          document.createElement("div");
+        spiceMix[category].forEach(
+          function(spice){
 
-        row.className =
-          "result-spice-row";
+            const spiceName =
+              spice[0];
 
+            const spicePercentage =
+              spice[1]/100;
 
-        row.innerHTML =
-
-          "<span>" +
-
-          spiceName +
-
-          "</span>" +
-
-          "<span>" +
-
-          spiceKg.toFixed(2) +
-
-          " kg</span>";
+            const spiceKg =
+              categoryKg *
+              spicePercentage;
 
 
-        spiceBreakup.appendChild(row);
+            const row =
+              document.createElement(
+                "div"
+              );
 
-      });
+            row.className =
+              "result-spice-row";
 
-    });
+
+            row.innerHTML =
+              "<span>" +
+              spiceName +
+              "</span>" +
+              "<span>" +
+              spiceKg.toFixed(2) +
+              " kg</span>";
 
 
-    /*
-       Update totals.
-    */
+            spiceBreakup.appendChild(
+              row
+            );
+
+          }
+        );
+
+      }
+    );
+
 
     document.getElementById(
       "totalKg"
     ).textContent =
-      totalKg.toFixed(1) + " kg";
+      totalKg.toFixed(1) +
+      " kg";
 
 
     document.getElementById(
       "totalMeals"
     ).textContent =
-      monthlyMeals.toLocaleString("en-IN");
+      monthlyMeals.toLocaleString(
+        "en-IN"
+      );
 
-
-    /*
-       Show result.
-    */
 
     const result =
       document.getElementById(
         "plannerResult"
       );
 
+
     result.classList.add("show");
 
-
-    /*
-       Scroll result into view.
-    */
 
     setTimeout(function(){
 
@@ -4390,13 +4415,9 @@ document
       "click",
       function(event){
 
-        /*
-           Allow normal checkbox behaviour
-           but update card visual state.
-        */
-
         if(
-          event.target.tagName !== "INPUT"
+          event.target.tagName !==
+          "INPUT"
         ){
 
           checkbox.checked =
@@ -4407,11 +4428,15 @@ document
 
         if(checkbox.checked){
 
-          card.classList.add("active");
+          card.classList.add(
+            "active"
+          );
 
         }else{
 
-          card.classList.remove("active");
+          card.classList.remove(
+            "active"
+          );
 
         }
 
@@ -4422,7 +4447,7 @@ document
 
 
 /* =========================================================
-   CLOSE MOBILE MENU
+   MOBILE MENU CLOSE
 ========================================================= */
 
 document
@@ -4433,7 +4458,9 @@ document
       "click",
       function(){
 
-        mobileMenu.classList.remove("open");
+        mobileMenu.classList.remove(
+          "open"
+        );
 
       }
     );
