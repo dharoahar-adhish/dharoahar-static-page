@@ -1,607 +1,2940 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-    <meta name="theme-color" content="#f5e6d3">
-    <title>Dharoahar - Premium Indian Spices</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Dharoahar | Authentic Indian Spices, Sourced with Care</title>
+
+  <meta
+    name="description"
+    content="Explore Dharoahar's range of whole and powdered Indian spices, sourced with care from established spice-growing regions across India."
+  >
+
+  <meta
+    name="keywords"
+    content="Dharoahar, Indian spices, whole spices, powdered spices, premium spices, Clove, Cardamom, Cinnamon, Black Pepper, Cumin, Degi Mirch, Kashmiri Mirch"
+  >
+
+  <meta name="theme-color" content="#f7f3ec">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap"
+    rel="stylesheet"
+  >
+
+  <style>
+
+    /* =========================================================
+       ROOT
+    ========================================================= */
+
+    :root {
+      --brown: #3d261c;
+      --brown-dark: #281812;
+      --brown-soft: #65483a;
+
+      --cream: #f7f3ec;
+      --cream-dark: #eee7dc;
+
+      --white: #ffffff;
+
+      --gold: #b28a54;
+      --terracotta: #a75c3c;
+
+      --green: #238b45;
+
+      --text: #33251e;
+      --muted: #74675f;
+
+      --border: #e3d9cd;
+
+      --shadow: 0 18px 50px rgba(61, 38, 28, 0.09);
+
+      --radius: 18px;
+    }
+
+
+    /* =========================================================
+       RESET
+    ========================================================= */
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      overflow-x: hidden;
+    }
+
+    body {
+      margin: 0;
+      font-family: "DM Sans", Arial, sans-serif;
+      color: var(--text);
+      background: var(--cream);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      display: block;
+      max-width: 100%;
+    }
+
+    button {
+      font-family: inherit;
+    }
+
+    .container {
+      width: min(1180px, calc(100% - 40px));
+      margin: 0 auto;
+    }
+
+
+    /* =========================================================
+       HEADER
+    ========================================================= */
+
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+
+      background: rgba(247, 243, 236, 0.96);
+      backdrop-filter: blur(14px);
+
+      border-bottom: 1px solid rgba(61, 38, 28, 0.08);
+    }
+
+    .header-inner {
+      min-height: 74px;
+
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      gap: 24px;
+    }
+
+    .logo {
+      font-family: "Playfair Display", Georgia, serif;
+      font-size: 29px;
+      font-weight: 700;
+
+      letter-spacing: -0.5px;
+
+      color: var(--brown);
+    }
+
+    .logo span {
+      display: block;
+
+      font-family: "DM Sans", Arial, sans-serif;
+
+      font-size: 9px;
+      line-height: 1;
+
+      letter-spacing: 2.4px;
+      text-transform: uppercase;
+
+      font-weight: 600;
+
+      color: var(--gold);
+
+      margin-top: 3px;
+    }
+
+    .desktop-nav {
+      display: flex;
+      align-items: center;
+      gap: 30px;
+    }
+
+    .desktop-nav a {
+      position: relative;
+
+      font-size: 14px;
+      font-weight: 500;
+
+      color: var(--brown-soft);
+
+      transition: color 0.2s ease;
+    }
+
+    .desktop-nav a:hover,
+    .desktop-nav a.active {
+      color: var(--brown);
+    }
+
+    .desktop-nav a.active::after {
+      content: "";
+
+      position: absolute;
+
+      left: 0;
+      right: 0;
+      bottom: -9px;
+
+      height: 1.5px;
+
+      background: var(--gold);
+    }
+
+    .header-button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+
+      min-height: 40px;
+
+      padding: 0 17px;
+
+      border-radius: 6px;
+
+      background: var(--brown);
+      color: #fff !important;
+
+      font-size: 12px;
+      font-weight: 700;
+
+      transition:
+        transform 0.2s ease,
+        background 0.2s ease;
+    }
+
+    .header-button:hover {
+      transform: translateY(-1px);
+      background: var(--brown-dark);
+    }
+
+    .menu-button {
+      display: none;
+
+      width: 42px;
+      height: 42px;
+
+      border: 0;
+      background: transparent;
+
+      cursor: pointer;
+
+      align-items: center;
+      justify-content: center;
+    }
+
+    .menu-icon {
+      width: 22px;
+      height: 16px;
+
+      position: relative;
+    }
+
+    .menu-icon span {
+      position: absolute;
+
+      left: 0;
+
+      width: 100%;
+      height: 1.5px;
+
+      background: var(--brown);
+    }
+
+    .menu-icon span:nth-child(1) {
+      top: 0;
+    }
+
+    .menu-icon span:nth-child(2) {
+      top: 7px;
+    }
+
+    .menu-icon span:nth-child(3) {
+      top: 14px;
+    }
+
+    .mobile-nav {
+      display: none;
+
+      padding: 0 20px 20px;
+    }
+
+    .mobile-nav.open {
+      display: block;
+    }
+
+    .mobile-nav a {
+      display: block;
+
+      padding: 13px 0;
+
+      border-bottom: 1px solid var(--border);
+
+      font-size: 15px;
+
+      color: var(--brown-soft);
+    }
+
+
+    /* =========================================================
+       HERO
+    ========================================================= */
+
+    .hero {
+      min-height: 650px;
+
+      position: relative;
+
+      display: flex;
+      align-items: center;
+
+      overflow: hidden;
+
+      background: var(--brown-dark);
+    }
+
+    .hero-image {
+      position: absolute;
+
+      inset: 0;
+
+      width: 100%;
+      height: 100%;
+
+      object-fit: cover;
+
+      object-position: center;
+    }
+
+    .hero-overlay {
+      position: absolute;
+
+      inset: 0;
+
+      background:
+        linear-gradient(
+          90deg,
+          rgba(40, 24, 18, 0.91) 0%,
+          rgba(40, 24, 18, 0.72) 42%,
+          rgba(40, 24, 18, 0.20) 100%
+        );
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+
+      width: min(1180px, calc(100% - 40px));
+
+      margin: 0 auto;
+
+      padding: 95px 0;
+    }
+
+    .hero-eyebrow {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+
+      margin-bottom: 22px;
+
+      color: #d6b37c;
+
+      font-size: 11px;
+      font-weight: 700;
+
+      letter-spacing: 2.4px;
+      text-transform: uppercase;
+    }
+
+    .hero-eyebrow::before {
+      content: "";
+
+      width: 30px;
+      height: 1px;
+
+      background: #d6b37c;
+    }
+
+    .hero h1 {
+      max-width: 720px;
+
+      font-family: "Playfair Display", Georgia, serif;
+
+      color: #fff;
+
+      font-size: clamp(48px, 7vw, 82px);
+
+      line-height: 1.02;
+
+      letter-spacing: -2.5px;
+
+      font-weight: 600;
+
+      margin-bottom: 25px;
+    }
+
+    .hero-subtitle {
+      max-width: 570px;
+
+      color: rgba(255,255,255,0.78);
+
+      font-size: 18px;
+
+      line-height: 1.75;
+
+      margin-bottom: 34px;
+    }
+
+    .hero-actions {
+      display: flex;
+
+      flex-wrap: wrap;
+
+      gap: 12px;
+    }
+
+    .hero-button {
+      min-height: 50px;
+
+      padding: 0 23px;
+
+      border-radius: 6px;
+
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+
+      font-size: 13px;
+      font-weight: 700;
+
+      transition:
+        transform 0.2s ease,
+        background 0.2s ease;
+    }
+
+    .hero-button-primary {
+      background: #fff;
+      color: var(--brown);
+    }
+
+    .hero-button-primary:hover {
+      transform: translateY(-2px);
+      background: #f3ede5;
+    }
+
+    .hero-button-secondary {
+      border: 1px solid rgba(255,255,255,0.35);
+
+      color: #fff;
+
+      background: rgba(255,255,255,0.06);
+    }
+
+    .hero-button-secondary:hover {
+      transform: translateY(-2px);
+      background: rgba(255,255,255,0.12);
+    }
+
+
+    /* =========================================================
+       INTRO
+    ========================================================= */
+
+    .intro-section {
+      padding: 90px 0 85px;
+
+      background: var(--white);
+    }
+
+    .intro-layout {
+      display: grid;
+
+      grid-template-columns: 0.85fr 1.15fr;
+
+      gap: 80px;
+
+      align-items: center;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+
+      align-items: center;
+
+      gap: 9px;
+
+      color: var(--gold);
+
+      text-transform: uppercase;
+
+      letter-spacing: 2px;
+
+      font-size: 11px;
+
+      font-weight: 700;
+
+      margin-bottom: 18px;
+    }
+
+    .eyebrow::before {
+      content: "";
+
+      width: 27px;
+      height: 1px;
+
+      background: var(--gold);
+    }
+
+    .intro-heading {
+      font-family: "Playfair Display", Georgia, serif;
+
+      color: var(--brown);
+
+      font-size: clamp(34px, 4vw, 51px);
+
+      line-height: 1.13;
+
+      font-weight: 600;
+
+      letter-spacing: -1px;
+    }
+
+    .intro-copy {
+      color: var(--muted);
+
+      font-size: 16px;
+
+      line-height: 1.85;
+    }
+
+    .intro-copy p + p {
+      margin-top: 17px;
+    }
+
+    .intro-link {
+      display: inline-flex;
+
+      align-items: center;
+
+      gap: 8px;
+
+      margin-top: 25px;
+
+      color: var(--brown);
+
+      font-size: 13px;
+
+      font-weight: 700;
+    }
+
+    .intro-link span {
+      transition: transform 0.2s ease;
+    }
+
+    .intro-link:hover span {
+      transform: translateX(4px);
+    }
+
+
+    /* =========================================================
+       FEATURED PRODUCTS
+    ========================================================= */
+
+    .products-section {
+      padding: 90px 0;
+
+      background: var(--cream);
+    }
+
+    .section-top {
+      display: flex;
+
+      align-items: flex-end;
+      justify-content: space-between;
+
+      gap: 30px;
+
+      margin-bottom: 40px;
+    }
+
+    .section-title {
+      font-family: "Playfair Display", Georgia, serif;
+
+      color: var(--brown);
+
+      font-size: clamp(34px, 4vw, 48px);
+
+      line-height: 1.1;
+
+      font-weight: 600;
+    }
+
+    .section-description {
+      max-width: 470px;
+
+      color: var(--muted);
+
+      font-size: 14px;
+
+      line-height: 1.7;
+    }
+
+    .products-grid {
+      display: grid;
+
+      grid-template-columns: repeat(4, 1fr);
+
+      gap: 18px;
+    }
+
+    .product-card {
+      display: block;
+
+      background: var(--white);
+
+      border: 1px solid var(--border);
+
+      border-radius: 15px;
+
+      overflow: hidden;
+
+      transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease,
+        border-color 0.25s ease;
+    }
+
+    .product-card:hover {
+      transform: translateY(-5px);
+
+      box-shadow: var(--shadow);
+
+      border-color: #d7c7b5;
+    }
+
+    .product-image {
+      position: relative;
+
+      height: 285px;
+
+      background: #f1ece4;
+
+      overflow: hidden;
+    }
+
+    .product-image img {
+      width: 100%;
+      height: 100%;
+
+      object-fit: cover;
+
+      transition: transform 0.45s ease;
+    }
+
+    .product-card:hover .product-image img {
+      transform: scale(1.035);
+    }
+
+    .product-category {
+      position: absolute;
+
+      top: 13px;
+      left: 13px;
+
+      padding: 5px 9px;
+
+      border-radius: 4px;
+
+      background: rgba(255,255,255,0.91);
+
+      color: var(--brown);
+
+      font-size: 9px;
+
+      font-weight: 700;
+
+      text-transform: uppercase;
+
+      letter-spacing: 1px;
+    }
+
+    .product-info {
+      padding: 19px 18px 21px;
+    }
+
+    .product-name {
+      font-family: "Playfair Display", Georgia, serif;
+
+      color: var(--brown);
+
+      font-size: 23px;
+
+      line-height: 1.2;
+
+      margin-bottom: 3px;
+    }
+
+    .product-hindi {
+      color: var(--gold);
+
+      font-size: 12px;
+
+      margin-bottom: 11px;
+    }
+
+    .product-origin {
+      color: var(--muted);
+
+      font-size: 12px;
+
+      min-height: 18px;
+    }
+
+    .view-products {
+      display: flex;
+
+      justify-content: center;
+
+      margin-top: 38px;
+    }
+
+    .brown-button {
+      display: inline-flex;
+
+      align-items: center;
+      justify-content: center;
+
+      min-height: 48px;
+
+      padding: 0 25px;
+
+      border-radius: 6px;
+
+      background: var(--brown);
+
+      color: #fff !important;
+
+      font-size: 13px;
+
+      font-weight: 700;
+
+      transition:
+        transform 0.2s ease,
+        background 0.2s ease;
+    }
+
+    .brown-button:hover {
+      transform: translateY(-2px);
+
+      background: var(--brown-dark);
+    }
+
+
+    /* =========================================================
+       CATEGORY BAND
+    ========================================================= */
+
+    .category-band {
+      padding: 78px 0;
+
+      background: var(--brown);
+    }
+
+    .category-grid {
+      display: grid;
+
+      grid-template-columns: 1fr 1fr;
+
+      gap: 18px;
+    }
+
+    .category-card {
+      position: relative;
+
+      min-height: 320px;
+
+      padding: 35px;
+
+      border-radius: 20px;
+
+      overflow: hidden;
+
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+
+      background: #5a4032;
+    }
+
+    .category-card:first-child {
+      background:
+        linear-gradient(
+          140deg,
+          #51372a,
+          #2f1e16
+        );
+    }
+
+    .category-card:last-child {
+      background:
+        linear-gradient(
+          140deg,
+          #754733,
+          #3e2419
+        );
+    }
+
+    .category-pattern {
+      position: absolute;
+
+      width: 260px;
+      height: 260px;
+
+      border-radius: 50%;
+
+      border: 1px solid rgba(255,255,255,0.12);
+
+      right: -80px;
+      top: -90px;
+    }
+
+    .category-pattern::after {
+      content: "";
+
+      position: absolute;
+
+      width: 190px;
+      height: 190px;
+
+      border-radius: 50%;
+
+      border: 1px solid rgba(255,255,255,0.09);
+
+      left: 35px;
+      top: 35px;
+    }
+
+    .category-content {
+      position: relative;
+      z-index: 2;
+    }
+
+    .category-label {
+      color: #d6b37c;
+
+      font-size: 10px;
+
+      text-transform: uppercase;
+
+      letter-spacing: 2px;
+
+      font-weight: 700;
+
+      margin-bottom: 11px;
+    }
+
+    .category-card h3 {
+      color: #fff;
+
+      font-family: "Playfair Display", Georgia, serif;
+
+      font-size: 34px;
+
+      line-height: 1.1;
+
+      margin-bottom: 11px;
+    }
+
+    .category-card p {
+      max-width: 440px;
+
+      color: rgba(255,255,255,0.69);
+
+      font-size: 13px;
+
+      line-height: 1.7;
+
+      margin-bottom: 19px;
+    }
+
+    .category-link {
+      display: inline-flex;
+
+      align-items: center;
+
+      gap: 8px;
+
+      color: #fff;
+
+      font-size: 12px;
+
+      font-weight: 700;
+    }
+
+    .category-link span {
+      transition: transform 0.2s ease;
+    }
+
+    .category-link:hover span {
+      transform: translateX(4px);
+    }
+
+
+    /* =========================================================
+       SOURCING
+    ========================================================= */
+
+    .sourcing-section {
+      padding: 92px 0;
+
+      background: var(--white);
+    }
+
+    .sourcing-heading {
+      max-width: 680px;
+
+      margin-bottom: 45px;
+    }
+
+    .sourcing-heading h2 {
+      font-family: "Playfair Display", Georgia, serif;
+
+      color: var(--brown);
+
+      font-size: clamp(34px, 4vw, 48px);
+
+      line-height: 1.13;
+
+      margin-bottom: 13px;
+    }
+
+    .sourcing-heading p {
+      color: var(--muted);
+
+      font-size: 15px;
+
+      line-height: 1.75;
+    }
+
+    .origin-grid {
+      display: grid;
+
+      grid-template-columns: repeat(3, 1fr);
+
+      gap: 18px;
+    }
+
+    .origin-card {
+      padding: 28px;
+
+      border: 1px solid var(--border);
+
+      border-radius: 16px;
+
+      background: var(--cream);
+
+      min-height: 190px;
+    }
+
+    .origin-card-number {
+      color: var(--gold);
+
+      font-size: 10px;
+
+      font-weight: 700;
+
+      letter-spacing: 1.5px;
+
+      margin-bottom: 18px;
+    }
+
+    .origin-card h3 {
+      font-family: "Playfair Display", Georgia, serif;
+
+      color: var(--brown);
+
+      font-size: 25px;
+
+      margin-bottom: 7px;
+    }
+
+    .origin-card p {
+      color: var(--muted);
+
+      font-size: 13px;
+
+      line-height: 1.7;
+    }
+
+
+    /* =========================================================
+       FOUNDER
+    ========================================================= */
+
+    .founder-section {
+      padding: 90px 0;
+
+      background: var(--cream);
+    }
+
+    .founder-layout {
+      display: grid;
+
+      grid-template-columns: 0.72fr 1.28fr;
+
+      gap: 70px;
+
+      align-items: center;
+    }
+
+    .founder-image {
+      position: relative;
+
+      max-width: 410px;
+
+      margin: 0 auto;
+    }
+
+    .founder-image::before {
+      content: "";
+
+      position: absolute;
+
+      inset: 14px -14px -14px 14px;
+
+      border: 1px solid #d5c5b3;
+
+      border-radius: 22px;
+    }
+
+    .founder-image img {
+      position: relative;
+      z-index: 2;
+
+      width: 100%;
+
+      aspect-ratio: 4 / 5;
+
+      object-fit: cover;
+
+      object-position: center top;
+
+      border-radius: 20px;
+    }
+
+    .founder-content h2 {
+      font-family: "Playfair Display", Georgia, serif;
+
+      color: var(--brown);
+
+      font-size: clamp(35px, 4vw, 49px);
+
+      line-height: 1.1;
+
+      margin-bottom: 7px;
+    }
+
+    .founder-name {
+      color: var(--brown);
+
+      font-size: 16px;
+
+      font-weight: 700;
+
+      margin-bottom: 1px;
+    }
+
+    .founder-title {
+      color: var(--gold);
+
+      font-size: 12px;
+
+      font-weight: 600;
+
+      margin-bottom: 24px;
+    }
+
+    .founder-content p {
+      color: var(--muted);
+
+      font-size: 14px;
+
+      line-height: 1.8;
+    }
+
+    .founder-content p + p {
+      margin-top: 14px;
+    }
+
+    .founder-link {
+      display: inline-flex;
+
+      align-items: center;
+
+      gap: 8px;
+
+      margin-top: 25px;
+
+      color: var(--brown);
+
+      font-size: 13px;
+
+      font-weight: 700;
+    }
+
+    .founder-link span {
+      transition: transform 0.2s ease;
+    }
+
+    .founder-link:hover span {
+      transform: translateX(4px);
+    }
+
+
+    /* =========================================================
+       QUALITY
+    ========================================================= */
+
+    .quality-section {
+      padding: 90px 0;
+
+      background: var(--white);
+    }
+
+    .quality-heading {
+      text-align: center;
+
+      max-width: 700px;
+
+      margin: 0 auto 45px;
+    }
+
+    .quality-heading .eyebrow {
+      justify-content: center;
+    }
+
+    .quality-heading h2 {
+      font-family: "Playfair Display", Georgia, serif;
+
+      color: var(--brown);
+
+      font-size: clamp(34px, 4vw, 48px);
+
+      line-height: 1.12;
+
+      margin-bottom: 13px;
+    }
+
+    .quality-heading p {
+      color: var(--muted);
+
+      font-size: 14px;
+
+      line-height: 1.7;
+    }
+
+    .quality-grid {
+      display: grid;
+
+      grid-template-columns: repeat(4, 1fr);
+
+      gap: 15px;
+    }
+
+    .quality-card {
+      padding: 26px 21px;
+
+      border: 1px solid var(--border);
+
+      border-radius: 15px;
+
+      background: var(--cream);
+    }
+
+    .quality-icon {
+      width: 43px;
+      height: 43px;
+
+      border-radius: 50%;
+
+      background: var(--white);
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      color: var(--brown);
+
+      font-size: 15px;
+
+      font-weight: 700;
+
+      margin-bottom: 19px;
+    }
+
+    .quality-card h3 {
+      font-family: "Playfair Display", Georgia, serif;
+
+      color: var(--brown);
+
+      font-size: 21px;
+
+      line-height: 1.2;
+
+      margin-bottom: 9px;
+    }
+
+    .quality-card p {
+      color: var(--muted);
+
+      font-size: 12px;
+
+      line-height: 1.65;
+
+      min-height: 60px;
+    }
+
+    .quality-link {
+      display: inline-flex;
+
+      margin-top: 15px;
+
+      color: var(--brown);
+
+      font-size: 11px;
+
+      font-weight: 700;
+    }
+
+
+    /* =========================================================
+       FINAL CTA
+    ========================================================= */
+
+    .cta-section {
+      padding: 95px 0;
+
+      background:
+        radial-gradient(
+          circle at 85% 20%,
+          rgba(178,138,84,0.14),
+          transparent 30%
+        ),
+        var(--brown);
+    }
+
+    .cta-inner {
+      text-align: center;
+
+      max-width: 750px;
+
+      margin: 0 auto;
+    }
+
+    .cta-section .eyebrow {
+      justify-content: center;
+
+      color: #d6b37c;
+    }
+
+    .cta-section .eyebrow::before {
+      background: #d6b37c;
+    }
+
+    .cta-section h2 {
+      font-family: "Playfair Display", Georgia, serif;
+
+      color: #fff;
+
+      font-size: clamp(38px, 5vw, 58px);
+
+      line-height: 1.08;
+
+      margin-bottom: 14px;
+    }
+
+    .cta-section p {
+      color: rgba(255,255,255,0.68);
+
+      font-size: 15px;
+
+      line-height: 1.7;
+
+      margin-bottom: 29px;
+    }
+
+    .cta-buttons {
+      display: flex;
+
+      justify-content: center;
+
+      flex-wrap: wrap;
+
+      gap: 11px;
+    }
+
+    .cta-button {
+      min-height: 49px;
+
+      padding: 0 24px;
+
+      border-radius: 6px;
+
+      display: inline-flex;
+
+      align-items: center;
+      justify-content: center;
+
+      font-size: 13px;
+
+      font-weight: 700;
+
+      transition:
+        transform 0.2s ease,
+        background 0.2s ease;
+    }
+
+    .cta-button-primary {
+      background: #fff;
+
+      color: var(--brown);
+    }
+
+    .cta-button-primary:hover {
+      transform: translateY(-2px);
+
+      background: #f3ede5;
+    }
+
+    .cta-button-secondary {
+      color: #fff;
+
+      border: 1px solid rgba(255,255,255,0.3);
+    }
+
+    .cta-button-secondary:hover {
+      transform: translateY(-2px);
+
+      background: rgba(255,255,255,0.08);
+    }
+
+
+    /* =========================================================
+       FOOTER
+    ========================================================= */
+
+    footer {
+      padding: 55px 0 24px;
+
+      background: var(--brown-dark);
+
+      color: #fff;
+    }
+
+    .footer-grid {
+      display: grid;
+
+      grid-template-columns: 1.4fr 0.7fr 0.9fr;
+
+      gap: 60px;
+
+      padding-bottom: 42px;
+
+      border-bottom: 1px solid rgba(255,255,255,0.12);
+    }
+
+    .footer-brand h2 {
+      font-family: "Playfair Display", Georgia, serif;
+
+      font-size: 29px;
+
+      margin-bottom: 8px;
+    }
+
+    .footer-brand p {
+      max-width: 380px;
+
+      color: rgba(255,255,255,0.62);
+
+      font-size: 13px;
+
+      line-height: 1.75;
+    }
+
+    .footer-column h3 {
+      color: #d6b37c;
+
+      text-transform: uppercase;
+
+      letter-spacing: 1.6px;
+
+      font-size: 10px;
+
+      margin-bottom: 18px;
+    }
+
+    .footer-column a {
+      display: block;
+
+      color: rgba(255,255,255,0.68);
+
+      font-size: 13px;
+
+      margin-bottom: 10px;
+
+      transition: color 0.2s ease;
+    }
+
+    .footer-column a:hover {
+      color: #fff;
+    }
+
+    .footer-bottom {
+      padding-top: 22px;
+
+      display: flex;
+
+      justify-content: space-between;
+
+      gap: 20px;
+
+      color: rgba(255,255,255,0.43);
+
+      font-size: 11px;
+    }
+
+
+    /* =========================================================
+       WHATSAPP
+    ========================================================= */
+
+    .whatsapp-float {
+      position: fixed;
+
+      right: 20px;
+      bottom: 20px;
+
+      width: 56px;
+      height: 56px;
+
+      border-radius: 50%;
+
+      background: var(--green);
+
+      display: flex;
+
+      align-items: center;
+      justify-content: center;
+
+      box-shadow: 0 9px 26px rgba(0,0,0,0.18);
+
+      z-index: 1100;
+
+      transition: transform 0.2s ease;
+    }
+
+    .whatsapp-float:hover {
+      transform: translateY(-3px);
+    }
+
+    .whatsapp-float svg {
+      width: 29px;
+      height: 29px;
+
+      fill: #fff;
+    }
+
+
+    /* =========================================================
+       RESPONSIVE
+    ========================================================= */
+
+    @media (max-width: 1000px) {
+
+      .desktop-nav {
+        display: none;
+      }
+
+      .header-button {
+        display: none;
+      }
+
+      .menu-button {
+        display: flex;
+      }
+
+      .intro-layout {
+        grid-template-columns: 1fr;
+
+        gap: 35px;
+      }
+
+      .products-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .origin-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .quality-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .founder-layout {
+        grid-template-columns: 0.65fr 1.35fr;
+
+        gap: 45px;
+      }
+
+      .footer-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .footer-brand {
+        grid-column: 1 / -1;
+      }
+    }
+
+
+    @media (max-width: 720px) {
+
+      .container {
+        width: min(100% - 30px, 1180px);
+      }
+
+      .header-inner {
+        min-height: 68px;
+      }
+
+      .logo {
+        font-size: 26px;
+      }
+
+      .hero {
+        min-height: 590px;
+      }
+
+      .hero-image {
+        object-position: 62% center;
+      }
+
+      .hero-overlay {
+        background:
+          linear-gradient(
+            90deg,
+            rgba(40, 24, 18, 0.90),
+            rgba(40, 24, 18, 0.63)
+          );
+      }
+
+      .hero-content {
+        width: min(100% - 30px, 1180px);
+
+        padding: 75px 0;
+      }
+
+      .hero h1 {
+        font-size: 48px;
+
+        letter-spacing: -1.4px;
+      }
+
+      .hero-subtitle {
+        font-size: 16px;
+      }
+
+      .intro-section,
+      .products-section,
+      .sourcing-section,
+      .founder-section,
+      .quality-section {
+        padding: 65px 0;
+      }
+
+      .section-top {
+        display: block;
+
+        margin-bottom: 30px;
+      }
+
+      .section-description {
+        margin-top: 13px;
+      }
+
+      .products-grid {
+        grid-template-columns: 1fr 1fr;
+
+        gap: 12px;
+      }
+
+      .product-image {
+        height: 220px;
+      }
+
+      .product-info {
+        padding: 15px 13px 17px;
+      }
+
+      .product-name {
+        font-size: 20px;
+      }
+
+      .category-band {
+        padding: 60px 0;
+      }
+
+      .category-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .category-card {
+        min-height: 285px;
+
+        padding: 27px;
+      }
+
+      .origin-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .founder-layout {
+        grid-template-columns: 1fr;
+
+        gap: 45px;
+      }
+
+      .founder-image {
+        max-width: 360px;
+      }
+
+      .quality-grid {
+        grid-template-columns: 1fr 1fr;
+
+        gap: 11px;
+      }
+
+      .quality-card {
+        padding: 22px 16px;
+      }
+
+      .quality-card p {
+        min-height: auto;
+      }
+
+      .cta-section {
+        padding: 68px 0;
+      }
+
+      .cta-buttons {
+        flex-direction: column;
+      }
+
+      .cta-button {
+        width: 100%;
+      }
+
+      .footer-grid {
+        grid-template-columns: 1fr;
+
+        gap: 32px;
+      }
+
+      .footer-brand {
+        grid-column: auto;
+      }
+
+      .footer-bottom {
+        flex-direction: column;
+
+        gap: 7px;
+      }
+    }
+
+
+    @media (max-width: 430px) {
+
+      .products-grid {
+        gap: 10px;
+      }
+
+      .product-image {
+        height: 190px;
+      }
+
+      .product-category {
+        top: 8px;
+        left: 8px;
+
+        padding: 4px 7px;
+
+        font-size: 8px;
+      }
+
+      .product-name {
+        font-size: 18px;
+      }
+
+      .product-hindi {
+        font-size: 11px;
+      }
+
+      .product-origin {
+        font-size: 10px;
+      }
+
+      .quality-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .whatsapp-float {
+        width: 53px;
+        height: 53px;
+
+        right: 15px;
+        bottom: 15px;
+      }
+    }
+
+  </style>
 </head>
+
+
 <body>
 
-<!-- HEADER -->
-<header class="header">
-    <div class="header-inner">
-        <div class="logo-section">
-            <a href="index.html" style="display: flex; align-items: center; text-decoration: none;">
-                <img src="logo.png" alt="Dharoahar" class="logo">
-            </a>
+
+  <!-- =======================================================
+       HEADER
+  ======================================================== -->
+
+  <header class="site-header">
+
+    <div class="container header-inner">
+
+      <a href="index.html" class="logo">
+        Dharoahar
+        <span>Authentic Indian Spices</span>
+      </a>
+
+
+      <nav class="desktop-nav">
+
+        <a href="index.html" class="active">
+          Home
+        </a>
+
+        <a href="about.html">
+          About Us
+        </a>
+
+        <a href="products.html">
+          Our Spices
+        </a>
+
+        <a href="quality.html">
+          Quality
+        </a>
+
+        <a href="contact.html">
+          Contact
+        </a>
+
+      </nav>
+
+
+      <a href="contact.html" class="header-button">
+        Enquire
+      </a>
+
+
+      <button
+        class="menu-button"
+        id="menuButton"
+        aria-label="Open menu"
+      >
+
+        <div class="menu-icon">
+
+          <span></span>
+          <span></span>
+          <span></span>
+
         </div>
 
-        <nav class="nav">
-            <a href="index.html">Home</a>
-            <a href="products.html">Products</a>
-            <a href="about.html">About</a>
-        </nav>
+      </button>
 
-        <a href="contact.html" class="btn-header">Contact</a>
     </div>
-</header>
 
 
-<!-- HERO SECTION -->
-<section class="hero">
-    <img src="hero.jpg" alt="Premium Spices" class="hero-bg">
+    <nav class="mobile-nav" id="mobileNav">
+
+      <a href="index.html">
+        Home
+      </a>
+
+      <a href="about.html">
+        About Us
+      </a>
+
+      <a href="products.html">
+        Our Spices
+      </a>
+
+      <a href="quality.html">
+        Quality
+      </a>
+
+      <a href="contact.html">
+        Contact
+      </a>
+
+    </nav>
+
+  </header>
+
+
+
+  <!-- =======================================================
+       HERO
+  ======================================================== -->
+
+  <section class="hero">
+
+    <img
+      src="hero.jpg"
+      alt="Indian spices"
+      class="hero-image"
+    >
+
     <div class="hero-overlay"></div>
 
+
     <div class="hero-content">
-        <h1>Authentic Indian Spices</h1>
-        <p>Crafted with Excellence & Delivered with Trust</p>
-    </div>
-</section>
+
+      <div class="hero-eyebrow">
+        Dharoahar
+      </div>
 
 
-<!-- WHOLE SPICES SECTION -->
-<section class="section products-section">
-
-    <div class="category-header">
-        <h2>🌿 Whole Spices</h2>
-    </div>
-
-    <div class="container">
-        <div class="products-grid">
-
-            <!-- CLOVE -->
-            <a href="clove.html" class="product-card">
-                <div class="product-image">
-                    <img src="clove.jpg" alt="Clove">
-                    <span class="product-type">Whole</span>
-                </div>
-
-                <h3>Clove</h3>
-                <p>
-                    Sourced from Kerala's finest plantations with rich aromatic flavors
-                </p>
-            </a>
+      <h1>
+        Authentic Indian Spices,
+        Sourced with Care.
+      </h1>
 
 
-            <!-- CARDAMOM -->
-            <a href="cardamom.html" class="product-card">
-                <div class="product-image">
-                    <img src="cardamom.jpg" alt="Cardamom">
-                    <span class="product-type">Whole</span>
-                </div>
-
-                <h3>Cardamom</h3>
-                <p>
-                    Premium green cardamom from Kerala's lush plantations with intense fragrance
-                </p>
-            </a>
+      <p class="hero-subtitle">
+        A carefully selected range of whole and powdered Indian
+        spices, sourced from established spice-growing regions
+        and brought together under one brand.
+      </p>
 
 
-            <!-- CINNAMON -->
-            <a href="cinnamon.html" class="product-card">
-                <div class="product-image">
-                    <img src="cinnamon.jpg" alt="Cinnamon">
-                    <span class="product-type">Whole</span>
-                </div>
+      <div class="hero-actions">
 
-                <h3>Cinnamon</h3>
-                <p>
-                    Sourced from Kerala with natural sweetness and authentic warmth.
-                    <strong>Food Safety Certified</strong>
-                </p>
-            </a>
+        <a
+          href="products.html"
+          class="hero-button hero-button-primary"
+        >
+          Explore Our Spices
+        </a>
 
+        <a
+          href="contact.html"
+          class="hero-button hero-button-secondary"
+        >
+          Business Enquiry
+        </a>
 
-            <!-- BLACK PEPPER -->
-            <a href="blackpepper.html" class="product-card">
-                <div class="product-image">
-                    <img src="black-pepper.jpg" alt="Black Pepper">
-                    <span class="product-type">Whole</span>
-                </div>
+      </div>
 
-                <h3>Black Pepper</h3>
-                <p>
-                    King of spices from Kerala with bold flavor and exceptional purity.
-                    <strong>Quality Guaranteed</strong>
-                </p>
-            </a>
-
-
-            <!-- CUMIN -->
-            <a href="cumin.html" class="product-card">
-                <div class="product-image">
-                    <img src="cumin.jpg" alt="Cumin">
-                    <span class="product-type">Whole</span>
-                </div>
-
-                <h3>Cumin</h3>
-                <p>
-                    Sourced from Rajasthan, delivering earthy flavors with authentic warmth
-                </p>
-            </a>
-
-
-            <!-- STAR ANISE -->
-            <a href="star-anise.html" class="product-card">
-                <div class="product-image">
-                    <img src="star-anise.png" alt="Star Anise">
-                    <span class="product-type">Whole</span>
-                </div>
-
-                <h3>Star Anise</h3>
-                <p>
-                    Premium star anise with distinctive licorice flavor and aromatic warmth
-                </p>
-            </a>
-
-        </div>
-    </div>
-</section>
-
-
-<!-- FINE GROUND SPICES SECTION -->
-<section class="section products-section">
-
-    <div class="category-header">
-        <h2>✨ Fine Ground Spices</h2>
     </div>
 
-    <div class="container">
-        <div class="products-grid">
-
-            <!-- DEGI CHILLI -->
-            <a href="degi-mirch.html" class="product-card">
-                <div class="product-image">
-                    <img src="degi-mirch.jpg" alt="Degi Chilli">
-                    <span class="product-type">Fine Grind</span>
-                </div>
-
-                <h3>Fine Ground Degi Chilli</h3>
-                <p>
-                    Sourced from Andhra Pradesh, delivering mild heat with vibrant color
-                </p>
-            </a>
+  </section>
 
 
-            <!-- CUMIN POWDER -->
-            <a href="cumin-powder.html" class="product-card">
-                <div class="product-image">
-                    <img src="cumin-powder.jpg" alt="Cumin Powder">
-                    <span class="product-type">Fine Grind</span>
-                </div>
 
-                <h3>Fine Ground Cumin</h3>
-                <p>
-                    Sourced from Rajasthan, freshly ground for maximum flavor and aroma
-                </p>
-            </a>
+  <!-- =======================================================
+       INTRO
+  ======================================================== -->
 
-
-            <!-- GARAM MASALA -->
-            <a href="garam-masala.html" class="product-card">
-                <div class="product-image">
-                    <img src="garam-masala.jpg" alt="Garam Masala">
-                    <span class="product-type">Fine Grind</span>
-                </div>
-
-                <h3>Fine Ground Garam Masala</h3>
-                <p>
-                    Sourced from Kerala, perfectly blended with balanced warmth and depth
-                </p>
-            </a>
-
-
-            <!-- CORIANDER -->
-            <a href="dhaniya-powder.html" class="product-card">
-                <div class="product-image">
-                    <img src="dhaniya-powder.jpg" alt="Coriander">
-                    <span class="product-type">Fine Grind</span>
-                </div>
-
-                <h3>Fine Ground Coriander</h3>
-                <p>
-                    Sourced from Rajasthan, finely ground for bright flavor and aroma
-                </p>
-            </a>
-
-
-            <!-- KASHMIRI CHILLI -->
-            <a href="kashmiri.html" class="product-card">
-                <div class="product-image">
-                    <img src="kashmiri-mirch.jpg" alt="Kashmiri Chilli">
-                    <span class="product-type">Fine Grind</span>
-                </div>
-
-                <h3>Fine Ground Kashmiri Chilli</h3>
-                <p>
-                    Sourced from Guntur, delivering deep red color with mild heat
-                </p>
-            </a>
-
-
-            <!-- TURMERIC -->
-            <a href="haldi-powder.html" class="product-card">
-                <div class="product-image">
-                    <img src="haldi-powder.jpg" alt="Turmeric">
-                    <span class="product-type">Fine Grind</span>
-                </div>
-
-                <h3>Fine Ground Turmeric</h3>
-                <p>
-                    Sourced from Tamil Nadu & Maharashtra, delivering golden color with authentic warmth
-                </p>
-            </a>
-
-        </div>
-    </div>
-</section>
-
-
-<!-- ABOUT SECTION -->
-<section class="section about-section">
+  <section class="intro-section">
 
     <div class="container">
 
-        <div class="about-text">
-
-            <h2>About Dharoahar</h2>
-
-            <p>
-                Dharoahar is committed to delivering premium Indian spices sourced
-                directly from the finest origin farms across India. Our carefully
-                curated selection ensures authenticity, quality, and excellence
-                in every batch.
-            </p>
+      <div class="intro-layout">
 
 
-            <p><strong>Our Sourcing Regions:</strong></p>
+        <div>
 
+          <div class="eyebrow">
+            The Dharoahar Approach
+          </div>
 
-            <div class="sourcing-regions">
-
-                <p>
-                    <strong>Kerala Spices:</strong>
-                    Our clove, cardamom, cinnamon, black pepper and garam masala
-                    are sourced from Kerala's lush plantations, known for exceptional
-                    quality and rich aromatic profiles.
-                </p>
-
-
-                <p>
-                    <strong>Rajasthan Spices:</strong>
-                    Our cumin and coriander are sourced from Rajasthan, India's
-                    spice capital, ensuring authentic earthy flavors and aroma.
-                </p>
-
-
-                <p>
-                    <strong>Andhra Pradesh Chilli:</strong>
-                    Our Degi Chilli is sourced from Andhra Pradesh, delivering
-                    vibrant color and balanced heat.
-                </p>
-
-
-                <p>
-                    <strong>Turmeric:</strong>
-                    Our turmeric is sourced from Tamil Nadu & Maharashtra,
-                    selected for its golden color and authentic warmth.
-                </p>
-
-            </div>
-
-
-            <div class="about-highlights">
-
-                <p>Origin-sourced from premium farms across India</p>
-
-                <p>Quality certified & tested for purity</p>
-
-                <p>Direct wholesale supply with no middlemen</p>
-
-                <p>Consistent excellence in every batch</p>
-
-            </div>
+          <h2 class="intro-heading">
+            Spices that belong
+            in the everyday kitchen.
+          </h2>
 
         </div>
 
-    </div>
 
-</section>
+        <div class="intro-copy">
 
+          <p>
+            Dharoahar brings together a growing portfolio of
+            Indian whole spices and powdered spices for everyday
+            cooking, food businesses and commercial requirements.
+          </p>
 
-<!-- FOUNDER SECTION -->
-<section class="section founder-section">
+          <p>
+            Our focus is straightforward: source thoughtfully,
+            maintain documented quality processes and build
+            dependable relationships around the products we supply.
+          </p>
 
-    <div class="container">
-
-        <div class="founder-inner">
-
-            <div class="founder-image-wrapper">
-
-                <div class="founder-image-circle">
-                    <img src="founder.jpg" alt="Aman Adhish">
-                </div>
-
-            </div>
-
-
-            <div class="founder-content">
-
-                <h2>Meet Our Founder</h2>
-
-                <p class="founder-name">
-                    Aman Adhish
-                </p>
-
-                <p class="founder-title">
-                    Founder & Director
-                </p>
-
-
-                <div class="founder-bio">
-
-                    <p>
-                        With over 10 years of expertise in sales and procurement,
-                        Aman Adhish brings deep industry knowledge and strategic
-                        vision to Dharoahar. His proven track record in building
-                        strong supplier networks and delivering quality products
-                        forms the foundation of our success.
-                    </p>
-
-
-                    <p>
-                        Combining procurement excellence with a passion for authentic
-                        products, Aman founded Dharoahar to bridge the gap between
-                        premium source farms and discerning customers. His focus on
-                        direct farm sourcing ensures that every spice meets our
-                        rigorous quality standards.
-                    </p>
-
-                </div>
-
-
-                <div class="founder-stats">
-
-                    <div class="stat">
-                        <p class="stat-number">10+</p>
-                        <p class="stat-label">
-                            Years in Sales & Procurement
-                        </p>
-                    </div>
-
-
-                    <div class="stat">
-                        <p class="stat-number">100%</p>
-                        <p class="stat-label">
-                            Quality Assured
-                        </p>
-                    </div>
-
-
-                    <div class="stat">
-                        <p class="stat-number">Direct</p>
-                        <p class="stat-label">
-                            Farm Sourcing
-                        </p>
-                    </div>
-
-                </div>
-
-            </div>
+          <a
+            href="about.html"
+            class="intro-link"
+          >
+            Discover Dharoahar
+            <span>→</span>
+          </a>
 
         </div>
 
+      </div>
+
     </div>
 
-</section>
+  </section>
 
 
-<!-- CERTIFICATIONS & COMPLIANCE SECTION -->
-<section class="section certifications-section">
+
+  <!-- =======================================================
+       FEATURED PRODUCTS
+  ======================================================== -->
+
+  <section class="products-section">
 
     <div class="container">
 
-        <p class="certifications-tagline">
-            Built on quality, compliance and a commitment to authentic Indian spices.
+
+      <div class="section-top">
+
+        <div>
+
+          <div class="eyebrow">
+            From Our Portfolio
+          </div>
+
+          <h2 class="section-title">
+            A taste of our spices.
+          </h2>
+
+        </div>
+
+
+        <p class="section-description">
+          Explore selected whole and powdered spices from the
+          Dharoahar portfolio. Every product page provides
+          details on the spice, its culinary uses and available
+          sourcing information.
         </p>
 
-        <h2 style="text-align: center; color: #5C3A21; margin-bottom: 20px;">
-            Certifications & Compliance
-        </h2>
+      </div>
 
 
-        <div class="certifications-grid">
+
+      <div class="products-grid">
 
 
-            <!-- FSSAI -->
-            <div class="certification-card">
+        <!-- CLOVE -->
 
-                <div class="cert-icon">🏛️</div>
+        <a
+          href="clove.html"
+          class="product-card"
+        >
 
-                <h3>FSSAI Central License</h3>
+          <div class="product-image">
 
-                <p>
-                    Central food safety license covering trade/retail wholesaling
-                    and exporter activity.
-                </p>
+            <img
+              src="clove.jpg"
+              alt="Clove"
+              loading="lazy"
+            >
 
-                <p class="cert-validity">
-                    Valid: Aug 2026 - Aug 2027
-                </p>
+            <span class="product-category">
+              Whole Spice
+            </span>
 
-                <a
-                    href="ADHISH%20DHAROAHAR%20PRIVATE%20LIMITED%20FSSAI%20LICENCE.pdf"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    class="cert-button"
-                >
-                    View Certificate
-                </a>
-
-            </div>
+          </div>
 
 
-            <!-- IEC -->
-            <div class="certification-card">
+          <div class="product-info">
 
-                <div class="cert-icon">📋</div>
+            <h3 class="product-name">
+              Clove
+            </h3>
 
-                <h3>Importer-Exporter Code (IEC)</h3>
+            <p class="product-hindi">
+              लौंग · Laung
+            </p>
 
-                <p>
-                    Government-issued Importer-Exporter Code for international trade.
-                </p>
+            <p class="product-origin">
+              Origin: Kerala
+            </p>
 
-                <p class="cert-validity">
-                    Issued: July 2026
-                </p>
+          </div>
 
-                <a
-                    href="IEC%20Certificate.pdf"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    class="cert-button"
-                >
-                    View Certificate
-                </a>
-
-            </div>
+        </a>
 
 
-            <!-- ISO -->
-            <div class="certification-card">
 
-                <div class="cert-icon">✓</div>
+        <!-- CARDAMOM -->
 
-                <h3>ISO 9001:2015</h3>
+        <a
+          href="cardamom.html"
+          class="product-card"
+        >
 
-                <p>
-                    Quality Management System certification covering manufacturing
-                    and supply of spices and food products.
-                </p>
+          <div class="product-image">
 
-                <p class="cert-validity">
-                    Valid: Aug 2026 - Aug 2029
-                </p>
+            <img
+              src="cardamom.jpg"
+              alt="Green Cardamom"
+              loading="lazy"
+            >
 
-                <a
-                    href="ISO%209001-2015.pdf"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    class="cert-button"
-                >
-                    View Certificate
-                </a>
+            <span class="product-category">
+              Whole Spice
+            </span>
 
-            </div>
+          </div>
 
 
-            <!-- FDA -->
-            <div class="certification-card">
+          <div class="product-info">
 
-                <div class="cert-icon">🌍</div>
+            <h3 class="product-name">
+              Green Cardamom
+            </h3>
 
-                <h3>FDA Certificate of Compliance</h3>
+            <p class="product-hindi">
+              हरी इलायची · Elaichi
+            </p>
 
-                <p>
-                    Certificate of Compliance covering manufacturing and supply
-                    of spices and food products.
-                </p>
+            <p class="product-origin">
+              Origin: Kerala
+            </p>
 
-                <p class="cert-validity">
-                    Valid: Aug 2026 - Aug 2029
-                </p>
+          </div>
 
-                <a
-                    href="FDA-%20EUROCERT.pdf"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    class="cert-button"
-                >
-                    View Certificate
-                </a>
+        </a>
 
-            </div>
 
-        </div>
+
+        <!-- CINNAMON -->
+
+        <a
+          href="cinnamon.html"
+          class="product-card"
+        >
+
+          <div class="product-image">
+
+            <img
+              src="cinnamon.jpg"
+              alt="Cinnamon"
+              loading="lazy"
+            >
+
+            <span class="product-category">
+              Whole Spice
+            </span>
+
+          </div>
+
+
+          <div class="product-info">
+
+            <h3 class="product-name">
+              Cinnamon
+            </h3>
+
+            <p class="product-hindi">
+              दालचीनी · Dalchini
+            </p>
+
+            <p class="product-origin">
+              Origin: Kerala
+            </p>
+
+          </div>
+
+        </a>
+
+
+
+        <!-- BLACK PEPPER -->
+
+        <a
+          href="blackpepper.html"
+          class="product-card"
+        >
+
+          <div class="product-image">
+
+            <img
+              src="black-pepper.jpg"
+              alt="Black Pepper"
+              loading="lazy"
+            >
+
+            <span class="product-category">
+              Whole Spice
+            </span>
+
+          </div>
+
+
+          <div class="product-info">
+
+            <h3 class="product-name">
+              Black Pepper
+            </h3>
+
+            <p class="product-hindi">
+              काली मिर्च · Kali Mirch
+            </p>
+
+            <p class="product-origin">
+              Origin: Kerala
+            </p>
+
+          </div>
+
+        </a>
+
+
+
+        <!-- CUMIN -->
+
+        <a
+          href="cumin.html"
+          class="product-card"
+        >
+
+          <div class="product-image">
+
+            <img
+              src="cumin.jpg"
+              alt="Cumin Seeds"
+              loading="lazy"
+            >
+
+            <span class="product-category">
+              Whole Spice
+            </span>
+
+          </div>
+
+
+          <div class="product-info">
+
+            <h3 class="product-name">
+              Cumin Seeds
+            </h3>
+
+            <p class="product-hindi">
+              जीरा · Jeera
+            </p>
+
+            <p class="product-origin">
+              Origin: Rajasthan
+            </p>
+
+          </div>
+
+        </a>
+
+
+
+        <!-- STAR ANISE -->
+
+        <a
+          href="star-anise.html"
+          class="product-card"
+        >
+
+          <div class="product-image">
+
+            <img
+              src="star-anise.png"
+              alt="Star Anise"
+              loading="lazy"
+            >
+
+            <span class="product-category">
+              Whole Spice
+            </span>
+
+          </div>
+
+
+          <div class="product-info">
+
+            <h3 class="product-name">
+              Star Anise
+            </h3>
+
+            <p class="product-hindi">
+              चक्र फूल · Chakra Phool
+            </p>
+
+            <p class="product-origin">
+              Whole Spice
+            </p>
+
+          </div>
+
+        </a>
+
+
+
+        <!-- DEGI MIRCH -->
+
+        <a
+          href="degi-mirch.html"
+          class="product-card"
+        >
+
+          <div class="product-image">
+
+            <img
+              src="degi-mirch.jpg"
+              alt="Degi Mirch"
+              loading="lazy"
+            >
+
+            <span class="product-category">
+              Powder Spice
+            </span>
+
+          </div>
+
+
+          <div class="product-info">
+
+            <h3 class="product-name">
+              Degi Mirch
+            </h3>
+
+            <p class="product-hindi">
+              देगी मिर्च
+            </p>
+
+            <p class="product-origin">
+              Origin: Andhra Pradesh
+            </p>
+
+          </div>
+
+        </a>
+
+
+
+        <!-- KASHMIRI MIRCH -->
+
+        <a
+          href="kashmiri-mirch.html"
+          class="product-card"
+        >
+
+          <div class="product-image">
+
+            <img
+              src="kashmiri-mirch.jpg"
+              alt="Kashmiri Mirch"
+              loading="lazy"
+            >
+
+            <span class="product-category">
+              Powder Spice
+            </span>
+
+          </div>
+
+
+          <div class="product-info">
+
+            <h3 class="product-name">
+              Kashmiri Mirch
+            </h3>
+
+            <p class="product-hindi">
+              कश्मीरी मिर्च
+            </p>
+
+            <p class="product-origin">
+              Origin: Guntur
+            </p>
+
+          </div>
+
+        </a>
+
+      </div>
+
+
+
+      <div class="view-products">
+
+        <a
+          href="products.html"
+          class="brown-button"
+        >
+          View All 20 Spices
+        </a>
+
+      </div>
 
     </div>
 
-</section>
+  </section>
 
 
-<!-- CTA SECTION -->
-<section class="section cta-section">
+
+  <!-- =======================================================
+       CATEGORIES
+  ======================================================== -->
+
+  <section class="category-band">
 
     <div class="container">
 
-        <h2>Ready to Order?</h2>
+      <div class="category-grid">
+
+
+        <div class="category-card">
+
+          <div class="category-pattern"></div>
+
+          <div class="category-content">
+
+            <div class="category-label">
+              10 Products
+            </div>
+
+            <h3>
+              Whole Spices
+            </h3>
+
+            <p>
+              Clove, cardamom, cinnamon, black pepper, cumin and
+              other whole spices for cooking, tempering, blends
+              and traditional recipes.
+            </p>
+
+            <a
+              href="products.html#whole-spices"
+              class="category-link"
+            >
+              Explore Whole Spices
+              <span>→</span>
+            </a>
+
+          </div>
+
+        </div>
+
+
+
+        <div class="category-card">
+
+          <div class="category-pattern"></div>
+
+          <div class="category-content">
+
+            <div class="category-label">
+              10 Products
+            </div>
+
+            <h3>
+              Powder Spices
+            </h3>
+
+            <p>
+              A practical range of ground spices including chilli,
+              turmeric, coriander, cumin, garam masala and more.
+            </p>
+
+            <a
+              href="products.html#powder-spices"
+              class="category-link"
+            >
+              Explore Powder Spices
+              <span>→</span>
+            </a>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+
+  <!-- =======================================================
+       SOURCING
+  ======================================================== -->
+
+  <section class="sourcing-section">
+
+    <div class="container">
+
+
+      <div class="sourcing-heading">
+
+        <div class="eyebrow">
+          Sourcing
+        </div>
+
+        <h2>
+          Rooted in India's
+          spice-growing regions.
+        </h2>
 
         <p>
-            Premium spices delivered to your door
+          Our portfolio brings together spices associated with
+          established growing regions across India. Origin
+          information is shown on individual product pages where
+          it has been confirmed.
+        </p>
+
+      </div>
+
+
+
+      <div class="origin-grid">
+
+
+        <div class="origin-card">
+
+          <div class="origin-card-number">
+            01
+          </div>
+
+          <h3>
+            Kerala
+          </h3>
+
+          <p>
+            Our confirmed Kerala-origin portfolio includes
+            clove, green cardamom, cinnamon, black pepper and
+            bay leaf.
+          </p>
+
+        </div>
+
+
+
+        <div class="origin-card">
+
+          <div class="origin-card-number">
+            02
+          </div>
+
+          <h3>
+            Rajasthan
+          </h3>
+
+          <p>
+            Cumin seeds, cumin powder and coriander powder in
+            our portfolio carry confirmed Rajasthan origin.
+          </p>
+
+        </div>
+
+
+
+        <div class="origin-card">
+
+          <div class="origin-card-number">
+            03
+          </div>
+
+          <h3>
+            Chilli Regions
+          </h3>
+
+          <p>
+            Degi Mirch is sourced from Andhra Pradesh, while
+            Kashmiri Mirch in our current portfolio carries
+            confirmed Guntur origin.
+          </p>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+
+  <!-- =======================================================
+       FOUNDER
+  ======================================================== -->
+
+  <section class="founder-section">
+
+    <div class="container">
+
+      <div class="founder-layout">
+
+
+        <div class="founder-image">
+
+          <img
+            src="founder.jpg"
+            alt="Aman Adhish, Founder and Director of Dharoahar"
+            loading="lazy"
+          >
+
+        </div>
+
+
+        <div class="founder-content">
+
+          <div class="eyebrow">
+            The Person Behind Dharoahar
+          </div>
+
+          <h2>
+            Building a spice business
+            around dependable sourcing.
+          </h2>
+
+          <p class="founder-name">
+            Aman Adhish
+          </p>
+
+          <p class="founder-title">
+            Founder &amp; Director
+          </p>
+
+
+          <p>
+            Dharoahar was founded with a simple objective:
+            to build a dependable business around Indian spices,
+            with attention to sourcing, product quality and
+            long-term relationships.
+          </p>
+
+          <p>
+            The business brings together experience across sales,
+            procurement and commercial operations with a focus on
+            creating a practical and reliable spice portfolio.
+          </p>
+
+
+          <a
+            href="about.html"
+            class="founder-link"
+          >
+            Read Our Story
+            <span>→</span>
+          </a>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+
+  <!-- =======================================================
+       QUALITY
+  ======================================================== -->
+
+  <section class="quality-section">
+
+    <div class="container">
+
+
+      <div class="quality-heading">
+
+        <div class="eyebrow">
+          Quality &amp; Compliance
+        </div>
+
+        <h2>
+          Built on quality.
+          Backed by documentation.
+        </h2>
+
+        <p>
+          Dharoahar maintains documented registrations and
+          certifications relevant to its food business and
+          international trade activities.
+        </p>
+
+      </div>
+
+
+
+      <div class="quality-grid">
+
+
+        <div class="quality-card">
+
+          <div class="quality-icon">
+            F
+          </div>
+
+          <h3>
+            FSSAI Central License
+          </h3>
+
+          <p>
+            Central food safety license covering the applicable
+            trade, retail, wholesale and exporter activities.
+          </p>
+
+          <a
+            href="quality.html"
+            class="quality-link"
+          >
+            View Details →
+          </a>
+
+        </div>
+
+
+
+        <div class="quality-card">
+
+          <div class="quality-icon">
+            I
+          </div>
+
+          <h3>
+            Importer-Exporter Code
+          </h3>
+
+          <p>
+            Government-issued IEC supporting the company's
+            international trade activities.
+          </p>
+
+          <a
+            href="quality.html"
+            class="quality-link"
+          >
+            View Details →
+          </a>
+
+        </div>
+
+
+
+        <div class="quality-card">
+
+          <div class="quality-icon">
+            Q
+          </div>
+
+          <h3>
+            ISO 9001:2015
+          </h3>
+
+          <p>
+            Quality Management System certification covering
+            manufacturing and supply of spices and food products.
+          </p>
+
+          <a
+            href="quality.html"
+            class="quality-link"
+          >
+            View Details →
+          </a>
+
+        </div>
+
+
+
+        <div class="quality-card">
+
+          <div class="quality-icon">
+            C
+          </div>
+
+          <h3>
+            FDA Certificate of Compliance
+          </h3>
+
+          <p>
+            Certificate of Compliance covering manufacturing
+            and supply of spices and other food products.
+          </p>
+
+          <a
+            href="quality.html"
+            class="quality-link"
+          >
+            View Details →
+          </a>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+
+  <!-- =======================================================
+       CTA
+  ======================================================== -->
+
+  <section class="cta-section">
+
+    <div class="container">
+
+      <div class="cta-inner">
+
+        <div class="eyebrow">
+          Start a Conversation
+        </div>
+
+        <h2>
+          Looking for Indian spices?
+        </h2>
+
+        <p>
+          Explore the Dharoahar portfolio or speak with us about
+          product, wholesale, distribution and other business
+          enquiries.
         </p>
 
 
         <div class="cta-buttons">
 
-            <a href="tel:+918603824415" class="cta-btn">
-                📞 Call Now
-            </a>
+          <a
+            href="products.html"
+            class="cta-button cta-button-primary"
+          >
+            Explore Our Spices
+          </a>
 
-            <a
-                href="https://wa.me/918603824415?text=Hi%20Dharoahar,%20I%20want%20to%20order%20spices"
-                class="cta-btn cta-btn-white"
-            >
-                💬 WhatsApp
-            </a>
 
-            <a
-                href="mailto:amanadhish@dharoahar.com"
-                class="cta-btn"
-            >
-                📧 Email
-            </a>
+          <a
+            href="https://wa.me/918603824415?text=Hello%20Dharoahar%2C%20I%20would%20like%20to%20make%20an%20enquiry."
+            target="_blank"
+            rel="noopener"
+            class="cta-button cta-button-secondary"
+          >
+            WhatsApp Us
+          </a>
+
+
+          <a
+            href="contact.html"
+            class="cta-button cta-button-secondary"
+          >
+            Contact Us
+          </a>
 
         </div>
 
+      </div>
+
     </div>
 
-</section>
+  </section>
 
 
-<!-- WHATSAPP FLOATING BUTTON -->
-<a
-    href="https://wa.me/918603824415?text=Hi%20Dharoahar,%20I%20want%20to%20know%20more"
+
+  <!-- =======================================================
+       FOOTER
+  ======================================================== -->
+
+  <footer>
+
+    <div class="container">
+
+
+      <div class="footer-grid">
+
+
+        <div class="footer-brand">
+
+          <h2>
+            Dharoahar
+          </h2>
+
+          <p>
+            Authentic Indian spices, sourced with care.
+            A growing portfolio of whole and powdered spices
+            for customers and businesses.
+          </p>
+
+        </div>
+
+
+        <div class="footer-column">
+
+          <h3>
+            Explore
+          </h3>
+
+          <a href="index.html">
+            Home
+          </a>
+
+          <a href="about.html">
+            About Us
+          </a>
+
+          <a href="products.html">
+            Our Spices
+          </a>
+
+          <a href="quality.html">
+            Quality
+          </a>
+
+          <a href="contact.html">
+            Contact
+          </a>
+
+        </div>
+
+
+        <div class="footer-column">
+
+          <h3>
+            Connect
+          </h3>
+
+          <a
+            href="https://wa.me/918603824415"
+            target="_blank"
+            rel="noopener"
+          >
+            WhatsApp
+          </a>
+
+          <a href="mailto:amanadhish@dharoahar.com">
+            Email
+          </a>
+
+          <a href="tel:+918603824415">
+            +91 86038 24415
+          </a>
+
+        </div>
+
+      </div>
+
+
+      <div class="footer-bottom">
+
+        <span>
+          © 2026 Dharoahar. All rights reserved.
+        </span>
+
+        <span>
+          Adhish Dharoahar Pvt. Ltd.
+        </span>
+
+      </div>
+
+    </div>
+
+  </footer>
+
+
+
+  <!-- =======================================================
+       WHATSAPP FLOAT
+  ======================================================== -->
+
+  <a
     class="whatsapp-float"
+    href="https://wa.me/918603824415?text=Hello%20Dharoahar%2C%20I%20would%20like%20to%20make%20an%20enquiry."
     target="_blank"
-    rel="noopener noreferrer"
-    title="Chat on WhatsApp"
->
-    <svg viewBox="0 0 24 24" fill="white" aria-hidden="true">
-        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.7-1.48-1.7s-.151-.198-.287-.297c-.136-.099-.341-.247-.523-.247-.182 0-.455.067-.695.32-.24.253-.91.89-.91 2.172s.932 2.52 1.068 2.694c.136.173 1.82 2.777 4.412 3.896 2.592 1.119 2.592.746 3.059.699.467-.047 1.503-.614 1.715-1.207.213-.593.213-1.101.149-1.207-.062-.105-.229-.167-.478-.291z"/>
-        <path d="M20.52 3.449A11.877 11.877 0 0 0 12.08 0C5.517 0 .163 5.354.163 11.917c0 2.101.549 4.152 1.592 5.962L.067 24l6.262-1.642a11.907 11.907 0 0 0 5.745 1.464h.005c6.56 0 11.915-5.354 11.915-11.917a11.85 11.85 0 0 0-3.474-8.456zM12.08 21.822h-.004a9.9 9.9 0 0 1-5.04-1.381l-.362-.215-3.716.974.992-3.624-.236-.372a9.88 9.88 0 0 1-1.516-5.287c0-5.454 4.44-9.894 9.899-9.894 2.644 0 5.129 1.031 6.996 2.902a9.87 9.87 0 0 1 2.898 6.992c-.001 5.458-4.441 9.905-9.911 9.905z"/>
+    rel="noopener"
+    aria-label="Chat with Dharoahar on WhatsApp"
+  >
+
+    <svg
+      viewBox="0 0 24 24"
+      aria-hidden="true"
+    >
+
+      <path d="M20.52 3.48A11.78 11.78 0 0 0 12.06 0C5.52 0 .2 5.32.2 11.86c0 2.09.55 4.13 1.59 5.93L.1 24l6.37-1.67a11.83 11.83 0 0 0 5.58 1.42h.01c6.54 0 11.86-5.32 11.86-11.86 0-3.17-1.24-6.14-3.4-8.41ZM12.06 21.7h-.01a9.82 9.82 0 0 1-5.01-1.37l-.36-.21-3.78.99 1.01-3.68-.23-.38a9.84 9.84 0 1 1 8.38 4.65Zm5.4-7.37c-.3-.15-1.77-.87-2.05-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.95 1.17-.17.2-.35.22-.65.07-.3-.15-1.27-.47-2.42-1.5-.9-.8-1.5-1.79-1.68-2.09-.17-.3-.02-.46.13-.61.14-.14.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.07-.15-.67-1.61-.92-2.21-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.49s1.07 2.89 1.22 3.09c.15.2 2.1 3.21 5.09 4.5.71.31 1.26.49 1.69.63.71.23 1.35.2 1.86.12.57-.09 1.77-.72 2.02-1.42.25-.7.25-1.3.17-1.42-.07-.12-.27-.2-.57-.35Z"/>
+
     </svg>
-</a>
+
+  </a>
 
 
-<!-- FOOTER -->
-<footer class="footer">
 
-    <p>
-        &copy; 2026 Adhish Dharoahar Pvt Ltd | CIN: U10195OR2024PTC049851
-    </p>
+  <!-- =======================================================
+       MOBILE MENU
+  ======================================================== -->
 
-    <div class="footer-links">
+  <script>
 
-        <a href="privacy.html">Privacy</a>
-        <a href="terms.html">Terms</a>
-        <a href="contact.html">Contact</a>
+    const menuButton =
+      document.getElementById("menuButton");
 
-    </div>
+    const mobileNav =
+      document.getElementById("mobileNav");
 
-</footer>
+
+    menuButton.addEventListener("click", function () {
+
+      mobileNav.classList.toggle("open");
+
+    });
+
+
+    mobileNav
+      .querySelectorAll("a")
+      .forEach(function(link) {
+
+        link.addEventListener("click", function() {
+
+          mobileNav.classList.remove("open");
+
+        });
+
+      });
+
+  </script>
 
 
 </body>
