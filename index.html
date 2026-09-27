@@ -5,30 +5,45 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <title>Dharoahar | Authentic Indian Spices</title>
-  <meta name="description" content="Explore Dharoahar's whole spices and powder spices, and discover the regional dishes and spice profiles that shape Indian cooking.">
+
+  <meta
+    name="description"
+    content="Explore Dharoahar's whole spices and powder spices, and discover the regional dishes and spice profiles that shape Indian cooking."
+  >
+
   <meta name="theme-color" content="#2f2119">
 
   <style>
+
     :root {
       --brown: #2f2119;
       --brown-2: #4b3427;
       --brown-3: #694937;
+
       --cream: #f8f4ed;
       --cream-2: #efe8dc;
+
       --white: #ffffff;
+
       --text: #2f2119;
       --muted: #76685d;
+
       --line: #ded5c9;
+
       --gold: #b4864a;
       --terracotta: #a95538;
+
       --green: #3c7548;
-      --green-bg: #edf5ee;
       --red: #b53c35;
-      --red-bg: #faeeee;
-      --shadow: 0 18px 45px rgba(47, 33, 25, 0.10);
+
+      --shadow:
+        0 18px 45px rgba(47, 33, 25, 0.10);
+
       --radius: 20px;
+
       --max: 1180px;
     }
+
 
     * {
       box-sizing: border-box;
@@ -36,27 +51,38 @@
       padding: 0;
     }
 
+
     html {
       scroll-behavior: smooth;
     }
 
+
     body {
-      font-family: Arial, Helvetica, sans-serif;
+      font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
       background: var(--cream);
       color: var(--text);
+
       line-height: 1.6;
+
       overflow-x: hidden;
     }
+
 
     img {
       display: block;
       max-width: 100%;
     }
 
+
     a {
       color: inherit;
       text-decoration: none;
     }
+
 
     button,
     input,
@@ -64,1341 +90,2912 @@
       font: inherit;
     }
 
+
     button {
       cursor: pointer;
     }
 
+
     .container {
-      width: min(calc(100% - 36px), var(--max));
+      width:
+        min(
+          calc(100% - 36px),
+          var(--max)
+        );
+
       margin: 0 auto;
     }
 
-    /* =========================
+
+    /* =========================================================
        HEADER
-    ========================= */
+    ========================================================= */
 
     .site-header {
       position: sticky;
       top: 0;
       z-index: 1000;
-      background: rgba(248, 244, 237, 0.96);
-      border-bottom: 1px solid rgba(47, 33, 25, 0.10);
-      backdrop-filter: blur(14px);
+
+      background:
+        rgba(248, 244, 237, 0.96);
+
+      border-bottom:
+        1px solid rgba(47, 33, 25, 0.10);
+
+      backdrop-filter:
+        blur(14px);
     }
+
 
     .nav {
       min-height: 72px;
+
       display: flex;
       align-items: center;
       justify-content: space-between;
+
       gap: 20px;
     }
 
+
     .logo {
-      font-family: Georgia, "Times New Roman", serif;
+      font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
       font-size: 25px;
       font-weight: 700;
+
       letter-spacing: -0.5px;
     }
 
+
     .logo span {
       display: block;
-      font-family: Arial, Helvetica, sans-serif;
+
+      font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
       font-size: 8px;
+
       letter-spacing: 2.5px;
+
       text-transform: uppercase;
+
       font-weight: 700;
+
       margin-top: -2px;
+
       color: var(--muted);
     }
 
+
     .desktop-nav {
       display: none;
+
       align-items: center;
+
       gap: 28px;
+
       font-size: 13px;
+
       font-weight: 600;
     }
 
-    .desktop-nav a {
-      position: relative;
-    }
 
     .desktop-nav a:hover {
       color: var(--terracotta);
     }
 
+
     .menu-btn {
       width: 42px;
       height: 42px;
-      border: 1px solid var(--line);
+
+      border:
+        1px solid var(--line);
+
       border-radius: 50%;
+
       background: transparent;
+
       color: var(--brown);
+
       font-size: 20px;
     }
 
+
     .mobile-menu {
       display: none;
-      border-top: 1px solid var(--line);
-      padding: 10px 18px 18px;
-      background: var(--cream);
+
+      border-top:
+        1px solid var(--line);
+
+      padding:
+        10px 18px 18px;
+
+      background:
+        var(--cream);
     }
+
 
     .mobile-menu.open {
       display: block;
     }
 
+
     .mobile-menu a {
       display: block;
+
       padding: 12px 0;
-      border-bottom: 1px solid var(--line);
+
+      border-bottom:
+        1px solid var(--line);
+
       font-size: 14px;
+
       font-weight: 600;
     }
 
-    /* =========================
+
+    /* =========================================================
        HERO
-    ========================= */
+    ========================================================= */
 
     .hero {
       position: relative;
+
       min-height: 690px;
+
       display: flex;
       align-items: flex-end;
+
       overflow: hidden;
+
       background:
-        linear-gradient(180deg, rgba(47, 33, 25, 0.10), rgba(47, 33, 25, 0.82)),
-        url("cinnamon.jpg") center/cover no-repeat;
+        linear-gradient(
+          180deg,
+          rgba(47, 33, 25, 0.10),
+          rgba(47, 33, 25, 0.82)
+        ),
+        url("cinnamon.jpg")
+        center / cover
+        no-repeat;
     }
+
 
     .hero::after {
       content: "";
+
       position: absolute;
+
       inset: 0;
-      background: linear-gradient(
-        90deg,
-        rgba(25, 17, 13, 0.68),
-        rgba(25, 17, 13, 0.18) 70%,
-        rgba(25, 17, 13, 0.10)
-      );
+
+      background:
+        linear-gradient(
+          90deg,
+          rgba(25, 17, 13, 0.68),
+          rgba(25, 17, 13, 0.18) 70%,
+          rgba(25, 17, 13, 0.10)
+        );
     }
+
 
     .hero-content {
       position: relative;
+
       z-index: 2;
-      width: min(calc(100% - 36px), var(--max));
+
+      width:
+        min(
+          calc(100% - 36px),
+          var(--max)
+        );
+
       margin: 0 auto;
-      padding: 80px 0 58px;
+
+      padding:
+        80px 0 58px;
+
       color: white;
     }
 
+
     .eyebrow {
       text-transform: uppercase;
+
       letter-spacing: 2.2px;
+
       font-size: 10px;
+
       font-weight: 700;
+
       margin-bottom: 14px;
+
       opacity: 0.84;
     }
 
+
     .hero h1 {
       max-width: 700px;
-      font-family: Georgia, "Times New Roman", serif;
-      font-size: clamp(45px, 12vw, 82px);
+
+      font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+      font-size:
+        clamp(
+          45px,
+          12vw,
+          82px
+        );
+
       line-height: 0.98;
+
       letter-spacing: -2.5px;
+
       font-weight: 500;
     }
 
+
     .hero p {
       max-width: 560px;
-      margin: 22px 0 28px;
+
+      margin:
+        22px 0 28px;
+
       font-size: 16px;
+
       line-height: 1.7;
-      color: rgba(255,255,255,0.90);
+
+      color:
+        rgba(255,255,255,0.90);
     }
+
 
     .hero-actions {
       display: flex;
+
       flex-direction: column;
+
       align-items: stretch;
+
       gap: 10px;
     }
 
+
     .btn {
       min-height: 50px;
+
       display: inline-flex;
+
       align-items: center;
+
       justify-content: center;
-      padding: 0 22px;
+
+      padding:
+        0 22px;
+
       border-radius: 999px;
+
       font-size: 13px;
+
       font-weight: 700;
-      transition: transform 0.2s ease, background 0.2s ease;
+
+      transition:
+        transform 0.2s ease,
+        background 0.2s ease;
     }
 
+
     .btn:hover {
-      transform: translateY(-2px);
+      transform:
+        translateY(-2px);
     }
+
 
     .btn-primary {
       background: white;
       color: var(--brown);
     }
 
+
     .btn-secondary {
-      border: 1px solid rgba(255,255,255,0.55);
+      border:
+        1px solid
+        rgba(255,255,255,0.55);
+
       color: white;
-      background: rgba(255,255,255,0.07);
+
+      background:
+        rgba(255,255,255,0.07);
     }
 
-    /* =========================
+
+    /* =========================================================
        INTRO
-    ========================= */
+    ========================================================= */
 
     .intro {
-      padding: 85px 0 70px;
-      background: var(--cream);
+      padding:
+        85px 0 70px;
+
+      background:
+        var(--cream);
     }
+
 
     .intro-grid {
       display: grid;
+
       gap: 28px;
     }
 
+
     .intro h2,
     .section-heading h2 {
-      font-family: Georgia, "Times New Roman", serif;
+      font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
       font-weight: 500;
-      font-size: clamp(34px, 8vw, 58px);
+
+      font-size:
+        clamp(
+          34px,
+          8vw,
+          58px
+        );
+
       line-height: 1.08;
+
       letter-spacing: -1.5px;
     }
 
+
     .intro-copy {
       color: var(--muted);
+
       font-size: 15px;
+
       line-height: 1.8;
+
       max-width: 570px;
     }
 
-    /* =========================
+
+    /* =========================================================
        PRODUCTS
-    ========================= */
+    ========================================================= */
 
     .products-section {
-      padding: 45px 0 90px;
+      padding:
+        45px 0 90px;
+
       background: var(--white);
     }
+
 
     .section-heading {
       margin-bottom: 34px;
     }
+
 
     .section-heading .eyebrow {
       color: var(--terracotta);
       opacity: 1;
     }
 
+
     .section-heading p {
       max-width: 590px;
+
       color: var(--muted);
+
       font-size: 14px;
+
       margin-top: 15px;
+
       line-height: 1.75;
     }
 
+
     .product-grid {
       display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
+
+      grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+
       gap: 14px;
     }
 
+
     .product-card {
       background: var(--cream);
-      border: 1px solid var(--line);
+
+      border:
+        1px solid var(--line);
+
       overflow: hidden;
-      transition: transform 0.25s ease, box-shadow 0.25s ease;
+
+      transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
     }
 
+
     .product-card:hover {
-      transform: translateY(-5px);
-      box-shadow: var(--shadow);
+      transform:
+        translateY(-5px);
+
+      box-shadow:
+        var(--shadow);
     }
+
 
     .product-image {
       aspect-ratio: 4 / 5;
+
       overflow: hidden;
-      background: #e7dfd2;
+
+      background:
+        #e7dfd2;
     }
+
 
     .product-image img {
       width: 100%;
       height: 100%;
+
       object-fit: cover;
     }
 
+
     .product-info {
-      padding: 15px 14px 17px;
+      padding:
+        15px 14px 17px;
     }
 
+
     .product-info h3 {
-      font-family: Georgia, "Times New Roman", serif;
+      font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
       font-size: 19px;
+
       font-weight: 500;
+
       line-height: 1.15;
     }
 
+
     .product-hindi {
       font-size: 11px;
+
       color: var(--muted);
+
       margin-top: 4px;
     }
 
+
     .product-link {
       display: inline-flex;
+
       margin-top: 13px;
+
       font-size: 11px;
+
       font-weight: 700;
+
       text-transform: uppercase;
+
       letter-spacing: 1px;
+
       color: var(--terracotta);
     }
 
-    /* =========================
-       SPICE SIGNATURE
-    ========================= */
+
+    /* =========================================================
+       SPICE SIGNATURE / INDIA ATLAS
+    ========================================================= */
 
     .signature-section {
-      padding: 92px 0 100px;
-      background: #f0e8dc;
+      padding:
+        92px 0 100px;
+
+      background:
+        #f0e8dc;
+
+      overflow: hidden;
     }
 
+
     .signature-intro {
-      max-width: 760px;
+      max-width: 780px;
+
       margin-bottom: 38px;
     }
 
-    .signature-intro h2 {
-      max-width: 700px;
+
+    .signature-intro .eyebrow {
+      color: var(--terracotta);
+
+      opacity: 1;
     }
+
+
+    .signature-intro h2 {
+      max-width: 720px;
+
+      font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+      font-weight: 500;
+
+      font-size:
+        clamp(
+          34px,
+          8vw,
+          58px
+        );
+
+      line-height: 1.08;
+
+      letter-spacing: -1.5px;
+    }
+
 
     .signature-intro p {
       margin-top: 16px;
+
       color: var(--muted);
+
       font-size: 15px;
+
       line-height: 1.8;
     }
 
-    .region-tabs {
+
+    /* =========================================================
+       INDIA MAP ATLAS
+    ========================================================= */
+
+    .india-atlas {
+      position: relative;
+
+      width:
+        min(
+          100%,
+          760px
+        );
+
+      margin:
+        0 auto 34px;
+
+      min-height: 475px;
+
       display: flex;
-      gap: 8px;
-      overflow-x: auto;
-      padding: 4px 0 12px;
-      scrollbar-width: none;
+
+      align-items: center;
+
+      justify-content: center;
     }
 
-    .region-tabs::-webkit-scrollbar {
-      display: none;
+
+    .india-map-wrap {
+      position: relative;
+
+      width: 230px;
+      height: 325px;
+
+      display: flex;
+
+      align-items: center;
+
+      justify-content: center;
+
+      z-index: 3;
     }
 
-    .region-tab {
-      flex: 0 0 auto;
-      border: 1px solid #cfc3b4;
-      background: transparent;
-      border-radius: 999px;
-      padding: 11px 17px;
-      color: var(--brown);
-      font-size: 11px;
-      font-weight: 700;
+
+    .india-map-wrap::before {
+      content: "";
+
+      position: absolute;
+
+      width: 285px;
+      height: 285px;
+
+      border:
+        1px solid
+        rgba(105,73,55,0.15);
+
+      border-radius: 50%;
+    }
+
+
+    .india-map-wrap::after {
+      content: "";
+
+      position: absolute;
+
+      width: 330px;
+      height: 330px;
+
+      border:
+        1px dashed
+        rgba(105,73,55,0.11);
+
+      border-radius: 50%;
+    }
+
+
+    .india-map {
+      position: relative;
+
+      z-index: 3;
+
+      width: 175px;
+      height: 245px;
+
+      object-fit: contain;
+
+      opacity: 0.72;
+
+      filter:
+        grayscale(1)
+        sepia(0.22)
+        saturate(0.42)
+        contrast(0.86);
+    }
+
+
+    .india-centre-label {
+      position: absolute;
+
+      z-index: 5;
+
+      top: 50%;
+      left: 50%;
+
+      transform:
+        translate(
+          -50%,
+          -50%
+        );
+
+      text-align: center;
+
+      pointer-events: none;
+
+      background:
+        rgba(248,244,237,0.78);
+
+      padding:
+        8px 13px;
+
+      border-radius: 50%;
+    }
+
+
+    .india-centre-label strong {
+      display: block;
+
+      font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+      font-size: 22px;
+
+      font-weight: 500;
+
       letter-spacing: 1px;
     }
 
-    .region-tab.active {
-      background: var(--brown);
-      color: white;
-      border-color: var(--brown);
+
+    .india-centre-label span {
+      display: block;
+
+      margin-top: 1px;
+
+      font-size: 7px;
+
+      text-transform: uppercase;
+
+      letter-spacing: 1.7px;
+
+      color: var(--muted);
     }
+
+
+    /* =========================================================
+       REGION NODES
+    ========================================================= */
+
+    .region-node {
+      position: absolute;
+
+      z-index: 8;
+
+      width: 115px;
+
+      min-height: 70px;
+
+      border: 0;
+
+      background: transparent;
+
+      color: var(--brown);
+
+      text-align: center;
+
+      padding: 8px;
+
+      transition:
+        transform 0.25s ease,
+        color 0.25s ease;
+    }
+
+
+    .region-node:hover {
+      color:
+        var(--terracotta);
+    }
+
+
+    .region-node .region-name {
+      display: block;
+
+      font-size: 11px;
+
+      font-weight: 700;
+
+      letter-spacing: 1.3px;
+    }
+
+
+    .region-node .region-count {
+      display: block;
+
+      margin-top: 3px;
+
+      font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+      font-size: 18px;
+    }
+
+
+    .region-node .region-sub {
+      display: block;
+
+      margin-top: 0;
+
+      font-size: 8px;
+
+      text-transform: uppercase;
+
+      letter-spacing: 1px;
+
+      color: var(--muted);
+    }
+
+
+    .region-node::after {
+      content: "";
+
+      position: absolute;
+
+      width: 7px;
+      height: 7px;
+
+      border:
+        1px solid
+        var(--brown);
+
+      border-radius: 50%;
+
+      background:
+        var(--cream);
+    }
+
+
+    .region-node.north {
+      top: 0;
+      left: 50%;
+
+      transform:
+        translateX(-50%);
+    }
+
+
+    .region-node.north:hover,
+    .region-node.north.active {
+      transform:
+        translateX(-50%)
+        translateY(-3px);
+    }
+
+
+    .region-node.north::after {
+      left: 50%;
+      bottom: -13px;
+
+      transform:
+        translateX(-50%);
+    }
+
+
+    .region-node.south {
+      bottom: 0;
+      left: 50%;
+
+      transform:
+        translateX(-50%);
+    }
+
+
+    .region-node.south:hover,
+    .region-node.south.active {
+      transform:
+        translateX(-50%)
+        translateY(3px);
+    }
+
+
+    .region-node.south::after {
+      left: 50%;
+      top: -13px;
+
+      transform:
+        translateX(-50%);
+    }
+
+
+    .region-node.west {
+      left: 0;
+      top: 50%;
+
+      transform:
+        translateY(-50%);
+    }
+
+
+    .region-node.west:hover,
+    .region-node.west.active {
+      transform:
+        translateY(-50%)
+        translateX(-3px);
+    }
+
+
+    .region-node.west::after {
+      right: -12px;
+      top: 50%;
+
+      transform:
+        translateY(-50%);
+    }
+
+
+    .region-node.east {
+      right: 0;
+      top: 50%;
+
+      transform:
+        translateY(-50%);
+    }
+
+
+    .region-node.east:hover,
+    .region-node.east.active {
+      transform:
+        translateY(-50%)
+        translateX(3px);
+    }
+
+
+    .region-node.east::after {
+      left: -12px;
+      top: 50%;
+
+      transform:
+        translateY(-50%);
+    }
+
+
+    .region-node.active .region-name,
+    .region-node.active .region-count {
+      color:
+        var(--terracotta);
+    }
+
+
+    .region-node.active::after {
+      width: 10px;
+      height: 10px;
+
+      background:
+        var(--terracotta);
+
+      border-color:
+        var(--terracotta);
+    }
+
+
+    /* =========================================================
+       REGION CONNECTION LINES
+    ========================================================= */
+
+    .region-line {
+      position: absolute;
+
+      z-index: 1;
+
+      background:
+        rgba(105,73,55,0.22);
+    }
+
+
+    .region-line.north-line {
+      width: 1px;
+      height: 75px;
+
+      top: 62px;
+      left: 50%;
+    }
+
+
+    .region-line.south-line {
+      width: 1px;
+      height: 75px;
+
+      bottom: 62px;
+      left: 50%;
+    }
+
+
+    .region-line.west-line {
+      width: 90px;
+      height: 1px;
+
+      left: 78px;
+      top: 50%;
+    }
+
+
+    .region-line.east-line {
+      width: 90px;
+      height: 1px;
+
+      right: 78px;
+      top: 50%;
+    }
+
+
+    /* =========================================================
+       DIET FILTERS
+    ========================================================= */
 
     .diet-filters {
       display: flex;
+
+      justify-content: center;
+
       flex-wrap: wrap;
+
       gap: 8px;
-      margin: 16px 0 26px;
+
+      margin:
+        6px 0 17px;
     }
+
 
     .diet-filter {
-      border: 1px solid var(--line);
-      background: rgba(255,255,255,0.55);
+      min-height: 38px;
+
+      border:
+        1px solid
+        #cfc3b4;
+
+      background:
+        rgba(255,255,255,0.38);
+
       border-radius: 999px;
-      padding: 8px 13px;
-      font-size: 11px;
+
+      padding:
+        7px 15px;
+
+      font-size: 10px;
+
       font-weight: 700;
-      color: var(--brown);
+
+      color:
+        var(--brown);
+
+      transition:
+        all 0.2s ease;
     }
 
-    .diet-filter.active {
-      background: white;
-      border-color: var(--brown);
+
+    .diet-filter:hover {
+      background:
+        rgba(255,255,255,0.75);
     }
+
+
+    .diet-filter.active {
+      background:
+        var(--brown);
+
+      border-color:
+        var(--brown);
+
+      color: white;
+    }
+
+
+    /* =========================================================
+       DIET KEY
+    ========================================================= */
 
     .diet-key {
       display: flex;
+
+      justify-content: center;
+
+      align-items: center;
+
       flex-wrap: wrap;
-      gap: 12px;
-      margin-bottom: 24px;
-      font-size: 11px;
+
+      gap: 18px;
+
+      margin-bottom: 25px;
+
+      font-size: 10px;
+
       color: var(--muted);
     }
+
 
     .key-item {
       display: inline-flex;
+
       align-items: center;
-      gap: 6px;
-    }
 
-    .diet-dot {
-      width: 10px;
-      height: 10px;
-      border-radius: 50%;
-      display: inline-block;
-    }
-
-    .diet-dot.veg {
-      background: var(--green);
-    }
-
-    .diet-dot.nonveg {
-      background: var(--red);
-    }
-
-    .both-icon {
-      width: 18px;
-      height: 10px;
-      display: inline-flex;
-      overflow: hidden;
-      border-radius: 8px;
-    }
-
-    .both-icon span:first-child {
-      width: 50%;
-      background: var(--green);
-    }
-
-    .both-icon span:last-child {
-      width: 50%;
-      background: var(--red);
-    }
-
-    .dish-grid {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 12px;
-    }
-
-    .dish-card {
-      position: relative;
-      min-height: 180px;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      background: rgba(255,255,255,0.72);
-      border: 1px solid #ddd1c1;
-      padding: 19px;
-      transition: transform 0.2s ease, background 0.2s ease;
-    }
-
-    .dish-card:hover {
-      transform: translateY(-3px);
-      background: white;
-    }
-
-    .dish-top {
-      display: flex;
-      justify-content: space-between;
-      gap: 10px;
-    }
-
-    .dish-region {
-      color: var(--muted);
-      font-size: 9px;
-      text-transform: uppercase;
-      letter-spacing: 1.2px;
-      font-weight: 700;
-    }
-
-    .dish-diet {
-      display: inline-flex;
-      align-items: center;
-      gap: 5px;
-      font-size: 9px;
-      text-transform: uppercase;
-      letter-spacing: 0.7px;
-      font-weight: 700;
-      white-space: nowrap;
-    }
-
-    .dish-name {
-      font-family: Georgia, "Times New Roman", serif;
-      font-size: 22px;
-      font-weight: 500;
-      line-height: 1.1;
-      margin: 18px 0 8px;
-      padding-right: 28px;
-    }
-
-    .dish-description {
-      color: var(--muted);
-      font-size: 12px;
-      line-height: 1.55;
-      max-width: 330px;
-    }
-
-    .dish-bottom {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 10px;
-      margin-top: 17px;
-    }
-
-    .dish-spices {
-      font-size: 9px;
-      color: var(--muted);
-      line-height: 1.4;
-    }
-
-    .info-btn {
-      flex: 0 0 auto;
-      width: 31px;
-      height: 31px;
-      border-radius: 50%;
-      border: 1px solid #cfc3b4;
-      background: white;
-      color: var(--brown);
-      font-family: Georgia, serif;
-      font-size: 16px;
-      font-weight: 700;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-    .info-btn:hover {
-      background: var(--brown);
-      color: white;
-    }
-
-    .signature-note {
-      margin-top: 22px;
-      padding: 15px 17px;
-      background: rgba(255,255,255,0.55);
-      border-left: 3px solid var(--gold);
-      color: var(--muted);
-      font-size: 11px;
-      line-height: 1.6;
-    }
-
-    /* =========================
-       RECIPE MODAL
-    ========================= */
-
-    .recipe-modal {
-      position: fixed;
-      inset: 0;
-      z-index: 3000;
-      display: none;
-      background: rgba(22, 15, 11, 0.72);
-      padding: 15px;
-      overflow-y: auto;
-    }
-
-    .recipe-modal.open {
-      display: flex;
-      align-items: flex-start;
-      justify-content: center;
-    }
-
-    .recipe-panel {
-      position: relative;
-      width: min(760px, 100%);
-      margin: 20px auto;
-      background: var(--cream);
-      border-radius: 22px;
-      overflow: hidden;
-      box-shadow: 0 30px 80px rgba(0,0,0,0.25);
-    }
-
-    .recipe-head {
-      padding: 28px 54px 23px 24px;
-      background: var(--brown);
-      color: white;
-    }
-
-    .recipe-head .eyebrow {
-      color: #d9b987;
-      margin-bottom: 7px;
-    }
-
-    .recipe-head h2 {
-      font-family: Georgia, "Times New Roman", serif;
-      font-size: 34px;
-      line-height: 1.05;
-      font-weight: 500;
-    }
-
-    .recipe-head p {
-      color: rgba(255,255,255,0.68);
-      font-size: 12px;
-      margin-top: 8px;
-    }
-
-    .close-modal {
-      position: absolute;
-      top: 18px;
-      right: 18px;
-      width: 38px;
-      height: 38px;
-      border-radius: 50%;
-      border: 1px solid rgba(255,255,255,0.25);
-      background: transparent;
-      color: white;
-      font-size: 20px;
-      line-height: 1;
-    }
-
-    .serving-bar {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 12px;
-      padding: 14px 20px;
-      background: white;
-      border-bottom: 1px solid var(--line);
-    }
-
-    .serving-label {
-      font-size: 11px;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-    }
-
-    .serving-options {
-      display: flex;
-      gap: 5px;
-    }
-
-    .serving-option {
-      min-width: 39px;
-      height: 32px;
-      border-radius: 999px;
-      border: 1px solid var(--line);
-      background: transparent;
-      font-size: 11px;
-      font-weight: 700;
-    }
-
-    .serving-option.active {
-      background: var(--brown);
-      color: white;
-      border-color: var(--brown);
-    }
-
-    .recipe-content {
-      padding: 23px 20px 30px;
-    }
-
-    .recipe-layout {
-      display: grid;
-      gap: 28px;
-    }
-
-    .recipe-section-title {
-      font-family: Georgia, "Times New Roman", serif;
-      font-size: 22px;
-      font-weight: 500;
-      margin-bottom: 13px;
-    }
-
-    .ingredient-list {
-      list-style: none;
-      border-top: 1px solid var(--line);
-    }
-
-    .ingredient-list li {
-      display: flex;
-      justify-content: space-between;
-      gap: 15px;
-      padding: 9px 0;
-      border-bottom: 1px solid var(--line);
-      font-size: 12px;
-    }
-
-    .ingredient-list .quantity {
-      font-weight: 700;
-      white-space: nowrap;
-    }
-
-    .spice-profile {
-      background: #efe5d7;
-      border: 1px solid #ddcdb9;
-      padding: 17px;
-    }
-
-    .spice-profile p {
-      color: var(--muted);
-      font-size: 11px;
-      margin-bottom: 12px;
-    }
-
-    .spice-links {
-      display: flex;
-      flex-wrap: wrap;
       gap: 7px;
     }
 
-    .spice-link {
+
+    /* =========================================================
+       DIET RINGS
+    ========================================================= */
+
+    .diet-ring {
+      width: 18px;
+      height: 18px;
+
+      border-radius: 50%;
+
       display: inline-flex;
-      padding: 7px 9px;
-      border-radius: 999px;
-      background: white;
-      border: 1px solid #d7c7b5;
+
+      align-items: center;
+
+      justify-content: center;
+
+      position: relative;
+
+      flex: 0 0 auto;
+    }
+
+
+    .diet-ring.veg {
+      border:
+        2px solid
+        var(--green);
+
+      background:
+        rgba(60,117,72,0.04);
+    }
+
+
+    .diet-ring.veg::after {
+      content: "";
+
+      width: 5px;
+      height: 5px;
+
+      border-radius: 50%;
+
+      background:
+        var(--green);
+    }
+
+
+    .diet-ring.nonveg {
+      border:
+        2px solid
+        var(--red);
+
+      background:
+        rgba(181,60,53,0.04);
+    }
+
+
+    .diet-ring.nonveg::after {
+      content: "";
+
+      width: 5px;
+      height: 5px;
+
+      border-radius: 50%;
+
+      background:
+        var(--red);
+    }
+
+
+    .diet-ring.both {
+      background:
+        conic-gradient(
+          var(--green) 0deg 180deg,
+          var(--red) 180deg 360deg
+        );
+
+      padding: 3px;
+    }
+
+
+    .diet-ring.both::after {
+      content: "";
+
+      width: 100%;
+      height: 100%;
+
+      border-radius: 50%;
+
+      background:
+        var(--cream);
+    }
+
+
+    /* =========================================================
+       DISH GRID
+    ========================================================= */
+
+    .dish-grid {
+      display: grid;
+
+      grid-template-columns:
+        repeat(
+          2,
+          minmax(0,1fr)
+        );
+
+      gap: 9px;
+    }
+
+
+    .dish-card {
+      position: relative;
+
+      min-height: 165px;
+
+      display: flex;
+
+      flex-direction: column;
+
+      justify-content: space-between;
+
+      background:
+        rgba(255,255,255,0.58);
+
+      border:
+        1px solid
+        rgba(105,73,55,0.18);
+
+      padding: 15px;
+
+      transition:
+        transform 0.22s ease,
+        background 0.22s ease,
+        border-color 0.22s ease;
+    }
+
+
+    .dish-card:hover {
+      transform:
+        translateY(-3px);
+
+      background:
+        rgba(255,255,255,0.90);
+
+      border-color:
+        rgba(105,73,55,0.35);
+    }
+
+
+    .dish-top {
+      display: flex;
+
+      align-items: center;
+
+      justify-content: space-between;
+
+      gap: 6px;
+    }
+
+
+    .dish-number {
+      font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
       font-size: 10px;
+
+      color:
+        #9b8a7b;
+    }
+
+
+    .dish-diet {
+      display: inline-flex;
+
+      align-items: center;
+
+      justify-content: center;
+    }
+
+
+    .dish-name {
+      font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+      font-size: 19px;
+
+      font-weight: 500;
+
+      line-height: 1.08;
+
+      margin:
+        20px 0 6px;
+    }
+
+
+    .dish-location {
+      color:
+        var(--muted);
+
+      font-size: 9px;
+
+      text-transform: uppercase;
+
+      letter-spacing: 0.8px;
+    }
+
+
+    .dish-description {
+      display: none;
+    }
+
+
+    .dish-bottom {
+      display: flex;
+
+      align-items: flex-end;
+
+      justify-content: space-between;
+
+      gap: 7px;
+
+      margin-top: 16px;
+    }
+
+
+    .dish-spices {
+      color:
+        var(--muted);
+
+      font-size: 8px;
+
+      line-height: 1.4;
+
+      max-width: 82%;
+    }
+
+
+    .info-btn {
+      flex:
+        0 0 auto;
+
+      width: 30px;
+      height: 30px;
+
+      border:
+        1px solid
+        #c8b9a9;
+
+      border-radius: 50%;
+
+      background:
+        transparent;
+
+      color:
+        var(--brown);
+
+      font-family:
+        Georgia,
+        serif;
+
+      font-size: 15px;
+
+      font-weight: 700;
+
+      display: inline-flex;
+
+      align-items: center;
+
+      justify-content: center;
+
+      transition:
+        all 0.2s ease;
+    }
+
+
+    .info-btn:hover {
+      background:
+        var(--brown);
+
+      color: white;
+
+      border-color:
+        var(--brown);
+    }
+
+
+    .signature-note {
+      max-width: 760px;
+
+      margin:
+        22px auto 0;
+
+      padding:
+        13px 16px;
+
+      background:
+        rgba(255,255,255,0.42);
+
+      border-left:
+        2px solid
+        var(--gold);
+
+      color:
+        var(--muted);
+
+      font-size: 10px;
+
+      line-height: 1.6;
+    }
+
+
+    .map-attribution {
+      text-align: center;
+
+      margin-top: 8px;
+
+      font-size: 7px;
+
+      line-height: 1.4;
+
+      color:
+        rgba(118,104,93,0.65);
+    }
+
+
+    .map-attribution a {
+      text-decoration: underline;
+    }
+
+
+    /* =========================================================
+       RECIPE MODAL
+    ========================================================= */
+
+    .recipe-modal {
+      position: fixed;
+
+      inset: 0;
+
+      z-index: 3000;
+
+      display: none;
+
+      background:
+        rgba(22,15,11,0.72);
+
+      padding: 15px;
+
+      overflow-y: auto;
+    }
+
+
+    .recipe-modal.open {
+      display: flex;
+
+      align-items:
+        flex-start;
+
+      justify-content:
+        center;
+    }
+
+
+    .recipe-panel {
+      position: relative;
+
+      width:
+        min(
+          760px,
+          100%
+        );
+
+      margin:
+        20px auto;
+
+      background:
+        var(--cream);
+
+      border-radius:
+        22px;
+
+      overflow: hidden;
+
+      box-shadow:
+        0 30px 80px
+        rgba(0,0,0,0.25);
+    }
+
+
+    .recipe-head {
+      padding:
+        28px 54px 23px 24px;
+
+      background:
+        var(--brown);
+
+      color: white;
+    }
+
+
+    .recipe-head .eyebrow {
+      color:
+        #d9b987;
+
+      margin-bottom: 7px;
+    }
+
+
+    .recipe-head h2 {
+      font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+      font-size: 34px;
+
+      line-height: 1.05;
+
+      font-weight: 500;
+    }
+
+
+    .recipe-head p {
+      color:
+        rgba(255,255,255,0.68);
+
+      font-size: 12px;
+
+      margin-top: 8px;
+    }
+
+
+    .close-modal {
+      position: absolute;
+
+      top: 18px;
+      right: 18px;
+
+      width: 38px;
+      height: 38px;
+
+      border:
+        1px solid
+        rgba(255,255,255,0.25);
+
+      background:
+        transparent;
+
+      color: white;
+
+      border-radius: 50%;
+
+      font-size: 20px;
+
+      line-height: 1;
+    }
+
+
+    .serving-bar {
+      display: flex;
+
+      align-items: center;
+
+      justify-content: space-between;
+
+      gap: 12px;
+
+      padding:
+        14px 20px;
+
+      background: white;
+
+      border-bottom:
+        1px solid
+        var(--line);
+    }
+
+
+    .serving-label {
+      font-size: 11px;
+
+      font-weight: 700;
+
+      text-transform: uppercase;
+
+      letter-spacing: 1px;
+    }
+
+
+    .serving-options {
+      display: flex;
+
+      gap: 5px;
+    }
+
+
+    .serving-option {
+      min-width: 39px;
+
+      height: 32px;
+
+      border-radius: 999px;
+
+      border:
+        1px solid
+        var(--line);
+
+      background:
+        transparent;
+
+      font-size: 11px;
+
       font-weight: 700;
     }
+
+
+    .serving-option.active {
+      background:
+        var(--brown);
+
+      color: white;
+
+      border-color:
+        var(--brown);
+    }
+
+
+    .recipe-content {
+      padding:
+        23px 20px 30px;
+    }
+
+
+    .recipe-layout {
+      display: grid;
+
+      gap: 28px;
+    }
+
+
+    .recipe-section-title {
+      font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+      font-size: 22px;
+
+      font-weight: 500;
+
+      margin-bottom: 13px;
+    }
+
+
+    .ingredient-list {
+      list-style: none;
+
+      border-top:
+        1px solid
+        var(--line);
+    }
+
+
+    .ingredient-list li {
+      display: flex;
+
+      justify-content: space-between;
+
+      gap: 15px;
+
+      padding: 9px 0;
+
+      border-bottom:
+        1px solid
+        var(--line);
+
+      font-size: 12px;
+    }
+
+
+    .ingredient-list .quantity {
+      font-weight: 700;
+
+      white-space: nowrap;
+    }
+
+
+    .spice-profile {
+      background:
+        #efe5d7;
+
+      border:
+        1px solid
+        #ddcdb9;
+
+      padding: 17px;
+    }
+
+
+    .spice-profile p {
+      color:
+        var(--muted);
+
+      font-size: 11px;
+
+      margin-bottom: 12px;
+    }
+
+
+    .spice-links {
+      display: flex;
+
+      flex-wrap: wrap;
+
+      gap: 7px;
+    }
+
+
+    .spice-link {
+      display: inline-flex;
+
+      padding:
+        7px 9px;
+
+      border-radius:
+        999px;
+
+      background: white;
+
+      border:
+        1px solid
+        #d7c7b5;
+
+      font-size: 10px;
+
+      font-weight: 700;
+    }
+
 
     .method-list {
       padding-left: 19px;
     }
 
+
     .method-list li {
       padding-left: 5px;
+
       margin-bottom: 11px;
+
       font-size: 12px;
+
       line-height: 1.65;
     }
 
+
     .recipe-footnote {
       margin-top: 22px;
-      color: var(--muted);
+
+      color:
+        var(--muted);
+
       font-size: 10px;
+
       line-height: 1.6;
+
       padding-top: 16px;
-      border-top: 1px solid var(--line);
+
+      border-top:
+        1px solid
+        var(--line);
     }
 
-    /* =========================
+
+    /* =========================================================
        B2B CALCULATOR
-    ========================= */
+    ========================================================= */
 
     .planner-section {
-      padding: 95px 0;
-      background: var(--brown);
+      padding:
+        95px 0;
+
+      background:
+        var(--brown);
+
       color: white;
     }
 
+
     .planner-grid {
       display: grid;
+
       gap: 34px;
     }
 
+
     .planner-copy .eyebrow {
-      color: #d7b47d;
+      color:
+        #d7b47d;
+
       opacity: 1;
     }
 
+
     .planner-copy h2 {
-      font-family: Georgia, "Times New Roman", serif;
-      font-size: clamp(35px, 8vw, 60px);
+      font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+      font-size:
+        clamp(
+          35px,
+          8vw,
+          60px
+        );
+
       line-height: 1.04;
+
       font-weight: 500;
+
       letter-spacing: -1.5px;
     }
 
+
     .planner-copy p {
       margin-top: 17px;
+
       max-width: 550px;
-      color: rgba(255,255,255,0.70);
+
+      color:
+        rgba(255,255,255,0.70);
+
       font-size: 14px;
+
       line-height: 1.8;
     }
 
+
     .calculator {
-      background: #f8f4ed;
-      color: var(--brown);
+      background:
+        #f8f4ed;
+
+      color:
+        var(--brown);
+
       padding: 21px;
+
       border-radius: 20px;
     }
+
 
     .calc-row {
       margin-bottom: 16px;
     }
 
+
     .calc-row label {
       display: block;
+
       font-size: 11px;
+
       font-weight: 700;
+
       margin-bottom: 7px;
     }
+
 
     .calc-row select,
     .calc-row input {
       width: 100%;
+
       min-height: 46px;
-      padding: 0 13px;
-      border: 1px solid var(--line);
+
+      padding:
+        0 13px;
+
+      border:
+        1px solid
+        var(--line);
+
       background: white;
-      color: var(--brown);
+
+      color:
+        var(--brown);
+
       border-radius: 10px;
+
       outline: none;
     }
 
+
     .calc-row input:focus,
     .calc-row select:focus {
-      border-color: var(--brown);
+      border-color:
+        var(--brown);
     }
+
 
     .calc-button {
       width: 100%;
+
       min-height: 49px;
+
       border: 0;
+
       border-radius: 999px;
-      background: var(--brown);
+
+      background:
+        var(--brown);
+
       color: white;
+
       font-size: 12px;
+
       font-weight: 700;
+
       margin-top: 3px;
     }
 
+
     .calc-results {
       display: none;
+
       margin-top: 19px;
+
       padding-top: 19px;
-      border-top: 1px solid var(--line);
+
+      border-top:
+        1px solid
+        var(--line);
     }
+
 
     .calc-results.show {
       display: block;
     }
 
+
     .result-main {
-      background: #eee4d7;
+      background:
+        #eee4d7;
+
       padding: 17px;
+
       border-radius: 13px;
+
       margin-bottom: 12px;
     }
 
+
     .result-main span {
       display: block;
-      color: var(--muted);
+
+      color:
+        var(--muted);
+
       font-size: 10px;
+
       text-transform: uppercase;
+
       letter-spacing: 1px;
     }
 
+
     .result-main strong {
       display: block;
-      font-family: Georgia, serif;
+
+      font-family:
+        Georgia,
+        serif;
+
       font-size: 36px;
+
       line-height: 1;
+
       margin-top: 5px;
     }
 
+
     .result-grid {
       display: grid;
-      grid-template-columns: repeat(2, 1fr);
+
+      grid-template-columns:
+        repeat(2,1fr);
+
       gap: 8px;
     }
 
+
     .result-box {
       background: white;
+
       padding: 12px;
-      border: 1px solid var(--line);
+
+      border:
+        1px solid
+        var(--line);
+
       border-radius: 10px;
     }
 
+
     .result-box span {
       display: block;
-      color: var(--muted);
+
+      color:
+        var(--muted);
+
       font-size: 9px;
+
       text-transform: uppercase;
+
       letter-spacing: .7px;
     }
 
+
     .result-box strong {
       display: block;
+
       margin-top: 3px;
+
       font-size: 16px;
     }
 
+
     .split-title {
-      margin: 17px 0 9px;
+      margin:
+        17px 0 9px;
+
       font-size: 11px;
+
       font-weight: 700;
     }
+
 
     .split-row {
       display: flex;
+
       justify-content: space-between;
+
       gap: 10px;
+
       font-size: 11px;
+
       padding: 6px 0;
-      border-bottom: 1px solid var(--line);
+
+      border-bottom:
+        1px solid
+        var(--line);
     }
+
 
     .calc-wa {
       display: flex;
+
       align-items: center;
+
       justify-content: center;
+
       width: 100%;
+
       min-height: 45px;
+
       margin-top: 15px;
+
       border-radius: 999px;
-      background: #258b45;
+
+      background:
+        #258b45;
+
       color: white;
+
       font-size: 11px;
+
       font-weight: 700;
     }
 
+
     .calculator-note {
       margin-top: 13px;
-      color: var(--muted);
+
+      color:
+        var(--muted);
+
       font-size: 9px;
+
       line-height: 1.55;
     }
 
-    /* =========================
+
+    /* =========================================================
        SOURCING
-    ========================= */
+    ========================================================= */
 
     .sourcing {
-      padding: 90px 0;
-      background: var(--cream);
+      padding:
+        90px 0;
+
+      background:
+        var(--cream);
     }
+
 
     .sourcing-grid {
       display: grid;
+
       gap: 28px;
     }
 
+
     .sourcing-image {
       aspect-ratio: 4 / 3;
+
       overflow: hidden;
     }
+
 
     .sourcing-image img {
       width: 100%;
       height: 100%;
+
       object-fit: cover;
     }
 
+
     .sourcing-copy h2 {
-      font-family: Georgia, serif;
-      font-size: clamp(35px, 8vw, 57px);
+      font-family:
+        Georgia,
+        serif;
+
+      font-size:
+        clamp(
+          35px,
+          8vw,
+          57px
+        );
+
       font-weight: 500;
+
       line-height: 1.04;
+
       letter-spacing: -1.4px;
     }
 
+
     .sourcing-copy p {
-      color: var(--muted);
+      color:
+        var(--muted);
+
       font-size: 14px;
+
       line-height: 1.8;
+
       margin-top: 18px;
     }
 
+
     .sourcing-points {
       display: grid;
+
       gap: 10px;
+
       margin-top: 25px;
     }
 
+
     .source-point {
-      padding: 14px 15px;
-      border: 1px solid var(--line);
-      background: rgba(255,255,255,0.45);
+      padding:
+        14px 15px;
+
+      border:
+        1px solid
+        var(--line);
+
+      background:
+        rgba(255,255,255,0.45);
     }
+
 
     .source-point strong {
       display: block;
-      font-family: Georgia, serif;
+
+      font-family:
+        Georgia,
+        serif;
+
       font-size: 18px;
+
       font-weight: 500;
     }
 
+
     .source-point span {
       display: block;
-      color: var(--muted);
+
+      color:
+        var(--muted);
+
       font-size: 11px;
+
       margin-top: 3px;
     }
 
-    /* =========================
+
+    /* =========================================================
        FOUNDER
-    ========================= */
+    ========================================================= */
 
     .founder {
-      padding: 90px 0;
-      background: white;
+      padding:
+        90px 0;
+
+      background:
+        white;
     }
+
 
     .founder-grid {
       display: grid;
+
       gap: 28px;
     }
 
+
     .founder-photo {
       aspect-ratio: 4 / 5;
-      background: #eee6da;
+
+      background:
+        #eee6da;
+
       overflow: hidden;
     }
+
 
     .founder-photo img {
       width: 100%;
       height: 100%;
+
       object-fit: cover;
     }
 
+
     .founder-copy h2 {
-      font-family: Georgia, serif;
-      font-size: clamp(35px, 8vw, 55px);
+      font-family:
+        Georgia,
+        serif;
+
+      font-size:
+        clamp(
+          35px,
+          8vw,
+          55px
+        );
+
       line-height: 1.05;
+
       font-weight: 500;
     }
+
 
     .founder-copy p {
       margin-top: 18px;
-      color: var(--muted);
+
+      color:
+        var(--muted);
+
       font-size: 14px;
+
       line-height: 1.85;
     }
 
+
     .founder-sign {
       margin-top: 25px;
-      font-family: Georgia, serif;
+
+      font-family:
+        Georgia,
+        serif;
+
       font-style: italic;
+
       font-size: 19px;
     }
 
-    /* =========================
+
+    /* =========================================================
        QUALITY
-    ========================= */
+    ========================================================= */
 
     .quality {
-      padding: 90px 0;
-      background: #efe7db;
+      padding:
+        90px 0;
+
+      background:
+        #efe7db;
     }
+
 
     .quality-grid {
       display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
+
+      grid-template-columns:
+        repeat(2,minmax(0,1fr));
+
       gap: 12px;
+
       margin-top: 32px;
     }
 
+
     .quality-card {
       padding: 18px;
-      background: white;
-      border: 1px solid #ddd1c1;
+
+      background:
+        white;
+
+      border:
+        1px solid
+        #ddd1c1;
     }
+
 
     .quality-card span {
       display: block;
-      color: var(--terracotta);
+
+      color:
+        var(--terracotta);
+
       font-size: 9px;
+
       text-transform: uppercase;
+
       letter-spacing: 1.2px;
+
       font-weight: 700;
     }
 
+
     .quality-card h3 {
-      font-family: Georgia, serif;
+      font-family:
+        Georgia,
+        serif;
+
       font-size: 20px;
+
       font-weight: 500;
+
       margin-top: 8px;
     }
 
+
     .quality-card p {
-      color: var(--muted);
+      color:
+        var(--muted);
+
       font-size: 10px;
+
       line-height: 1.55;
+
       margin-top: 5px;
     }
 
-    /* =========================
+
+    /* =========================================================
        FINAL CTA
-    ========================= */
+    ========================================================= */
 
     .final-cta {
-      padding: 100px 0;
-      background: var(--brown);
+      padding:
+        100px 0;
+
+      background:
+        var(--brown);
+
       color: white;
+
       text-align: center;
     }
 
+
     .final-cta h2 {
       max-width: 720px;
+
       margin: 0 auto;
-      font-family: Georgia, serif;
+
+      font-family:
+        Georgia,
+        serif;
+
       font-weight: 500;
-      font-size: clamp(38px, 9vw, 65px);
+
+      font-size:
+        clamp(
+          38px,
+          9vw,
+          65px
+        );
+
       line-height: 1.04;
+
       letter-spacing: -1.6px;
     }
 
+
     .final-cta p {
       max-width: 540px;
-      margin: 17px auto 27px;
-      color: rgba(255,255,255,0.70);
+
+      margin:
+        17px auto 27px;
+
+      color:
+        rgba(255,255,255,0.70);
+
       font-size: 14px;
+
       line-height: 1.75;
     }
 
-    /* =========================
+
+    /* =========================================================
        FOOTER
-    ========================= */
+    ========================================================= */
 
     footer {
-      padding: 48px 0 35px;
-      background: #211712;
+      padding:
+        48px 0 35px;
+
+      background:
+        #211712;
+
       color: white;
     }
 
+
     .footer-grid {
       display: grid;
+
       gap: 30px;
     }
 
+
     .footer-brand {
-      font-family: Georgia, serif;
+      font-family:
+        Georgia,
+        serif;
+
       font-size: 27px;
     }
 
+
     .footer-brand span {
       display: block;
-      font-family: Arial, sans-serif;
-      color: rgba(255,255,255,0.45);
+
+      font-family:
+        Arial,
+        sans-serif;
+
+      color:
+        rgba(255,255,255,0.45);
+
       font-size: 8px;
+
       text-transform: uppercase;
+
       letter-spacing: 2px;
+
       margin-top: 2px;
     }
 
+
     .footer-copy {
-      color: rgba(255,255,255,0.52);
+      color:
+        rgba(255,255,255,0.52);
+
       font-size: 11px;
+
       line-height: 1.7;
+
       max-width: 340px;
+
       margin-top: 10px;
     }
 
+
     .footer-links {
       display: grid;
-      grid-template-columns: repeat(2, 1fr);
+
+      grid-template-columns:
+        repeat(2,1fr);
+
       gap: 9px;
     }
 
+
     .footer-links a {
-      color: rgba(255,255,255,0.68);
+      color:
+        rgba(255,255,255,0.68);
+
       font-size: 11px;
     }
+
 
     .footer-links a:hover {
       color: white;
     }
 
+
     .footer-bottom {
       margin-top: 35px;
+
       padding-top: 17px;
-      border-top: 1px solid rgba(255,255,255,0.10);
-      color: rgba(255,255,255,0.38);
+
+      border-top:
+        1px solid
+        rgba(255,255,255,0.10);
+
+      color:
+        rgba(255,255,255,0.38);
+
       font-size: 9px;
+
       display: flex;
+
       flex-direction: column;
+
       gap: 5px;
     }
 
-    /* =========================
+
+    /* =========================================================
        WHATSAPP
-    ========================= */
+    ========================================================= */
 
     .whatsapp-float {
       position: fixed;
+
       right: 16px;
       bottom: 16px;
+
       z-index: 1200;
+
       width: 52px;
       height: 52px;
+
       border-radius: 50%;
-      background: #25d366;
+
+      background:
+        #25d366;
+
       display: flex;
+
       align-items: center;
+
       justify-content: center;
-      box-shadow: 0 8px 25px rgba(0,0,0,0.18);
+
+      box-shadow:
+        0 8px 25px
+        rgba(0,0,0,0.18);
     }
+
 
     .whatsapp-float svg {
       width: 27px;
       height: 27px;
+
       fill: white;
     }
 
-    /* =========================
+
+    /* =========================================================
        DESKTOP
-    ========================= */
+    ========================================================= */
 
     @media (min-width: 760px) {
 
       .container {
-        width: min(calc(100% - 60px), var(--max));
+        width:
+          min(
+            calc(100% - 60px),
+            var(--max)
+          );
       }
+
 
       .menu-btn {
         display: none;
       }
 
+
       .desktop-nav {
         display: flex;
       }
+
 
       .hero {
         min-height: 760px;
       }
 
+
       .hero-content {
-        width: min(calc(100% - 60px), var(--max));
+        width:
+          min(
+            calc(100% - 60px),
+            var(--max)
+          );
+
         padding-bottom: 75px;
       }
 
+
       .hero-actions {
         flex-direction: row;
+
         align-items: center;
+
         width: auto;
       }
+
 
       .btn {
         width: auto;
       }
 
+
       .intro {
-        padding: 120px 0 100px;
+        padding:
+          120px 0 100px;
       }
 
+
       .intro-grid {
-        grid-template-columns: 0.9fr 1.1fr;
+        grid-template-columns:
+          0.9fr 1.1fr;
+
         align-items: end;
       }
 
+
       .product-grid {
-        grid-template-columns: repeat(4, minmax(0, 1fr));
+        grid-template-columns:
+          repeat(4,minmax(0,1fr));
+
         gap: 18px;
       }
 
-      .dish-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
+
+      .india-atlas {
+        min-height: 540px;
       }
+
+
+      .india-map-wrap {
+        width: 280px;
+        height: 390px;
+      }
+
+
+      .india-map {
+        width: 210px;
+        height: 295px;
+      }
+
+
+      .india-map-wrap::before {
+        width: 350px;
+        height: 350px;
+      }
+
+
+      .india-map-wrap::after {
+        width: 395px;
+        height: 395px;
+      }
+
+
+      .region-node {
+        width: 145px;
+      }
+
+
+      .region-node.west {
+        left: 20px;
+      }
+
+
+      .region-node.east {
+        right: 20px;
+      }
+
+
+      .region-line.west-line {
+        left: 140px;
+        width: 105px;
+      }
+
+
+      .region-line.east-line {
+        right: 140px;
+        width: 105px;
+      }
+
+
+      .dish-grid {
+        grid-template-columns:
+          repeat(4,minmax(0,1fr));
+
+        gap: 12px;
+      }
+
+
+      .dish-card {
+        min-height: 205px;
+
+        padding: 17px;
+      }
+
+
+      .dish-name {
+        font-size: 21px;
+      }
+
 
       .recipe-layout {
-        grid-template-columns: 0.9fr 1.1fr;
+        grid-template-columns:
+          0.9fr 1.1fr;
       }
+
 
       .planner-grid {
-        grid-template-columns: 1.1fr 0.9fr;
+        grid-template-columns:
+          1.1fr 0.9fr;
+
         align-items: center;
       }
 
+
       .sourcing-grid {
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns:
+          1fr 1fr;
+
         align-items: center;
+
         gap: 65px;
       }
 
+
       .founder-grid {
-        grid-template-columns: 0.7fr 1.3fr;
+        grid-template-columns:
+          0.7fr 1.3fr;
+
         align-items: center;
+
         gap: 70px;
       }
 
+
       .quality-grid {
-        grid-template-columns: repeat(4, 1fr);
+        grid-template-columns:
+          repeat(4,1fr);
       }
 
+
       .footer-grid {
-        grid-template-columns: 1.3fr 0.7fr;
+        grid-template-columns:
+          1.3fr 0.7fr;
+
         align-items: start;
       }
 
+
       .footer-bottom {
         flex-direction: row;
+
         justify-content: space-between;
       }
+
     }
+
 
     @media (min-width: 1050px) {
 
-      .dish-grid {
-        grid-template-columns: repeat(4, minmax(0, 1fr));
-      }
-
-      .dish-card {
-        min-height: 230px;
-      }
-
       .signature-section {
-        padding-top: 120px;
+        padding-top: 115px;
       }
+
 
       .recipe-modal {
         padding: 35px;
       }
 
+
       .recipe-panel {
         margin: 25px auto;
       }
+
     }
+
+
+    /* =========================================================
+       ACCESSIBILITY / REDUCED MOTION
+    ========================================================= */
+
+    @media (prefers-reduced-motion: reduce) {
+
+      html {
+        scroll-behavior: auto;
+      }
+
+
+      *,
+      *::before,
+      *::after {
+        transition-duration: 0.01ms !important;
+      }
+
+    }
+
   </style>
 </head>
 
+
 <body>
 
-  <!-- =========================
+
+  <!-- =========================================================
        HEADER
-  ========================= -->
+  ========================================================= -->
 
   <header class="site-header">
+
     <div class="container nav">
 
-      <a href="index.html" class="logo">
+      <a
+        href="index.html"
+        class="logo"
+      >
         Dharoahar
-        <span>Adhish Dharoahar Pvt. Ltd.</span>
+
+        <span>
+          Adhish Dharoahar Pvt. Ltd.
+        </span>
       </a>
 
+
       <nav class="desktop-nav">
-        <a href="index.html">Home</a>
-        <a href="about.html">About Us</a>
-        <a href="products.html">Our Spices</a>
-        <a href="quality.html">Quality</a>
-        <a href="contact.html">Contact</a>
+
+        <a href="index.html">
+          Home
+        </a>
+
+        <a href="about.html">
+          About Us
+        </a>
+
+        <a href="products.html">
+          Our Spices
+        </a>
+
+        <a href="quality.html">
+          Quality
+        </a>
+
+        <a href="contact.html">
+          Contact
+        </a>
+
       </nav>
 
-      <button class="menu-btn" id="menuBtn" aria-label="Open menu">☰</button>
+
+      <button
+        type="button"
+        class="menu-btn"
+        id="menuBtn"
+        aria-label="Open menu"
+      >
+        ☰
+      </button>
+
     </div>
 
-    <div class="mobile-menu" id="mobileMenu">
-      <a href="index.html">Home</a>
-      <a href="about.html">About Us</a>
-      <a href="products.html">Our Spices</a>
-      <a href="quality.html">Quality</a>
-      <a href="contact.html">Contact</a>
+
+    <div
+      class="mobile-menu"
+      id="mobileMenu"
+    >
+
+      <a href="index.html">
+        Home
+      </a>
+
+      <a href="about.html">
+        About Us
+      </a>
+
+      <a href="products.html">
+        Our Spices
+      </a>
+
+      <a href="quality.html">
+        Quality
+      </a>
+
+      <a href="contact.html">
+        Contact
+      </a>
+
     </div>
+
   </header>
 
 
-  <!-- =========================
+  <!-- =========================================================
        HERO
-  ========================= -->
+  ========================================================= -->
 
   <section class="hero">
 
@@ -1408,70 +3005,94 @@
         Authentic Indian Spices
       </div>
 
+
       <h1>
         Rooted in tradition.<br>
         Made for today.
       </h1>
+
 
       <p>
         Whole spices and carefully prepared powders for kitchens
         that care about flavour, consistency and where their food begins.
       </p>
 
+
       <div class="hero-actions">
-        <a href="products.html" class="btn btn-primary">
+
+        <a
+          href="products.html"
+          class="btn btn-primary"
+        >
           Explore Our Spices
         </a>
 
-        <a href="#spice-signature" class="btn btn-secondary">
+
+        <a
+          href="#spice-signature"
+          class="btn btn-secondary"
+        >
           Discover Your Spice Signature →
         </a>
+
       </div>
 
     </div>
+
   </section>
 
 
-  <!-- =========================
+  <!-- =========================================================
        INTRO
-  ========================= -->
+  ========================================================= -->
 
   <section class="intro">
+
     <div class="container">
 
       <div class="intro-grid">
 
         <div>
-          <div class="eyebrow">The Dharoahar Approach</div>
+
+          <div class="eyebrow">
+            The Dharoahar Approach
+          </div>
+
 
           <h2>
             Good food starts long before the pan.
           </h2>
+
         </div>
 
+
         <div class="intro-copy">
+
           <p>
             Dharoahar brings together a focused collection of whole spices
             and powder spices for everyday Indian cooking, professional
             kitchens and food businesses.
           </p>
 
+
           <p style="margin-top:14px;">
             We keep the portfolio focused, the sourcing thoughtful and
             the product information clear — because a spice should add
             character to a dish without complicating the choice.
           </p>
+
         </div>
 
       </div>
 
     </div>
+
   </section>
 
 
-  <!-- =========================
+  <!-- =========================================================
        FEATURED PRODUCTS
-  ========================= -->
+  ========================================================= -->
 
   <section class="products-section">
 
@@ -1479,12 +3100,16 @@
 
       <div class="section-heading">
 
-        <div class="eyebrow">From the Dharoahar Pantry</div>
+        <div class="eyebrow">
+          From the Dharoahar Pantry
+        </div>
+
 
         <h2>
           Whole spices. Ground spices.<br>
           Indian flavour, thoughtfully selected.
         </h2>
+
 
         <p>
           Explore a growing collection of whole spices and powder spices
@@ -1496,220 +3121,591 @@
 
       <div class="product-grid">
 
-        <a href="clove.html" class="product-card">
+
+        <a
+          href="clove.html"
+          class="product-card"
+        >
+
           <div class="product-image">
-            <img src="clove.jpg" alt="Clove">
+
+            <img
+              src="clove.jpg"
+              alt="Clove"
+            >
+
           </div>
+
+
           <div class="product-info">
-            <h3>Clove</h3>
-            <div class="product-hindi">लौंग · Laung</div>
-            <span class="product-link">View Product →</span>
+
+            <h3>
+              Clove
+            </h3>
+
+            <div class="product-hindi">
+              लौंग · Laung
+            </div>
+
+            <span class="product-link">
+              View Product →
+            </span>
+
           </div>
+
         </a>
 
 
-        <a href="cardamom.html" class="product-card">
+        <a
+          href="cardamom.html"
+          class="product-card"
+        >
+
           <div class="product-image">
-            <img src="cardamom.jpg" alt="Green Cardamom">
+
+            <img
+              src="cardamom.jpg"
+              alt="Green Cardamom"
+            >
+
           </div>
+
+
           <div class="product-info">
-            <h3>Green Cardamom</h3>
-            <div class="product-hindi">हरी इलायची · Elaichi</div>
-            <span class="product-link">View Product →</span>
+
+            <h3>
+              Green Cardamom
+            </h3>
+
+            <div class="product-hindi">
+              हरी इलायची · Elaichi
+            </div>
+
+            <span class="product-link">
+              View Product →
+            </span>
+
           </div>
+
         </a>
 
 
-        <a href="cinnamon.html" class="product-card">
+        <a
+          href="cinnamon.html"
+          class="product-card"
+        >
+
           <div class="product-image">
-            <img src="cinnamon.jpg" alt="Cinnamon">
+
+            <img
+              src="cinnamon.jpg"
+              alt="Cinnamon"
+            >
+
           </div>
+
+
           <div class="product-info">
-            <h3>Cinnamon</h3>
-            <div class="product-hindi">दालचीनी · Dalchini</div>
-            <span class="product-link">View Product →</span>
+
+            <h3>
+              Cinnamon
+            </h3>
+
+            <div class="product-hindi">
+              दालचीनी · Dalchini
+            </div>
+
+            <span class="product-link">
+              View Product →
+            </span>
+
           </div>
+
         </a>
 
 
-        <a href="blackpepper.html" class="product-card">
+        <a
+          href="blackpepper.html"
+          class="product-card"
+        >
+
           <div class="product-image">
-            <img src="black-pepper.jpg" alt="Black Pepper">
+
+            <img
+              src="black-pepper.jpg"
+              alt="Black Pepper"
+            >
+
           </div>
+
+
           <div class="product-info">
-            <h3>Black Pepper</h3>
-            <div class="product-hindi">काली मिर्च · Kali Mirch</div>
-            <span class="product-link">View Product →</span>
+
+            <h3>
+              Black Pepper
+            </h3>
+
+            <div class="product-hindi">
+              काली मिर्च · Kali Mirch
+            </div>
+
+            <span class="product-link">
+              View Product →
+            </span>
+
           </div>
+
         </a>
 
 
-        <a href="cumin.html" class="product-card">
+        <a
+          href="cumin.html"
+          class="product-card"
+        >
+
           <div class="product-image">
-            <img src="cumin.jpg" alt="Cumin Seeds">
+
+            <img
+              src="cumin.jpg"
+              alt="Cumin Seeds"
+            >
+
           </div>
+
+
           <div class="product-info">
-            <h3>Cumin Seeds</h3>
-            <div class="product-hindi">जीरा · Jeera</div>
-            <span class="product-link">View Product →</span>
+
+            <h3>
+              Cumin Seeds
+            </h3>
+
+            <div class="product-hindi">
+              जीरा · Jeera
+            </div>
+
+            <span class="product-link">
+              View Product →
+            </span>
+
           </div>
+
         </a>
 
 
-        <a href="star-anise.html" class="product-card">
+        <a
+          href="star-anise.html"
+          class="product-card"
+        >
+
           <div class="product-image">
-            <img src="star-anise.png" alt="Star Anise">
+
+            <img
+              src="star-anise.png"
+              alt="Star Anise"
+            >
+
           </div>
+
+
           <div class="product-info">
-            <h3>Star Anise</h3>
-            <div class="product-hindi">चक्र फूल · Chakra Phool</div>
-            <span class="product-link">View Product →</span>
+
+            <h3>
+              Star Anise
+            </h3>
+
+            <div class="product-hindi">
+              चक्र फूल · Chakra Phool
+            </div>
+
+            <span class="product-link">
+              View Product →
+            </span>
+
           </div>
+
         </a>
 
 
-        <a href="degi-mirch.html" class="product-card">
+        <a
+          href="degi-mirch.html"
+          class="product-card"
+        >
+
           <div class="product-image">
-            <img src="degi-mirch.jpg" alt="Degi Mirch">
+
+            <img
+              src="degi-mirch.jpg"
+              alt="Degi Mirch"
+            >
+
           </div>
+
+
           <div class="product-info">
-            <h3>Degi Mirch</h3>
-            <div class="product-hindi">देगी मिर्च</div>
-            <span class="product-link">View Product →</span>
+
+            <h3>
+              Degi Mirch
+            </h3>
+
+            <div class="product-hindi">
+              देगी मिर्च
+            </div>
+
+            <span class="product-link">
+              View Product →
+            </span>
+
           </div>
+
         </a>
 
 
-        <a href="garam-masala.html" class="product-card">
+        <a
+          href="garam-masala.html"
+          class="product-card"
+        >
+
           <div class="product-image">
-            <img src="garam-masala.jpg" alt="Garam Masala">
+
+            <img
+              src="garam-masala.jpg"
+              alt="Garam Masala"
+            >
+
           </div>
+
+
           <div class="product-info">
-            <h3>Garam Masala</h3>
-            <div class="product-hindi">गरम मसाला</div>
-            <span class="product-link">View Product →</span>
+
+            <h3>
+              Garam Masala
+            </h3>
+
+            <div class="product-hindi">
+              गरम मसाला
+            </div>
+
+            <span class="product-link">
+              View Product →
+            </span>
+
           </div>
+
         </a>
 
       </div>
 
+
       <div style="margin-top:30px;">
-        <a href="products.html" class="btn" style="background:var(--brown);color:white;">
+
+        <a
+          href="products.html"
+          class="btn"
+          style="
+            background:var(--brown);
+            color:white;
+          "
+        >
           View All 20 Spices →
         </a>
+
       </div>
 
     </div>
+
   </section>
 
 
   <!-- =========================================================
-       DHAROAHAR SPICE SIGNATURE
-  ========================================================== -->
+       SPICE SIGNATURE
+  ========================================================= -->
 
-  <section class="signature-section" id="spice-signature">
+  <section
+    class="signature-section"
+    id="spice-signature"
+  >
 
     <div class="container">
 
+
       <div class="signature-intro">
 
-        <div class="eyebrow">The Dharoahar Spice Signature™</div>
+        <div class="eyebrow">
+          The Dharoahar Spice Signature™
+        </div>
+
 
         <h2>
           India has thousands of dishes.<br>
           Start with your region.
         </h2>
 
+
         <p>
-          Discover the spices behind popular and representative dishes
-          from North, East, West and South India. Choose a region,
-          choose your preference, then open any dish to see a simple
-          one-person kitchen reference.
+          Four regions. Hundreds of traditions.
+          Choose a direction and discover the spices
+          that shape its table.
         </p>
 
       </div>
 
 
-      <!-- REGION TABS -->
+      <!-- =====================================================
+           INDIA ATLAS
+      ====================================================== -->
 
-      <div class="region-tabs" id="regionTabs">
+      <div class="india-atlas">
 
-        <button class="region-tab active" data-region="north">
-          NORTH INDIA
+
+        <!-- NORTH -->
+
+        <button
+          type="button"
+          class="region-node north active"
+          data-region="north"
+          aria-label="Explore North India"
+        >
+
+          <span class="region-name">
+            NORTH
+          </span>
+
+          <span class="region-count">
+            08
+          </span>
+
+          <span class="region-sub">
+            dishes
+          </span>
+
         </button>
 
-        <button class="region-tab" data-region="east">
-          EAST INDIA
+
+        <!-- WEST -->
+
+        <button
+          type="button"
+          class="region-node west"
+          data-region="west"
+          aria-label="Explore West India"
+        >
+
+          <span class="region-name">
+            WEST
+          </span>
+
+          <span class="region-count">
+            08
+          </span>
+
+          <span class="region-sub">
+            dishes
+          </span>
+
         </button>
 
-        <button class="region-tab" data-region="west">
-          WEST INDIA
+
+        <!-- EAST -->
+
+        <button
+          type="button"
+          class="region-node east"
+          data-region="east"
+          aria-label="Explore East India"
+        >
+
+          <span class="region-name">
+            EAST
+          </span>
+
+          <span class="region-count">
+            08
+          </span>
+
+          <span class="region-sub">
+            dishes
+          </span>
+
         </button>
 
-        <button class="region-tab" data-region="south">
-          SOUTH INDIA
+
+        <!-- SOUTH -->
+
+        <button
+          type="button"
+          class="region-node south"
+          data-region="south"
+          aria-label="Explore South India"
+        >
+
+          <span class="region-name">
+            SOUTH
+          </span>
+
+          <span class="region-count">
+            08
+          </span>
+
+          <span class="region-sub">
+            dishes
+          </span>
+
         </button>
+
+
+        <!-- CONNECTING LINES -->
+
+        <span class="region-line north-line"></span>
+
+        <span class="region-line south-line"></span>
+
+        <span class="region-line west-line"></span>
+
+        <span class="region-line east-line"></span>
+
+
+        <!-- INDIA MAP -->
+
+        <div class="india-map-wrap">
+
+          <img
+            class="india-map"
+            src="https://upload.wikimedia.org/wikipedia/commons/8/84/India_states_and_union_territories_map.svg"
+            alt="Map of India showing states and union territories"
+          >
+
+
+          <div class="india-centre-label">
+
+            <strong>
+              INDIA
+            </strong>
+
+            <span>
+              spice atlas
+            </span>
+
+          </div>
+
+        </div>
 
       </div>
 
 
-      <!-- DIET FILTER -->
+      <div class="map-attribution">
+
+        India map:
+        <a
+          href="https://commons.wikimedia.org/wiki/File:India_states_and_union_territories_map.svg"
+          target="_blank"
+          rel="noopener"
+        >
+          Wikimedia Commons
+        </a>
+        · CC BY-SA 3.0
+
+      </div>
+
+
+      <!-- =====================================================
+           DIET FILTERS
+      ====================================================== -->
 
       <div class="diet-filters">
 
-        <button class="diet-filter active" data-diet="all">
+        <button
+          type="button"
+          class="diet-filter active"
+          data-diet="all"
+        >
           All
         </button>
 
-        <button class="diet-filter" data-diet="veg">
-          🟢 Veg
+
+        <button
+          type="button"
+          class="diet-filter"
+          data-diet="veg"
+        >
+          Vegetarian
         </button>
 
-        <button class="diet-filter" data-diet="nonveg">
-          🔴 Non-Veg
+
+        <button
+          type="button"
+          class="diet-filter"
+          data-diet="nonveg"
+        >
+          Non-Vegetarian
         </button>
 
-        <button class="diet-filter" data-diet="both">
-          🟢🔴 Both
+
+        <button
+          type="button"
+          class="diet-filter"
+          data-diet="both"
+        >
+          Both
         </button>
 
       </div>
 
 
-      <!-- DIET KEY -->
+      <!-- =====================================================
+           DIET KEY
+      ====================================================== -->
 
       <div class="diet-key">
 
         <span class="key-item">
-          <span class="diet-dot veg"></span>
+
+          <span class="diet-ring veg"></span>
+
           Vegetarian
+
         </span>
 
+
         <span class="key-item">
-          <span class="diet-dot nonveg"></span>
+
+          <span class="diet-ring nonveg"></span>
+
           Non-Vegetarian
+
         </span>
 
+
         <span class="key-item">
-          <span class="both-icon">
-            <span></span><span></span>
-          </span>
-          Vegetarian / Non-Vegetarian variants
+
+          <span class="diet-ring both"></span>
+
+          Both variants
+
         </span>
 
       </div>
 
 
-      <!-- DISHES ARE RENDERED HERE -->
+      <!-- =====================================================
+           DISH GRID
+      ====================================================== -->
 
-      <div class="dish-grid" id="dishGrid"></div>
+      <div
+        class="dish-grid"
+        id="dishGrid"
+      ></div>
 
 
       <div class="signature-note">
-        <strong>Kitchen note:</strong>
+
+        <strong>
+          Kitchen note:
+        </strong>
+
         Recipes shown here are Dharoahar's simplified kitchen references
         for one person. Household recipes vary by region, family and
         preference, so quantities can be adjusted to taste.
+
       </div>
 
     </div>
@@ -1719,25 +3715,43 @@
 
   <!-- =========================================================
        RECIPE MODAL
-  ========================================================== -->
+  ========================================================= -->
 
-  <div class="recipe-modal" id="recipeModal" aria-hidden="true">
+  <div
+    class="recipe-modal"
+    id="recipeModal"
+    aria-hidden="true"
+  >
 
-    <div class="recipe-panel" role="dialog" aria-modal="true" aria-labelledby="recipeTitle">
+    <div
+      class="recipe-panel"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="recipeTitle"
+    >
 
-      <button class="close-modal" id="closeRecipe" aria-label="Close recipe">
+
+      <button
+        type="button"
+        class="close-modal"
+        id="closeRecipe"
+        aria-label="Close recipe"
+      >
         ×
       </button>
 
+
       <div class="recipe-head">
 
-        <div class="eyebrow" id="recipeEyebrow">
+        <div class="eyebrow">
           Dharoahar Kitchen Reference
         </div>
+
 
         <h2 id="recipeTitle">
           Recipe
         </h2>
+
 
         <p id="recipeMeta">
           Serves 1
@@ -1752,17 +3766,32 @@
           Serves
         </span>
 
+
         <div class="serving-options">
 
-          <button class="serving-option active" data-serving="1">
+          <button
+            type="button"
+            class="serving-option active"
+            data-serving="1"
+          >
             1
           </button>
 
-          <button class="serving-option" data-serving="2">
+
+          <button
+            type="button"
+            class="serving-option"
+            data-serving="2"
+          >
             2
           </button>
 
-          <button class="serving-option" data-serving="4">
+
+          <button
+            type="button"
+            class="serving-option"
+            data-serving="4"
+          >
             4
           </button>
 
@@ -1775,18 +3804,24 @@
 
         <div class="recipe-layout">
 
+
           <div>
 
             <h3 class="recipe-section-title">
               Ingredients
             </h3>
 
-            <ul class="ingredient-list" id="ingredientList"></ul>
+
+            <ul
+              class="ingredient-list"
+              id="ingredientList"
+            ></ul>
 
           </div>
 
 
           <div>
+
 
             <div class="spice-profile">
 
@@ -1794,11 +3829,16 @@
                 Dharoahar Spice Profile
               </h3>
 
+
               <p>
                 The key Dharoahar spices used in this preparation.
               </p>
 
-              <div class="spice-links" id="spiceLinks"></div>
+
+              <div
+                class="spice-links"
+                id="spiceLinks"
+              ></div>
 
             </div>
 
@@ -1809,7 +3849,11 @@
                 Method
               </h3>
 
-              <ol class="method-list" id="methodList"></ol>
+
+              <ol
+                class="method-list"
+                id="methodList"
+              ></ol>
 
             </div>
 
@@ -1819,9 +3863,11 @@
 
 
         <div class="recipe-footnote">
+
           Quantities are indicative home-cooking references for the selected
           serving size. Salt, water and cooking time can vary with ingredients,
           equipment and personal preference.
+
         </div>
 
       </div>
@@ -1832,14 +3878,18 @@
 
 
   <!-- =========================================================
-       B2B SPICE CALCULATOR
-  ========================================================== -->
+       B2B CALCULATOR
+  ========================================================= -->
 
-  <section class="planner-section" id="business-planner">
+  <section
+    class="planner-section"
+    id="business-planner"
+  >
 
     <div class="container">
 
       <div class="planner-grid">
+
 
         <div class="planner-copy">
 
@@ -1847,9 +3897,11 @@
             For Food Businesses
           </div>
 
+
           <h2>
             How Much Spice Does Your Kitchen Need?
           </h2>
+
 
           <p>
             Tell us how many meals you serve and your approximate spice
@@ -1862,19 +3914,40 @@
 
         <div class="calculator">
 
+
           <div class="calc-row">
 
             <label for="businessType">
               Business Type
             </label>
 
+
             <select id="businessType">
-              <option value="Cloud Kitchen">Cloud Kitchen</option>
-              <option value="Restaurant">Restaurant</option>
-              <option value="QSR">QSR</option>
-              <option value="Hotel">Hotel</option>
-              <option value="Caterer">Caterer</option>
-              <option value="Food Manufacturer">Food Manufacturer</option>
+
+              <option value="Cloud Kitchen">
+                Cloud Kitchen
+              </option>
+
+              <option value="Restaurant">
+                Restaurant
+              </option>
+
+              <option value="QSR">
+                QSR
+              </option>
+
+              <option value="Hotel">
+                Hotel
+              </option>
+
+              <option value="Caterer">
+                Caterer
+              </option>
+
+              <option value="Food Manufacturer">
+                Food Manufacturer
+              </option>
+
             </select>
 
           </div>
@@ -1885,6 +3958,7 @@
             <label for="outlets">
               Number of Outlets
             </label>
+
 
             <input
               type="number"
@@ -1903,6 +3977,7 @@
               Meals / Plates per Month
             </label>
 
+
             <input
               type="number"
               id="meals"
@@ -1918,6 +3993,7 @@
             <label for="usage">
               Average Spice Usage per Plate (grams)
             </label>
+
 
             <input
               type="number"
@@ -1937,6 +4013,7 @@
               Wastage / Safety Buffer
             </label>
 
+
             <input
               type="number"
               id="buffer"
@@ -1949,18 +4026,27 @@
           </div>
 
 
-          <button class="calc-button" id="calculateBtn">
+          <button
+            type="button"
+            class="calc-button"
+            id="calculateBtn"
+          >
             Calculate My Requirement →
           </button>
 
 
-          <div class="calc-results" id="calcResults">
+          <div
+            class="calc-results"
+            id="calcResults"
+          >
+
 
             <div class="result-main">
 
               <span>
                 Estimated Monthly Requirement
               </span>
+
 
               <strong id="monthlyResult">
                 0 kg
@@ -1971,11 +4057,13 @@
 
             <div class="result-grid">
 
+
               <div class="result-box">
 
                 <span>
                   Annual Requirement
                 </span>
+
 
                 <strong id="annualResult">
                   0 kg
@@ -1990,6 +4078,7 @@
                   Per Outlet / Month
                 </span>
 
+
                 <strong id="outletResult">
                   0 kg
                 </strong>
@@ -2003,19 +4092,43 @@
               Indicative Procurement Split
             </div>
 
-            <div class="split-row">
-              <span>Whole Spices</span>
-              <strong id="wholeResult">0 kg</strong>
-            </div>
 
             <div class="split-row">
-              <span>Chilli Products</span>
-              <strong id="chilliResult">0 kg</strong>
+
+              <span>
+                Whole Spices
+              </span>
+
+              <strong id="wholeResult">
+                0 kg
+              </strong>
+
             </div>
 
+
             <div class="split-row">
-              <span>Powder Spices</span>
-              <strong id="powderResult">0 kg</strong>
+
+              <span>
+                Chilli Products
+              </span>
+
+              <strong id="chilliResult">
+                0 kg
+              </strong>
+
+            </div>
+
+
+            <div class="split-row">
+
+              <span>
+                Powder Spices
+              </span>
+
+              <strong id="powderResult">
+                0 kg
+              </strong>
+
             </div>
 
 
@@ -2033,9 +4146,11 @@
 
 
           <div class="calculator-note">
+
             This is a planning tool, not an industry-standard consumption
             benchmark. Actual requirements vary by menu, recipe,
             portion size, preparation method and kitchen format.
+
           </div>
 
         </div>
@@ -2047,9 +4162,9 @@
   </section>
 
 
-  <!-- =========================
+  <!-- =========================================================
        SOURCING
-  ========================= -->
+  ========================================================= -->
 
   <section class="sourcing">
 
@@ -2057,8 +4172,14 @@
 
       <div class="sourcing-grid">
 
+
         <div class="sourcing-image">
-          <img src="cumin.jpg" alt="Indian cumin seeds">
+
+          <img
+            src="cumin.jpg"
+            alt="Indian cumin seeds"
+          >
+
         </div>
 
 
@@ -2068,9 +4189,11 @@
             Thoughtful Sourcing
           </div>
 
+
           <h2>
             Know what you're cooking with.
           </h2>
+
 
           <p>
             Dharoahar's portfolio is built around clearly identified
@@ -2078,21 +4201,46 @@
             approach to sourcing.
           </p>
 
+
           <div class="sourcing-points">
 
-            <div class="source-point">
-              <strong>Whole & Powder</strong>
-              <span>A focused range covering everyday Indian cooking.</span>
-            </div>
 
             <div class="source-point">
-              <strong>Product Information</strong>
-              <span>Clear names, culinary uses and available origin details.</span>
+
+              <strong>
+                Whole & Powder
+              </strong>
+
+              <span>
+                A focused range covering everyday Indian cooking.
+              </span>
+
             </div>
 
+
             <div class="source-point">
-              <strong>Built for Business</strong>
-              <span>Designed for both households and food-service requirements.</span>
+
+              <strong>
+                Product Information
+              </strong>
+
+              <span>
+                Clear names, culinary uses and available origin details.
+              </span>
+
+            </div>
+
+
+            <div class="source-point">
+
+              <strong>
+                Built for Business
+              </strong>
+
+              <span>
+                Designed for both households and food-service requirements.
+              </span>
+
             </div>
 
           </div>
@@ -2106,9 +4254,9 @@
   </section>
 
 
-  <!-- =========================
+  <!-- =========================================================
        FOUNDER
-  ========================= -->
+  ========================================================= -->
 
   <section class="founder">
 
@@ -2116,12 +4264,15 @@
 
       <div class="founder-grid">
 
+
         <div class="founder-photo">
+
           <img
             src="founder.jpg"
             alt="Founder of Dharoahar"
             onerror="this.style.display='none';"
           >
+
         </div>
 
 
@@ -2131,9 +4282,11 @@
             The Story Behind Dharoahar
           </div>
 
+
           <h2>
             Building a spice business around trust.
           </h2>
+
 
           <p>
             Dharoahar was created with a simple belief:
@@ -2141,11 +4294,13 @@
             the same attention we give to the food we make with them.
           </p>
 
+
           <p>
             The brand is being built around a focused range,
             thoughtful sourcing and a long-term approach to
             quality, documentation and customer relationships.
           </p>
+
 
           <div class="founder-sign">
             — The Dharoahar Team
@@ -2160,13 +4315,14 @@
   </section>
 
 
-  <!-- =========================
+  <!-- =========================================================
        QUALITY
-  ========================= -->
+  ========================================================= -->
 
   <section class="quality">
 
     <div class="container">
+
 
       <div class="section-heading">
 
@@ -2174,10 +4330,12 @@
           Quality & Documentation
         </div>
 
+
         <h2>
           Built on quality.<br>
           Backed by documentation.
         </h2>
+
 
         <p>
           Dharoahar maintains documented registrations and quality
@@ -2189,39 +4347,84 @@
 
       <div class="quality-grid">
 
-        <a href="quality.html" class="quality-card">
-          <span>Food Business</span>
-          <h3>FSSAI</h3>
+
+        <a
+          href="quality.html"
+          class="quality-card"
+        >
+
+          <span>
+            Food Business
+          </span>
+
+          <h3>
+            FSSAI
+          </h3>
+
           <p>
             Central License
           </p>
+
         </a>
 
 
-        <a href="quality.html" class="quality-card">
-          <span>Export</span>
-          <h3>IEC</h3>
+        <a
+          href="quality.html"
+          class="quality-card"
+        >
+
+          <span>
+            Export
+          </span>
+
+          <h3>
+            IEC
+          </h3>
+
           <p>
             Importer-Exporter Code
           </p>
+
         </a>
 
 
-        <a href="quality.html" class="quality-card">
-          <span>Quality Management</span>
-          <h3>ISO 9001:2015</h3>
+        <a
+          href="quality.html"
+          class="quality-card"
+        >
+
+          <span>
+            Quality Management
+          </span>
+
+          <h3>
+            ISO 9001:2015
+          </h3>
+
           <p>
             Quality Management System
           </p>
+
         </a>
 
 
-        <a href="quality.html" class="quality-card">
-          <span>Compliance</span>
-          <h3>FDA</h3>
+        <a
+          href="quality.html"
+          class="quality-card"
+        >
+
+          <span>
+            Compliance
+          </span>
+
+          <h3>
+            FDA
+          </h3>
+
           <p>
             Certificate of Compliance
           </p>
+
         </a>
 
       </div>
@@ -2231,28 +4434,36 @@
   </section>
 
 
-  <!-- =========================
+  <!-- =========================================================
        FINAL CTA
-  ========================= -->
+  ========================================================= -->
 
   <section class="final-cta">
 
     <div class="container">
 
+
       <div class="eyebrow">
         Dharoahar
       </div>
 
+
       <h2>
         Authentic Indian Spices, Sourced with Care.
       </h2>
+
 
       <p>
         Looking for spices for your home, restaurant, food business
         or distribution requirement? Let's talk.
       </p>
 
-      <div class="hero-actions" style="justify-content:center;">
+
+      <div
+        class="hero-actions"
+        style="justify-content:center;"
+      >
+
 
         <a
           href="https://wa.me/918603824415?text=Hello%20Dharoahar%2C%20I%20would%20like%20to%20know%20more%20about%20your%20spices."
@@ -2262,6 +4473,7 @@
         >
           WhatsApp Us
         </a>
+
 
         <a
           href="mailto:amanadhish@dharoahar.com"
@@ -2277,25 +4489,35 @@
   </section>
 
 
-  <!-- =========================
+  <!-- =========================================================
        FOOTER
-  ========================= -->
+  ========================================================= -->
 
   <footer>
 
     <div class="container">
 
+
       <div class="footer-grid">
+
 
         <div>
 
           <div class="footer-brand">
+
             Dharoahar
-            <span>Adhish Dharoahar Pvt. Ltd.</span>
+
+            <span>
+              Adhish Dharoahar Pvt. Ltd.
+            </span>
+
           </div>
 
+
           <div class="footer-copy">
+
             Authentic Indian spices for homes, kitchens and food businesses.
+
           </div>
 
         </div>
@@ -2303,12 +4525,29 @@
 
         <div class="footer-links">
 
-          <a href="index.html">Home</a>
-          <a href="about.html">About Us</a>
-          <a href="products.html">Our Spices</a>
-          <a href="quality.html">Quality</a>
-          <a href="contact.html">Contact</a>
-          <a href="privacy.html">Privacy</a>
+          <a href="index.html">
+            Home
+          </a>
+
+          <a href="about.html">
+            About Us
+          </a>
+
+          <a href="products.html">
+            Our Spices
+          </a>
+
+          <a href="quality.html">
+            Quality
+          </a>
+
+          <a href="contact.html">
+            Contact
+          </a>
+
+          <a href="privacy.html">
+            Privacy
+          </a>
 
         </div>
 
@@ -2321,6 +4560,7 @@
           © 2026 Dharoahar. All rights reserved.
         </span>
 
+
         <span>
           Adhish Dharoahar Pvt. Ltd.
         </span>
@@ -2332,9 +4572,9 @@
   </footer>
 
 
-  <!-- =========================
-       WHATSAPP FLOAT
-  ========================= -->
+  <!-- =========================================================
+       WHATSAPP
+  ========================================================= -->
 
   <a
     class="whatsapp-float"
@@ -2344,8 +4584,13 @@
     aria-label="Chat with Dharoahar on WhatsApp"
   >
 
-    <svg viewBox="0 0 32 32" aria-hidden="true">
+    <svg
+      viewBox="0 0 32 32"
+      aria-hidden="true"
+    >
+
       <path d="M16.02 3C8.84 3 3 8.82 3 16c0 2.29.6 4.44 1.65 6.31L3 29l6.86-1.61A12.93 12.93 0 0 0 16.02 29C23.19 29 29 23.18 29 16S23.19 3 16.02 3Zm0 23.63c-1.94 0-3.84-.52-5.49-1.5l-.39-.23-4.07.96.97-3.97-.25-.41A10.96 10.96 0 1 1 16.02 26.63Zm6.02-8.21c-.33-.17-1.95-.96-2.25-1.07-.3-.11-.52-.17-.74.17-.22.33-.85 1.07-1.04 1.29-.19.22-.38.25-.71.08-.33-.17-1.39-.51-2.65-1.63-.98-.87-1.64-1.94-1.83-2.27-.19-.33-.02-.51.14-.68.15-.15.33-.38.49-.57.16-.19.22-.33.33-.55.11-.22.05-.41-.03-.58-.08-.17-.74-1.79-1.01-2.45-.27-.65-.54-.56-.74-.57h-.63c-.22 0-.58.08-.88.41-.3.33-1.15 1.12-1.15 2.74s1.18 3.18 1.35 3.4c.16.22 2.31 3.53 5.6 4.95.78.34 1.39.54 1.87.69.79.25 1.51.21 2.08.13.64-.1 1.95-.8 2.22-1.57.27-.77.27-1.43.19-1.57-.08-.14-.3-.22-.63-.39Z"/>
+
     </svg>
 
   </a>
@@ -2353,44 +4598,66 @@
 
   <!-- =========================================================
        JAVASCRIPT
-  ========================================================== -->
+  ========================================================= -->
 
   <script>
 
-    /* =========================
+
+    /* =========================================================
        MOBILE MENU
-    ========================= */
+    ========================================================= */
 
-    const menuBtn = document.getElementById("menuBtn");
-    const mobileMenu = document.getElementById("mobileMenu");
+    const menuBtn =
+      document.getElementById("menuBtn");
 
-    menuBtn.addEventListener("click", function () {
-      mobileMenu.classList.toggle("open");
-    });
 
-    document.querySelectorAll(".mobile-menu a").forEach(function(link) {
-      link.addEventListener("click", function() {
-        mobileMenu.classList.remove("open");
+    const mobileMenu =
+      document.getElementById("mobileMenu");
+
+
+    menuBtn.addEventListener(
+      "click",
+      function() {
+
+        mobileMenu.classList.toggle("open");
+
+      }
+    );
+
+
+    document
+      .querySelectorAll(".mobile-menu a")
+      .forEach(function(link) {
+
+        link.addEventListener(
+          "click",
+          function() {
+
+            mobileMenu.classList.remove("open");
+
+          }
+        );
+
       });
-    });
 
 
     /* =========================================================
-       SPICE SIGNATURE DATA
+       RECIPE DATA
     ========================================================= */
 
     const recipes = {
 
-      /* =========================
+
+      /* =======================================================
          NORTH INDIA
-      ========================= */
+      ======================================================= */
 
       north: [
 
         {
           id: "dal-makhani",
           name: "Dal Makhani",
-          state: "Punjab / North India",
+          state: "Punjab",
           type: "veg",
           description: "Slow-cooked black lentils with a rich, warming spice base.",
           spices: [
@@ -2425,7 +4692,7 @@
         {
           id: "chole",
           name: "Chole",
-          state: "Punjab / North India",
+          state: "Punjab",
           type: "veg",
           description: "Spiced chickpeas with a deep, aromatic masala.",
           spices: [
@@ -2450,7 +4717,7 @@
             "Heat oil and temper cumin seeds.",
             "Add onion and cook until golden.",
             "Add ginger-garlic and cook briefly.",
-            "Add tomato and the powdered spices. Cook until the masala thickens.",
+            "Add tomato and powdered spices. Cook until the masala thickens.",
             "Add chickpeas with a little cooking water.",
             "Simmer for 10–12 minutes and finish with garam masala."
           ]
@@ -2516,9 +4783,9 @@
           ],
           method: [
             "Melt butter and gently temper cumin seeds.",
-            "Add ginger-garlic and cook for 30–40 seconds.",
+            "Add ginger-garlic and cook briefly.",
             "Add tomato puree, Kashmiri Mirch and salt.",
-            "Cook until the sauce thickens and the raw tomato aroma reduces.",
+            "Cook until the sauce thickens.",
             "Add paneer and a little water. Simmer gently.",
             "Finish with cream and garam masala."
           ]
@@ -2528,7 +4795,7 @@
         {
           id: "aloo-paratha",
           name: "Aloo Paratha",
-          state: "Punjab / North India",
+          state: "Punjab",
           type: "veg",
           description: "Stuffed whole-wheat flatbread with a cumin-spiced potato filling.",
           spices: [
@@ -2540,17 +4807,17 @@
             { name: "Boiled potato", qty: 90, unit: "g" },
             { name: "Cumin Seeds", qty: 0.35, unit: "tsp" },
             { name: "Red Chilli Powder", qty: 0.2, unit: "tsp" },
-            { name: "Green chilli, chopped", qty: 1, unit: "small" },
+            { name: "Green chilli", qty: 1, unit: "small" },
             { name: "Coriander leaves", qty: 1, unit: "tbsp" },
             { name: "Oil or ghee", qty: 8, unit: "ml" },
             { name: "Salt", qty: null, unit: "to taste" }
           ],
           method: [
-            "Knead the flour with water into a soft dough and rest it.",
+            "Knead flour into a soft dough and rest it.",
             "Mash potato and mix with cumin, chilli, coriander and salt.",
-            "Stuff a portion of dough with the potato mixture and seal.",
+            "Stuff the dough with the potato mixture.",
             "Roll gently into a round paratha.",
-            "Cook on a hot tawa, applying oil or ghee on both sides.",
+            "Cook on a hot tawa with oil or ghee.",
             "Serve hot with curd or pickle."
           ]
         },
@@ -2581,7 +4848,7 @@
           ],
           method: [
             "Marinate chicken with yogurt, ginger-garlic, Kashmiri Mirch and salt.",
-            "Cook the chicken in a hot pan or oven until lightly charred and cooked.",
+            "Cook chicken until lightly charred and cooked.",
             "Heat butter and add tomato puree.",
             "Add cumin powder and simmer until the sauce thickens.",
             "Add chicken and a little water. Simmer for 5–7 minutes.",
@@ -2617,10 +4884,10 @@
           method: [
             "Heat oil and gently bloom cinnamon, clove and cardamom.",
             "Add lamb and sear until lightly browned.",
-            "Lower the heat and add yogurt gradually while stirring.",
+            "Lower heat and add yogurt gradually.",
             "Add Kashmiri Mirch, fennel and ginger powder.",
             "Add water, cover and cook until the lamb becomes tender.",
-            "Adjust salt and simmer uncovered briefly to concentrate the gravy."
+            "Simmer uncovered briefly to concentrate the gravy."
           ]
         },
 
@@ -2648,10 +4915,10 @@
             { name: "Salt", qty: null, unit: "to taste" }
           ],
           method: [
-            "Make deep cuts in the chicken so the marinade can penetrate.",
+            "Make deep cuts in the chicken.",
             "Mix yogurt, lemon, ginger-garlic and spices.",
-            "Coat the chicken thoroughly and marinate for at least 30 minutes.",
-            "Cook in a very hot oven, grill or air fryer until cooked and lightly charred.",
+            "Coat chicken thoroughly and marinate.",
+            "Cook in a very hot oven, grill or air fryer.",
             "Brush lightly with oil during cooking if needed.",
             "Rest for a few minutes before serving."
           ]
@@ -2660,9 +4927,9 @@
       ],
 
 
-      /* =========================
+      /* =======================================================
          EAST INDIA
-      ========================= */
+      ======================================================= */
 
       east: [
 
@@ -2687,12 +4954,12 @@
             { name: "Salt", qty: null, unit: "to taste" }
           ],
           method: [
-            "Knead maida with a little oil, salt and water into a firm dough.",
+            "Knead maida into a firm dough.",
             "Rest the dough and divide into small balls.",
             "Roll into small discs and deep-fry until puffed.",
-            "For aloo dum, temper cumin seeds in oil.",
-            "Add potatoes, ginger powder, chilli and salt with a splash of water.",
-            "Cook until the potatoes are coated in the masala and serve with luchi."
+            "Temper cumin seeds in oil.",
+            "Add potatoes, ginger powder, chilli and salt with water.",
+            "Cook until coated in masala and serve with luchi."
           ]
         },
 
@@ -2720,12 +4987,12 @@
             { name: "Salt", qty: null, unit: "to taste" }
           ],
           method: [
-            "Cook chana dal until soft but still holding its shape.",
-            "Heat oil or ghee and temper cumin, fennel and cinnamon.",
+            "Cook chana dal until soft but holding its shape.",
+            "Temper cumin, fennel and cinnamon.",
             "Add green chilli and grated coconut.",
             "Add cooked dal and a little water.",
             "Season with salt and a small pinch of sugar.",
-            "Simmer for 5–7 minutes and serve."
+            "Simmer for 5–7 minutes."
           ]
         },
 
@@ -2749,11 +5016,11 @@
             { name: "Salt", qty: null, unit: "to taste" }
           ],
           method: [
-            "Grind soaked poppy seeds with a little water into a smooth paste.",
+            "Grind soaked poppy seeds with water into a smooth paste.",
             "Heat mustard oil and add cumin seeds.",
             "Add potatoes and cook until lightly golden.",
             "Add poppy paste, green chilli and salt.",
-            "Add a small amount of water, cover and cook until potatoes are tender.",
+            "Cover and cook until potatoes are tender.",
             "Finish with a little mustard oil if desired."
           ]
         },
@@ -2781,12 +5048,12 @@
             { name: "Salt", qty: null, unit: "to taste" }
           ],
           method: [
-            "Wash the dal and combine with vegetables, tomato and turmeric.",
-            "Pressure-cook or simmer until the dal and vegetables are tender.",
+            "Wash dal and combine with vegetables, tomato and turmeric.",
+            "Cook until dal and vegetables are tender.",
             "Heat oil or ghee and temper cumin seeds.",
-            "Add ginger powder and immediately pour the tempering over the dal.",
-            "Adjust water and salt to reach a light stew-like consistency.",
-            "Simmer for a few minutes before serving."
+            "Add ginger powder and pour tempering over the dal.",
+            "Adjust water and salt.",
+            "Simmer briefly before serving."
           ]
         },
 
@@ -2812,12 +5079,12 @@
             { name: "Salt", qty: null, unit: "to taste" }
           ],
           method: [
-            "Lightly coat the fish with turmeric and salt.",
-            "Heat mustard oil and briefly sear the fish on both sides.",
-            "Grind soaked mustard seeds with a little water.",
-            "Add the mustard paste, chilli and a little water to the pan.",
-            "Return the fish and simmer gently until cooked.",
-            "Finish with a few drops of mustard oil and serve with rice."
+            "Coat fish with turmeric and salt.",
+            "Heat mustard oil and lightly sear the fish.",
+            "Grind soaked mustard seeds with water.",
+            "Add mustard paste, chilli and water to the pan.",
+            "Return fish and simmer gently.",
+            "Finish with a few drops of mustard oil."
           ]
         },
 
@@ -2844,12 +5111,12 @@
             { name: "Salt", qty: null, unit: "to taste" }
           ],
           method: [
-            "Rub fish lightly with turmeric and salt.",
-            "Heat mustard oil and lightly fry the fish. Remove.",
+            "Rub fish with turmeric and salt.",
+            "Heat mustard oil and lightly fry fish. Remove.",
             "Temper cumin seeds in the same pan.",
-            "Add potato and tomato with remaining turmeric and ginger powder.",
-            "Add water and cook until the potato is nearly tender.",
-            "Return the fish and simmer gently until cooked."
+            "Add potato and tomato with turmeric and ginger powder.",
+            "Add water and cook until potato is nearly tender.",
+            "Return fish and simmer gently."
           ]
         },
 
@@ -2882,9 +5149,9 @@
             "Heat oil and bloom cinnamon, clove and cardamom.",
             "Add onions and cook until deeply golden.",
             "Add mutton and sear well.",
-            "Add yogurt and cumin powder while stirring continuously.",
-            "Add potato and a little water, cover and cook until tender.",
-            "Continue cooking uncovered until the masala becomes thick and glossy."
+            "Add yogurt and cumin powder while stirring.",
+            "Add potato and water, cover and cook until tender.",
+            "Continue cooking uncovered until the masala becomes thick."
           ]
         },
 
@@ -2911,9 +5178,9 @@
           method: [
             "Place cooked rice in a bowl and add water.",
             "Mix in curd and salt.",
-            "Lightly temper mustard and cumin seeds.",
-            "Add the tempering and green chilli.",
-            "Allow the rice to rest chilled or at room temperature depending on preference.",
+            "Temper mustard and cumin seeds.",
+            "Add tempering and green chilli.",
+            "Allow rice to rest chilled or at room temperature.",
             "Serve as a simple rice-based meal accompaniment."
           ]
         }
@@ -2921,9 +5188,9 @@
       ],
 
 
-      /* =========================
+      /* =======================================================
          WEST INDIA
-      ========================= */
+      ======================================================= */
 
       west: [
 
@@ -2950,11 +5217,11 @@
             { name: "Salt", qty: null, unit: "to taste" }
           ],
           method: [
-            "Boil the vegetables until soft and mash them.",
+            "Boil vegetables until soft and mash them.",
             "Heat butter and temper cumin seeds.",
             "Add onion and tomato and cook until soft.",
             "Add chilli powder and garam masala.",
-            "Add mashed vegetables and cook while mashing further.",
+            "Add mashed vegetables and cook while mashing.",
             "Toast pav with butter and serve hot."
           ]
         },
@@ -2983,9 +5250,9 @@
           ],
           method: [
             "Mash potato and mix with cumin, turmeric, chilli and salt.",
-            "Shape into one large or two small balls.",
-            "Make a thick besan batter with water and salt.",
-            "Dip the potato mixture into the batter.",
+            "Shape into balls.",
+            "Make a thick besan batter.",
+            "Dip potato mixture into batter.",
             "Deep-fry until golden.",
             "Place inside pav with chutney and serve."
           ]
@@ -3017,8 +5284,8 @@
           method: [
             "Heat oil and temper cumin seeds.",
             "Cook onion until soft, then add tomato.",
-            "Add coriander and chilli powder and cook the masala.",
-            "Add sprouts and enough water for a light gravy.",
+            "Add coriander and chilli powder.",
+            "Add sprouts and water for a light gravy.",
             "Simmer for 8–10 minutes.",
             "Serve with pav and fresh onion."
           ]
@@ -3046,12 +5313,12 @@
             { name: "Salt", qty: null, unit: "to taste" }
           ],
           method: [
-            "Whisk besan, curd, water, lemon juice and salt into a smooth batter.",
-            "Just before steaming, mix in fruit salt.",
-            "Pour into a greased steaming tray.",
-            "Steam until a toothpick comes out clean.",
-            "Temper mustard and cumin seeds in a little oil.",
-            "Pour the tempering over the dhokla and cut into pieces."
+            "Whisk besan, curd, water, lemon juice and salt.",
+            "Mix in fruit salt just before steaming.",
+            "Pour into a greased tray.",
+            "Steam until cooked.",
+            "Temper mustard and cumin seeds in oil.",
+            "Pour over dhokla and cut into pieces."
           ]
         },
 
@@ -3077,11 +5344,11 @@
             { name: "Salt", qty: null, unit: "to taste" }
           ],
           method: [
-            "Prepare a coarse herb and spice mixture with coriander and spices.",
-            "Coat the vegetables with the mixture.",
-            "Heat oil and gently cook the vegetables in layers.",
+            "Prepare a coarse herb and spice mixture.",
+            "Coat vegetables with the mixture.",
+            "Heat oil and gently cook vegetables.",
             "Add a little water and cover.",
-            "Cook on low heat until the vegetables are tender.",
+            "Cook until vegetables are tender.",
             "Gently mix before serving."
           ]
         },
@@ -3107,11 +5374,11 @@
             { name: "Salt", qty: null, unit: "to taste" }
           ],
           method: [
-            "Knead wheat flour with salt, ghee and water into a firm dough.",
-            "Shape into small balls and bake until cooked and browned.",
-            "Cook the dal until soft and temper with cumin.",
-            "Add garam masala and salt to the dal.",
-            "Crumble one baati and mix with ghee and jaggery for a simple churma.",
+            "Knead wheat flour with salt, ghee and water.",
+            "Shape into small balls and bake until cooked.",
+            "Cook dal until soft and temper with cumin.",
+            "Add garam masala and salt.",
+            "Crumble one baati with ghee and jaggery for churma.",
             "Serve baati with dal and churma."
           ]
         },
@@ -3141,10 +5408,10 @@
           ],
           method: [
             "Rub fish with turmeric and salt.",
-            "Blend coconut milk with tomato and the spices.",
-            "Heat oil and gently cook the blended mixture.",
-            "Add tamarind and adjust the consistency with water.",
-            "Add fish and simmer gently until cooked.",
+            "Blend coconut milk with tomato and spices.",
+            "Heat oil and gently cook the mixture.",
+            "Add tamarind and adjust consistency.",
+            "Add fish and simmer until cooked.",
             "Serve with rice."
           ]
         },
@@ -3173,10 +5440,10 @@
             { name: "Salt", qty: null, unit: "to taste" }
           ],
           method: [
-            "Lightly season prawns with turmeric and salt.",
-            "Prepare a coconut-based curry with tomato and spices.",
-            "Bring the curry to a gentle simmer.",
-            "Add prawns and cook only until just done.",
+            "Season prawns with turmeric and salt.",
+            "Prepare coconut-based curry with tomato and spices.",
+            "Bring curry to a gentle simmer.",
+            "Add prawns and cook until just done.",
             "Add tamarind and adjust seasoning.",
             "Serve immediately with rice."
           ]
@@ -3185,9 +5452,9 @@
       ],
 
 
-      /* =========================
+      /* =======================================================
          SOUTH INDIA
-      ========================= */
+      ======================================================= */
 
       south: [
 
@@ -3215,9 +5482,9 @@
           method: [
             "Heat oil and temper mustard and cumin seeds.",
             "Add onion and cook until soft.",
-            "Add potato, turmeric and salt and mix.",
-            "Heat a flat tawa and spread dosa batter thinly.",
-            "Cook until crisp and place potato filling inside.",
+            "Add potato, turmeric and salt.",
+            "Spread dosa batter thinly on a hot tawa.",
+            "Cook until crisp and add potato filling.",
             "Fold and serve hot."
           ]
         },
@@ -3245,12 +5512,12 @@
             { name: "Salt", qty: null, unit: "to taste" }
           ],
           method: [
-            "Steam the idli batter in idli moulds until cooked.",
-            "Cook the toor dal until soft.",
+            "Steam idli batter until cooked.",
+            "Cook toor dal until soft.",
             "Add vegetables, turmeric and water and simmer.",
             "Temper cumin seeds in oil.",
-            "Add chilli powder to the tempering and pour into the sambar.",
-            "Serve hot sambar with steamed idli."
+            "Add chilli powder to the tempering.",
+            "Serve hot sambar with idli."
           ]
         },
 
@@ -3277,12 +5544,12 @@
             { name: "Salt", qty: null, unit: "to taste" }
           ],
           method: [
-            "Cook vegetables with turmeric and enough water.",
+            "Cook vegetables with turmeric and water.",
             "Add cooked dal and coriander powder.",
-            "Simmer until the vegetables are tender.",
-            "Temper cumin seeds in oil and add to the mixture.",
-            "Mix with cooked rice.",
-            "Adjust consistency and seasoning before serving."
+            "Simmer until vegetables are tender.",
+            "Temper cumin seeds in oil.",
+            "Mix the preparation with cooked rice.",
+            "Adjust consistency and seasoning."
           ]
         },
 
@@ -3309,12 +5576,12 @@
             { name: "Salt", qty: null, unit: "to taste" }
           ],
           method: [
-            "Cool the cooked rice slightly so the grains remain separate.",
+            "Cool cooked rice slightly.",
             "Heat oil and temper mustard and cumin seeds.",
             "Add green chilli and turmeric.",
-            "Turn off the heat and add lemon juice.",
-            "Mix the tempering gently into the rice.",
-            "Rest for a few minutes before serving."
+            "Turn off heat and add lemon juice.",
+            "Mix the tempering into the rice.",
+            "Rest briefly before serving."
           ]
         },
 
@@ -3346,8 +5613,8 @@
             "Cook rice and dal together until soft.",
             "Cook vegetables separately until tender.",
             "Heat ghee and bloom cumin, cinnamon and clove.",
-            "Add turmeric and the cooked vegetables.",
-            "Add rice, dal and tamarind with enough water.",
+            "Add turmeric and vegetables.",
+            "Add rice, dal and tamarind with water.",
             "Simmer until creamy and well combined."
           ]
         },
@@ -3380,8 +5647,8 @@
             "Add onion and vegetables and cook until softened.",
             "Add coconut milk and simmer gently.",
             "Add crushed black pepper and salt.",
-            "Cook until the vegetables are tender and the stew is aromatic.",
-            "Cook appam batter in a hot appam pan until the edges are crisp and the centre is soft."
+            "Cook until vegetables are tender.",
+            "Cook appam batter until edges are crisp and centre is soft."
           ]
         },
 
@@ -3412,12 +5679,12 @@
             { name: "Salt", qty: null, unit: "to taste" }
           ],
           method: [
-            "Wash and partially cook the basmati rice with whole spices and salt.",
-            "Prepare the chicken or vegetable mixture with yogurt and spices.",
-            "Layer the partially cooked rice over the prepared base.",
-            "Top with browned onions and a little oil or ghee.",
-            "Cover tightly and cook on low heat until the rice is fully tender.",
-            "Rest for a few minutes before gently mixing and serving."
+            "Wash and partially cook basmati rice with whole spices.",
+            "Prepare chicken or vegetable mixture with yogurt and spices.",
+            "Layer partially cooked rice over the base.",
+            "Top with browned onions and oil or ghee.",
+            "Cover and cook on low heat until rice is tender.",
+            "Rest briefly before serving."
           ]
         },
 
@@ -3447,12 +5714,12 @@
             { name: "Salt", qty: null, unit: "to taste" }
           ],
           method: [
-            "Heat a dry pan and lightly toast cumin, fennel, black pepper and cinnamon.",
-            "Crush the toasted spices coarsely.",
+            "Lightly toast cumin, fennel, black pepper and cinnamon.",
+            "Crush the toasted spices.",
             "Heat oil and cook onion until golden.",
-            "Add ginger-garlic and tomato and cook into a masala.",
-            "Add chicken and the roasted spice mixture.",
-            "Add a little water, cover and cook until the chicken is tender."
+            "Add ginger-garlic and tomato.",
+            "Add chicken and roasted spice mixture.",
+            "Add water, cover and cook until chicken is tender."
           ]
         }
 
@@ -3462,176 +5729,269 @@
 
 
     /* =========================================================
-       REGION / DIET STATE
-    ========================================================== */
+       STATE
+    ========================================================= */
 
-    let currentRegion = "north";
-    let currentDiet = "all";
-    let currentRecipe = null;
-    let currentServing = 1;
+    let currentRegion =
+      "north";
+
+
+    let currentDiet =
+      "all";
+
+
+    let currentRecipe =
+      null;
+
+
+    let currentServing =
+      1;
 
 
     /* =========================================================
-       DIET ICON
-    ========================================================== */
+       DIET RING
+    ========================================================= */
 
     function getDietIcon(type) {
 
       if (type === "veg") {
-        return '<span class="diet-dot veg"></span>';
+
+        return `
+          <span
+            class="diet-ring veg"
+            title="Vegetarian"
+            aria-label="Vegetarian"
+          ></span>
+        `;
+
       }
+
 
       if (type === "nonveg") {
-        return '<span class="diet-dot nonveg"></span>';
+
+        return `
+          <span
+            class="diet-ring nonveg"
+            title="Non-Vegetarian"
+            aria-label="Non-Vegetarian"
+          ></span>
+        `;
+
       }
 
+
       return `
-        <span class="both-icon">
-          <span></span><span></span>
-        </span>
+        <span
+          class="diet-ring both"
+          title="Vegetarian and Non-Vegetarian variants"
+          aria-label="Vegetarian and Non-Vegetarian variants"
+        ></span>
       `;
-    }
-
-
-    function getDietLabel(type) {
-
-      if (type === "veg") return "Veg";
-      if (type === "nonveg") return "Non-Veg";
-      return "Both";
 
     }
 
 
     /* =========================================================
        RENDER DISHES
-    ========================================================== */
+    ========================================================= */
 
     function renderDishes() {
 
-      const dishGrid = document.getElementById("dishGrid");
+      const dishGrid =
+        document.getElementById(
+          "dishGrid"
+        );
 
-      let dishes = recipes[currentRegion] || [];
 
-      if (currentDiet !== "all") {
-        dishes = dishes.filter(function(dish) {
-          return dish.type === currentDiet;
-        });
+      let dishes =
+        recipes[currentRegion] || [];
+
+
+      if (
+        currentDiet !==
+        "all"
+      ) {
+
+        dishes =
+          dishes.filter(
+            function(dish) {
+
+              return (
+                dish.type ===
+                currentDiet
+              );
+
+            }
+          );
+
       }
 
-      dishGrid.innerHTML = "";
+
+      dishGrid.innerHTML =
+        "";
+
 
       if (!dishes.length) {
+
         dishGrid.innerHTML = `
-          <div style="
-            grid-column:1/-1;
-            padding:30px;
-            background:white;
-            border:1px solid var(--line);
-            color:var(--muted);
-            font-size:13px;
-          ">
+          <div
+            style="
+              grid-column:1/-1;
+              padding:30px;
+              background:white;
+              border:1px solid var(--line);
+              color:var(--muted);
+              font-size:13px;
+            "
+          >
             No dishes found for this filter.
           </div>
         `;
+
         return;
+
       }
 
-      dishes.forEach(function(dish) {
 
-        const spiceNames = dish.spices
-          .slice(0, 3)
-          .map(function(spice) {
-            return spice.name;
-          })
-          .join(" · ");
+      dishes.forEach(
+        function(dish,index) {
 
-        const card = document.createElement("article");
+          const spiceNames =
+            dish.spices
+              .slice(0,3)
+              .map(
+                function(spice) {
+                  return spice.name;
+                }
+              )
+              .join(" · ");
 
-        card.className = "dish-card";
 
-        card.innerHTML = `
+          const card =
+            document.createElement(
+              "article"
+            );
 
-          <div>
 
-            <div class="dish-top">
+          card.className =
+            "dish-card";
 
-              <div class="dish-region">
+
+          card.innerHTML = `
+
+            <div>
+
+              <div class="dish-top">
+
+                <span class="dish-number">
+                  ${String(index + 1).padStart(2,"0")}
+                </span>
+
+                <span class="dish-diet">
+                  ${getDietIcon(dish.type)}
+                </span>
+
+              </div>
+
+
+              <div class="dish-name">
+                ${dish.name}
+              </div>
+
+
+              <div class="dish-location">
                 ${dish.state}
               </div>
 
-              <div class="dish-diet">
-                ${getDietIcon(dish.type)}
-                ${getDietLabel(dish.type)}
+            </div>
+
+
+            <div class="dish-bottom">
+
+              <div class="dish-spices">
+                ${spiceNames}
               </div>
 
+
+              <button
+                type="button"
+                class="info-btn"
+                aria-label="View recipe for ${dish.name}"
+                data-recipe="${dish.id}"
+              >
+                i
+              </button>
+
             </div>
 
-
-            <div class="dish-name">
-              ${dish.name}
-            </div>
-
-            <div class="dish-description">
-              ${dish.description}
-            </div>
-
-          </div>
+          `;
 
 
-          <div class="dish-bottom">
+          dishGrid.appendChild(
+            card
+          );
 
-            <div class="dish-spices">
-              ${spiceNames}
-            </div>
-
-            <button
-              class="info-btn"
-              aria-label="View recipe for ${dish.name}"
-              data-recipe="${dish.id}"
-            >
-              i
-            </button>
-
-          </div>
-        `;
-
-        dishGrid.appendChild(card);
-
-      });
+        }
+      );
 
 
-      document.querySelectorAll(".info-btn").forEach(function(button) {
+      document
+        .querySelectorAll(".info-btn")
+        .forEach(
+          function(button) {
 
-        button.addEventListener("click", function() {
+            button.addEventListener(
+              "click",
+              function() {
 
-          const id = button.getAttribute("data-recipe");
+                const id =
+                  button.getAttribute(
+                    "data-recipe"
+                  );
 
-          openRecipe(id);
 
-        });
+                openRecipe(id);
 
-      });
+              }
+            );
+
+          }
+        );
 
     }
 
 
     /* =========================================================
        FIND RECIPE
-    ========================================================== */
+    ========================================================= */
 
     function findRecipe(id) {
 
-      for (const region in recipes) {
+      for (
+        const region in recipes
+      ) {
 
-        const found = recipes[region].find(function(recipe) {
-          return recipe.id === id;
-        });
+        const found =
+          recipes[region].find(
+            function(recipe) {
+
+              return (
+                recipe.id ===
+                id
+              );
+
+            }
+          );
+
 
         if (found) {
+
           return found;
+
         }
 
       }
+
 
       return null;
 
@@ -3640,384 +6000,794 @@
 
     /* =========================================================
        FORMAT QUANTITY
-    ========================================================== */
+    ========================================================= */
 
     function formatQuantity(value) {
 
-      if (value === null || value === undefined) {
+      if (
+        value === null ||
+        value === undefined
+      ) {
+
         return "";
+
       }
 
-      const rounded = Math.round(value * 100) / 100;
 
-      const fractionMap = {
-        0.25: "¼",
-        0.33: "⅓",
-        0.5: "½",
-        0.66: "⅔",
-        0.75: "¾"
-      };
+      const rounded =
+        Math.round(
+          value * 100
+        ) / 100;
 
-      const whole = Math.floor(rounded);
-      const fraction = Math.round((rounded - whole) * 100) / 100;
 
-      let fractionText = "";
+      const whole =
+        Math.floor(
+          rounded
+        );
 
-      if (fraction === 0.25) fractionText = "¼";
-      else if (fraction === 0.5) fractionText = "½";
-      else if (fraction === 0.75) fractionText = "¾";
 
-      if (whole === 0 && fractionText) {
+      const fraction =
+        Math.round(
+          (
+            rounded -
+            whole
+          ) * 100
+        ) / 100;
+
+
+      let fractionText =
+        "";
+
+
+      if (
+        fraction ===
+        0.25
+      ) {
+
+        fractionText =
+          "¼";
+
+      }
+
+
+      else if (
+        fraction ===
+        0.5
+      ) {
+
+        fractionText =
+          "½";
+
+      }
+
+
+      else if (
+        fraction ===
+        0.75
+      ) {
+
+        fractionText =
+          "¾";
+
+      }
+
+
+      if (
+        whole === 0 &&
+        fractionText
+      ) {
+
         return fractionText;
+
       }
 
-      if (whole > 0 && fractionText) {
-        return whole + fractionText;
+
+      if (
+        whole > 0 &&
+        fractionText
+      ) {
+
+        return (
+          whole +
+          fractionText
+        );
+
       }
 
-      return String(rounded);
+
+      return String(
+        rounded
+      );
+
     }
 
 
     /* =========================================================
        OPEN RECIPE
-    ========================================================== */
+    ========================================================= */
 
     function openRecipe(id) {
 
-      const recipe = findRecipe(id);
+      const recipe =
+        findRecipe(id);
 
-      if (!recipe) return;
 
-      currentRecipe = recipe;
-      currentServing = 1;
+      if (!recipe) {
 
-      document.getElementById("recipeTitle").textContent = recipe.name;
+        return;
 
-      document.getElementById("recipeMeta").textContent =
-        recipe.state + " · Serves 1";
+      }
+
+
+      currentRecipe =
+        recipe;
+
+
+      currentServing =
+        1;
+
+
+      document
+        .getElementById(
+          "recipeTitle"
+        )
+        .textContent =
+        recipe.name;
+
+
+      document
+        .getElementById(
+          "recipeMeta"
+        )
+        .textContent =
+        recipe.state +
+        " · Serves 1";
+
 
       renderRecipe();
 
-      document
-        .getElementById("recipeModal")
-        .classList.add("open");
 
       document
-        .getElementById("recipeModal")
-        .setAttribute("aria-hidden", "false");
+        .getElementById(
+          "recipeModal"
+        )
+        .classList.add(
+          "open"
+        );
 
-      document.body.style.overflow = "hidden";
+
+      document
+        .getElementById(
+          "recipeModal"
+        )
+        .setAttribute(
+          "aria-hidden",
+          "false"
+        );
+
+
+      document.body.style.overflow =
+        "hidden";
 
     }
 
 
     /* =========================================================
        RENDER RECIPE
-    ========================================================== */
+    ========================================================= */
 
     function renderRecipe() {
 
-      if (!currentRecipe) return;
+      if (!currentRecipe) {
 
-      const recipe = currentRecipe;
+        return;
+
+      }
+
+
+      const recipe =
+        currentRecipe;
+
 
       const ingredientList =
-        document.getElementById("ingredientList");
-
-      const spiceLinks =
-        document.getElementById("spiceLinks");
-
-      const methodList =
-        document.getElementById("methodList");
-
-
-      ingredientList.innerHTML = "";
-
-      recipe.ingredients.forEach(function(item) {
-
-        const li = document.createElement("li");
-
-        let quantityText = "";
-
-        if (item.qty === null) {
-          quantityText = item.unit;
-        } else {
-          const scaled = item.qty * currentServing;
-
-          quantityText =
-            formatQuantity(scaled) +
-            " " +
-            item.unit;
-        }
-
-        li.innerHTML = `
-          <span>${item.name}</span>
-          <span class="quantity">${quantityText}</span>
-        `;
-
-        ingredientList.appendChild(li);
-
-      });
-
-
-      spiceLinks.innerHTML = "";
-
-      recipe.spices.forEach(function(spice) {
-
-        const link = document.createElement("a");
-
-        link.href = spice.link;
-        link.className = "spice-link";
-        link.textContent = spice.name;
-
-        spiceLinks.appendChild(link);
-
-      });
-
-
-      methodList.innerHTML = "";
-
-      recipe.method.forEach(function(step) {
-
-        const li = document.createElement("li");
-
-        li.textContent = step;
-
-        methodList.appendChild(li);
-
-      });
-
-
-      document.getElementById("recipeMeta").textContent =
-        recipe.state + " · Serves " + currentServing;
-
-
-      document.querySelectorAll(".serving-option").forEach(function(button) {
-
-        button.classList.toggle(
-          "active",
-          Number(button.dataset.serving) === currentServing
+        document.getElementById(
+          "ingredientList"
         );
 
-      });
+
+      const spiceLinks =
+        document.getElementById(
+          "spiceLinks"
+        );
+
+
+      const methodList =
+        document.getElementById(
+          "methodList"
+        );
+
+
+      ingredientList.innerHTML =
+        "";
+
+
+      recipe.ingredients.forEach(
+        function(item) {
+
+          const li =
+            document.createElement(
+              "li"
+            );
+
+
+          let quantityText =
+            "";
+
+
+          if (
+            item.qty ===
+            null
+          ) {
+
+            quantityText =
+              item.unit;
+
+          }
+
+
+          else {
+
+            const scaled =
+              item.qty *
+              currentServing;
+
+
+            quantityText =
+              formatQuantity(
+                scaled
+              ) +
+              " " +
+              item.unit;
+
+          }
+
+
+          li.innerHTML = `
+            <span>
+              ${item.name}
+            </span>
+
+            <span class="quantity">
+              ${quantityText}
+            </span>
+          `;
+
+
+          ingredientList.appendChild(
+            li
+          );
+
+        }
+      );
+
+
+      spiceLinks.innerHTML =
+        "";
+
+
+      recipe.spices.forEach(
+        function(spice) {
+
+          const link =
+            document.createElement(
+              "a"
+            );
+
+
+          link.href =
+            spice.link;
+
+
+          link.className =
+            "spice-link";
+
+
+          link.textContent =
+            spice.name;
+
+
+          spiceLinks.appendChild(
+            link
+          );
+
+        }
+      );
+
+
+      methodList.innerHTML =
+        "";
+
+
+      recipe.method.forEach(
+        function(step) {
+
+          const li =
+            document.createElement(
+              "li"
+            );
+
+
+          li.textContent =
+            step;
+
+
+          methodList.appendChild(
+            li
+          );
+
+        }
+      );
+
+
+      document
+        .getElementById(
+          "recipeMeta"
+        )
+        .textContent =
+        recipe.state +
+        " · Serves " +
+        currentServing;
+
+
+      document
+        .querySelectorAll(
+          ".serving-option"
+        )
+        .forEach(
+          function(button) {
+
+            button.classList.toggle(
+              "active",
+              Number(
+                button.dataset.serving
+              ) ===
+              currentServing
+            );
+
+          }
+        );
 
     }
 
 
     /* =========================================================
        CLOSE RECIPE
-    ========================================================== */
+    ========================================================= */
 
     function closeRecipe() {
 
       document
-        .getElementById("recipeModal")
-        .classList.remove("open");
+        .getElementById(
+          "recipeModal"
+        )
+        .classList.remove(
+          "open"
+        );
+
 
       document
-        .getElementById("recipeModal")
-        .setAttribute("aria-hidden", "true");
+        .getElementById(
+          "recipeModal"
+        )
+        .setAttribute(
+          "aria-hidden",
+          "true"
+        );
 
-      document.body.style.overflow = "";
+
+      document.body.style.overflow =
+        "";
 
     }
 
 
     document
-      .getElementById("closeRecipe")
-      .addEventListener("click", closeRecipe);
+      .getElementById(
+        "closeRecipe"
+      )
+      .addEventListener(
+        "click",
+        closeRecipe
+      );
 
 
     document
-      .getElementById("recipeModal")
-      .addEventListener("click", function(event) {
+      .getElementById(
+        "recipeModal"
+      )
+      .addEventListener(
+        "click",
+        function(event) {
 
-        if (event.target === this) {
+          if (
+            event.target ===
+            this
+          ) {
+
+            closeRecipe();
+
+          }
+
+        }
+      );
+
+
+    document.addEventListener(
+      "keydown",
+      function(event) {
+
+        if (
+          event.key ===
+          "Escape"
+        ) {
+
           closeRecipe();
+
         }
 
-      });
-
-
-    document.addEventListener("keydown", function(event) {
-
-      if (event.key === "Escape") {
-        closeRecipe();
       }
-
-    });
+    );
 
 
     /* =========================================================
        SERVING BUTTONS
-    ========================================================== */
+    ========================================================= */
 
-    document.querySelectorAll(".serving-option").forEach(function(button) {
+    document
+      .querySelectorAll(
+        ".serving-option"
+      )
+      .forEach(
+        function(button) {
 
-      button.addEventListener("click", function() {
+          button.addEventListener(
+            "click",
+            function() {
 
-        currentServing =
-          Number(button.dataset.serving);
+              currentServing =
+                Number(
+                  button.dataset.serving
+                );
 
-        renderRecipe();
 
-      });
+              renderRecipe();
 
-    });
+            }
+          );
+
+        }
+      );
 
 
     /* =========================================================
-       REGION TABS
-    ========================================================== */
+       INDIA ATLAS REGION SELECTOR
+    ========================================================= */
 
-    document.querySelectorAll(".region-tab").forEach(function(button) {
+    document
+      .querySelectorAll(
+        ".region-node"
+      )
+      .forEach(
+        function(button) {
 
-      button.addEventListener("click", function() {
+          button.addEventListener(
+            "click",
+            function() {
 
-        currentRegion =
-          button.dataset.region;
+              currentRegion =
+                button.dataset.region;
 
-        document.querySelectorAll(".region-tab").forEach(function(tab) {
-          tab.classList.remove("active");
-        });
 
-        button.classList.add("active");
+              document
+                .querySelectorAll(
+                  ".region-node"
+                )
+                .forEach(
+                  function(node) {
 
-        renderDishes();
+                    node.classList.remove(
+                      "active"
+                    );
 
-      });
+                  }
+                );
 
-    });
+
+              button.classList.add(
+                "active"
+              );
+
+
+              renderDishes();
+
+
+              const dishGrid =
+                document.getElementById(
+                  "dishGrid"
+                );
+
+
+              setTimeout(
+                function() {
+
+                  dishGrid.scrollIntoView({
+                    behavior: "smooth",
+                    block: "start"
+                  });
+
+                },
+                80
+              );
+
+            }
+          );
+
+        }
+      );
 
 
     /* =========================================================
        DIET FILTERS
-    ========================================================== */
+    ========================================================= */
 
-    document.querySelectorAll(".diet-filter").forEach(function(button) {
+    document
+      .querySelectorAll(
+        ".diet-filter"
+      )
+      .forEach(
+        function(button) {
 
-      button.addEventListener("click", function() {
+          button.addEventListener(
+            "click",
+            function() {
 
-        currentDiet =
-          button.dataset.diet;
+              currentDiet =
+                button.dataset.diet;
 
-        document.querySelectorAll(".diet-filter").forEach(function(filter) {
-          filter.classList.remove("active");
-        });
 
-        button.classList.add("active");
+              document
+                .querySelectorAll(
+                  ".diet-filter"
+                )
+                .forEach(
+                  function(filter) {
 
-        renderDishes();
+                    filter.classList.remove(
+                      "active"
+                    );
 
-      });
+                  }
+                );
 
-    });
+
+              button.classList.add(
+                "active"
+              );
+
+
+              renderDishes();
+
+            }
+          );
+
+        }
+      );
 
 
     /* =========================================================
        B2B CALCULATOR
-    ========================================================== */
+    ========================================================= */
 
-    const calculateBtn =
-      document.getElementById("calculateBtn");
-
-
-    calculateBtn.addEventListener("click", function() {
-
-      const businessType =
-        document.getElementById("businessType").value;
-
-      const outlets =
-        Number(document.getElementById("outlets").value) || 1;
-
-      const meals =
-        Number(document.getElementById("meals").value) || 0;
-
-      const usage =
-        Number(document.getElementById("usage").value) || 0;
-
-      const buffer =
-        Number(document.getElementById("buffer").value) || 0;
+    document
+      .getElementById(
+        "calculateBtn"
+      )
+      .addEventListener(
+        "click",
+        function() {
 
 
-      const baseGrams =
-        meals * usage;
-
-      const adjustedGrams =
-        baseGrams * (1 + buffer / 100);
-
-      const monthlyKg =
-        adjustedGrams / 1000;
-
-      const annualKg =
-        monthlyKg * 12;
-
-      const outletKg =
-        monthlyKg / outlets;
+          const businessType =
+            document.getElementById(
+              "businessType"
+            ).value;
 
 
-      const wholeKg =
-        monthlyKg * 0.30;
-
-      const chilliKg =
-        monthlyKg * 0.15;
-
-      const powderKg =
-        monthlyKg * 0.55;
+          const outlets =
+            Number(
+              document.getElementById(
+                "outlets"
+              ).value
+            ) || 1;
 
 
-      document.getElementById("monthlyResult").textContent =
-        monthlyKg.toFixed(1) + " kg";
+          const meals =
+            Number(
+              document.getElementById(
+                "meals"
+              ).value
+            ) || 0;
 
 
-      document.getElementById("annualResult").textContent =
-        annualKg.toFixed(1) + " kg";
+          const usage =
+            Number(
+              document.getElementById(
+                "usage"
+              ).value
+            ) || 0;
 
 
-      document.getElementById("outletResult").textContent =
-        outletKg.toFixed(1) + " kg";
+          const buffer =
+            Number(
+              document.getElementById(
+                "buffer"
+              ).value
+            ) || 0;
 
 
-      document.getElementById("wholeResult").textContent =
-        wholeKg.toFixed(1) + " kg";
+          const baseGrams =
+            meals *
+            usage;
 
 
-      document.getElementById("chilliResult").textContent =
-        chilliKg.toFixed(1) + " kg";
+          const adjustedGrams =
+            baseGrams *
+            (
+              1 +
+              buffer / 100
+            );
 
 
-      document.getElementById("powderResult").textContent =
-        powderKg.toFixed(1) + " kg";
+          const monthlyKg =
+            adjustedGrams /
+            1000;
 
 
-      const message =
-        "Hello Dharoahar,%0A%0A" +
-        "I used the Spice Requirement Calculator.%0A%0A" +
-        "Business: " + businessType + "%0A" +
-        "Outlets: " + outlets + "%0A" +
-        "Meals / plates per month: " + meals + "%0A" +
-        "Average spice usage: " + usage + " g per plate%0A" +
-        "Buffer: " + buffer + "%0A%0A" +
-        "Estimated monthly requirement: " +
-        monthlyKg.toFixed(1) + " kg.%0A%0A" +
-        "I'd like to discuss my requirement.";
+          const annualKg =
+            monthlyKg *
+            12;
 
 
-      document.getElementById("calcWhatsapp").href =
-        "https://wa.me/918603824415?text=" + message;
+          const outletKg =
+            monthlyKg /
+            outlets;
 
 
-      document
-        .getElementById("calcResults")
-        .classList.add("show");
+          const wholeKg =
+            monthlyKg *
+            0.30;
 
-    });
+
+          const chilliKg =
+            monthlyKg *
+            0.15;
+
+
+          const powderKg =
+            monthlyKg *
+            0.55;
+
+
+          document
+            .getElementById(
+              "monthlyResult"
+            )
+            .textContent =
+            monthlyKg.toFixed(1) +
+            " kg";
+
+
+          document
+            .getElementById(
+              "annualResult"
+            )
+            .textContent =
+            annualKg.toFixed(1) +
+            " kg";
+
+
+          document
+            .getElementById(
+              "outletResult"
+            )
+            .textContent =
+            outletKg.toFixed(1) +
+            " kg";
+
+
+          document
+            .getElementById(
+              "wholeResult"
+            )
+            .textContent =
+            wholeKg.toFixed(1) +
+            " kg";
+
+
+          document
+            .getElementById(
+              "chilliResult"
+            )
+            .textContent =
+            chilliKg.toFixed(1) +
+            " kg";
+
+
+          document
+            .getElementById(
+              "powderResult"
+            )
+            .textContent =
+            powderKg.toFixed(1) +
+            " kg";
+
+
+          const message =
+            "Hello Dharoahar,%0A%0A" +
+
+            "I used the Spice Requirement Calculator.%0A%0A" +
+
+            "Business: " +
+            businessType +
+            "%0A" +
+
+            "Outlets: " +
+            outlets +
+            "%0A" +
+
+            "Meals / plates per month: " +
+            meals +
+            "%0A" +
+
+            "Average spice usage: " +
+            usage +
+            " g per plate%0A" +
+
+            "Buffer: " +
+            buffer +
+            "%0A%0A" +
+
+            "Estimated monthly requirement: " +
+            monthlyKg.toFixed(1) +
+            " kg.%0A%0A" +
+
+            "I'd like to discuss my requirement.";
+
+
+          document
+            .getElementById(
+              "calcWhatsapp"
+            )
+            .href =
+            "https://wa.me/918603824415?text=" +
+            message;
+
+
+          document
+            .getElementById(
+              "calcResults"
+            )
+            .classList.add(
+              "show"
+            );
+
+        }
+      );
 
 
     /* =========================================================
        INITIAL RENDER
-    ========================================================== */
+    ========================================================= */
 
     renderDishes();
 
