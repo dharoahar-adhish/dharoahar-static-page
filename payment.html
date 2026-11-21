@@ -1,30 +1,253 @@
-<!doctype html>
-<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>UPI Payment | Dharoahar</title><link rel="stylesheet" href="cart.css"></head>
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Complete Payment | Dharoahar</title>
+<link rel="stylesheet" href="cart.css">
+
+<style>
+.payment-layout{
+  display:grid;
+  grid-template-columns:minmax(0,1.5fr) minmax(260px,.8fr);
+  gap:22px;
+  align-items:start;
+}
+.payment-amount{
+  font:500 40px Georgia,serif;
+  color:#39271d;
+}
+.payment-main-btn{
+  width:100%;
+  min-height:54px;
+  border:0;
+  background:#4b2e20;
+  color:#fff;
+  font-size:12px;
+  font-weight:800;
+  letter-spacing:.12em;
+  cursor:pointer;
+  margin:20px 0 12px;
+}
+.payment-secondary{
+  width:100%;
+  min-height:46px;
+  border:1px solid #b58a65;
+  background:transparent;
+  color:#60432f;
+  font-size:11px;
+  font-weight:700;
+  letter-spacing:.06em;
+  cursor:pointer;
+}
+.payment-details{
+  display:none;
+  margin-top:16px;
+  padding:18px;
+  background:#f5eddf;
+  border:1px solid #e3d2bc;
+}
+.payment-details.show{
+  display:block;
+}
+.payment-upi{
+  display:flex;
+  gap:8px;
+  align-items:center;
+  margin-top:10px;
+}
+.payment-upi input{
+  flex:1;
+  min-width:0;
+  min-height:44px;
+  padding:10px;
+  border:1px solid #d4c1aa;
+  background:#fff;
+  color:#39271d;
+  font-size:13px;
+}
+.payment-copy{
+  min-height:44px;
+  padding:0 15px;
+  border:1px solid #8d684b;
+  background:#fff;
+  color:#60432f;
+  font-size:10px;
+  font-weight:800;
+  cursor:pointer;
+}
+.payment-track{
+  display:block;
+  margin-top:18px;
+  text-align:center;
+  color:#81552f;
+  font-size:12px;
+  font-weight:700;
+  text-decoration:none;
+}
+.payment-message{
+  margin-top:14px;
+  font-size:12px;
+  line-height:1.6;
+}
+@media(max-width:760px){
+  .payment-layout{grid-template-columns:1fr}
+  .payment-amount{font-size:34px}
+  .payment-upi{flex-wrap:wrap}
+  .payment-upi input{width:100%;flex-basis:100%}
+}
+</style>
+</head>
+
 <body data-page="payment">
-<header class="dh-brand-head"><div class="dh-brand-inner">
-<a class="dh-brand" href="index.html"><strong>Dharoahar</strong><small>Authentic Indian Spices</small></a>
-<a class="dh-back" href="products.html">Continue shopping</a></div></header>
-<main class="dh-page"><div class="dh-wrap">
-<div class="dh-page-head"><div class="dh-eyebrow">Secure your order</div><h1>Pay using UPI</h1>
-<p>Your order has been recorded. You can pay directly to Dharoahar using any UPI app.</p></div>
-<div class="dh-grid">
-<section class="dh-panel">
-<div class="dh-success">Your order has been received. Payment will be verified manually by the Dharoahar team.</div>
-<div style="margin:22px 0 8px"><div class="dh-muted">Order ID</div><strong id="payOrderId">—</strong></div>
-<div style="margin:18px 0"><div class="dh-muted">Amount to pay</div><strong id="payAmount" style="font:500 36px Georgia,serif">—</strong></div>
-<div class="dh-field"><label for="upiIdDisplay">Official Dharoahar UPI ID</label>
-<div style="display:flex;gap:8px;align-items:stretch"><input id="upiIdDisplay" readonly value="yespay.smessi10311553@yesbankltd"><button type="button" class="dh-btn dh-btn-outline" id="copyUpi">COPY</button></div></div>
-<p style="margin:20px 0 12px"><a class="dh-btn" id="openUpi" href="#">PAY USING UPI APP</a></p>
-<div class="dh-note"><strong>Important payment instructions</strong><br>
-Payee name should appear as <strong>Adhish Dharoahar Private Limited</strong>. Please check the payee name and amount in your UPI app before paying. Never share your UPI PIN or OTP.</div>
-<div class="dh-status"><strong>No UTR or payment screenshot is required.</strong> After placing the order, the Dharoahar team will contact you on your registered mobile number and verify the payment directly. We will update the payment status in our order records.</div>
-<a class="dh-btn" href="order-success.html" id="confirmReturn" style="width:100%;margin-top:20px">I HAVE COMPLETED PAYMENT — CONTINUE</a>
-<p class="dh-muted" style="margin-top:12px">This button does not confirm payment. Your order remains pending until our team verifies the credit in the business account.</p>
-</section>
-<aside class="dh-panel"><h2 style="font:500 25px Georgia,serif;margin:0 0 16px">What happens next?</h2>
-<ol class="dh-step-list"><li>Complete the payment using the UPI ID above.</li><li>Our team will call your registered mobile number.</li><li>We will verify the credit in our bank/UPI account.</li><li>We will update payment and order status in our order sheet.</li><li>After confirmation, we will process and dispatch your order.</li></ol>
-<div class="dh-note">Estimated delivery: 10–15 days after payment confirmation, subject to PIN code serviceability. Courier booking and AWB updates will be handled manually by Dharoahar.</div>
-</aside></div></div></main>
-<footer class="dh-page-footer">© Dharoahar · Authentic Indian Spices · <a href="privacy.html">Privacy</a> · <a href="terms.html">Terms</a></footer>
-<script src="ecommerce-config.js"></script><script src="payment.js" defer></script></body></html>
+
+<header class="dh-brand-head">
+  <div class="dh-brand-inner">
+    <a class="dh-brand" href="index.html">
+      <strong>Dharoahar</strong>
+      <small>Authentic Indian Spices</small>
+    </a>
+    <a class="dh-back" href="products.html">Continue shopping</a>
+  </div>
+</header>
+
+<main class="dh-page">
+<div class="dh-wrap">
+
+  <div class="dh-page-head">
+    <div class="dh-eyebrow">Order payment</div>
+    <h1>Complete your payment</h1>
+    <p>Your order has been received. Choose your preferred UPI app to make the payment.</p>
+  </div>
+
+  <div class="payment-layout">
+
+    <section class="dh-panel">
+
+      <div class="dh-success">
+        Your order has been received. Payment will be verified manually by the Dharoahar team.
+      </div>
+
+      <div style="margin:22px 0 8px">
+        <div class="dh-muted">Your Order ID</div>
+        <strong id="payOrderId">Loading...</strong>
+      </div>
+
+      <div style="margin:20px 0">
+        <div class="dh-muted">Amount payable</div>
+        <strong class="payment-amount" id="payAmount">—</strong>
+      </div>
+
+      <button type="button" class="payment-main-btn" id="openUpi">
+        PAY USING UPI APP →
+      </button>
+
+      <button type="button" class="payment-secondary" id="showUpiDetails">
+        HAVING TROUBLE? SHOW UPI PAYMENT DETAILS
+      </button>
+
+      <div class="payment-details" id="upiDetails">
+        <strong style="font-size:13px">Official Dharoahar UPI ID</strong>
+
+        <div class="payment-upi">
+          <input
+            type="text"
+            id="upiIdDisplay"
+            readonly
+            value=""
+            aria-label="Dharoahar UPI ID"
+          >
+
+          <button type="button" class="payment-copy" id="copyUpi">
+            COPY UPI ID
+          </button>
+        </div>
+
+        <p class="dh-muted" style="margin-top:12px">
+          Open any UPI app, choose Pay to UPI ID, paste the copied ID,
+          enter the exact order amount and complete payment.
+        </p>
+      </div>
+
+      <div class="dh-note" style="margin-top:20px">
+        <strong>Important payment instructions</strong><br>
+        The payee name should appear as
+        <strong>Adhish Dharoahar Private Limited</strong>.
+        Please verify the payee name and amount before paying.
+        Never share your UPI PIN or OTP.
+      </div>
+
+      <div class="dh-status">
+        <strong>No UTR or payment screenshot is required.</strong>
+        Our team will contact you on your registered mobile number
+        and verify the payment directly. Your payment status will
+        be updated by Dharoahar.
+      </div>
+
+      <a
+        class="dh-btn"
+        href="order-success.html"
+        id="confirmReturn"
+        style="width:100%;margin-top:20px"
+      >
+        I'VE MADE THE PAYMENT — CONTINUE
+      </a>
+
+      <p class="dh-muted" style="margin-top:12px">
+        Continuing does not confirm payment. Your order remains
+        pending until our team verifies the credit in the business account.
+      </p>
+
+      <a class="payment-track" href="track-order.html">
+        ALREADY PLACED AN ORDER? TRACK MY ORDER →
+      </a>
+
+      <div id="paymentMessage" class="payment-message" aria-live="polite"></div>
+
+    </section>
+
+    <aside class="dh-panel">
+
+      <h2 style="font:500 25px Georgia,serif;margin:0 0 16px">
+        What happens next?
+      </h2>
+
+      <ol class="dh-step-list">
+        <li>Complete payment using your preferred UPI app.</li>
+        <li>Our team will call your registered mobile number.</li>
+        <li>We will verify the payment in our business account.</li>
+        <li>We will update your payment and order status.</li>
+        <li>After confirmation, we will process and dispatch your order.</li>
+      </ol>
+
+      <div class="dh-note">
+        <strong>Delivery timeline</strong><br>
+        Estimated delivery is 10–15 days after payment confirmation,
+        subject to PIN code serviceability.
+        Courier booking and AWB updates are handled manually by Dharoahar.
+      </div>
+
+      <p class="dh-muted">
+        You can return to this website anytime and use
+        Track My Order to check your order status.
+      </p>
+
+    </aside>
+
+  </div>
+</div>
+</main>
+
+<footer class="dh-page-footer">
+  © Dharoahar · Authentic Indian Spices ·
+  <a href="privacy.html">Privacy</a> ·
+  <a href="terms.html">Terms</a>
+</footer>
+
+<script src="ecommerce-config.js"></script>
+<script src="payment.js" defer></script>
+
+</body>
+</html>
+```
