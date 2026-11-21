@@ -1,0 +1,28 @@
+/* Dharoahar ecommerce card controls — isolated from existing site styles */
+.dh-card-commerce{padding:0 18px 18px;color:#30231d;font-family:Arial,Helvetica,sans-serif}
+.dh-card-price{display:flex;align-items:baseline;gap:8px;flex-wrap:wrap;min-height:26px;margin:0 0 10px}
+.dh-sale-price{font-size:18px;font-weight:800;color:#3b2418;letter-spacing:-.2px}
+.dh-mrp{font-size:12px;color:#897c72;text-decoration:line-through}
+.dh-discount{font-size:10px;font-weight:800;color:#47734b;letter-spacing:.02em}
+.dh-card-actions{display:flex;align-items:center;gap:8px}
+.dh-qty-control{height:40px;display:inline-flex;align-items:center;justify-content:space-between;min-width:104px;border:1px solid rgba(59,36,24,.22);border-radius:7px;background:#fff;overflow:hidden;flex:0 0 auto}
+.dh-qty-control button{width:32px;height:38px;border:0;background:transparent;color:#4a3020;font-size:20px;line-height:1;cursor:pointer}
+.dh-qty-control button:disabled{opacity:.35;cursor:not-allowed}
+.dh-qty-control output{min-width:22px;text-align:center;font-size:13px;font-weight:700;color:#3b2418}
+.dh-add-btn{height:40px;flex:1;min-width:0;padding:0 10px;border:1px solid #4a3020;border-radius:7px;background:#4a3020;color:#fff;font-size:10px;font-weight:800;letter-spacing:.08em;cursor:pointer;transition:background .2s ease,transform .2s ease}
+.dh-add-btn:hover:not(:disabled){background:#765037;transform:translateY(-1px)}
+.dh-add-btn:disabled{opacity:.48;cursor:not-allowed}
+.dh-pack-label{margin-top:7px;font-size:10px;color:#85766a}
+.product-card .dh-card-commerce{padding-left:15px;padding-right:15px}
+.chilli-card .dh-card-commerce{color:#fff;padding:0 20px 20px}
+.chilli-card .dh-sale-price{color:#fff}
+.chilli-card .dh-mrp{color:rgba(255,255,255,.58)}
+.chilli-card .dh-discount{color:#d9c28d}
+.chilli-card .dh-qty-control{background:#fff;border-color:rgba(255,255,255,.25)}
+.chilli-card .dh-add-btn{background:#e8d6bd;color:#3b2418;border-color:#e8d6bd}
+.chilli-card .dh-add-btn:hover:not(:disabled){background:#fff}
+.chilli-card .dh-pack-label{color:rgba(255,255,255,.6)}
+.product-card .product-card-link{display:block;color:inherit;text-decoration:none}
+.dh-cart-toast{position:fixed;z-index:99999;left:50%;bottom:24px;transform:translate(-50%,18px);padding:12px 18px;border-radius:999px;background:#302018;color:#fff;font:600 13px/1.3 Arial,sans-serif;box-shadow:0 12px 30px rgba(0,0,0,.2);opacity:0;pointer-events:none;transition:opacity .2s ease,transform .2s ease;max-width:calc(100vw - 32px);text-align:center}
+.dh-cart-toast.is-visible{opacity:1;transform:translate(-50%,0)}
+@media(max-width:700px){.dh-card-commerce{padding:0 10px 12px}.dh-card-actions{gap:5px}.dh-qty-control{min-width:82px;height:36px}.dh-qty-control button{width:26px;height:34px;font-size:18px}.dh-add-btn{height:36px;padding:0 6px;font-size:9px;letter-spacing:.04em}.dh-sale-price{font-size:16px}.dh-mrp{font-size:11px}.dh-discount{font-size:9px}.dh-pack-label{font-size:9px}.chilli-card .dh-card-commerce{padding:0 12px 14px}}
