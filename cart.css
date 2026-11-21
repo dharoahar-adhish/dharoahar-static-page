@@ -1,28 +1,110 @@
-/* Dharoahar ecommerce card controls — isolated from existing site styles */
-.dh-card-commerce{padding:0 18px 18px;color:#30231d;font-family:Arial,Helvetica,sans-serif}
-.dh-card-price{display:flex;align-items:baseline;gap:8px;flex-wrap:wrap;min-height:26px;margin:0 0 10px}
-.dh-sale-price{font-size:18px;font-weight:800;color:#3b2418;letter-spacing:-.2px}
-.dh-mrp{font-size:12px;color:#897c72;text-decoration:line-through}
-.dh-discount{font-size:10px;font-weight:800;color:#47734b;letter-spacing:.02em}
-.dh-card-actions{display:flex;align-items:center;gap:8px}
-.dh-qty-control{height:40px;display:inline-flex;align-items:center;justify-content:space-between;min-width:104px;border:1px solid rgba(59,36,24,.22);border-radius:7px;background:#fff;overflow:hidden;flex:0 0 auto}
-.dh-qty-control button{width:32px;height:38px;border:0;background:transparent;color:#4a3020;font-size:20px;line-height:1;cursor:pointer}
-.dh-qty-control button:disabled{opacity:.35;cursor:not-allowed}
-.dh-qty-control output{min-width:22px;text-align:center;font-size:13px;font-weight:700;color:#3b2418}
-.dh-add-btn{height:40px;flex:1;min-width:0;padding:0 10px;border:1px solid #4a3020;border-radius:7px;background:#4a3020;color:#fff;font-size:10px;font-weight:800;letter-spacing:.08em;cursor:pointer;transition:background .2s ease,transform .2s ease}
-.dh-add-btn:hover:not(:disabled){background:#765037;transform:translateY(-1px)}
-.dh-add-btn:disabled{opacity:.48;cursor:not-allowed}
-.dh-pack-label{margin-top:7px;font-size:10px;color:#85766a}
-.product-card .dh-card-commerce{padding-left:15px;padding-right:15px}
-.chilli-card .dh-card-commerce{color:#fff;padding:0 20px 20px}
-.chilli-card .dh-sale-price{color:#fff}
-.chilli-card .dh-mrp{color:rgba(255,255,255,.58)}
-.chilli-card .dh-discount{color:#d9c28d}
-.chilli-card .dh-qty-control{background:#fff;border-color:rgba(255,255,255,.25)}
-.chilli-card .dh-add-btn{background:#e8d6bd;color:#3b2418;border-color:#e8d6bd}
-.chilli-card .dh-add-btn:hover:not(:disabled){background:#fff}
-.chilli-card .dh-pack-label{color:rgba(255,255,255,.6)}
-.product-card .product-card-link{display:block;color:inherit;text-decoration:none}
-.dh-cart-toast{position:fixed;z-index:99999;left:50%;bottom:24px;transform:translate(-50%,18px);padding:12px 18px;border-radius:999px;background:#302018;color:#fff;font:600 13px/1.3 Arial,sans-serif;box-shadow:0 12px 30px rgba(0,0,0,.2);opacity:0;pointer-events:none;transition:opacity .2s ease,transform .2s ease;max-width:calc(100vw - 32px);text-align:center}
-.dh-cart-toast.is-visible{opacity:1;transform:translate(-50%,0)}
-@media(max-width:700px){.dh-card-commerce{padding:0 10px 12px}.dh-card-actions{gap:5px}.dh-qty-control{min-width:82px;height:36px}.dh-qty-control button{width:26px;height:34px;font-size:18px}.dh-add-btn{height:36px;padding:0 6px;font-size:9px;letter-spacing:.04em}.dh-sale-price{font-size:16px}.dh-mrp{font-size:11px}.dh-discount{font-size:9px}.dh-pack-label{font-size:9px}.chilli-card .dh-card-commerce{padding:0 12px 14px}}
+/* Shared Dharoahar cart access + cart page styling */
+.dh-nav-cart, .dh-mobile-cart {
+  display: inline-flex !important;
+  align-items: center;
+  gap: 7px;
+  color: #6e3f24 !important;
+  font-weight: 700 !important;
+}
+.dh-nav-cart span, .dh-mobile-cart span {
+  display: inline-flex;
+  min-width: 19px;
+  height: 19px;
+  padding: 0 5px;
+  border-radius: 20px;
+  align-items: center;
+  justify-content: center;
+  background: #6e3f24;
+  color: #fff !important;
+  font-size: 11px;
+}
+.dh-floating-cart {
+  position: fixed;
+  z-index: 99999;
+  right: 22px;
+  bottom: 22px;
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  padding: 13px 18px;
+  border-radius: 999px;
+  background: #4b2e20;
+  color: #fff !important;
+  text-decoration: none !important;
+  box-shadow: 0 8px 28px rgba(40, 25, 15, .24);
+  font: 700 13px/1 Arial, sans-serif;
+}
+.dh-floating-cart-count {
+  display: inline-flex;
+  min-width: 22px;
+  height: 22px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: #d8a65b;
+  color: #2c1a10;
+}
+.dh-cart-toast {
+  position: fixed;
+  z-index: 100000;
+  left: 50%;
+  bottom: 82px;
+  transform: translate(-50%, 12px);
+  opacity: 0;
+  pointer-events: none;
+  padding: 12px 18px;
+  border-radius: 8px;
+  background: #2f241d;
+  color: #fff;
+  font: 13px/1.4 Arial, sans-serif;
+  transition: .2s ease;
+  box-shadow: 0 8px 24px rgba(0,0,0,.18);
+}
+.dh-cart-toast.is-visible { opacity: 1; transform: translate(-50%, 0); }
+
+.dh-cart-page {
+  min-height: 75vh;
+  padding: 58px 20px 90px;
+  background: #f7f2e9;
+  color: #39271d;
+}
+.dh-cart-wrap { max-width: 1120px; margin: 0 auto; }
+.dh-cart-heading { margin-bottom: 30px; }
+.dh-cart-eyebrow { color: #a66a36; text-transform: uppercase; letter-spacing: .18em; font-size: 10px; font-weight: 700; }
+.dh-cart-heading h1 { margin: 10px 0 8px; font: 500 clamp(34px, 5vw, 54px)/1.05 Georgia, serif; }
+.dh-cart-heading p { margin: 0; color: #806f62; font: 14px/1.6 Arial, sans-serif; }
+.dh-cart-layout { display: grid; grid-template-columns: minmax(0, 1.6fr) minmax(280px, .8fr); gap: 24px; align-items: start; }
+.dh-cart-list { display: grid; gap: 12px; }
+.dh-cart-row { display: grid; grid-template-columns: 92px minmax(0,1fr) auto auto; gap: 16px; align-items: center; padding: 14px; background: #fffdfa; border: 1px solid #e8ddce; }
+.dh-cart-row img { width: 92px; height: 105px; object-fit: cover; background: #eee3d3; }
+.dh-cart-category { color: #a66a36; font-size: 9px; letter-spacing: .14em; text-transform: uppercase; font-weight: 700; }
+.dh-cart-product h3 { margin: 5px 0; font: 600 20px Georgia, serif; }
+.dh-cart-product p { margin: 0; color: #87776b; font-size: 12px; }
+.dh-remove-item { margin-top: 10px; padding: 0; border: 0; background: none; color: #a15a37; text-decoration: underline; cursor: pointer; font-size: 12px; }
+.dh-cart-qty { display: inline-flex; align-items: center; gap: 13px; padding: 8px 10px; border: 1px solid #dfd2c2; background: white; }
+.dh-cart-qty button { border: 0; background: none; color: #563723; font-size: 18px; cursor: pointer; }
+.dh-cart-line-price { min-width: 82px; text-align: right; font-weight: 700; }
+.dh-cart-summary { padding: 24px; background: #fffdfa; border: 1px solid #e8ddce; position: sticky; top: 25px; }
+.dh-cart-summary h2 { margin: 0 0 20px; font: 500 25px Georgia, serif; }
+.dh-summary-line { display: flex; justify-content: space-between; gap: 15px; margin: 13px 0; color: #66564a; font-size: 13px; }
+.dh-summary-total { padding-top: 15px; border-top: 1px solid #e8ddce; color: #39271d; font-size: 17px; font-weight: 700; }
+.dh-cart-notice { margin: 18px 0; padding: 13px; background: #f3eadc; color: #65452e; font-size: 12px; line-height: 1.6; }
+.dh-checkout-btn, .dh-primary-btn { display: inline-flex; width: 100%; min-height: 48px; justify-content: center; align-items: center; border: 0; background: #4b2e20; color: #fff !important; text-decoration: none; font-size: 11px; font-weight: 700; letter-spacing: .1em; cursor: pointer; }
+.dh-checkout-btn:disabled { opacity: .45; cursor: not-allowed; }
+.dh-continue-shopping { display: inline-block; margin-top: 17px; color: #8d552d; font-size: 12px; text-decoration: underline; }
+.dh-empty-cart { padding: 65px 20px; text-align: center; background: #fffdfa; border: 1px solid #e8ddce; }
+.dh-empty-icon { font-size: 35px; }
+.dh-empty-cart h2 { margin: 15px 0 8px; font: 500 30px Georgia, serif; }
+.dh-empty-cart p { margin-bottom: 22px; color: #806f62; }
+.dh-empty-cart .dh-primary-btn { width: auto; padding: 0 24px; }
+.dh-cart-error { padding: 25px; background: #fff; color: #8c3b2c; }
+@media (max-width: 760px) {
+  .dh-floating-cart { right: 14px; bottom: 14px; padding: 12px 15px; }
+  .dh-cart-page { padding: 38px 14px 80px; }
+  .dh-cart-layout { grid-template-columns: 1fr; }
+  .dh-cart-row { grid-template-columns: 72px minmax(0,1fr); gap: 10px 12px; }
+  .dh-cart-row img { width: 72px; height: 82px; grid-row: span 2; }
+  .dh-cart-qty { grid-column: 2; justify-self: start; }
+  .dh-cart-line-price { grid-column: 2; grid-row: 2; justify-self: end; }
+  .dh-cart-summary { position: static; }
+}

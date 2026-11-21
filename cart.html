@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Your Cart | Dharoahar</title>
+  <meta name="description" content="Review your Dharoahar spice order.">
+  <link rel="stylesheet" href="cart.css">
+  <style>
+    *{box-sizing:border-box}
+    body{margin:0;background:#f7f2e9;color:#39271d;font-family:Arial,sans-serif}
+    .cart-header{background:#fbf8f1;border-bottom:1px solid #e7ded2}
+    .cart-header-inner{max-width:1120px;margin:auto;padding:17px 20px;display:flex;align-items:center;justify-content:space-between;gap:20px}
+    .cart-brand{text-decoration:none;color:#39271d}
+    .cart-brand strong{display:block;font:500 27px Georgia,serif}
+    .cart-brand small{display:block;margin-top:3px;color:#9a806b;font-size:9px;letter-spacing:.22em;text-transform:uppercase}
+    .cart-back{color:#805332;font-size:12px;text-decoration:none}
+    .cart-footer{padding:30px 20px;text-align:center;color:#8b7a6b;font-size:11px}
+  </style>
+</head>
+<body data-page="cart">
+  <header class="cart-header">
+    <div class="cart-header-inner">
+      <a class="cart-brand" href="index.html"><strong>Dharoahar</strong><small>Authentic Indian Spices</small></a>
+      <a class="cart-back" href="products.html">← Continue shopping</a>
+    </div>
+  </header>
+
+  <main class="dh-cart-page">
+    <div class="dh-cart-wrap">
+      <div class="dh-cart-heading">
+        <div class="dh-cart-eyebrow">Your selection</div>
+        <h1>Your Shopping Cart</h1>
+        <p>Review your spices and quantities before proceeding.</p>
+      </div>
+
+      <div class="dh-cart-layout">
+        <section class="dh-cart-list" id="dhCartItems" aria-live="polite">
+          <p>Loading your cart…</p>
+        </section>
+
+        <aside class="dh-cart-summary">
+          <h2>Order Summary</h2>
+          <div class="dh-summary-line"><span>Product subtotal</span><strong id="dhSubtotal">₹0</strong></div>
+          <div class="dh-summary-line"><span>Below-minimum delivery charge</span><strong id="dhDelivery">₹0</strong></div>
+          <div class="dh-summary-line dh-summary-total"><span>Estimated total</span><strong id="dhGrandTotal">₹0</strong></div>
+          <div class="dh-cart-notice" id="dhCartNotice">Loading order settings…</div>
+          <button class="dh-checkout-btn" id="dhCheckoutButton" type="button" disabled>CHECKOUT WILL BE AVAILABLE NEXT</button>
+          <a class="dh-continue-shopping" href="products.html">Continue shopping</a>
+        </aside>
+      </div>
+    </div>
+  </main>
+
+  <footer class="cart-footer">© Dharoahar. Rooted in Tradition. Delivered with Purity.</footer>
+  <script src="cart.js" defer></script>
+</body>
+</html>
