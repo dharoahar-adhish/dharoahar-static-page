@@ -1,16 +1,159 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Checkout | Dharoahar</title><link rel="stylesheet" href="cart.css"></head><body data-page="checkout"><header class="dh-brand-head"><div class="dh-brand-inner"><a class="dh-brand" href="index.html"><strong>Dharoahar</strong><small>Authentic Indian Spices</small></a><a class="dh-back" href="products.html">Continue shopping</a></div></header>
-<main class="dh-page"><div class="dh-wrap"><div class="dh-page-head"><div class="dh-eyebrow">Almost yours</div><h1>Delivery Details</h1><p>Share your details so we can prepare and deliver your Dharoahar order.</p></div><div class="dh-grid"><section class="dh-panel"><form id="dhCheckoutForm" class="dh-form-grid">
-<div class="dh-field"><label for="name">Full name *</label><input id="name" name="name" autocomplete="name" required maxlength="100"></div>
-<div class="dh-field"><label for="mobile">Mobile number *</label><input id="mobile" name="mobile" inputmode="numeric" autocomplete="tel" pattern="[0-9]{10}" maxlength="10" placeholder="10-digit mobile number" required></div>
-<div class="dh-field full"><label for="email">Email address *</label><input id="email" name="email" type="email" autocomplete="email" required maxlength="150"></div>
-<div class="dh-field full"><label for="address1">House / Flat / Building, Street *</label><input id="address1" name="address1" autocomplete="address-line1" required maxlength="180"></div>
-<div class="dh-field full"><label for="address2">Landmark / Area (optional)</label><input id="address2" name="address2" autocomplete="address-line2" maxlength="180"></div>
-<div class="dh-field"><label for="city">City *</label><input id="city" name="city" autocomplete="address-level2" required maxlength="80"></div>
-<div class="dh-field"><label for="state">State *</label><input id="state" name="state" autocomplete="address-level1" required maxlength="80"></div>
-<div class="dh-field"><label for="pincode">PIN code *</label><input id="pincode" name="pincode" inputmode="numeric" pattern="[0-9]{6}" maxlength="6" autocomplete="postal-code" required></div>
-<div class="dh-field full"><label for="notes">Delivery instructions (optional)</label><textarea id="notes" name="notes" maxlength="500"></textarea></div>
-<div class="dh-field full"><label style="display:flex;gap:9px;align-items:flex-start;font-weight:400"><input type="checkbox" id="consent" required style="width:auto;min-height:0;margin-top:2px"> I confirm that the delivery details are correct and agree to the Terms & Conditions and Privacy Policy.</label></div>
-<div class="dh-field full"><div id="checkoutError" aria-live="polite"></div><button class="dh-btn" id="placeOrder" type="submit">CONTINUE TO PAYMENT</button></div>
-</form></section><aside class="dh-panel"><h2 style="font:500 25px Georgia,serif;margin:0 0 18px">Order Summary</h2><div id="checkoutItems"></div><div class="dh-summary-line"><span>Product subtotal</span><strong id="checkoutSubtotal">₹0</strong></div><div class="dh-summary-line"><span>Delivery charge</span><strong id="checkoutDelivery">₹0</strong></div><div class="dh-summary-line dh-summary-total"><span>Total payable</span><strong id="checkoutTotal">₹0</strong></div><div class="dh-note" id="checkoutDeliveryNote">Delivery estimate: 10–15 days.</div><p class="dh-muted">Orders are accepted subject to product availability and delivery serviceability. Payment is made directly through UPI. Dharoahar will call you to verify receipt; no UTR or screenshot is required.</p></aside></div></div></main><footer class="dh-page-footer">© Dharoahar · Authentic Indian Spices · <a href="privacy.html">Privacy</a> · <a href="terms.html">Terms</a></footer>
-<iframe name="dhOrderSubmitFrame" id="dhOrderSubmitFrame" title="Order submission" style="display:none"></iframe>
-<script src="ecommerce-config.js"></script><script src="checkout.js" defer></script></body></html>
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f7f2e9">
+  <title>Checkout | Dharoahar</title>
+  <link rel="stylesheet" href="cart.css">
+  <link rel="stylesheet" href="checkout.css">
+</head>
+<body class="dh-checkout-page" data-page="checkout">
+  <header class="dh-brand-head">
+    <div class="dh-brand-inner">
+      <a class="dh-brand" href="index.html">
+        <strong>Dharoahar</strong>
+        <small>Authentic Indian Spices</small>
+      </a>
+      <a class="dh-back" href="cart.html">← Back to cart</a>
+    </div>
+  </header>
+
+  <main class="co-main">
+    <div class="co-wrap">
+      <div class="co-heading">
+        <div class="co-eyebrow">Almost yours</div>
+        <h1>Delivery details</h1>
+        <p>Just a few details and your favourite Dharoahar spices will be on their way.</p>
+        <div class="co-steps" aria-label="Checkout progress">
+          <span class="co-step co-step-done"><b>1</b> Cart</span>
+          <i></i>
+          <span class="co-step co-step-active"><b>2</b> Delivery</span>
+          <i></i>
+          <span class="co-step"><b>3</b> Payment</span>
+        </div>
+      </div>
+
+      <div class="co-layout">
+        <section class="co-card co-form-card">
+          <div class="co-card-heading">
+            <span class="co-number">01</span>
+            <div>
+              <h2>Your contact details</h2>
+              <p>We'll use these details for order updates and delivery coordination.</p>
+            </div>
+          </div>
+
+          <form id="dhCheckoutForm" class="co-form">
+            <div class="co-section-label">Contact</div>
+            <div class="co-fields co-fields-two">
+              <div class="co-field">
+                <label for="name">Full name <em>*</em></label>
+                <input id="name" name="name" autocomplete="name" placeholder="Enter your full name" required maxlength="100">
+              </div>
+              <div class="co-field">
+                <label for="mobile">Mobile number <em>*</em></label>
+                <input id="mobile" name="mobile" type="tel" inputmode="numeric" autocomplete="tel" pattern="[0-9]{10}" maxlength="10" placeholder="10-digit mobile number" required>
+                <small>We'll call this number to verify payment and coordinate delivery.</small>
+              </div>
+              <div class="co-field co-field-wide">
+                <label for="email">Email address <em>*</em></label>
+                <input id="email" name="email" type="email" autocomplete="email" placeholder="you@example.com" required maxlength="150">
+                <small>Your order confirmation will be sent here.</small>
+              </div>
+            </div>
+
+            <div class="co-divider"></div>
+            <div class="co-card-heading co-address-heading">
+              <span class="co-number">02</span>
+              <div>
+                <h2>Where should we deliver?</h2>
+                <p>Please enter the address where you can receive the parcel.</p>
+              </div>
+            </div>
+
+            <div class="co-fields">
+              <div class="co-field co-field-wide">
+                <label for="address1">House / flat / building, street <em>*</em></label>
+                <input id="address1" name="address1" autocomplete="address-line1" placeholder="House number, building, street" required maxlength="180">
+              </div>
+              <div class="co-field co-field-wide">
+                <label for="address2">Area / landmark <span>(optional)</span></label>
+                <input id="address2" name="address2" autocomplete="address-line2" placeholder="Nearby landmark, locality" maxlength="180">
+              </div>
+              <div class="co-fields co-fields-two co-field-wide co-nested-fields">
+                <div class="co-field">
+                  <label for="city">City <em>*</em></label>
+                  <input id="city" name="city" autocomplete="address-level2" placeholder="City" required maxlength="80">
+                </div>
+                <div class="co-field">
+                  <label for="state">State <em>*</em></label>
+                  <input id="state" name="state" autocomplete="address-level1" placeholder="State" required maxlength="80">
+                </div>
+                <div class="co-field">
+                  <label for="pincode">PIN code <em>*</em></label>
+                  <input id="pincode" name="pincode" inputmode="numeric" pattern="[0-9]{6}" maxlength="6" autocomplete="postal-code" placeholder="6-digit PIN code" required>
+                </div>
+              </div>
+              <div class="co-field co-field-wide">
+                <label for="notes">Delivery instructions <span>(optional)</span></label>
+                <textarea id="notes" name="notes" rows="3" maxlength="500" placeholder="Any directions that will help us deliver your order?"></textarea>
+              </div>
+            </div>
+
+            <div class="co-consent">
+              <input type="checkbox" id="consent" required>
+              <label for="consent">I confirm that these delivery details are correct and agree to the <a href="terms.html" target="_blank" rel="noopener">Terms &amp; Conditions</a> and <a href="privacy.html" target="_blank" rel="noopener">Privacy Policy</a>.</label>
+            </div>
+
+            <div id="checkoutError" class="co-feedback" aria-live="polite"></div>
+            <button class="co-submit" id="placeOrder" type="submit">
+              <span>CONTINUE TO PAYMENT</span><b>→</b>
+            </button>
+            <p class="co-secure-note">Your details are used only to process and deliver your Dharoahar order.</p>
+          </form>
+        </section>
+
+        <aside class="co-card co-summary-card">
+          <div class="co-summary-top">
+            <div>
+              <div class="co-eyebrow">Your selection</div>
+              <h2>Order summary</h2>
+            </div>
+            <a href="cart.html">Edit cart</a>
+          </div>
+          <div id="checkoutItems" class="co-items">
+            <div class="co-loading">Loading your selected spices and latest prices…</div>
+          </div>
+          <div class="co-totals">
+            <div><span>Product subtotal</span><strong id="checkoutSubtotal">₹—</strong></div>
+            <div><span>Delivery charge</span><strong id="checkoutDelivery">₹—</strong></div>
+            <div class="co-grand-total"><span>Total payable</span><strong id="checkoutTotal">₹—</strong></div>
+          </div>
+          <div class="co-delivery-note" id="checkoutDeliveryNote">Delivery estimate: 10–15 days after payment confirmation, subject to PIN-code serviceability.</div>
+          <div class="co-support">
+            <span class="co-support-icon">?</span>
+            <p>Need help with your order?<br><a href="https://wa.me/918603824415" target="_blank" rel="noopener">Chat with Dharoahar on WhatsApp →</a></p>
+          </div>
+        </aside>
+      </div>
+
+      <div class="co-bottom-trust">
+        <span>✓ Secure order recording</span>
+        <span>✓ Manual payment verification</span>
+        <span>✓ Pan-India delivery, subject to PIN-code serviceability</span>
+      </div>
+    </div>
+  </main>
+
+  <footer class="dh-page-footer">
+    © Dharoahar · Authentic Indian Spices ·
+    <a href="privacy.html">Privacy</a> ·
+    <a href="terms.html">Terms</a>
+  </footer>
+
+  <iframe name="dhOrderSubmitFrame" id="dhOrderSubmitFrame" title="Order submission" style="display:none"></iframe>
+  <script src="ecommerce-config.js"></script>
+  <script src="checkout.js" defer></script>
+</body>
+</html>

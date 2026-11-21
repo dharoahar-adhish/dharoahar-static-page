@@ -1,25 +1,466 @@
-(function(){
-"use strict";
-const cfg=window.DHAROAHAR_CONFIG||{};
-const API=cfg.apiUrl||"";
-const KEY=cfg.cartKey||"dharoahar_cart_v1";
-let products={},settings={};
-const $=id=>document.getElementById(id);
-const money=n=>"₹"+Number(n||0).toLocaleString("en-IN",{maximumFractionDigits:2});
-function cart(){try{return JSON.parse(localStorage.getItem(KEY)||"[]")}catch(e){return[]}}
-function save(a){localStorage.setItem(KEY,JSON.stringify(a));badges()}
-function qtyCount(){return cart().reduce((s,x)=>s+(Number(x.quantity)||0),0)}
-function badges(){document.querySelectorAll("[data-cart-count]").forEach(x=>x.textContent=qtyCount());let b=document.querySelector(".dh-floating-cart-count");if(b)b.textContent=qtyCount()}
-function toast(t){let x=document.querySelector(".dh-cart-toast");if(!x){x=document.createElement("div");x.className="dh-cart-toast";document.body.appendChild(x)}x.textContent=t;x.classList.add("is-visible");clearTimeout(window.__dhToast);window.__dhToast=setTimeout(()=>x.classList.remove("is-visible"),2300)}
-function floating(){if(document.querySelector(".dh-floating-cart"))return;let a=document.createElement("a");a.className="dh-floating-cart";a.href="cart.html";a.innerHTML='🛒 <span>Cart</span> <b class="dh-floating-cart-count">'+qtyCount()+'</b>';document.body.appendChild(a)}
-function load(cb){let n="__dhp"+Date.now(),s=document.createElement("script"),done=false;let timer=setTimeout(()=>finish(false),12000);function finish(ok,d){if(done)return;done=true;clearTimeout(timer);try{delete window[n]}catch(e){}s.remove();if(ok&&d){(d.products||[]).forEach(p=>products[p.sku]=p);settings=d.settings||{}}cb(ok)}window[n]=d=>finish(!!(d&&d.success),d);s.onerror=()=>finish(false);s.src=API+"?callback="+n+"&_="+Date.now();document.head.appendChild(s)}
-function renderCards(){document.querySelectorAll("[data-commerce]").forEach(c=>{let p=products[c.dataset.sku];let price=c.querySelector("[data-sale-price]"),mrp=c.querySelector("[data-mrp]"),disc=c.querySelector("[data-discount]"),pack=c.querySelector("[data-pack-label]"),btn=c.querySelector("[data-add-to-cart]");if(!p){if(price)price.textContent="Price unavailable";if(btn){btn.disabled=true;btn.textContent="UNAVAILABLE"}return}if(price)price.textContent=money(p.salePrice);if(mrp)mrp.textContent=p.mrp>p.salePrice?money(p.mrp):"";if(disc)disc.textContent=p.discount>0?Math.round(p.discount*100)+"% OFF":"";if(pack)pack.textContent=(p.packSize||100)+" g pack";let stock=String(p.stockStatus).trim().toLowerCase()==="in stock";if(btn){btn.disabled=!stock;btn.textContent=stock?"ADD TO CART":"OUT OF STOCK"}if(String(p.visible).toUpperCase()!=="YES")c.style.display="none"})}
-function safe(v){return String(v||"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]))}
-function summary(sub){let min=Number(settings["Minimum Order Value"])||500,abs=Number(settings["Minimum Cart Value for Checkout"])||250,allow=String(settings["Allow Checkout Below ₹500"]||"YES").toUpperCase()==="YES",fee=Number(settings["Below ₹500 Delivery Charge"])||0,delivery=(sub<min&&allow&&sub>=abs)?fee:0;return{min,abs,allow,fee,delivery,total:sub+delivery,can:sub>=min||(allow&&sub>=abs)}}
-function renderCart(){let box=$("dhCartItems");if(!box)return;let items=cart();if(!items.length){box.innerHTML='<div style="padding:45px 15px;text-align:center"><h2 style="font:500 28px Georgia,serif">Your cart is waiting</h2><p class="dh-muted">You have not added any spices yet.</p><a class="dh-btn" href="products.html">EXPLORE OUR SPICES</a></div>';updateTotals(0);return}let subtotal=0;box.innerHTML=items.map(i=>{let p=products[i.sku];if(!p)return"";let q=Number(i.quantity)||1,line=Number(p.salePrice)*q;subtotal+=line;return `<div class="dh-line-item"><img src="${safe(p.image)}" alt="${safe(p.name)}"><div><h3>${safe(p.name)}</h3><p>${safe(p.hindiName)} · ${p.packSize||100} g · ${money(p.salePrice)} each</p><div style="display:flex;align-items:center;gap:10px;margin-top:8px"><button type="button" class="dh-qty-mini" data-minus="${safe(i.sku)}">−</button><strong>${q}</strong><button type="button" class="dh-qty-mini" data-plus="${safe(i.sku)}">+</button><button type="button" class="dh-remove" data-remove="${safe(i.sku)}">Remove</button></div></div><strong>${money(line)}</strong></div>`}).join("");updateTotals(subtotal)}
-function updateTotals(sub){let s=summary(sub);if($("dhSubtotal"))$("dhSubtotal").textContent=money(sub);if($("dhDelivery"))$("dhDelivery").textContent=s.delivery?money(s.delivery):"₹0";if($("dhGrandTotal"))$("dhGrandTotal").textContent=money(s.total);if($("dhCartNotice"))$("dhCartNotice").textContent=sub===0?"Add products to get started.":sub<s.abs?`Your cart must be at least ${money(s.abs)} to proceed.`:sub<s.min?`Add ${money(s.min-sub)} more to avoid the below-minimum delivery charge of ${money(s.fee)}. You may continue with the additional charge.`:`You have reached the ₹${s.min} minimum order value. Estimated delivery: ${settings["Delivery Min Days"]||10}–${settings["Delivery Max Days"]||15} days.`;let b=$("dhCheckoutButton");if(b){b.classList.add("dh-btn");b.style.width="100%";b.href=s.can?"checkout.html":"#";b.setAttribute("aria-disabled",s.can?"false":"true");b.style.opacity=s.can?"1":".45";b.onclick=e=>{if(!s.can){e.preventDefault();toast("Minimum checkout value is "+money(s.abs))}}}}
-document.addEventListener("click",e=>{let m=e.target.closest("[data-qty-minus]"),p=e.target.closest("[data-qty-plus]"),a=e.target.closest("[data-add-to-cart]");if(m||p){e.preventDefault();let c=(m||p).closest("[data-commerce]"),o=c&&c.querySelector("[data-qty]");if(o)o.textContent=Math.max(1,Math.min(100,(Number(o.textContent)||1)+(m?-1:1)));return}if(a){e.preventDefault();let c=a.closest("[data-commerce]"),sku=c.dataset.sku,pd=products[sku];if(!pd||String(pd.stockStatus).toLowerCase()!=="in stock"){toast("This product is currently unavailable.");return}let q=Math.max(1,Math.min(100,Number(c.querySelector("[data-qty]")?.textContent)||1)),items=cart(),old=items.find(x=>x.sku===sku);if(old)old.quantity=Math.min(100,old.quantity+q);else items.push({sku,quantity:q});save(items);toast(pd.name+" added to cart");a.textContent="ADDED ✓";setTimeout(()=>a.textContent="ADD TO CART",1400);return}let minus=e.target.closest("[data-minus]"),plus=e.target.closest("[data-plus]"),remove=e.target.closest("[data-remove]");if(minus||plus||remove){let sku=(minus||plus||remove).dataset.minus||(minus||plus||remove).dataset.plus||(minus||plus||remove).dataset.remove,items=cart(),it=items.find(x=>x.sku===sku);if(remove)items=items.filter(x=>x.sku!==sku);else if(it)it.quantity=Math.max(1,Math.min(100,it.quantity+(minus?-1:1)));save(items);renderCart()}});
-document.addEventListener("DOMContentLoaded",()=>{floating();badges();load(ok=>{if(!ok){if($("dhCartItems"))$("dhCartItems").innerHTML='<div class="dh-error">Unable to load current product prices. Please refresh.</div>';return}renderCards();renderCart()})});
-window.addEventListener("storage",badges);
-window.DharoaharStore={cart,products:()=>products,settings:()=>settings,money,summary};
+(function () {
+  "use strict";
+
+  // Prevent duplicate initialisation if this script is accidentally included twice.
+  if (window.__DHAROAHAR_CART_INIT__) return;
+  window.__DHAROAHAR_CART_INIT__ = true;
+
+  const cfg = window.DHAROAHAR_CONFIG || {};
+  const API = String(cfg.apiUrl || "").trim();
+  const CART_KEY = cfg.cartKey || "dharoahar_cart_v1";
+  const PRODUCT_CACHE_KEY = "dharoahar_products_cache_v1";
+  const PRODUCT_CACHE_MAX_AGE = 24 * 60 * 60 * 1000;
+
+  let products = {};
+  let settings = {};
+  let usingCachedPrices = false;
+
+  const $ = id => document.getElementById(id);
+  const money = value => "₹" + Number(value || 0).toLocaleString("en-IN", {
+    maximumFractionDigits: 2
+  });
+
+  function readCart() {
+    try {
+      const value = JSON.parse(localStorage.getItem(CART_KEY) || "[]");
+      return Array.isArray(value) ? value : [];
+    } catch (error) {
+      return [];
+    }
+  }
+
+  function writeCart(items) {
+    try {
+      localStorage.setItem(CART_KEY, JSON.stringify(items));
+    } catch (error) {}
+    updateBadges();
+    window.dispatchEvent(new Event("dharoahar-cart-updated"));
+  }
+
+  function updateBadges() {
+    const count = readCart().reduce((sum, item) =>
+      sum + Math.max(0, Number(item.quantity) || 0), 0);
+
+    document.querySelectorAll("[data-cart-count]").forEach(node => {
+      node.textContent = count;
+    });
+
+    document.querySelectorAll(".dh-floating-cart-count").forEach(node => {
+      node.textContent = count;
+    });
+  }
+
+  function showToast(message) {
+    let toast = document.querySelector(".dh-cart-toast");
+    if (!toast) {
+      toast = document.createElement("div");
+      toast.className = "dh-cart-toast";
+      toast.setAttribute("role", "status");
+      document.body.appendChild(toast);
+    }
+
+    toast.textContent = message;
+    toast.classList.add("is-visible");
+    clearTimeout(window.__dharoaharToastTimer);
+    window.__dharoaharToastTimer = setTimeout(() => {
+      toast.classList.remove("is-visible");
+    }, 2300);
+  }
+
+  function addFloatingCart() {
+    if (document.querySelector(".dh-floating-cart")) return;
+
+    const link = document.createElement("a");
+    link.className = "dh-floating-cart";
+    link.href = "cart.html";
+    link.setAttribute("aria-label", "Open shopping cart");
+    link.innerHTML =
+      '🛒 <span>Cart</span> <b class="dh-floating-cart-count">' +
+      updateCartCount() + '</b>';
+
+    document.body.appendChild(link);
+  }
+
+  function updateCartCount() {
+    return readCart().reduce((sum, item) =>
+      sum + Math.max(0, Number(item.quantity) || 0), 0);
+  }
+
+  function escapeHTML(value) {
+    return String(value == null ? "" : value).replace(/[&<>"']/g, char => ({
+      "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;"
+    })[char]);
+  }
+
+  function jsonpRequest(url, timeoutMs) {
+    return new Promise(resolve => {
+      const callbackName = "__dhProductFeed_" + Date.now() + "_" +
+        Math.random().toString(36).slice(2, 10);
+      const script = document.createElement("script");
+      let finished = false;
+
+      const timer = setTimeout(() => finish(null), timeoutMs || 20000);
+
+      function finish(data) {
+        if (finished) return;
+        finished = true;
+        clearTimeout(timer);
+        try { delete window[callbackName]; } catch (error) {}
+        script.remove();
+        resolve(data);
+      }
+
+      window[callbackName] = finish;
+      script.onerror = () => finish(null);
+      script.src = url + (url.includes("?") ? "&" : "?") +
+        "callback=" + encodeURIComponent(callbackName) +
+        "&_=" + Date.now() + Math.random().toString(36).slice(2, 5);
+
+      document.head.appendChild(script);
+    });
+  }
+
+  function saveProductCache(data) {
+    try {
+      localStorage.setItem(PRODUCT_CACHE_KEY, JSON.stringify({
+        savedAt: Date.now(),
+        products: data.products || [],
+        settings: data.settings || {}
+      }));
+    } catch (error) {}
+  }
+
+  function readProductCache() {
+    try {
+      const cached = JSON.parse(localStorage.getItem(PRODUCT_CACHE_KEY) || "null");
+      if (!cached || !Array.isArray(cached.products)) return null;
+      if (Date.now() - Number(cached.savedAt || 0) > PRODUCT_CACHE_MAX_AGE) return null;
+      return cached;
+    } catch (error) {
+      return null;
+    }
+  }
+
+  function applyProductFeed(data, isCache) {
+    products = {};
+    (data.products || []).forEach(product => {
+      if (product && product.sku) products[String(product.sku).trim()] = product;
+    });
+    settings = data.settings || {};
+    usingCachedPrices = Boolean(isCache);
+  }
+
+  async function loadProductFeed() {
+    if (!API) throw new Error("The website pricing connection is not configured.");
+
+    let lastError = null;
+
+    // Retry transient mobile-network / Apps Script redirect delays.
+    for (let attempt = 1; attempt <= 3; attempt++) {
+      const data = await jsonpRequest(API, 20000);
+      if (data && data.success && Array.isArray(data.products)) {
+        saveProductCache(data);
+        applyProductFeed(data, false);
+        return;
+      }
+
+      lastError = new Error("The live product feed did not respond.");
+      if (attempt < 3) {
+        await new Promise(resolve => setTimeout(resolve, 700 * attempt));
+      }
+    }
+
+    // Cached prices are only a display fallback. Checkout re-fetches live prices
+    // and the server independently verifies every price before saving an order.
+    const cached = readProductCache();
+    if (cached) {
+      applyProductFeed(cached, true);
+      return;
+    }
+
+    throw lastError || new Error("Unable to load product prices.");
+  }
+
+  function renderProductCards() {
+    document.querySelectorAll("[data-commerce]").forEach(card => {
+      const sku = String(card.dataset.sku || "").trim();
+      const product = products[sku];
+
+      const price = card.querySelector("[data-sale-price]");
+      const mrp = card.querySelector("[data-mrp]");
+      const discount = card.querySelector("[data-discount]");
+      const pack = card.querySelector("[data-pack-label]");
+      const button = card.querySelector("[data-add-to-cart]");
+
+      if (!product) {
+        if (price) price.textContent = "Price unavailable";
+        if (button) {
+          button.disabled = true;
+          button.textContent = "UNAVAILABLE";
+        }
+        return;
+      }
+
+      if (price) price.textContent = money(product.salePrice);
+      if (mrp) {
+        mrp.textContent = Number(product.mrp) > Number(product.salePrice)
+          ? money(product.mrp) : "";
+      }
+      if (discount) {
+        discount.textContent = Number(product.discount) > 0
+          ? Math.round(Number(product.discount) * 100) + "% OFF" : "";
+      }
+      if (pack) pack.textContent = (Number(product.packSize) || 100) + " g pack";
+
+      const inStock = String(product.stockStatus || "").trim().toLowerCase() === "in stock";
+      if (button) {
+        button.disabled = !inStock;
+        button.textContent = inStock ? "ADD TO CART" : "OUT OF STOCK";
+      }
+
+      if (String(product.visible || "").trim().toUpperCase() !== "YES") {
+        card.style.display = "none";
+      }
+    });
+
+    if (usingCachedPrices) {
+      document.querySelectorAll("[data-commerce]").forEach(card => {
+        const price = card.querySelector("[data-sale-price]");
+        if (price) price.title = "Recently cached display price. Live price will be verified at checkout.";
+      });
+    }
+  }
+
+  function getCartRules() {
+    const minimum = Number(settings["Minimum Order Value"]) || 500;
+    const absoluteMinimum = Number(settings["Minimum Cart Value for Checkout"]) || 250;
+    const allowBelow = String(settings["Allow Checkout Below ₹500"] || "YES")
+      .trim().toUpperCase() === "YES";
+    const belowCharge = Number(settings["Below ₹500 Delivery Charge"]) || 0;
+
+    return { minimum, absoluteMinimum, allowBelow, belowCharge };
+  }
+
+  function calculateSummary(subtotal) {
+    const rules = getCartRules();
+    const delivery = subtotal < rules.minimum && rules.allowBelow &&
+      subtotal >= rules.absoluteMinimum ? rules.belowCharge : 0;
+
+    return {
+      ...rules,
+      delivery,
+      total: subtotal + delivery,
+      canCheckout: subtotal >= rules.minimum ||
+        (rules.allowBelow && subtotal >= rules.absoluteMinimum)
+    };
+  }
+
+  function renderCart() {
+    const container = $("dhCartItems");
+    if (!container) return;
+
+    const items = readCart();
+
+    if (!items.length) {
+      container.innerHTML = `
+        <div class="dh-cart-empty">
+          <div class="dh-cart-empty-mark">✦</div>
+          <h2>Your cart is waiting</h2>
+          <p class="dh-muted">You haven't added any spices yet.</p>
+          <a class="dh-btn" href="products.html">EXPLORE OUR SPICES</a>
+        </div>`;
+      updateTotals(0);
+      return;
+    }
+
+    let subtotal = 0;
+    const itemMarkup = [];
+
+    items.forEach(item => {
+      const product = products[String(item.sku || "").trim()];
+      if (!product) return;
+
+      const quantity = Math.max(1, Number(item.quantity) || 1);
+      const price = Number(product.salePrice) || 0;
+      const lineTotal = price * quantity;
+      subtotal += lineTotal;
+
+      itemMarkup.push(`
+        <article class="dh-line-item">
+          <img src="${escapeHTML(product.image)}" alt="${escapeHTML(product.name)}" loading="lazy">
+          <div class="dh-cart-product-copy">
+            <h3>${escapeHTML(product.name)}</h3>
+            <p>${escapeHTML(product.hindiName || "")} · ${Number(product.packSize) || 100} g · ${money(price)} each</p>
+            <div class="dh-cart-item-actions">
+              <div class="dh-cart-qty" aria-label="Quantity">
+                <button type="button" class="dh-qty-mini" data-minus="${escapeHTML(item.sku)}" aria-label="Decrease quantity">−</button>
+                <span>${quantity}</span>
+                <button type="button" class="dh-qty-mini" data-plus="${escapeHTML(item.sku)}" aria-label="Increase quantity">+</button>
+              </div>
+              <button type="button" class="dh-remove" data-remove="${escapeHTML(item.sku)}">Remove</button>
+            </div>
+          </div>
+          <strong class="dh-cart-line-total">${money(lineTotal)}</strong>
+        </article>`);
+    });
+
+    if (!itemMarkup.length) {
+      container.innerHTML = '<div class="dh-error">Your cart items could not be matched to the current product list. Please return to Our Spices and add them again.</div>';
+      updateTotals(0);
+      return;
+    }
+
+    container.innerHTML = itemMarkup.join("");
+    updateTotals(Math.round((subtotal + Number.EPSILON) * 100) / 100);
+  }
+
+  function updateTotals(subtotal) {
+    const rules = calculateSummary(subtotal);
+
+    if ($("dhSubtotal")) $("dhSubtotal").textContent = money(subtotal);
+    if ($("dhDelivery")) $("dhDelivery").textContent = money(rules.delivery);
+    if ($("dhGrandTotal")) $("dhGrandTotal").textContent = money(rules.total);
+
+    const notice = $("dhCartNotice");
+    if (notice) {
+      if (!subtotal) {
+        notice.textContent = "Add products to get started.";
+      } else if (subtotal < rules.absoluteMinimum) {
+        notice.textContent = "Your cart must be at least " +
+          money(rules.absoluteMinimum) + " to proceed.";
+      } else if (subtotal < rules.minimum) {
+        notice.textContent = "Add " + money(rules.minimum - subtotal) +
+          " more to reach the ₹" + rules.minimum +
+          " minimum and avoid the below-minimum delivery charge of " +
+          money(rules.belowCharge) + ". You may continue with the additional charge.";
+      } else {
+        notice.textContent = "You have reached the ₹" + rules.minimum +
+          " minimum order value. Estimated delivery: " +
+          (settings["Delivery Min Days"] || 10) + "–" +
+          (settings["Delivery Max Days"] || 15) + " days.";
+      }
+
+      if (usingCachedPrices) {
+        notice.textContent += " Display prices were recently cached; checkout will verify live prices.";
+      }
+    }
+
+    const button = $("dhCheckoutButton");
+    if (button) {
+      button.classList.add("dh-btn");
+      button.href = rules.canCheckout ? "checkout.html" : "#";
+      button.setAttribute("aria-disabled", rules.canCheckout ? "false" : "true");
+      button.style.opacity = rules.canCheckout ? "1" : ".48";
+      button.onclick = event => {
+        if (!rules.canCheckout) {
+          event.preventDefault();
+          showToast("Minimum checkout value is " + money(rules.absoluteMinimum));
+        }
+      };
+    }
+  }
+
+  function adjustCartItem(sku, delta, remove) {
+    const items = readCart();
+    const item = items.find(entry => String(entry.sku) === String(sku));
+    if (remove) {
+      writeCart(items.filter(entry => String(entry.sku) !== String(sku)));
+    } else if (item) {
+      item.quantity = Math.max(1, Math.min(100, (Number(item.quantity) || 1) + delta));
+      writeCart(items);
+    }
+    renderCart();
+  }
+
+  document.addEventListener("click", event => {
+    const minusCard = event.target.closest("[data-qty-minus]");
+    const plusCard = event.target.closest("[data-qty-plus]");
+    const addButton = event.target.closest("[data-add-to-cart]");
+
+    if (minusCard || plusCard) {
+      event.preventDefault();
+      const card = (minusCard || plusCard).closest("[data-commerce]");
+      const output = card && card.querySelector("[data-qty]");
+      if (output) {
+        const next = (Number(output.textContent) || 1) + (minusCard ? -1 : 1);
+        output.textContent = Math.max(1, Math.min(100, next));
+      }
+      return;
+    }
+
+    if (addButton) {
+      event.preventDefault();
+      const card = addButton.closest("[data-commerce]");
+      if (!card) return;
+
+      const sku = String(card.dataset.sku || "").trim();
+      const product = products[sku];
+      if (!product || String(product.stockStatus).trim().toLowerCase() !== "in stock") {
+        showToast("This product is currently unavailable.");
+        return;
+      }
+
+      const quantity = Math.max(1, Math.min(100,
+        Number(card.querySelector("[data-qty]")?.textContent) || 1));
+      const items = readCart();
+      const existing = items.find(item => item.sku === sku);
+
+      if (existing) existing.quantity = Math.min(100, existing.quantity + quantity);
+      else items.push({ sku, quantity });
+
+      writeCart(items);
+      showToast(product.name + " added to cart");
+      addButton.textContent = "ADDED ✓";
+      setTimeout(() => {
+        if (document.body.contains(addButton)) addButton.textContent = "ADD TO CART";
+      }, 1400);
+      return;
+    }
+
+    const minus = event.target.closest("[data-minus]");
+    const plus = event.target.closest("[data-plus]");
+    const remove = event.target.closest("[data-remove]");
+
+    if (minus || plus || remove) {
+      const target = minus || plus || remove;
+      const sku = target.dataset.minus || target.dataset.plus || target.dataset.remove;
+      adjustCartItem(sku, minus ? -1 : 1, Boolean(remove));
+    }
+  });
+
+  async function initialise() {
+    addFloatingCart();
+    updateBadges();
+
+    try {
+      await loadProductFeed();
+      renderProductCards();
+      renderCart();
+    } catch (error) {
+      const cartContainer = $("dhCartItems");
+      if (cartContainer) {
+        cartContainer.innerHTML =
+          '<div class="dh-error">We could not load current product prices right now. Please check your internet connection and refresh this page.</div>';
+      }
+
+      document.querySelectorAll("[data-commerce] [data-sale-price]").forEach(node => {
+        node.textContent = "Price temporarily unavailable";
+      });
+      document.querySelectorAll("[data-commerce] [data-add-to-cart]").forEach(node => {
+        node.disabled = true;
+      });
+    }
+  }
+
+  document.addEventListener("DOMContentLoaded", initialise, { once: true });
+  window.addEventListener("storage", updateBadges);
+  window.addEventListener("dharoahar-cart-updated", updateBadges);
+
+  window.DharoaharStore = {
+    cart: readCart,
+    products: () => products,
+    settings: () => settings,
+    money: money,
+    summary: calculateSummary
+  };
 })();

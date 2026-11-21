@@ -1,3 +1,63 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Track Order | Dharoahar</title><link rel="stylesheet" href="cart.css"></head><body><header class="dh-brand-head"><div class="dh-brand-inner"><a class="dh-brand" href="index.html"><strong>Dharoahar</strong><small>Authentic Indian Spices</small></a><a class="dh-back" href="products.html">Continue shopping</a></div></header>
-<main class="dh-page"><div class="dh-wrap" style="max-width:760px"><div class="dh-page-head"><div class="dh-eyebrow">Order updates</div><h1>Track your order</h1><p>Enter your order ID and the last four digits of the mobile number used at checkout. Order and courier updates are entered manually by Dharoahar.</p></div><section class="dh-panel"><form id="trackForm" class="dh-form-grid"><div class="dh-field full"><label for="orderId">Order ID</label><input id="orderId" required placeholder="DHA-YYYYMMDD-XXXXXX"></div><div class="dh-field full"><label for="mobileLast4">Last four digits of mobile number</label><input id="mobileLast4" required inputmode="numeric" pattern="[0-9]{4}" maxlength="4"></div><div class="dh-field full"><button class="dh-btn" type="submit">FIND MY ORDER</button></div></form><div id="trackResult" style="margin-top:20px" aria-live="polite"></div></section></div></main><footer class="dh-page-footer">© Dharoahar · Authentic Indian Spices · <a href="privacy.html">Privacy</a> · <a href="terms.html">Terms</a></footer>
-<script src="ecommerce-config.js"></script><script src="track-order.js" defer></script></body></html>
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f7f2e9">
+  <title>Track Order | Dharoahar</title>
+  <link rel="stylesheet" href="cart.css">
+  <link rel="stylesheet" href="track-order.css">
+</head>
+<body class="dh-track-page">
+  <header class="dh-brand-head">
+    <div class="dh-brand-inner">
+      <a class="dh-brand" href="index.html">
+        <strong>Dharoahar</strong>
+        <small>Authentic Indian Spices</small>
+      </a>
+      <a class="dh-back" href="products.html">← Continue shopping</a>
+    </div>
+  </header>
+
+  <main class="dh-page">
+    <div class="dh-wrap dh-track-wrap">
+      <div class="dh-page-head">
+        <div class="dh-eyebrow">Order updates</div>
+        <h1>Track your order</h1>
+        <p>Enter your order ID and the last four digits of the mobile number used at checkout. Order and courier updates are entered manually by Dharoahar.</p>
+      </div>
+
+      <section class="dh-panel dh-track-panel">
+        <form id="trackForm" class="dh-form-grid">
+          <div class="dh-field full">
+            <label for="orderId">Order ID</label>
+            <input id="orderId" required placeholder="DHA-YYYYMMDD-XXXXXX" autocomplete="off">
+          </div>
+          <div class="dh-field full">
+            <label for="mobileLast4">Last four digits of mobile number</label>
+            <input id="mobileLast4" required inputmode="numeric" pattern="[0-9]{4}" maxlength="4" placeholder="e.g. 2230" autocomplete="off">
+          </div>
+          <div class="dh-field full">
+            <button class="dh-btn dh-track-submit" type="submit">FIND MY ORDER <span>→</span></button>
+          </div>
+        </form>
+        <div id="trackResult" aria-live="polite"></div>
+      </section>
+
+      <div class="dh-track-help">
+        <span>Need help with an order?</span>
+        <a href="https://wa.me/918603824415" target="_blank" rel="noopener">Connect with Dharoahar on WhatsApp →</a>
+      </div>
+    </div>
+  </main>
+
+  <footer class="dh-page-footer">
+    © Dharoahar · Authentic Indian Spices ·
+    <a href="privacy.html">Privacy</a> ·
+    <a href="terms.html">Terms</a>
+  </footer>
+
+  <script src="ecommerce-config.js"></script>
+  <script src="track-order.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,49 @@
+/* Dharoahar cart refinements — loaded AFTER cart.css */
+.dh-cart-page{padding-top:44px!important}
+.dh-cart-grid{grid-template-columns:minmax(0,1.55fr) minmax(300px,.82fr)!important;gap:22px!important}
+.dh-cart-items-panel,.dh-cart-summary-panel{background:#fffdfa!important;border:1px solid #e6dacb!important;box-shadow:0 12px 34px rgba(55,35,20,.045)}
+.dh-cart-panel-heading{display:flex;align-items:center;justify-content:space-between;gap:12px;padding-bottom:16px;margin-bottom:4px;border-bottom:1px solid #eee5d9}
+.dh-cart-panel-heading h2,.dh-cart-summary-title{margin:0;color:#38271d;font:400 25px/1.15 Georgia,serif}
+.dh-cart-panel-heading>a{color:#8b6038;font-size:11px;font-weight:700;text-decoration:none}
+.dh-cart-summary-panel{position:sticky;top:22px}
+.dh-cart-summary-title{margin:7px 0 20px}
+.dh-cart-checkout{width:100%;min-height:54px;display:flex!important;align-items:center;justify-content:space-between;padding:0 18px!important;border-radius:7px!important;font-size:10px!important;letter-spacing:.09em}
+.dh-cart-checkout span{font-size:19px;font-weight:400}
+.dh-cart-summary-panel .dh-note{border-radius:6px}
+.dh-cart-summary-panel .dh-muted{margin-top:14px}
+.dh-cart-help{margin-top:18px;padding-top:15px;border-top:1px solid #eee5d9;color:#817264;font-size:11px;line-height:1.6}
+.dh-cart-help a{color:#3d7047;font-weight:700;text-decoration:none}
+.dh-line-item{grid-template-columns:76px minmax(0,1fr) auto!important;gap:15px!important;padding:17px 0!important}
+.dh-line-item img{width:76px!important;height:82px!important;border-radius:6px}
+.dh-line-item h3{font-size:17px!important;color:#3b281d}
+.dh-line-item p{font-size:11px!important;line-height:1.5}
+.dh-line-item>strong{font-size:14px;color:#3b281d;white-space:nowrap}
+.dh-qty-mini{
+  width:31px;height:30px;display:inline-grid;place-items:center;
+  border:1px solid #ddcfbf;border-radius:6px;background:#fffdfa;
+  color:#513323;font-size:17px;line-height:1;cursor:pointer;
+  transition:background .15s,border-color .15s;
+}
+.dh-qty-mini:hover{background:#f4ecdf;border-color:#b99169}
+.dh-remove{
+  min-height:30px;padding:0 11px;border:1px solid #e5d9cc;border-radius:6px;
+  background:#fffdfa;color:#8b5d45;font-size:10px;font-weight:700;cursor:pointer;
+}
+.dh-remove:hover{background:#fbefeb;border-color:#d8b6a8}
+@media(max-width:760px){
+  .dh-cart-page{padding:28px 13px 55px!important}
+  .dh-cart-grid{grid-template-columns:1fr!important;gap:14px!important}
+  .dh-cart-summary-panel{position:static;order:-1;padding:19px!important}
+  .dh-cart-items-panel{padding:17px!important}
+  .dh-cart-panel-heading h2,.dh-cart-summary-title{font-size:22px}
+  .dh-line-item{grid-template-columns:58px minmax(0,1fr) auto!important;gap:10px!important;padding:13px 0!important}
+  .dh-line-item img{width:58px!important;height:64px!important}
+  .dh-line-item h3{font-size:15px!important}
+  .dh-line-item>strong{font-size:12px}
+  .dh-line-item>div:nth-child(2)>div{gap:7px!important;flex-wrap:wrap}
+}
+@media(max-width:380px){
+  .dh-line-item{grid-template-columns:50px minmax(0,1fr) auto!important;gap:8px!important}
+  .dh-line-item img{width:50px!important;height:58px!important}
+  .dh-remove{padding:0 8px}
+}

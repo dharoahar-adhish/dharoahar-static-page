@@ -1,0 +1,20 @@
+/* Order tracking result card */
+.trk-result-card{margin-top:22px;padding:25px;background:#fffdfa;border:1px solid #e7dccd;box-shadow:0 10px 30px rgba(55,35,20,.04)}
+.trk-result-top{display:flex;justify-content:space-between;align-items:flex-start;gap:14px;padding-bottom:17px;border-bottom:1px solid #eee5d9}
+.trk-result-top h2{margin:7px 0 0;font:400 27px/1.15 Georgia,serif;color:#38271d}
+.trk-status-pill{display:inline-flex;padding:7px 11px;border-radius:999px;background:#edf2e8;color:#4e6a42;font-size:10px;font-weight:800}
+.trk-info-grid{padding:8px 0}
+.trk-info-row{display:flex;justify-content:space-between;align-items:flex-start;gap:18px;padding:12px 0;border-bottom:1px solid #f0e9e0;font-size:12px}
+.trk-info-row span{color:#817163}
+.trk-info-row strong{color:#493427;text-align:right;max-width:60%;overflow-wrap:anywhere}
+.trk-external{color:#85572f;font-weight:700;text-decoration:none}
+.trk-external:hover{text-decoration:underline}
+.trk-delivery-note{margin-top:13px;padding:14px;background:#f4ecdf;color:#705139;font-size:11px;line-height:1.65}
+.trk-help{margin-top:16px;color:#817264;font-size:11px;line-height:1.6}
+.trk-help a{color:#3d7047;font-weight:700;text-decoration:none}
+@media(max-width:600px){
+  .trk-result-card{padding:18px 15px}
+  .trk-result-top h2{font-size:24px}
+  .trk-info-row{gap:12px;font-size:11px}
+  .trk-info-row strong{max-width:58%}
+}

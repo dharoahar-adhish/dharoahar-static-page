@@ -1,0 +1,138 @@
+/* Dharoahar checkout — isolated styling; leaves the main website untouched */
+.dh-checkout-page{
+  --co-ink:#352319;
+  --co-brown:#4b2e20;
+  --co-muted:#7c6a5b;
+  --co-gold:#b98750;
+  --co-line:#e7dccd;
+  --co-paper:#fffdfa;
+  --co-bg:#f7f2e9;
+  margin:0;
+  background:var(--co-bg);
+  color:var(--co-ink);
+  font-family:Arial,Helvetica,sans-serif;
+}
+.dh-checkout-page *{box-sizing:border-box}
+.dh-checkout-page .dh-brand-head{background:#fcfaf5}
+.dh-checkout-page .dh-brand-inner{max-width:1180px;padding:17px 24px}
+.dh-checkout-page .dh-brand strong{font-size:29px}
+.dh-checkout-page .dh-back{font-weight:700}
+.co-main{min-height:80vh;padding:48px 22px 76px}
+.co-wrap{max-width:1180px;margin:0 auto}
+.co-heading{margin:0 0 28px}
+.co-eyebrow{font-size:9px;line-height:1.4;letter-spacing:.22em;text-transform:uppercase;font-weight:800;color:#a96e36}
+.co-heading h1{margin:8px 0 8px;font:400 clamp(38px,5vw,58px)/1.04 Georgia,serif;letter-spacing:-.025em;color:var(--co-ink)}
+.co-heading>p{margin:0;color:var(--co-muted);font-size:14px;line-height:1.65}
+.co-steps{display:flex;align-items:center;gap:12px;margin-top:22px;max-width:480px}
+.co-steps>i{height:1px;flex:1;background:#d8c8b5}
+.co-step{display:flex;align-items:center;gap:7px;color:#9a8a7b;font-size:11px;font-weight:700;white-space:nowrap}
+.co-step b{width:25px;height:25px;display:grid;place-items:center;border:1px solid #d7c8b7;border-radius:50%;font-size:10px}
+.co-step-done b{background:#e9eee3;border-color:#cbd8c1;color:#4d6943}
+.co-step-active{color:var(--co-brown)}
+.co-step-active b{background:var(--co-brown);border-color:var(--co-brown);color:white}
+.co-layout{display:grid;grid-template-columns:minmax(0,1.45fr) minmax(310px,.82fr);gap:24px;align-items:start}
+.co-card{background:var(--co-paper);border:1px solid var(--co-line);box-shadow:0 12px 34px rgba(55,35,20,.045)}
+.co-form-card{padding:30px 32px}
+.co-summary-card{padding:25px 25px 22px;position:sticky;top:22px}
+.co-card-heading{display:flex;align-items:flex-start;gap:13px;margin-bottom:22px}
+.co-number{flex:0 0 31px;width:31px;height:31px;display:grid;place-items:center;border-radius:50%;background:#f2e8d9;color:#8d5e32;font-size:10px;font-weight:800}
+.co-card-heading h2,.co-summary-top h2{margin:0;color:var(--co-ink);font:400 25px/1.15 Georgia,serif}
+.co-card-heading p{margin:5px 0 0;color:var(--co-muted);font-size:12px;line-height:1.5}
+.co-section-label{margin:0 0 14px;color:#9a6b3e;font-size:9px;font-weight:800;letter-spacing:.18em;text-transform:uppercase}
+.co-fields{display:grid;grid-template-columns:1fr 1fr;gap:17px 16px}
+.co-fields-two{grid-template-columns:1fr 1fr}
+.co-field{display:flex;flex-direction:column;gap:7px;min-width:0}
+.co-field-wide{grid-column:1/-1}
+.co-field label{font-size:11px;font-weight:700;color:#604735}
+.co-field label em{color:#a34d3b;font-style:normal}
+.co-field label span{font-weight:400;color:#9b8b7d}
+.co-field input,.co-field textarea{
+  display:block;width:100%;min-width:0;min-height:49px;padding:13px 14px;
+  border:1px solid #ded2c4;border-radius:7px;background:#fff;color:#302219;
+  font:14px/1.4 Arial,Helvetica,sans-serif;box-shadow:0 1px 2px rgba(40,25,15,.025);
+  appearance:none;-webkit-appearance:none;
+}
+.co-field textarea{min-height:94px;resize:vertical}
+.co-field input::placeholder,.co-field textarea::placeholder{color:#b0a397}
+.co-field input:focus,.co-field textarea:focus{
+  outline:none;border-color:#b88754;box-shadow:0 0 0 3px rgba(184,135,84,.13);background:#fffefa
+}
+.co-field input:-webkit-autofill,.co-field textarea:-webkit-autofill{
+  -webkit-box-shadow:0 0 0 1000px #fffefa inset!important;-webkit-text-fill-color:#302219!important;
+}
+.co-field small{color:#928273;font-size:10px;line-height:1.45}
+.co-divider{height:1px;background:var(--co-line);margin:28px 0 25px}
+.co-address-heading{margin-bottom:20px}
+.co-nested-fields{grid-column:1/-1}
+.co-consent{display:flex;align-items:flex-start;gap:10px;margin:23px 0 17px;padding:14px;background:#f8f4ed;border:1px solid #eee5d9;border-radius:7px}
+.co-consent input{flex:0 0 16px;width:16px;height:16px;margin:2px 0 0;accent-color:var(--co-brown)}
+.co-consent label{font-size:11px;line-height:1.6;color:#6f5c4d}
+.co-consent a{color:#81552f;text-decoration:underline}
+.co-feedback:empty{display:none}
+.co-feedback{margin:0 0 14px}
+.co-feedback .dh-error,.co-feedback .dh-success,.co-feedback .dh-note{border-radius:6px}
+.co-submit{
+  width:100%;min-height:56px;display:flex;align-items:center;justify-content:space-between;gap:14px;
+  padding:0 20px;border:0;border-radius:7px;background:var(--co-brown);color:#fff;
+  font-size:11px;font-weight:800;letter-spacing:.1em;cursor:pointer;transition:background .2s,transform .2s
+}
+.co-submit b{font-size:20px;font-weight:400}
+.co-submit:hover{background:#684630;transform:translateY(-1px)}
+.co-submit:disabled{opacity:.55;cursor:not-allowed;transform:none}
+.co-secure-note{margin:12px 0 0;text-align:center;color:#9a8b7c;font-size:10px;line-height:1.5}
+.co-summary-top{display:flex;justify-content:space-between;align-items:flex-start;gap:10px;padding-bottom:18px;border-bottom:1px solid var(--co-line)}
+.co-summary-top h2{margin-top:6px;font-size:27px}
+.co-summary-top>a{margin-top:5px;color:#895d35;font-size:11px;font-weight:700;text-decoration:none}
+.co-items{padding:4px 0 8px}
+.co-items .dh-line-item{grid-template-columns:55px minmax(0,1fr) auto;gap:11px;padding:13px 0}
+.co-items .dh-line-item img{width:55px;height:61px;border-radius:5px;object-fit:cover}
+.co-items .dh-line-item h3{font:600 14px/1.25 Georgia,serif;color:#3b281d}
+.co-items .dh-line-item p{font-size:10px;line-height:1.5}
+.co-items .dh-line-item>strong{font-size:12px;white-space:nowrap}
+.co-loading{padding:22px 0;color:#89796b;font-size:12px;line-height:1.6}
+.co-totals{padding-top:13px;border-top:1px solid var(--co-line)}
+.co-totals>div{display:flex;justify-content:space-between;gap:14px;margin:12px 0;color:#776657;font-size:12px}
+.co-totals strong{color:#493427}
+.co-grand-total{padding-top:15px;border-top:1px solid var(--co-line);font-size:16px!important;color:var(--co-ink)!important}
+.co-grand-total strong{font-size:21px;color:var(--co-brown)}
+.co-delivery-note{margin-top:16px;padding:13px 14px;border-radius:6px;background:#f4ecdf;color:#705139;font-size:11px;line-height:1.6}
+.co-support{display:flex;align-items:center;gap:11px;margin-top:17px;padding-top:16px;border-top:1px solid var(--co-line)}
+.co-support-icon{flex:0 0 27px;width:27px;height:27px;display:grid;place-items:center;border:1px solid #d8c8b6;border-radius:50%;color:#8b6039;font:700 13px Georgia,serif}
+.co-support p{margin:0;color:#817264;font-size:10px;line-height:1.6}
+.co-support a{color:#3d7047;font-weight:700;text-decoration:none}
+.co-bottom-trust{display:flex;justify-content:center;gap:25px;flex-wrap:wrap;margin:23px 0 0;color:#88796c;font-size:10px}
+.co-bottom-trust span{white-space:nowrap}
+.dh-checkout-page .dh-page-footer{background:transparent;color:#988879}
+@media(max-width:900px){
+  .co-layout{grid-template-columns:minmax(0,1.2fr) minmax(280px,.85fr);gap:16px}
+  .co-form-card{padding:24px}
+  .co-summary-card{padding:21px}
+}
+@media(max-width:760px){
+  .co-main{padding:29px 14px 54px}
+  .co-heading{margin-bottom:18px}
+  .co-heading h1{font-size:39px}
+  .co-heading>p{font-size:13px}
+  .co-steps{margin-top:17px;gap:8px}
+  .co-layout{grid-template-columns:1fr;gap:15px}
+  /* Put prices and order summary ABOVE the long address form on mobile. */
+  .co-summary-card{order:-1;position:static;padding:19px 17px}
+  .co-form-card{order:1;padding:21px 17px}
+  .co-summary-top h2{font-size:24px}
+  .co-items .dh-line-item{grid-template-columns:48px minmax(0,1fr) auto;gap:9px}
+  .co-items .dh-line-item img{width:48px;height:54px}
+  .co-fields,.co-fields-two{grid-template-columns:1fr;gap:14px}
+  .co-field-wide,.co-nested-fields{grid-column:1}
+  .co-divider{margin:23px 0 21px}
+  .co-card-heading h2{font-size:22px}
+  .co-bottom-trust{display:grid;gap:8px;justify-content:start;margin-left:4px}
+  .dh-checkout-page .dh-brand-inner{padding:13px 16px}
+}
+@media(max-width:390px){
+  .co-heading h1{font-size:35px}
+  .co-form-card{padding:18px 14px}
+  .co-summary-card{padding:17px 14px}
+  .co-steps{gap:5px}
+  .co-step{font-size:10px}
+  .co-step b{width:22px;height:22px}
+}

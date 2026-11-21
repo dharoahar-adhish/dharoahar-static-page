@@ -3,87 +3,70 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#f7f2e9">
   <title>Your Cart | Dharoahar</title>
   <link rel="stylesheet" href="cart.css">
+  <link rel="stylesheet" href="cart-polish.css">
 </head>
-
 <body data-page="cart">
-
-<header class="dh-brand-head">
-  <div class="dh-brand-inner">
-    <a class="dh-brand" href="index.html">
-      <strong>Dharoahar</strong>
-      <small>Authentic Indian Spices</small>
-    </a>
-    <a class="dh-back" href="products.html">Continue shopping</a>
-  </div>
-</header>
-
-<main class="dh-page">
-  <div class="dh-wrap">
-
-    <div class="dh-page-head">
-      <div class="dh-eyebrow">Your selection</div>
-      <h1>Your Shopping Cart</h1>
-      <p>Review your spices and quantities before proceeding.</p>
+  <header class="dh-brand-head">
+    <div class="dh-brand-inner">
+      <a class="dh-brand" href="index.html">
+        <strong>Dharoahar</strong>
+        <small>Authentic Indian Spices</small>
+      </a>
+      <a class="dh-back" href="products.html">← Continue shopping</a>
     </div>
+  </header>
 
-    <div class="dh-grid">
+  <main class="dh-page dh-cart-page">
+    <div class="dh-wrap">
+      <div class="dh-page-head">
+        <div class="dh-eyebrow">Your selection</div>
+        <h1>Your Shopping Cart</h1>
+        <p>Review your spices and quantities before proceeding.</p>
+      </div>
 
-      <section class="dh-panel">
-        <div id="dhCartItems">Loading your cart…</div>
-      </section>
+      <div class="dh-grid dh-cart-grid">
+        <section class="dh-panel dh-cart-items-panel">
+          <div class="dh-cart-panel-heading">
+            <h2>Your selected spices</h2>
+            <a href="products.html">Add more spices +</a>
+          </div>
+          <div id="dhCartItems">Loading your cart…</div>
+        </section>
 
-      <aside class="dh-panel">
-        <h2 style="font:500 25px Georgia,serif;margin:0 0 18px">
-          Order Summary
-        </h2>
-
-        <div class="dh-summary-line">
-          <span>Product subtotal</span>
-          <strong id="dhSubtotal">₹0</strong>
-        </div>
-
-        <div class="dh-summary-line">
-          <span>Below-₹500 delivery charge</span>
-          <strong id="dhDelivery">₹0</strong>
-        </div>
-
-        <div class="dh-summary-line dh-summary-total">
-          <span>Estimated total</span>
-          <strong id="dhGrandTotal">₹0</strong>
-        </div>
-
-        <div class="dh-note" id="dhCartNotice">
-          Loading settings…
-        </div>
-
-        <a
-          class="dh-btn"
-          id="dhCheckoutButton"
-          href="checkout.html"
-          style="width:100%"
-        >
-          PROCEED TO CHECKOUT
-        </a>
-
-        <p class="dh-muted">
-          Estimated delivery: 10–15 days, subject to pincode serviceability.
-        </p>
-      </aside>
-
+        <aside class="dh-panel dh-cart-summary-panel">
+          <div class="dh-eyebrow">Almost there</div>
+          <h2 class="dh-cart-summary-title">Order Summary</h2>
+          <div class="dh-summary-line">
+            <span>Product subtotal</span>
+            <strong id="dhSubtotal">₹0</strong>
+          </div>
+          <div class="dh-summary-line">
+            <span>Below-₹500 delivery charge</span>
+            <strong id="dhDelivery">₹0</strong>
+          </div>
+          <div class="dh-summary-line dh-summary-total">
+            <span>Estimated total</span>
+            <strong id="dhGrandTotal">₹0</strong>
+          </div>
+          <div class="dh-note" id="dhCartNotice">Loading settings…</div>
+          <a class="dh-btn dh-cart-checkout" id="dhCheckoutButton" href="checkout.html">PROCEED TO CHECKOUT <span>→</span></a>
+          <p class="dh-muted">Estimated delivery: 10–15 days after payment confirmation, subject to PIN-code serviceability.</p>
+          <div class="dh-cart-help">Need help? <a href="https://wa.me/918603824415" target="_blank" rel="noopener">Chat with us on WhatsApp →</a></div>
+        </aside>
+      </div>
     </div>
-  </div>
-</main>
+  </main>
 
-<footer class="dh-page-footer">
-  © Dharoahar · Authentic Indian Spices ·
-  <a href="privacy.html">Privacy</a> ·
-  <a href="terms.html">Terms</a>
-</footer>
+  <footer class="dh-page-footer">
+    © Dharoahar · Authentic Indian Spices ·
+    <a href="privacy.html">Privacy</a> ·
+    <a href="terms.html">Terms</a>
+  </footer>
 
-<script src="ecommerce-config.js"></script>
-<script src="cart.js" defer></script>
-
+  <script src="ecommerce-config.js"></script>
+  <script src="cart.js" defer></script>
 </body>
 </html>
